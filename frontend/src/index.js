@@ -6,13 +6,19 @@ import './index.css';
 import App from './App';
 
 import configureStore from './store';
+import { restoreCSRF, csrfFetch } from './store/csrf';
+
 
 const store = configureStore();
 // Create a variable to access your store and expose it to the window,
 // should not be exposed in production, only in development
 if (process.env.NODE_ENV !== 'production') {
+  restoreCSRF();
+
+  window.csrfFetch = csrfFetch;
   window.store = store;
 }
+
 
 function Root() {
   return (
