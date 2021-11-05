@@ -9,18 +9,17 @@ function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
 
-  // use restore user thunk action after App component's first render 
+  // use restore user thunk action after App component's first render
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
 
-  return (
+  return isLoaded && (
     <Switch>
-      <Route path='/login'>
+      <Route path="/login">
         <LoginFormPage />
       </Route>
     </Switch>
   );
 }
-
 export default App;

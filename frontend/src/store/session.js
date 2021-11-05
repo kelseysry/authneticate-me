@@ -38,6 +38,31 @@ export const login = (user) => async (dispatch) => {
   return response
 };
 
+// restore session user thunk action GET /api/session
+export const restoreUser = () => async dispatch => {
+  const response = await csrfFetch('/api/session');
+  const data = await response.json();
+  dispatch(setUser(data.user)); // dispatch the action for setting
+  //the session user to the user in the response's body.
+  return response;
+};
+
+// signup thunk
+export const signup = (user) => async (dispatch) => {
+  const { username, email, password } = user;
+  const response = await csrfFetch("/api/users", {
+    method: "POST",
+    body: JSON.stringify({
+      username,
+      email,
+      password,
+    }),
+  });
+  const data = await response.json();
+  dispatch(setUser(data.user));
+  return response;
+};
+
 const initialState = { user: null };
 
 const sessionReducer = (state = initialState, action) => {
@@ -60,14 +85,8 @@ const sessionReducer = (state = initialState, action) => {
   }
 };
 
-// restore session user thunk action GET /api/session
-export const restoreUser = () => async dispatch => {
-  const response = await csrfFetch('/api/session');
-  const data = await response.json();
-  dispatch(setUser(data.user)); // dispatch the action for setting
-  //the session user to the user in the response's body.
-  return response;
-};
+
+
 
 
 export default sessionReducer
