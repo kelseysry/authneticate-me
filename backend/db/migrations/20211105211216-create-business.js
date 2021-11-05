@@ -9,24 +9,31 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       ownerId: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       title: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       description: {
+        allowNull: false,
         type: Sequelize.TEXT
       },
       address: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       city: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       state: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       zipCode: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       lat: {
