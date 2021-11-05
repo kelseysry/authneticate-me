@@ -21,9 +21,11 @@ const removeUser = () => {
   };
 };
 
-// thunk to login user 
+// thunk to login user
 export const login = (user) => async (dispatch) => {
   const { credential, password } = user;
+  // we are able to extract this credential and password from user info b/c of
+  //return dispatch(sessionActions.login({ credential, password })) in components/loginFormPage
   const response = await csrfFetch('/api/session', {
     method: 'POST',
     body: JSON.stringify({
