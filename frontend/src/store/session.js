@@ -79,7 +79,7 @@ export const logout = () => async (dispatch) => {
 
 const initialState = { user: null };
 
-// since we're only dealing with one user -> we don't need an id b/c only one person in this session 
+// since we're only dealing with one user -> we don't need an id b/c only one person in this session
 const sessionReducer = (state = initialState, action) => {
   let newState;
   switch (action.type) {
@@ -106,3 +106,7 @@ const sessionReducer = (state = initialState, action) => {
 
 
 export default sessionReducer
+
+
+
+// npx sequelize-cli model:generate --name Business --attributes id:integer,ownerId:integer,title:string,description:text,address:string,city:string,state:string,zipCode:string,lat:decimal,lng:decimal
