@@ -35,7 +35,7 @@ function LoginFormPage() {
 
   return (
     <>
-    <h2 className="signUp">Log in to Yelp</h2>
+    <h2 className="login">Log in to Yelp</h2>
     <form onSubmit={handleSubmit}>
       <ul>
         {errors.map((error, idx) => <li key={idx}>{error}</li>)}
