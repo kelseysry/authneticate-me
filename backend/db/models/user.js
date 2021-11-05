@@ -125,3 +125,5 @@ If you see model/class.method , you can call the method on the model itself. Thi
 
 
  */
+
+// npx sequelize-cli model:generate --name Business --attributes ownerId:integer,title:string,description:text,address:string,city:string,state:string,zipCode:string,lat:decimal,lng:decimal

@@ -10,16 +10,25 @@ import Navigation from "./components/Navigation";
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
-  // isLoaded - don't want to render routes unless user logged in 
+  // isLoaded - don't want to render routes unless user logged in
 
   // use restore user thunk action after App component's first render
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
 
+  // useEffect(() => {
+  //   dispatch(sessionActions.login({
+  //     credential: 'Demo-lition',
+  //     password: 'password'
+  //   }));
+  // }, [dispatch]);
+
+
   return (
     <>
       <Navigation isLoaded={isLoaded} />
+      {/* <button>Demo</button> */}
       {isLoaded && (
         <Switch>
           <Route path="/login">
