@@ -7,6 +7,7 @@ import React, { useState } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+import './LoginForm.css';
 
 function LoginFormPage() {
   const dispatch = useDispatch();
@@ -16,7 +17,7 @@ function LoginFormPage() {
   const [errors, setErrors] = useState([]);
 
   //if there is a current session user in the redux store, then redirect the user to the / path
-  // if trying to access the LognFormPage 
+  // if trying to access the LognFormPage
   if (sessionUser) return (
     <Redirect to="/" />
   );
@@ -33,6 +34,8 @@ function LoginFormPage() {
   }
 
   return (
+    <>
+    <h2 className="signUp">Log in to Yelp</h2>
     <form onSubmit={handleSubmit}>
       <ul>
         {errors.map((error, idx) => <li key={idx}>{error}</li>)}
@@ -57,6 +60,7 @@ function LoginFormPage() {
       </label>
       <button type="submit">Log In</button>
     </form>
+    </>
   );
 }
 
