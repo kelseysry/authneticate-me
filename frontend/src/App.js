@@ -10,6 +10,7 @@ import Navigation from "./components/Navigation";
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
+  // isLoaded - don't want to render routes unless user logged in 
 
   // use restore user thunk action after App component's first render
   useEffect(() => {

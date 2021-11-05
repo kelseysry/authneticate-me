@@ -69,7 +69,7 @@ router.get(
       return res.json({
         user: user.toSafeObject()
       });
-    } else return res.json({});
+    } else return res.json({}); // return an empty obj for user 
   }
 );
 

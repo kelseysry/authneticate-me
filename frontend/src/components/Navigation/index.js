@@ -30,6 +30,9 @@ function Navigation({ isLoaded }){
       </li>
     </ul>
   );
+  // only show sessionLink if check app has loaded
+  // isLoaded runs before restoreUser runs. B/c we run our jsx before our logic.
+  // want basic functionality of web to work first before user logins 
 }
 
 export default Navigation;

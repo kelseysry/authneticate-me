@@ -26,7 +26,7 @@ export const login = (user) => async (dispatch) => {
   const { credential, password } = user;
   // we are able to extract this credential and password from user info b/c of
   //return dispatch(sessionActions.login({ credential, password })) in components/loginFormPage
-  const response = await csrfFetch('/api/session', {
+  const response = await csrfFetch('/api/session', { // csrfFetch grabbing cookie from comp and attach to request -> prove user is indeed the right one
     method: 'POST',
     body: JSON.stringify({
       credential, password
@@ -42,8 +42,13 @@ export const login = (user) => async (dispatch) => {
 export const restoreUser = () => async dispatch => {
   const response = await csrfFetch('/api/session');
   const data = await response.json();
-  dispatch(setUser(data.user)); // dispatch the action for setting
-  //the session user to the user in the response's body.
+  if(data.user) {
+    dispatch(setUser(data.user)); // dispatch the action for setting
+    //the session user to the user in the response's body.
+    // b/c of the back end // user: user.toSafeObject()
+  } else {
+    dispatch(setUser(null))
+  }
   return response;
 };
 
@@ -74,20 +79,22 @@ export const logout = () => async (dispatch) => {
 
 const initialState = { user: null };
 
+// since we're only dealing with one user -> we don't need an id b/c only one person in this session 
 const sessionReducer = (state = initialState, action) => {
   let newState;
   switch (action.type) {
     case SET_USER:
       newState = Object.assign({}, state);
+      // update user key, and set to object
       newState.user = action.user;
       return newState;
-      // newState = {...state, [action.user]: action.user};
+      // newState = {...state, user: action.user};
+      // newState = {...state, [action.user.id]: action.user};
+
       // return newState;
     case REMOVE_USER:
       newState = Object.assign({}, state);
       newState.user = null;
-      // newState = {...state};
-      // delete newState[action.user];
       return newState;
     default:
       return state;
