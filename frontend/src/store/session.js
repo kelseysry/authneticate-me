@@ -59,41 +59,15 @@ const sessionReducer = (state = initialState, action) => {
       return state;
   }
 };
+
+// restore session user thunk action GET /api/session
+export const restoreUser = () => async dispatch => {
+  const response = await csrfFetch('/api/session');
+  const data = await response.json();
+  dispatch(setUser(data.user)); // dispatch the action for setting
+  //the session user to the user in the response's body.
+  return response;
+};
+
+
 export default sessionReducer
-
-
-
-// would this be valid for sessionReducer
-// const sessionReducer = (state ={}, action) => {
-//   let newState = {},
-//   switch (action.type) {
-//     case ADD_USER:
-//       newState = {...state, [action.sessionUser.id]: action.sessionUser};
-//       return newState
-//     case REMOVE_USER:
-//       newState = {...state};
-//       delete newState[action.sessionUser];
-//       return newState;
-//     default:
-//       return state;
-//   }
-// }
-
-
-// ok thunk?
-// thunk
-// export const loginSessionUser = payload => async dispatch => {
-//   const response = await fetch('/api/session', {
-//     method: 'POST',
-//     headers: { 'Content-Type': 'application/json' },
-//     body: JSON.stringify(payload),
-//     credential: ,
-//     password: ,
-//   })
-
-//   if (response.ok) {
-//     const user = await response.json();
-//     dispatch(addUser(user))
-//     return user;
-//   }
-// }
