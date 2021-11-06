@@ -41,6 +41,18 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Business.associate = function(models) {
     // associations can be defined here
+    Business.belongsTo(models.User, { foreignKey: 'ownerId' });
+    Business.hasMany(models.Review, { foreignKey: 'businessId', onDelete: 'CASCADE', hooks: true})
+    // if delete business, delete all reviews associated with it
+
+
+  const columnMapping = {
+      through: 'Review', // This is the model name referencing through
+      otherKey: 'userId',
+      foreignKey: 'businessId'
+  }
+  Business.belongsToMany(models.User, columnMapping);
+
   };
   return Business;
 };
