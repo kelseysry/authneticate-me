@@ -24,11 +24,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    state: {
+    zipCode: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    zipCode: {
+    imageUrl: {
       type: DataTypes.STRING,
       allowNull: false,
     },
