@@ -48,6 +48,8 @@ module.exports = (sequelize, DataTypes) => {
   });
   User.associate = function(models) {
     // associations can be defined here
+    User.hasMany(models.Review, { foreignKey: 'userId' });
+
   };
 
   // If you see model/class.prototype.method, you will need to great an instance of that class before using the method. This is considered an instance method.
