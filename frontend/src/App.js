@@ -8,6 +8,7 @@ import Navigation from "./components/Navigation";
 import SingleBusinessPage from "./components/SingleBusinessPage";
 import AllBusiness from "./components/AllBusiness";
 import CreateBusinessForm from "./components/CreateBusiness";
+import EditBusinessForm from "./components/EditBusinessForm";
 
 function App() {
   const dispatch = useDispatch();
@@ -45,6 +46,9 @@ function App() {
           {/* <Route path='/createBusiness'>
             <CreateBusinessForm />
           </Route> */}
+          <Route path='/EditBusiness'>
+            <EditBusinessForm />
+          </Route>
           <Route>
             Page Not Found
           </Route>

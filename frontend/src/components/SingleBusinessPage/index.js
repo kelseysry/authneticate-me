@@ -8,6 +8,7 @@ import {useParams } from 'react-router-dom';
 // import thunk creator
 import { getOneBusiness } from "../../store/business"
 import { useHistory } from 'react-router';
+// import EditBusinessForm from '../EditBusinessForm';
 
 
 const SingleBusinessPage = () => {
@@ -30,10 +31,11 @@ const SingleBusinessPage = () => {
     // style={{ backgroundImage: `url('${business.imageUrl}')` }}
     >
     <h1>{business?.title}</h1>
+    {/* <EditBusinessForm /> */}
 
 
-    <button onClick={() => {history.push("/business");}}>Click</button>
-    
+    <button onClick={() => {history.push("/EditBusiness");}}>Edit Business</button>
+
 
     <p>{business?.description}</p>
     <img src ={business?.imageUrl}/>
