@@ -60,10 +60,11 @@ const SingleBusinessPage = () => {
           <li>
             <b>zipCode</b> {business.zipCode}
           </li>
-          <li>
+          {/* <li>
             <b>Image Url</b> {business.imageUrl}
-          </li>
+          </li> */}
         </ul>
+
       </div>
     )
   }
@@ -84,7 +85,7 @@ const SingleBusinessPage = () => {
       {content}
     </div>
 
-    <button onClick={() => setShowEditBusinessForm(true)}>Edit Hidden</button>
+    <button onClick={() => setShowEditBusinessForm(true)}>Editttttt</button>
     <p>{business?.description}</p>
     <img src ={business?.imageUrl}/>
   </div>

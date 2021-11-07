@@ -7,15 +7,18 @@ import { useDispatch, useSelector } from 'react-redux';
 // import { useParams } from 'react-router-dom';
 
 
-const EditBusinessForm = () => {
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
-  const [address, setAddress] = useState('');
-  const [city, setCity] = useState('');
-  const [zipCode, setZipCode] = useState('');
-  const [imageUrl, setImageUrl] = useState('');
-  const [ownerId, setOwnerId] = useState('')
+const EditBusinessForm = ({business, hideForm}) => {
+
+
+  const [title, setTitle] = useState(business.title);
+  const [description, setDescription] = useState(business.description);
+  const [address, setAddress] = useState(business.address);
+  const [city, setCity] = useState(business.city);
+  const [zipCode, setZipCode] = useState(business.zipCode);
+  const [imageUrl, setImageUrl] = useState(business.imageUrl);
+  const [ownerId, setOwnerId] = useState(business.ownerId)
   const [errors, setErrors] = useState([])
+
   const history = useHistory();
   const dispatch = useDispatch();
 
