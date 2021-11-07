@@ -15,7 +15,7 @@ module.exports = {
         businessId: 2,
         rating: 5,
         answer: 'WHERE THE LOCALS GO FOR SEAFOOD!!!!!! Absolutely AMAZING. The wait can be kind of long but WOW it is WORTH IT. Highly recommend getting the crabs and oyster!!!!',
-        imageUrl: 'https://res.cloudinary.com/mabmab/image/upload/v1636229600/khmer_food/IMG_9627_t0pb3c.heic'
+        imageUrl: 'https://res.cloudinary.com/mabmab/image/upload/v1636248447/khmer_food/oysterJ_ceurjg.jpg'
         }
     ], {});
 
