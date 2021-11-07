@@ -4,6 +4,7 @@ import isURL from 'validator/es/lib/isURL';
 import { createOneBusiness } from '../../store/business';
 
 import { useDispatch, useSelector } from 'react-redux';
+// import { useParams } from 'react-router-dom';
 
 
 const EditBusinessForm = () => {
@@ -17,6 +18,10 @@ const EditBusinessForm = () => {
   const [errors, setErrors] = useState([])
   const history = useHistory();
   const dispatch = useDispatch();
+
+  // const business = useSelector((state) => state.business[businessId])
+
+
 
   useEffect(() => {
     const validationErrors = []
@@ -64,7 +69,7 @@ const EditBusinessForm = () => {
         Name
           <input
           type="text"
-          placeholder="Name of Business"
+          placeholder="name"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           >
@@ -130,7 +135,7 @@ const EditBusinessForm = () => {
         type="submit"
         disabled={errors.length>0}
       >
-        Edit
+        Edit Component
       </button>
     </form>
   )
