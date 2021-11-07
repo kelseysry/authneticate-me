@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import { useHistory } from 'react-router';
+
 // import { useDispatch, useSelector } from 'react-redux';
 
 const CreateBusinessForm = () => {
@@ -8,17 +10,40 @@ const CreateBusinessForm = () => {
   const [city, setCity] = useState('');
   const [zipCode, setZipCode] = useState('');
   const [imageUrl, setImageUrl] = useState('');
+  const [errors, setErrors] = useState([])
+  const history = useHistory();
 
+  useEffect(() => {
+    const validationErrors = []
+    if(!title) validationErrors.push("Name is required")
+    if(title.length<4) validationErrors.push("Name must be more than 4 characters long")
+    if(title.length >100) validationErrors.push("Name must be less than 100 characters")
+    if(!address) validationErrors.push("Address is required")
+    if(!city) validationErrors.push("City is required")
+    if(!zipCode) validationErrors.push("Zip code is required")
+    if(!imageUrl) validationErrors.push("Please provide an image")
+    if(!imageUrl) validationErrors.push("Please provide an image")
+
+    setErrors(validationErrors)
+  },[title,address,city,zipCode,imageUrl])
 
   const handleSubmit = async(e) => {
     e.preventDefault();
 
+    const newBusiness = {
+      title, description, address, city, zipCode, imageUrl
+    }
+
+    history.push('/')
 
   }
 
   return (
 
     <form onSubmit={handleSubmit}>
+      <ul className="errors">
+        {errors.map((error) => <li key={error}>{error}</li>)}
+      </ul>
       <label>
         Name
           <input
@@ -54,7 +79,7 @@ const CreateBusinessForm = () => {
           <input
           type="text"
           value={city}
-          onChange={(e) => setAddress(e.target.value)}
+          onChange={(e) => setCity(e.target.value)}
           >
           </input>
       </label>
@@ -63,7 +88,7 @@ const CreateBusinessForm = () => {
           <input
           type="text"
           value={zipCode}
-          onChange={(e) => setAddress(e.target.value)}
+          onChange={(e) => setZipCode(e.target.value)}
           >
           </input>
       </label>
@@ -76,10 +101,12 @@ const CreateBusinessForm = () => {
         >
         </input>
       </label>
-
-
-
-
+      <button
+        type="submit"
+        disabled={errors.length>0}
+      >
+        Submit
+      </button>
     </form>
   )
 
