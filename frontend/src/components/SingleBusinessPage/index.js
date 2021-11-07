@@ -85,7 +85,7 @@ const SingleBusinessPage = () => {
       {content}
     </div>
 
-    <button onClick={() => setShowEditBusinessForm(true)}>Editttttt</button>
+    <button onClick={() => setShowEditBusinessForm(true)}>Edit</button>
     <p>{business?.description}</p>
     <img src ={business?.imageUrl}/>
   </div>

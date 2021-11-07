@@ -48,19 +48,22 @@ const EditBusinessForm = ({business, hideForm}) => {
   const handleSubmit = async(e) => {
     e.preventDefault();
 
-    const newBusiness = {
+    const updateBusiness = {
       title, description, address, city, zipCode, imageUrl, ownerId
     }
-    console.log("newBusiness in component", newBusiness)
 
-    let createdBusiness = await dispatch(createOneBusiness(newBusiness))
-    console.log("Dispatch the return value of the thunk creator -returned from dispatch", createdBusiness)
+    let updatedBusiness = await dispatch(editOneBusiness(updateBusiness))
 
-    if (createdBusiness) {
-      // history.push(`/business/${createdBusiness.id}`)
-      history.push('/')
+    if (updatedBusiness) {
+      hideForm();
     }
+
   }
+
+  const handleCancelFormEditClick = (e) => {
+    e.preventDefault();
+    hideForm();
+  };
 
   return (
 
@@ -134,12 +137,8 @@ const EditBusinessForm = ({business, hideForm}) => {
         >
         </input>
       </label>
-      <button
-        type="submit"
-        disabled={errors.length>0}
-      >
-        Edit Component
-      </button>
+      <button type="submit" disabled={errors.length>0}>Update Business</button>
+      <button type="button" onClick={handleCancelFormEditClick}>Cancel</button>
     </form>
   )
 
