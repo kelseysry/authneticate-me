@@ -1,8 +1,9 @@
 // currently in the business slice of state
 import { csrfFetch } from "./csrf"
 
-const LOAD_BUSINESS = 'business/LOAD_BUSINESS';
-const LOAD_BUSINESSES = 'business/LOAD_BUSINESSES' //domain/action
+const LOAD_BUSINESS = 'business/LOAD_BUSINESS';  //domain/action
+const LOAD_BUSINESSES = 'business/LOAD_BUSINESSES';
+const ADD_ONE = 'business/ADD_ONE';
 
 // action for one business
 const load = (business) => ({
@@ -16,6 +17,12 @@ const load = (business) => ({
 const loadBusinesses = (businesses) => ({
   type: LOAD_BUSINESSES,
   businesses,
+})
+
+// action create one business
+const addOneBusiness = business => ({
+  type:ADD_ONE,
+  business,
 })
 
 // thunk for getOneBusiness
@@ -36,6 +43,20 @@ export const getAllBusinesses = () => async (dispatch) => {
   dispatch(loadBusinesses(businesses))
 }
 
+// thunk for creating one business
+export const createOneBusiness = (formData) => async dispatch  =>{
+  const response = await csrfFetch('/api/business', {
+    method: 'POST',
+    body: JSON.stringify(formData)
+  });
+
+  if(response.ok) {
+    const data = await response.json();
+    dispatch(addOneBusiness(data))
+    return data
+  }
+}
+
 // reducer
 const initialState = { entries: {}};
 const businessReducer = (state = initialState, action) => {
@@ -47,28 +68,25 @@ switch (action.type) {
       // normalizing
       newState[business.id] = business // make key value pair with id as key and value as business object
     })
-    console.log("this is the new State", newState)
+    // console.log("this is the new State", newState)
     return newState // must return newState or else will skip to default
   }
   case LOAD_BUSINESS: {
     const newState = {...state};
     newState[action.business.id] = action.business
-    console.log("this is newState in Load", newState)
+    // console.log("this is newState in Load", newState)
     return newState
   }
-
-
-    // newState = Object.assign({}, state);
-    // newState.business = action.business
-    // return newState;
-    // const oneBusiness = {};
-    // action.business.forEach((business) => {
-    //   oneBusiness[business.id] = business
-    // });
-    // return {
-    //   ...oneBusiness,
-    //   ...state,
-    // }
+  case ADD_ONE: {
+    if(!state[action.business.id]) {
+      const newState = {
+        ...state,
+        [action.business.id]: action.business
+      };
+      console.log(newState)
+      return newState
+    }
+  }
 
   default:
     return state;

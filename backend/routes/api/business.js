@@ -13,9 +13,16 @@ router.get('/', asyncHandler(async (req, res) => {
 
 router.get('/:businessId', asyncHandler(async (req, res) => {
   const business = await Business.findByPk(req.params.businessId);
-  return res.json(business) // sends one business to the front end 
+  return res.json(business) // sends one business to the front end
 
 }));
+
+// create one business
+router.post('/', asyncHandler(async function(req, res) {
+  const businessId = await Business.create(req.body);
+  return res.redirect(`${req.baseUrl}/${businessId}`)
+})
+)
 
 
 module.exports = router;

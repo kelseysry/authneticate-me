@@ -28,9 +28,12 @@ const SingleBusinessPage = () => {
     <div
     // style={{ backgroundImage: `url('${business.imageUrl}')` }}
     >
+    <h1>{business?.title}</h1>
+      
+
     <p>{business?.description}</p>
     <img src ={business?.imageUrl}/>
-    <p>Hello</p>
+
   </div>
 
   )
