@@ -7,13 +7,14 @@ import {useParams } from 'react-router-dom';
 
 // import thunk creator
 import { getOneBusiness } from "../../store/business"
+import { useHistory } from 'react-router';
 
 
 const SingleBusinessPage = () => {
   const dispatch = useDispatch();
   const { businessId } = useParams();
   const business = useSelector((state) => state.business[businessId]);
-
+  const history = useHistory();
 
   useEffect(() => {
     dispatch(getOneBusiness(businessId));
@@ -29,7 +30,10 @@ const SingleBusinessPage = () => {
     // style={{ backgroundImage: `url('${business.imageUrl}')` }}
     >
     <h1>{business?.title}</h1>
-      
+
+
+    <button onClick={() => {history.push("/business");}}>Click</button>
+    
 
     <p>{business?.description}</p>
     <img src ={business?.imageUrl}/>
