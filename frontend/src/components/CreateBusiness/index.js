@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
+import isURL from 'validator/es/lib/isURL';
+
 
 // import { useDispatch, useSelector } from 'react-redux';
 
@@ -21,8 +23,13 @@ const CreateBusinessForm = () => {
     if(!address) validationErrors.push("Address is required")
     if(!city) validationErrors.push("City is required")
     if(!zipCode) validationErrors.push("Zip code is required")
-    if(!imageUrl) validationErrors.push("Please provide an image")
-    if(!imageUrl) validationErrors.push("Please provide an image")
+    if(!imageUrl) {
+      validationErrors.push("Please provide an image")
+    } else if (!isURL(imageUrl)) {
+      validationErrors.push("Please provide a valid link for the image")
+    }
+
+
 
     setErrors(validationErrors)
   },[title,address,city,zipCode,imageUrl])
