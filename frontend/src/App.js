@@ -5,7 +5,8 @@ import LoginFormPage from './components/LoginFormPage';
 import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
-
+import SingleBusinessPage from "./components/SingleBusinessPage";
+import AllBusiness from "./components/AllBusiness";
 
 function App() {
   const dispatch = useDispatch();
@@ -17,12 +18,6 @@ function App() {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
 
-  // useEffect(() => {
-  //   dispatch(sessionActions.login({
-  //     credential: 'Demo-lition',
-  //     password: 'password'
-  //   }));
-  // }, [dispatch]);
 
 
   return (
@@ -31,11 +26,20 @@ function App() {
       {/* <button>Demo</button> */}
       {isLoaded && (
         <Switch>
-          <Route path="/login">
+          <Route path='/login'>
             <LoginFormPage />
           </Route>
-          <Route path="/signup">
+          <Route path='/signup'>
             <SignupFormPage />
+          </Route>
+          <Route path='/business/:businessId'>
+            <SingleBusinessPage />
+          </Route>
+          <Route path='/business'>
+            <AllBusiness />
+          </Route>
+          <Route>
+            Page Not Found
           </Route>
         </Switch>
       )}
