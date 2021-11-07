@@ -23,9 +23,11 @@ function App() {
   return (
     <>
       <Navigation isLoaded={isLoaded} />
-      {/* <button>Demo</button> */}
       {isLoaded && (
         <Switch>
+          <Route exact path='/'>
+            Hi
+          </Route>
           <Route path='/login'>
             <LoginFormPage />
           </Route>

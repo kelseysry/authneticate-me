@@ -5,10 +5,9 @@ const LOAD_BUSINESS = 'business/LOAD_BUSINESS';
 const LOAD_BUSINESSES = 'business/LOAD_BUSINESSES' //domain/action
 
 // action for one business
-const load = (business, businessId) => ({
+const load = (business) => ({
   type: LOAD_BUSINESS,
   business,
-  businessId
 })
 
 // action for all business
@@ -26,7 +25,7 @@ export const getOneBusiness = (businessId) => async (dispatch) => {
   if(response.ok) {
     const business = await response.json();
     dispatch(load(business))
-    console.log(business)
+    // console.log("this is one", business)
   }
 }
 
@@ -38,11 +37,11 @@ export const getAllBusinesses = () => async (dispatch) => {
 }
 
 // reducer
-const initialState = {};
+const initialState = { entries: {}};
 const businessReducer = (state = initialState, action) => {
 let newState
 switch (action.type) {
-  case LOAD_BUSINESSES:
+  case LOAD_BUSINESSES: {
     const newState = {...state}; // don't have to ...state, if this load on first render/first time user opens the page
     action.businesses.forEach((business) => {
       // normalizing
@@ -50,6 +49,13 @@ switch (action.type) {
     })
     console.log("this is the new State", newState)
     return newState // must return newState or else will skip to default
+  }
+  case LOAD_BUSINESS: {
+    const newState = {...state};
+    newState[action.business.id] = action.business
+    console.log("this is newState in Load", newState)
+    return newState
+  }
 
 
     // newState = Object.assign({}, state);

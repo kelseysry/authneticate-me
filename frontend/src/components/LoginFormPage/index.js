@@ -11,7 +11,7 @@ import './LoginForm.css';
 
 function LoginFormPage() {
   const dispatch = useDispatch();
-  const sessionUser = useSelector(state => state.session.user); // first argument always state -> session from index.js in store, .user is from initial state in reducer for sessionReducer 
+  const sessionUser = useSelector(state => state.session.user); // first argument always state -> session from index.js in store, .user is from initial state in reducer for sessionReducer
   const [credential, setCredential] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState([]);
@@ -19,8 +19,8 @@ function LoginFormPage() {
   //if there is a current session user in the redux store, then redirect the user to the / path
   // if trying to access the LognFormPage
   if (sessionUser) return (
-    <Redirect to="/" />
-  );
+    <Redirect to="/"/>
+  )
 
   const handleSubmit = (e) => {
     e.preventDefault();

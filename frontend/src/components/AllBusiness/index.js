@@ -17,7 +17,7 @@ const AllBusiness = () => {
 
   // if want array version of business
   const businesses = Object.values(businessObj)
-  console.log("this is from components", businesses)
+  // console.log("this is from components", businesses)
 
   // after the component return () below has been rendered for the first time,
   //useEffect will dispatch the thunk
