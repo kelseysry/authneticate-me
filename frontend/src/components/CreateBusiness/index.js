@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
 import isURL from 'validator/es/lib/isURL';
+import { createOneBusiness } from '../../store/business';
 
+import { useDispatch, useSelector } from 'react-redux';
 
-// import { useDispatch, useSelector } from 'react-redux';
 
 const CreateBusinessForm = () => {
   const [title, setTitle] = useState('');
@@ -12,8 +13,10 @@ const CreateBusinessForm = () => {
   const [city, setCity] = useState('');
   const [zipCode, setZipCode] = useState('');
   const [imageUrl, setImageUrl] = useState('');
+  const [ownerId, setOwnerId] = useState('')
   const [errors, setErrors] = useState([])
   const history = useHistory();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const validationErrors = []
@@ -38,11 +41,17 @@ const CreateBusinessForm = () => {
     e.preventDefault();
 
     const newBusiness = {
-      title, description, address, city, zipCode, imageUrl
+      title, description, address, city, zipCode, imageUrl, ownerId
     }
+    console.log("newBusiness in component", newBusiness)
 
-    history.push('/')
+    let createdBusiness = await dispatch(createOneBusiness(newBusiness))
+    console.log("Dispatch the return value of the thunk creator -returned from dispatch", createdBusiness)
 
+    if (createdBusiness) {
+      // history.push(`/business/${createdBusiness.id}`)
+      history.push('/')
+    }
   }
 
   return (
@@ -105,6 +114,15 @@ const CreateBusinessForm = () => {
         type="text"
         value={imageUrl}
         onChange={(e) => setImageUrl(e.target.value)}
+        >
+        </input>
+      </label>
+      <label>
+        Owner Id
+        <input
+        type="number"
+        value={ownerId}
+        onChange={(e) => setOwnerId(e.target.value)}
         >
         </input>
       </label>

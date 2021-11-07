@@ -39,11 +39,12 @@ function App() {
             <SingleBusinessPage />
           </Route>
           <Route path='/business'>
+            <CreateBusinessForm />
             <AllBusiness />
           </Route>
-          <Route path='/createBusiness'>
+          {/* <Route path='/createBusiness'>
             <CreateBusinessForm />
-          </Route>
+          </Route> */}
           <Route>
             Page Not Found
           </Route>

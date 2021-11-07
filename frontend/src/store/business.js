@@ -20,9 +20,9 @@ const loadBusinesses = (businesses) => ({
 })
 
 // action create one business
-const addOneBusiness = business => ({
+const addOneBusiness = (newBusiness) => ({
   type:ADD_ONE,
-  business,
+  newBusiness,
 })
 
 // thunk for getOneBusiness
@@ -44,17 +44,23 @@ export const getAllBusinesses = () => async (dispatch) => {
 }
 
 // thunk for creating one business
-export const createOneBusiness = (formData) => async dispatch  =>{
+export const createOneBusiness = (formData) => async dispatch  => {
   const response = await csrfFetch('/api/business', {
+  // const response = await fetch('/api/business', {
     method: 'POST',
+    // headers: { 'Content-Type': 'application/json'}, // remove
     body: JSON.stringify(formData)
   });
 
-  if(response.ok) {
-    const data = await response.json();
-    dispatch(addOneBusiness(data))
-    return data
-  }
+  console.log("this is response in thunk",response)
+
+  // if(response.ok) {
+    const newBusiness = await response.json();
+    console.log("newBusiness in thunk", newBusiness)
+
+    dispatch(addOneBusiness(newBusiness))
+    return newBusiness
+  //}
 }
 
 // reducer
@@ -78,16 +84,16 @@ switch (action.type) {
     return newState
   }
   case ADD_ONE: {
-    if(!state[action.business.id]) {
+    console.log('hello')
+    if(!state[action.newBusiness.id]) {
       const newState = {
         ...state,
-        [action.business.id]: action.business
+        [action.newBusiness.id]: action.newBusiness
       };
-      console.log(newState)
+      console.log("this is newState", newState)
       return newState
     }
   }
-
   default:
     return state;
   }

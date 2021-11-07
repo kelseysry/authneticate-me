@@ -18,9 +18,11 @@ router.get('/:businessId', asyncHandler(async (req, res) => {
 }));
 
 // create one business
-router.post('/', asyncHandler(async function(req, res) {
-  const businessId = await Business.create(req.body);
-  return res.redirect(`${req.baseUrl}/${businessId}`)
+router.post('/', asyncHandler(async (req, res) =>{
+  const id = await Business.create(req.body);
+  // console.log("this is in api", id)
+  // res.redirect(`/${id}`)
+  return res.json(id)
 })
 )
 
