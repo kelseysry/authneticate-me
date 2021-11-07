@@ -22,7 +22,8 @@ const CreateBusinessForm = () => {
     if(!city) validationErrors.push("City is required")
     if(!zipCode) validationErrors.push("Zip code is required")
     if(!imageUrl) validationErrors.push("Please provide an image")
-    
+    if(!imageUrl) validationErrors.push("Please provide an image")
+
     setErrors(validationErrors)
   },[title,address,city,zipCode,imageUrl])
 
