@@ -4,6 +4,7 @@ import { csrfFetch } from "./csrf"
 const LOAD_BUSINESS = 'business/LOAD_BUSINESS';  //domain/action
 const LOAD_BUSINESSES = 'business/LOAD_BUSINESSES';
 const ADD_ONE = 'business/ADD_ONE';
+const REMOVE_BUSINESS = 'business/REMOVE_BUSINESS';
 
 // action for one business
 const load = (business) => ({
@@ -23,6 +24,12 @@ const loadBusinesses = (businesses) => ({
 const addOneBusiness = (newBusiness) => ({
   type:ADD_ONE,
   newBusiness,
+})
+
+// action creator delete one business
+const remove = (businessId) => ({
+  type: REMOVE_BUSINESS,
+  businessId
 })
 
 // thunk for getOneBusiness
@@ -93,6 +100,11 @@ switch (action.type) {
       console.log("this is newState", newState)
       return newState
     }
+  }
+  case REMOVE_BUSINESS: {
+    const newState = {...state };
+    delete newState[action.businessId];
+    return newState
   }
   default:
     return state;

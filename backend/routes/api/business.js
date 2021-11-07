@@ -5,6 +5,15 @@ const asyncHandler = require('express-async-handler')
 
 const { Business } = require('../../db/models');
 
+// async function to delete a business 
+async function deleteBusiness(businessId) {
+  const business = await Business.findByPk(businessId);
+  if(!business) throw new Error ('Can not find business');
+
+  await Business.destory({where: {id: business.id}});
+  return business.id
+}
+
 router.get('/', asyncHandler(async (req, res) => {
   const businesses = await Business.findAll();
   res.json(businesses) // sends an array of businesses to the front end
@@ -26,5 +35,10 @@ router.post('/', asyncHandler(async (req, res) =>{
 })
 )
 
+// delete one business
+router.delete('/:businessId', asyncHandler(async(req, res) => {
+  const businessId = await Business.deleteBusiness(req.params.id);
+  return res.json({businessId})
+}))
 
 module.exports = router;
