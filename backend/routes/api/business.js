@@ -87,4 +87,10 @@ router.get('/:businessId(\\d+)/reviews', asyncHandler(async(req, res) => {
   return res.json(reviews)
 }))
 
+// create one review for one business
+router.post('/:businessId(\\d+)/reviews', asyncHandler(async(req,res) => {
+  const review = await Review.create(req.body);
+  return res.json(review)
+}))
+
 module.exports = router;

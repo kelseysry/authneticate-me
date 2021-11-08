@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react"
-import { useHistory } from 'react-router';
+// import { useHistory } from 'react-router';
 import isURL from 'validator/es/lib/isURL';
 import { useDispatch} from 'react-redux';
 import { createOneReview } from "../../store/review";
 
 
-const ReviewForm = () => {
+const ReviewForm = ({reviews, hideForm}) => {
 
   const [rating, setRating] = useState('');
   const [answer, setAnswer] = useState('');
@@ -14,7 +14,7 @@ const ReviewForm = () => {
   const [businessId, setBusinessId] = useState('')
   const [errors, setErrors] = useState([])
   const dispatch = useDispatch();
-  const history = useHistory();
+  // const history = useHistory();
 
 
   useEffect(() => {
@@ -47,11 +47,37 @@ const ReviewForm = () => {
 
     let createdReview = await dispatch(createOneReview(newReview))
 
-    if(createdReview) {
-      history.push('/')
+    // if(createdReview) {
+    //   history.push('/')
+    // }
+    if (createdReview) {
+      hideForm();
     }
   }
 
+  const handleCancelReviewFormClick = (e) => {
+    e.preventDefault();
+    hideForm();
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <ul className="error">
+      {errors.map((error) => <li key={error}>{error}</li>)}
+      </ul>
+      <label>
+        Rating
+          <input
+            type="number"
+            placeholder="rating"
+            value={rating}
+            onChange={(e) => setRating(e.target.value)}
+          >
+          </input>
+      </label>
+      <button type="submit" disabled={errors.length>0}>Submit Reviw</button>
+    </form>
+  )
 
 }
 

@@ -1,7 +1,7 @@
 import { csrfFetch } from "./csrf"
 
-export const LOAD_REVIEWS = "items/LOAD_REVIEWS";
-
+const LOAD_REVIEWS = "review/LOAD_REVIEWS";
+const ADD_ONE = "review/ADD_ONE"
 
 // action
 const load = (reviews, businessId) => ({
@@ -9,6 +9,12 @@ const load = (reviews, businessId) => ({
   reviews,
   businessId,
 });
+
+// action create one review
+const addOneReview = (newReview) => ({
+  type: ADD_ONE,
+  newReview
+})
 
 
 // thunk for getting all reviews
@@ -25,7 +31,15 @@ export const getReviews = (businessId) => async(dispatch) => {
 
 // thunk for creating a review
 export const createOneReview = (formData) => async dispatch => {
-  
+  let businessId = formData.businessId
+  const response = await csrfFetch(`/api/business/${businessId}/reviews`, {
+    method: 'POST',
+    body: JSON.stringify(formData)
+  });
+
+  const newReview = await response.json();
+  dispatch(addOneReview(newReview))
+  return newReview
 }
 
 
@@ -39,6 +53,15 @@ const reviewReducer = (state = initialState, action) => {
         newState[review.id] = review
       })
       return newState
+    }
+    case ADD_ONE : {
+      if(!state[action.newReview.id]) {
+        const newState = {
+          ...state,
+          [action.newState.id]: action.newState
+        }
+        return newState 
+      }
     }
     default:
       return state;

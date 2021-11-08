@@ -52,7 +52,7 @@ const CreateBusinessForm = () => {
     }
     // console.log("newBusiness in component", newBusiness)
 
-    let createdBusiness = await dispatch(createOneBusiness(newBusiness))
+    let createdBusiness = await dispatch(createOneBusiness(newBusiness, ))
     // console.log("Dispatch the return value of the thunk creator -returned from dispatch", createdBusiness)
 
     if (createdBusiness) {

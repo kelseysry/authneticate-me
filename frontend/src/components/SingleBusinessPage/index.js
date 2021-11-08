@@ -13,41 +13,50 @@ import { useHistory } from 'react-router';
 
 import { deleteBusiness } from '../../store/business';
 import BusinessReviews from '../AllReviews';
-
 import EditBusinessForm from '../EditBusinessForm';
+import ReviewForm from "../CreateReview";
+
 
 
 const SingleBusinessPage = () => {
 
   const { businessId } = useParams();
   const business = useSelector((state) => state.business[businessId]);
-  // const sessionUser = useSelector(state => state.session.user); // try
-
-  // console.log("this is sessionUser", sessionUser)
 
   const [showEditBusinessForm, setShowEditBusinessForm] = useState(false)
   const dispatch = useDispatch();
   const history = useHistory();
 
-  // if (sessionUser) return <Redirect to="/" />;
+  const reviewsObj = useSelector((state) => state.review)
+  const reviews = Object.values(reviewsObj)
+  const [showReviewForm, setShowReviewForm] = useState(false)
 
-
+// getOneBusiness
   useEffect(() => {
     dispatch(getOneBusiness(businessId));
   }, [dispatch, businessId]);
 
-
+// Show Business Form
   useEffect(() => {
     setShowEditBusinessForm(false)
   },[businessId])
 
+  //trying to hide review form
+  useEffect(() => {
+    setShowReviewForm(false)
+  },[businessId])
+
+
+  if(!reviews) {
+    return null;
+  }
 
   if (!business) {
     return null;
   }
 
   let content = null;
-
+  let reviewContent = null;
 
   if(showEditBusinessForm && business) {
     content = (
@@ -85,6 +94,26 @@ const SingleBusinessPage = () => {
     )
   }
 
+
+  if(showReviewForm && reviews) {
+    reviewContent = (
+      <ReviewForm reviews={reviews} hideForm={() => setShowReviewForm(false)} />
+    )
+  } else {
+    reviewContent = (
+      <div>
+        <h2>Reviews</h2>
+        <ul>
+          <li>
+            <b>Rating</b>{reviews.rating}
+          </li>
+        </ul>
+      </div>
+      // finish this up, might be a little weird because you have to map out
+    )
+  }
+
+
   // deleteBusiness thunk
   const handleDelete = (businessId) => {
     dispatch(deleteBusiness(businessId));
@@ -114,6 +143,7 @@ const SingleBusinessPage = () => {
     {/* <p>{business?.description}</p> */}
     <div>
     <BusinessReviews business={business}/>
+    {reviewContent}
     </div>
     <img src ={business?.imageUrl} alt= "single business pic"/>
   </div>
