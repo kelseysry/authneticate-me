@@ -124,7 +124,7 @@ const SingleBusinessPage = () => {
             <li>
             </li>
               <li>
-                {/* <b>User</b> {review[0].User} */}
+                <b>User</b> {review.User.username}
               </li>
             <div>
             <img src ={review.imageUrl} alt={review.imageUrl}/>
@@ -135,7 +135,8 @@ const SingleBusinessPage = () => {
     )
   }
 
-//   console.log("this is reviews.User", reviews[0].User)
+  // console.log("this is reviews.User", reviews[0].User)
+  // console.log("this is reviews.User", reviews[0].User.username)
 
   // deleteBusiness thunk
   const handleDelete = (businessId) => {

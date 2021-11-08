@@ -88,16 +88,9 @@ router.get('/:businessId(\\d+)/reviews', asyncHandler(async(req, res) => {
     include: [User]
   })
 
-  // const reviews = await Review.findAll({
-  //   where: {
-  //     businessId: business.id
-  //   },
-  //     include: [User]
-  //   })
-
   console.log("this is reviews", reviews)
   // console.log("this is reviews.User, no array", reviews.User)
-  // console.log("this is reviews.User", reviews[0].User)
+  console.log("this is reviews.User", reviews[0].User.username)
 
   return res.json(reviews)
 }))
