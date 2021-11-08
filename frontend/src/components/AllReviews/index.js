@@ -9,43 +9,15 @@ const BusinessReviews = ({business}) => {
 
   const dispatch = useDispatch();
   const reviewsObj = useSelector((state) => state.review)
+
   const reviews = Object.values(reviewsObj)
+  console.log("review components", reviews)
 
-  // const [showReviewForm, setShowReviewForm] = useState(false)
-
-  // //trying to hide review form
-  // useEffect(() => {
-  //   setShowReviewForm(false)
-  // },[business.id])
-
-// review dispatch
   useEffect(() => {
     dispatch(getReviews(business.id))
   },[dispatch])
 
-  // if(!reviews) {
-  //   return null;
-  // }
 
-  // let content = null;
-
-  // if(showReviewForm && reviews) {
-  //   content = (
-  //     <ReviewForm reviews={reviews} hideForm={() => setShowReviewForm(false)} />
-  //   )
-  // } else {
-  //   content = (
-  //     <div>
-  //       <h2>Reviews</h2>
-  //       <ul>
-  //         <li>
-  //           <b>Rating</b>{reviews.rating}
-  //         </li>
-  //       </ul>
-  //     </div>
-  //     // finish this up, might be a little weird because you have to map out
-  //   )
-  // }
 
   return (
     <div>
@@ -59,7 +31,7 @@ const BusinessReviews = ({business}) => {
       </div> */}
 
       <div>
-        {/* {reviews.map((review) => review.answer)} */}
+        {reviews.map((review) => review.answer)}
       </div>
 
     </div>

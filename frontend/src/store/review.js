@@ -8,6 +8,7 @@ const load = (reviews, businessId) => ({
   type: LOAD_REVIEWS,
   reviews,
   businessId,
+
 });
 
 // action create one review
@@ -24,7 +25,7 @@ export const getReviews = (businessId) => async(dispatch) => {
   if(response.ok) {
     const reviews = await response.json();
     console.log("reviews in thunk, works!", reviews)
-    console.log("thunk businessId", businessId)
+    console.log("thunk businessId, worjs", businessId)
     dispatch(load(reviews, businessId))
   }
 }
@@ -47,11 +48,12 @@ export const createOneReview = (formData) => async dispatch => {
 const initialState = {};
 const reviewReducer = (state = initialState, action) => {
   switch (action.type) {
-    case LOAD_REVIEWS : {
+    case LOAD_REVIEWS: {
       const newState = {...state};
       action.reviews.forEach((review) => {
         newState[review.id] = review
       })
+      console.log("newState LOAD_REVIEWS", newState)
       return newState
     }
     case ADD_ONE : {

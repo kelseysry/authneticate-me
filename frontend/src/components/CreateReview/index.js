@@ -4,10 +4,12 @@ import isURL from 'validator/es/lib/isURL';
 import { useDispatch} from 'react-redux';
 import { createOneReview } from "../../store/review";
 import { useSelector } from "react-redux";
+import {useParams} from 'react-router-dom';
 
 
 const ReviewForm = ({reviews, hideForm}) => {
 
+  const { businessId } = useParams();
   const [rating, setRating] = useState('');
   const [answer, setAnswer] = useState('');
   const [imageUrl, setImageUrl] = useState('');
@@ -19,7 +21,7 @@ const ReviewForm = ({reviews, hideForm}) => {
   const sessionUser = useSelector((state) => state.session.user);
   // const business = useSelector((state) => state.business)
   const userId = sessionUser.id
-  const businessId = reviews[0].businessId
+  // const businessId = reviews[0].businessId
 
   // console.log("this is reviews", {reviews})
   // console.log("this is reviews", reviews[0].businessId)
