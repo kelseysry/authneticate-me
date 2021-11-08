@@ -28,8 +28,8 @@ const AllBusiness = () => {
   return (
     <>
       <div>
-        {businesses.map((business) =>
-        <div key={business.description}>
+        {businesses.map((business,index) =>
+        <div key={index}>
           <img src ={business.imageUrl} alt={business.imageUrl}/>
         </div>
         )}

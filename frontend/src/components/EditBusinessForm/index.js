@@ -43,9 +43,8 @@ const EditBusinessForm = ({business, hideForm}) => {
       validationErrors.push("Please provide a valid link for the image")
     }
 
-
-
     setErrors(validationErrors)
+
   },[title,address,city,zipCode,imageUrl])
 
   const handleSubmit = async(e) => {
@@ -61,7 +60,7 @@ const EditBusinessForm = ({business, hideForm}) => {
     // and the specific business.id that we can get from the useSelector in the SingleBusinessPage component
     // note we passed in business as a prop into the EditBusinessForm component
     let updated = await dispatch(editOneBusiness(userInputUpdateBusiness, business.id))
-    console.log("this update", updated)
+    console.log("editBusinessForm after dispatch thunk", updated)
 
     if (updated) {
       hideForm();
@@ -75,7 +74,6 @@ const EditBusinessForm = ({business, hideForm}) => {
   };
 
   return (
-
     <form onSubmit={handleSubmit}>
       <ul className="errors">
         {errors.map((error) => <li key={error}>{error}</li>)}

@@ -40,9 +40,8 @@ router.post('/', asyncHandler(async (req, res) =>{
 // edit one business
 router.put('/:businessId(\\d+)', asyncHandler(async (req, res, next) => {
   const business = await Business.findByPk(req.params.businessId)
-  // console.log("this is the previous", previousObj)
-  // console.log("this is req.body", req.body)
 
+  // console.log("business in api route", business)
   if(business) {
     business.title = req.body.title || business.title;
     business.description = req.body.description || business.description;
@@ -52,10 +51,11 @@ router.put('/:businessId(\\d+)', asyncHandler(async (req, res, next) => {
     business.imageUrl = req.body.imageUrl || business.imageUrl;
 
     await business.save();
+    console.log("api route, res.json(business)", business) // business is saving properly
     res.json({business})
   } else {
     // next(businessNotFoundError(req.params.businessId))
-    
+
 
   }
   // const {title, description, address, city, zipCode, imageUrl} = req.body

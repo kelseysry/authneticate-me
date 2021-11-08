@@ -28,9 +28,10 @@ const addOneBusiness = (newBusiness) => ({
 })
 
 // action creator edit one business
-const edit = (updateBusiness) => ({
+const edit = (updateBusiness,businessId) => ({
   type: EDIT_ONE,
-  updateBusiness
+  updateBusiness,
+  businessId
 })
 
 // action creator delete one business
@@ -68,7 +69,7 @@ export const createOneBusiness = (formData) => async dispatch  => {
     body: JSON.stringify(formData)
   });
 
-  // console.log("this is response in thunk",response)
+  // console.log("this is response in thunk, this works",response)
 
   // if(response.ok) {
     const newBusiness = await response.json();
@@ -84,14 +85,14 @@ export const editOneBusiness = (updateBusiness, businessId) => async dispatch =>
   const response = await csrfFetch(`/api/business/${businessId}`, {
     method: 'PUT',
     body: JSON.stringify(updateBusiness)
-  })
-
+  });
   console.log('response in the thunk editOneBusiness', response)
-  if(response.ok) {
+
+  // if(response.ok) {
     const business = await response.json();
-    dispatch(edit(business))
+    dispatch(edit(business, businessId))
     return business
-  }
+ // }
 }
 
 // thunk to delete one business
@@ -105,7 +106,7 @@ export const deleteBusiness = businessId => async dispatch => {
 };
 
 // reducer
-const initialState = { entries: {}};
+const initialState = {};
 const businessReducer = (state = initialState, action) => {
 // let newState
 switch (action.type) {
@@ -135,17 +136,26 @@ switch (action.type) {
     }
   }
   case EDIT_ONE: {
-    if(!state[action.updateBusiness.id]) {
+  console.log("action.updateBusiness console.log", action.updateBusiness.business.id)
+  console.log("action.businessId console.log", action.businessId)
+
+
+    if(!state[action.updateBusiness.businessId]) {
       const newState = {
-        ...state,
-        [action.updateBusiness.id]: action.updateBusiness
+        ...state, [action.updateBusiness.business.id]: action.updateBusiness.business
       };
-      // console.log("this is newState", newState)
+      console.log("this is newState", newState)
       return newState
     }
   }
+  // case EDIT_ONE: {
+  //   console.log("action.updateBusiness console.log", action.updateBusiness)
+  //   const newState = {...state, [action.updateBusiness.id]: action.updateBusiness.id};
+  //   console.log("EDIT_ONEONE", newState)
+  //   return newState
+  // }
   case REMOVE_BUSINESS: {
-    const newState = {...state };
+    const newState = {...state};
     delete newState[action.businessId];
     return newState
   }
