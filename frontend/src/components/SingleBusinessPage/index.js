@@ -62,6 +62,9 @@ const SingleBusinessPage = () => {
             <b>Title</b> {business.title}
           </li>
           <li>
+            <b>Owner</b> {business.User.username}
+          </li>
+          <li>
             <b>Description</b> {business.description}
           </li>
           <li>

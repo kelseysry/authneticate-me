@@ -4,6 +4,7 @@ const asyncHandler = require('express-async-handler')
 
 const { Business } = require('../../db/models');
 const { Review } = require('../../db/models')
+const { User } = require('../../db/models')
 
 const businessNotFoundError = businessId => {
   const err = Error('Business not found');
@@ -20,8 +21,10 @@ router.get('/', asyncHandler(async (req, res) => {
 }));
 
 router.get('/:businessId(\\d+)', asyncHandler(async (req, res) => {
-  const business = await Business.findByPk(req.params.businessId);
-  // console.log("this is business", business)
+  const business = await Business.findByPk(req.params.businessId, {
+    include: [User]
+  });
+  // console.log("this is business maybe User", business.User)
   return res.json(business) // sends one business to the front end
 
 }));
