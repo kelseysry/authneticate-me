@@ -106,6 +106,8 @@ const ReviewForm = ({reviews, hideForm}) => {
         </input>
       </label>
       <button type="submit" disabled={errors.length>0}>Submit Review</button>
+      <button type="button" onClick={handleCancelReviewFormClick}>Cancel</button>
+
     </form>
   )
 
