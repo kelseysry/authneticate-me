@@ -8,7 +8,7 @@ import App from './App';
 import configureStore from './store';
 import { restoreCSRF, csrfFetch } from './store/csrf';
 import * as sessionActions from './store/session';
-
+import * as reviewActions from './store/review';
 
 const store = configureStore();
 // Create a variable to access your store and expose it to the window,
@@ -19,6 +19,7 @@ if (process.env.NODE_ENV !== 'production') {
   window.csrfFetch = csrfFetch;
   window.store = store;
   window.sessionActions = sessionActions;
+  window.reviewActions = reviewActions;
 
 }
 

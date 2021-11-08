@@ -3,11 +3,13 @@ import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import sessionReducer from './session';
 import businessReducer from './business';
+import reviewReducer from './review';
 
 // add reducer so can name (business) slice of state so useSelector can grab it
 const rootReducer = combineReducers({
   session: sessionReducer,
-  business: businessReducer
+  business: businessReducer,
+  review: reviewReducer
 });
 
 let enhancer; // In production, the enhancer should only apply the thunk middleware.

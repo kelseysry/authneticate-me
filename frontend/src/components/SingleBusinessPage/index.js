@@ -12,6 +12,7 @@ import { getOneBusiness } from "../../store/business"
 import { useHistory } from 'react-router';
 
 import { deleteBusiness } from '../../store/business';
+import BusinessReviews from '../AllReviews';
 
 import EditBusinessForm from '../EditBusinessForm';
 
@@ -101,6 +102,9 @@ const SingleBusinessPage = () => {
 
     <button onClick={() => setShowEditBusinessForm(true)}>Edit</button>
     {/* <p>{business?.description}</p> */}
+    <div>
+    <BusinessReviews business={business}/>
+    </div>
     <img src ={business?.imageUrl} alt= "single business pic"/>
   </div>
 

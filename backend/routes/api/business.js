@@ -3,6 +3,7 @@ const router = express.Router();
 const asyncHandler = require('express-async-handler')
 
 const { Business } = require('../../db/models');
+const { Review } = require('../../db/models')
 
 const businessNotFoundError = businessId => {
   const err = Error('Business not found');
@@ -24,9 +25,6 @@ router.get('/:businessId(\\d+)', asyncHandler(async (req, res) => {
   return res.json(business) // sends one business to the front end
 
 }));
-
-
-
 
 // create one business
 router.post('/', asyncHandler(async (req, res) =>{
@@ -65,10 +63,6 @@ router.put('/:businessId(\\d+)', asyncHandler(async (req, res, next) => {
   })
 );
 
-
-
-
-
 // delete one business
 router.delete('/:businessId(\\d+)', asyncHandler(async(req, res, next) => {
   const business = await Business.findByPk(req.params.businessId);
@@ -79,5 +73,15 @@ router.delete('/:businessId(\\d+)', asyncHandler(async(req, res, next) => {
     next(businessNotFoundError(req.params.businessId))
   }
 }));
+
+// get reviews for one business
+router.get('/:businessId(\\d+)/reviews', asyncHandler(async(req, res) => {
+  const business = await Business.findByPk(req.params.businessId);
+  // console.log("this is reviews in api", business)
+
+  const reviews = await Review.findAll({where: { businessId: business.id}} )
+  console.log("this is reviews", reviews)
+  return res.json(reviews)
+}))
 
 module.exports = router;
