@@ -23,6 +23,11 @@ export const getReviews = (businessId) => async(dispatch) => {
   }
 }
 
+// thunk for creating a review
+export const createOneReview = (formData) => async dispatch => {
+  
+}
+
 
 // reducer
 const initialState = {};
