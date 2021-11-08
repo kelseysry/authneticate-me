@@ -21,9 +21,16 @@ const SingleBusinessPage = () => {
 
   const { businessId } = useParams();
   const business = useSelector((state) => state.business[businessId]);
+  // const sessionUser = useSelector(state => state.session.user); // try
+
+  // console.log("this is sessionUser", sessionUser)
+
   const [showEditBusinessForm, setShowEditBusinessForm] = useState(false)
   const dispatch = useDispatch();
   const history = useHistory();
+
+  // if (sessionUser) return <Redirect to="/" />;
+
 
   useEffect(() => {
     dispatch(getOneBusiness(businessId));
