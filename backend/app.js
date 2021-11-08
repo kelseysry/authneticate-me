@@ -54,6 +54,7 @@ app.use((_req, _res, next) => {
   err.title = "Resource Not Found";
   err.errors = ["The requested resource couldn't be found."];
   err.status = 404;
+  
   next(err);
 });
 

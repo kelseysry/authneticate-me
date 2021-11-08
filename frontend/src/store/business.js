@@ -107,7 +107,7 @@ export const deleteBusiness = businessId => async dispatch => {
 // reducer
 const initialState = { entries: {}};
 const businessReducer = (state = initialState, action) => {
-let newState
+// let newState
 switch (action.type) {
   case LOAD_BUSINESSES: {
     const newState = {...state}; // don't have to ...state, if this load on first render/first time user opens the page

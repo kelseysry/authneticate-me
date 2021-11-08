@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import { useHistory } from 'react-router';
+// import { useHistory } from 'react-router';
 import isURL from 'validator/es/lib/isURL';
 // import { createOneBusiness } from '../../store/business';
 
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 // import { useParams } from 'react-router-dom';
 
 import { editOneBusiness } from '../../store/business';
@@ -22,7 +22,7 @@ const EditBusinessForm = ({business, hideForm}) => {
   const [ownerId, setOwnerId] = useState(business.ownerId)
   const [errors, setErrors] = useState([])
 
-  const history = useHistory();
+  // const history = useHistory();
   const dispatch = useDispatch();
 
   // const business = useSelector((state) => state.business[businessId])

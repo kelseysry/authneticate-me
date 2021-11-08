@@ -54,7 +54,9 @@ router.put('/:businessId(\\d+)', asyncHandler(async (req, res, next) => {
     await business.save();
     res.json({business})
   } else {
-    next(businessNotFoundError(req.params.businessId))
+    // next(businessNotFoundError(req.params.businessId))
+    
+
   }
   // const {title, description, address, city, zipCode, imageUrl} = req.body
   // await previousObj.update({title:title, description:description, address:address, city, zipCode, imageUrl})

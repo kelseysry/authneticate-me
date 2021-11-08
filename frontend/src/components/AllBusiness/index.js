@@ -3,7 +3,7 @@ import {useEffect } from 'react'; // side effects
 import { useDispatch, useSelector } from 'react-redux';
 //dispatch  - send request to redux store.
 // useSelector - grab info loaded into the store
-import {useParams } from 'react-router-dom';
+// import {useParams } from 'react-router-dom';
 
 // import thunk creator
 import { getAllBusinesses } from '../../store/business';
@@ -29,7 +29,9 @@ const AllBusiness = () => {
     <>
       <div>
         {businesses.map((business) =>
-        <img src ={business.imageUrl}/>
+        <div key={business.description}>
+          <img src ={business.imageUrl} alt={business.imageUrl}/>
+        </div>
         )}
       </div>
       <div>

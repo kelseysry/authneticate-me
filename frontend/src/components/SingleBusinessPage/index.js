@@ -3,7 +3,9 @@ import { useState, useEffect } from 'react'; // side effects
 import { useDispatch, useSelector } from 'react-redux';
 //dispatch  - send request to redux store.
 // useSelector - grab info loaded into the store
-import {useParams } from 'react-router-dom';
+// import {useParams, Redirect } from 'react-router-dom';
+import {useParams} from 'react-router-dom';
+// import {Redirect} from 'react-router-dom';
 
 // import thunk creator
 import { getOneBusiness } from "../../store/business"
@@ -15,6 +17,7 @@ import EditBusinessForm from '../EditBusinessForm';
 
 
 const SingleBusinessPage = () => {
+
   const { businessId } = useParams();
   const business = useSelector((state) => state.business[businessId]);
   const [showEditBusinessForm, setShowEditBusinessForm] = useState(false)
@@ -23,18 +26,14 @@ const SingleBusinessPage = () => {
 
   useEffect(() => {
     dispatch(getOneBusiness(businessId));
-  }, [dispatch]);
-
-  useEffect(() => {
-
-  }, [business])
+  }, [dispatch, businessId]);
 
 
   useEffect(() => {
     setShowEditBusinessForm(false)
   },[businessId])
 
-  // idk
+
   if (!business) {
     return null;
   }
@@ -81,6 +80,8 @@ const SingleBusinessPage = () => {
     history.push("/")
   }
 
+  // if (businessId == null) return <Redirect to="/" />;
+
   return (
     <div
     // style={{ backgroundImage: `url('${business.imageUrl}')` }}
@@ -100,7 +101,7 @@ const SingleBusinessPage = () => {
 
     <button onClick={() => setShowEditBusinessForm(true)}>Edit</button>
     <p>{business?.description}</p>
-    <img src ={business?.imageUrl}/>
+    <img src ={business?.imageUrl} alt= "single business pic"/>
   </div>
 
   )
