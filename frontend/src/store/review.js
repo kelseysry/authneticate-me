@@ -43,7 +43,6 @@ export const createOneReview = (formData) => async dispatch => {
   return newReview
 }
 
-
 // reducer
 const initialState = {};
 const reviewReducer = (state = initialState, action) => {
