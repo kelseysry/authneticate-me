@@ -1,11 +1,14 @@
 import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
 import isURL from 'validator/es/lib/isURL';
-import { createOneBusiness } from '../../store/business';
+// import { createOneBusiness } from '../../store/business';
 
 import { useDispatch, useSelector } from 'react-redux';
 // import { useParams } from 'react-router-dom';
 
+import { editOneBusiness } from '../../store/business';
+
+// import { editOneBusiness } from '../store/business';
 
 const EditBusinessForm = ({business, hideForm}) => {
 
@@ -48,13 +51,19 @@ const EditBusinessForm = ({business, hideForm}) => {
   const handleSubmit = async(e) => {
     e.preventDefault();
 
-    const updateBusiness = {
+    const userInputUpdateBusiness = {
       title, description, address, city, zipCode, imageUrl, ownerId
     }
 
-    let updatedBusiness = await dispatch(editOneBusiness(updateBusiness))
+    console.log("this is userInput", userInputUpdateBusiness)
 
-    if (updatedBusiness) {
+    // editOneBusiness is the thunk, we're passing the updateBusiness info that the user typed
+    // and the specific business.id that we can get from the useSelector in the SingleBusinessPage component
+    // note we passed in business as a prop into the EditBusinessForm component
+    let updated = await dispatch(editOneBusiness(userInputUpdateBusiness, business.id))
+    console.log("this update", updated)
+
+    if (updated) {
       hideForm();
     }
 

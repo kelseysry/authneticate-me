@@ -43,10 +43,10 @@ const CreateBusinessForm = () => {
     const newBusiness = {
       title, description, address, city, zipCode, imageUrl, ownerId
     }
-    console.log("newBusiness in component", newBusiness)
+    // console.log("newBusiness in component", newBusiness)
 
     let createdBusiness = await dispatch(createOneBusiness(newBusiness))
-    console.log("Dispatch the return value of the thunk creator -returned from dispatch", createdBusiness)
+    // console.log("Dispatch the return value of the thunk creator -returned from dispatch", createdBusiness)
 
     if (createdBusiness) {
       // history.push(`/business/${createdBusiness.id}`)

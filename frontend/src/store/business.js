@@ -5,6 +5,7 @@ const LOAD_BUSINESS = 'business/LOAD_BUSINESS';  //domain/action
 const LOAD_BUSINESSES = 'business/LOAD_BUSINESSES';
 const ADD_ONE = 'business/ADD_ONE';
 const REMOVE_BUSINESS = 'business/REMOVE_BUSINESS';
+const EDIT_ONE = 'business/EDIT_ONE'
 
 // action for one business
 const load = (business) => ({
@@ -26,11 +27,19 @@ const addOneBusiness = (newBusiness) => ({
   newBusiness,
 })
 
+// action creator edit one business
+const edit = (updateBusiness) => ({
+  type: EDIT_ONE,
+  updateBusiness
+})
+
 // action creator delete one business
 const remove = (businessId) => ({
   type: REMOVE_BUSINESS,
   businessId
 })
+
+
 
 // thunk for getOneBusiness
 export const getOneBusiness = (businessId) => async (dispatch) => {
@@ -70,6 +79,21 @@ export const createOneBusiness = (formData) => async dispatch  => {
   //}
 }
 
+// thunk for editing one business
+export const editOneBusiness = (updateBusiness, businessId) => async dispatch => {
+  const response = await csrfFetch(`/api/business/${businessId}`, {
+    method: 'PUT',
+    body: JSON.stringify(updateBusiness)
+  })
+
+  console.log('response in the thunk editOneBusiness', response)
+  if(response.ok) {
+    const business = await response.json();
+    dispatch(edit(business))
+    return business
+  }
+}
+
 // reducer
 const initialState = { entries: {}};
 const businessReducer = (state = initialState, action) => {
@@ -91,7 +115,16 @@ switch (action.type) {
     return newState
   }
   case ADD_ONE: {
-    console.log('hello')
+    if(!state[action.newBusiness.id]) {
+      const newState = {
+        ...state,
+        [action.newBusiness.id]: action.newBusiness
+      };
+      console.log("this is newState", newState)
+      return newState
+    }
+  }
+  case EDIT_ONE: {
     if(!state[action.newBusiness.id]) {
       const newState = {
         ...state,
