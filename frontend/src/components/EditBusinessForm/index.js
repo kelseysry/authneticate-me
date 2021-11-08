@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import isURL from 'validator/es/lib/isURL';
 // import { createOneBusiness } from '../../store/business';
 
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from "react-redux";
 // import { useParams } from 'react-router-dom';
 
 import { editOneBusiness } from '../../store/business';
@@ -19,14 +19,16 @@ const EditBusinessForm = ({business, hideForm}) => {
   const [city, setCity] = useState(business.city);
   const [zipCode, setZipCode] = useState(business.zipCode);
   const [imageUrl, setImageUrl] = useState(business.imageUrl);
-  const [ownerId, setOwnerId] = useState(business.ownerId)
+  // const [ownerId, setOwnerId] = useState(business.ownerId)
   const [errors, setErrors] = useState([])
 
   // const history = useHistory();
   const dispatch = useDispatch();
 
   // const business = useSelector((state) => state.business[businessId])
+  const sessionUser = useSelector((state) => state.session.user);
 
+  const ownerId = sessionUser.id
 
 
   useEffect(() => {
@@ -136,7 +138,7 @@ const EditBusinessForm = ({business, hideForm}) => {
         >
         </input>
       </label>
-      <label>
+      {/* <label>
         Owner Id
         <input
         type="number"
@@ -144,7 +146,7 @@ const EditBusinessForm = ({business, hideForm}) => {
         onChange={(e) => setOwnerId(e.target.value)}
         >
         </input>
-      </label>
+      </label> */}
       <button type="submit" disabled={errors.length>0}>Update Business</button>
       <button type="button" onClick={handleCancelFormEditClick}>Cancel</button>
     </form>

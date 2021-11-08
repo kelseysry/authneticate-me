@@ -3,20 +3,27 @@ import { useHistory } from 'react-router';
 import isURL from 'validator/es/lib/isURL';
 import { createOneBusiness } from '../../store/business';
 
-import { useDispatch} from 'react-redux';
+import { useDispatch, useSelector } from "react-redux";
 
 
 const CreateBusinessForm = () => {
+
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [address, setAddress] = useState('');
   const [city, setCity] = useState('');
   const [zipCode, setZipCode] = useState('');
   const [imageUrl, setImageUrl] = useState('');
-  const [ownerId, setOwnerId] = useState('')
+  // const [ownerId, setOwnerId] = useState('')
   const [errors, setErrors] = useState([])
   const history = useHistory();
   const dispatch = useDispatch();
+  const sessionUser = useSelector((state) => state.session.user);
+
+  console.log("this is sessionUser", sessionUser)
+  console.log("this is sessionUserId", sessionUser.id)
+  const ownerId = sessionUser.id
+
 
   useEffect(() => {
     const validationErrors = []
@@ -117,7 +124,7 @@ const CreateBusinessForm = () => {
         >
         </input>
       </label>
-      <label>
+      {/* <label>
         Owner Id
         <input
         type="number"
@@ -125,7 +132,7 @@ const CreateBusinessForm = () => {
         onChange={(e) => setOwnerId(e.target.value)}
         >
         </input>
-      </label>
+      </label> */}
       <button
         type="submit"
         disabled={errors.length>0}
