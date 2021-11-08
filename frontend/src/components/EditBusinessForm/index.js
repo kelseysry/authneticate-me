@@ -34,6 +34,7 @@ const EditBusinessForm = ({business, hideForm}) => {
     if(!title) validationErrors.push("Name is required")
     if(title.length<4) validationErrors.push("Name must be more than 4 characters long")
     if(title.length >100) validationErrors.push("Name must be less than 100 characters")
+    if(description.length < 4) validationErrors.push("Please fill in description")
     if(!address) validationErrors.push("Address is required")
     if(!city) validationErrors.push("City is required")
     if(!zipCode) validationErrors.push("Zip code is required")
@@ -88,17 +89,17 @@ const EditBusinessForm = ({business, hideForm}) => {
           >
           </input>
       </label>
-
       <label>
         Description
           <input
           type="text"
-          placeholder="Tell us what customers love about your restaurant!"
+          // placeholder="Tell us what customers love about your restaurant!"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           >
           </input>
       </label>
+
       <label>
         Address
           <input

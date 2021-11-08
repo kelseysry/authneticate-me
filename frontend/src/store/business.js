@@ -28,10 +28,10 @@ const addOneBusiness = (newBusiness) => ({
 })
 
 // action creator edit one business
-const edit = (updateBusiness,businessId) => ({
+const edit = (updateBusiness) => ({
   type: EDIT_ONE,
   updateBusiness,
-  businessId
+
 })
 
 // action creator delete one business
@@ -137,10 +137,9 @@ switch (action.type) {
   }
   case EDIT_ONE: {
   console.log("action.updateBusiness console.log", action.updateBusiness.business.id)
-  console.log("action.businessId console.log", action.businessId)
 
 
-    if(!state[action.updateBusiness.businessId]) {
+    if(!state[action.updateBusiness]) {
       const newState = {
         ...state, [action.updateBusiness.business.id]: action.updateBusiness.business
       };

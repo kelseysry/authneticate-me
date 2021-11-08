@@ -100,7 +100,7 @@ const SingleBusinessPage = () => {
     </div>
 
     <button onClick={() => setShowEditBusinessForm(true)}>Edit</button>
-    <p>{business?.description}</p>
+    {/* <p>{business?.description}</p> */}
     <img src ={business?.imageUrl} alt= "single business pic"/>
   </div>
 
