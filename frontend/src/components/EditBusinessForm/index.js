@@ -34,7 +34,7 @@ const EditBusinessForm = ({business, hideForm}) => {
     if(!title) validationErrors.push("Name is required")
     if(title.length<4) validationErrors.push("Name must be more than 4 characters long")
     if(title.length >100) validationErrors.push("Name must be less than 100 characters")
-    if(description.length < 4) validationErrors.push("Please fill in description")
+    if(!description) validationErrors.push("Please fill in description")
     if(!address) validationErrors.push("Address is required")
     if(!city) validationErrors.push("City is required")
     if(!zipCode) validationErrors.push("Zip code is required")
@@ -46,7 +46,7 @@ const EditBusinessForm = ({business, hideForm}) => {
 
     setErrors(validationErrors)
 
-  },[title,address,city,zipCode,imageUrl])
+  },[title,address,city,zipCode,imageUrl, description])
 
   const handleSubmit = async(e) => {
     e.preventDefault();
