@@ -120,17 +120,17 @@ switch (action.type) {
         ...state,
         [action.newBusiness.id]: action.newBusiness
       };
-      console.log("this is newState", newState)
+      // console.log("this is newState", newState)
       return newState
     }
   }
   case EDIT_ONE: {
-    if(!state[action.newBusiness.id]) {
+    if(!state[action.updateBusiness.id]) {
       const newState = {
         ...state,
-        [action.newBusiness.id]: action.newBusiness
+        [action.updateBusiness.id]: action.updateBusiness
       };
-      console.log("this is newState", newState)
+      // console.log("this is newState", newState)
       return newState
     }
   }

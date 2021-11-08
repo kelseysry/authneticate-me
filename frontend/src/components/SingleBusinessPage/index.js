@@ -23,6 +23,10 @@ const SingleBusinessPage = () => {
     dispatch(getOneBusiness(businessId));
   }, [dispatch]);
 
+  useEffect(() => {
+
+  }, [business])
+
 
   useEffect(() => {
     setShowEditBusinessForm(false)

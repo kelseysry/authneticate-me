@@ -5,7 +5,13 @@ const asyncHandler = require('express-async-handler')
 
 const { sequelize, Business } = require('../../db/models');
 
-
+const businessNotFoundError = id => {
+  const err = Error('Business not found');
+  err.errors = [`Business with id of ${id} could not be found.`];
+  err.title = 'Business not found.';
+  err.status = 404;
+  return err;
+}
 
 router.get('/', asyncHandler(async (req, res) => {
   const businesses = await Business.findAll();
@@ -35,12 +41,20 @@ router.put('/:businessId', asyncHandler(async (req, res) => {
   console.log("this is the previous", previousObj)
   console.log("this is req.body", req.body)
 
-  const {title, description, address, city, zipCode, imageUrl} = req.body
-  await previousObj.update({title:title, description:description, address:address, city, zipCode, imageUrl})
-  let newobj = await previousObj.save()
-  // console.log('newObj', newobj)
+  if(previousObj) {
+    previousObj.title = req.body.title
+    await previousObj.save();
+    res.json({previousObj})
+  } else {
+    next(businessNotFoundError(req.params.businessId))
+  }
 
-  return res.json(newobj)
+
+
+  // const {title, description, address, city, zipCode, imageUrl} = req.body
+  // await previousObj.update({title:title, description:description, address:address, city, zipCode, imageUrl})
+  // let newobj = await previousObj.save()
+  // return res.json(newobj)
 }))
 
 // delete one business
