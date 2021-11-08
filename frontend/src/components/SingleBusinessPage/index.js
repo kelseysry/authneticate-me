@@ -15,7 +15,7 @@ import { deleteBusiness } from '../../store/business';
 import BusinessReviews from '../AllReviews';
 import EditBusinessForm from '../EditBusinessForm';
 import ReviewForm from "../CreateReview";
-
+import './SingleBusiness.css';
 
 
 const SingleBusinessPage = () => {
@@ -96,23 +96,46 @@ const SingleBusinessPage = () => {
 
 
   if(showReviewForm && reviews) {
+    // console.log("this is reviews in component", reviews)
+
     reviewContent = (
       <ReviewForm reviews={reviews} hideForm={() => setShowReviewForm(false)} />
     )
   } else {
     reviewContent = (
       <div>
-        <h2>Reviews</h2>
+          {/* {reviews.map((review) => defaultReview)} */}
+{/*
+        <h2>Reviews</h2> {reviews.answer}
         <ul>
           <li>
             <b>Rating</b>{reviews.rating}
           </li>
-        </ul>
+        </ul> */}
+
+        {reviews.map((review) => (
+          <ul>
+            <li>
+              <b>Answer</b> {review.answer}
+            </li>
+            <li>
+              <b>Rating</b> {review.rating}
+            </li>
+            <li>
+            </li>
+              <li>
+                {/* <b>User</b> {review[0].User} */}
+              </li>
+            <div>
+            <img src ={review.imageUrl} alt={review.imageUrl}/>
+            </div>
+          </ul>
+        ))}
       </div>
-      // finish this up, might be a little weird because you have to map out
     )
   }
 
+//   console.log("this is reviews.User", reviews[0].User)
 
   // deleteBusiness thunk
   const handleDelete = (businessId) => {
@@ -136,13 +159,13 @@ const SingleBusinessPage = () => {
       {content}
     </div>
     <div>
-      <button onClick={() => handleDelete(businessId)}>Delete</button>
+      <button onClick={() => handleDelete(businessId)}>Delete Business</button>
     </div>
-
-    <button onClick={() => setShowEditBusinessForm(true)}>Edit</button>
+    <button onClick={() => setShowEditBusinessForm(true)}>Edit Business</button>
     {/* <p>{business?.description}</p> */}
     <div>
     <BusinessReviews business={business}/>
+    <button onClick={() => setShowReviewForm(true)}>Add a Review</button>
     {reviewContent}
     </div>
     <img src ={business?.imageUrl} alt= "single business pic"/>

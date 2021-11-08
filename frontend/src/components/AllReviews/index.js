@@ -59,7 +59,7 @@ const BusinessReviews = ({business}) => {
       </div> */}
 
       <div>
-        {reviews.map((review) => review.answer)}
+        {/* {reviews.map((review) => review.answer)} */}
       </div>
 
     </div>

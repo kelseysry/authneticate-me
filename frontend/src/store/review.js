@@ -55,13 +55,15 @@ const reviewReducer = (state = initialState, action) => {
       return newState
     }
     case ADD_ONE : {
+      // console.log("add_one case", newReview)
       if(!state[action.newReview.id]) {
         const newState = {
           ...state,
-          [action.newState.id]: action.newState
+          [action.newReview.id]: action.newReview
         }
-        return newState 
+        return newState
       }
+      return state
     }
     default:
       return state;

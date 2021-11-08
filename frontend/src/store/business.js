@@ -134,6 +134,7 @@ switch (action.type) {
       // console.log("this is newState", newState)
       return newState
     }
+    return state
   }
   case EDIT_ONE: {
   console.log("action.updateBusiness console.log", action.updateBusiness.business.id)
@@ -146,6 +147,7 @@ switch (action.type) {
       console.log("this is newState", newState)
       return newState
     }
+    return state
   }
   // case EDIT_ONE: {
   //   console.log("action.updateBusiness console.log", action.updateBusiness)

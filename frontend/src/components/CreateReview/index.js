@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import isURL from 'validator/es/lib/isURL';
 import { useDispatch} from 'react-redux';
 import { createOneReview } from "../../store/review";
+import { useSelector } from "react-redux";
 
 
 const ReviewForm = ({reviews, hideForm}) => {
@@ -10,11 +11,18 @@ const ReviewForm = ({reviews, hideForm}) => {
   const [rating, setRating] = useState('');
   const [answer, setAnswer] = useState('');
   const [imageUrl, setImageUrl] = useState('');
-  const [userId, setUserId] = useState('');
-  const [businessId, setBusinessId] = useState('')
+  // const [userId, setUserId] = useState('');
+  // const [businessId, setBusinessId] = useState('')
   const [errors, setErrors] = useState([])
   const dispatch = useDispatch();
   // const history = useHistory();
+  const sessionUser = useSelector((state) => state.session.user);
+  // const business = useSelector((state) => state.business)
+  const userId = sessionUser.id
+  const businessId = reviews[0].businessId
+
+  // console.log("this is reviews", {reviews})
+  // console.log("this is reviews", reviews[0].businessId)
 
 
   useEffect(() => {
@@ -29,8 +37,8 @@ const ReviewForm = ({reviews, hideForm}) => {
     }
 
     // need to get rid of this later
-    if(!userId) validationErrors.push("userId required");
-    if(!businessId) validationErrors.push("businessId required")
+    // if(!userId) validationErrors.push("userId required");
+    // if(!businessId) validationErrors.push("businessId required")
 
 
     setErrors(validationErrors)
@@ -44,8 +52,10 @@ const ReviewForm = ({reviews, hideForm}) => {
     const newReview = {
       rating,answer,imageUrl,userId,businessId
     }
+    console.log("newReview in CreateView Component", newReview)
 
     let createdReview = await dispatch(createOneReview(newReview))
+    console.log("this is createdReview in CreateView Component", createdReview)
 
     // if(createdReview) {
     //   history.push('/')
@@ -75,7 +85,25 @@ const ReviewForm = ({reviews, hideForm}) => {
           >
           </input>
       </label>
-      <button type="submit" disabled={errors.length>0}>Submit Reviw</button>
+      <label>
+        Review
+          <input
+            type="text"
+            value={answer}
+            onChange={(e) => setAnswer(e.target.value)}
+          >
+          </input>
+      </label>
+      <label>
+        Image Url
+        <input
+        type="text"
+        value={imageUrl}
+        onChange={(e) => setImageUrl(e.target.value)}
+        >
+        </input>
+      </label>
+      <button type="submit" disabled={errors.length>0}>Submit Review</button>
     </form>
   )
 

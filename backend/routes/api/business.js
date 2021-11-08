@@ -80,16 +80,32 @@ router.delete('/:businessId(\\d+)', asyncHandler(async(req, res, next) => {
 // get reviews for one business
 router.get('/:businessId(\\d+)/reviews', asyncHandler(async(req, res) => {
   const business = await Business.findByPk(req.params.businessId);
-  // console.log("this is reviews in api", business)
 
-  const reviews = await Review.findAll({where: { businessId: business.id}} )
+  const reviews = await Review.findAll({
+    where: {
+      businessId: business.id
+    },
+    include: [User]
+  })
+
+  // const reviews = await Review.findAll({
+  //   where: {
+  //     businessId: business.id
+  //   },
+  //     include: [User]
+  //   })
+
   console.log("this is reviews", reviews)
+  // console.log("this is reviews.User, no array", reviews.User)
+  console.log("this is reviews.User", reviews[0].User)
+
   return res.json(reviews)
 }))
 
 // create one review for one business
 router.post('/:businessId(\\d+)/reviews', asyncHandler(async(req,res) => {
   const review = await Review.create(req.body);
+  console.log("review in backend", review)
   return res.json(review)
 }))
 
