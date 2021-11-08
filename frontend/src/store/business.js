@@ -34,7 +34,7 @@ const edit = (updateBusiness) => ({
 })
 
 // action creator delete one business
-const remove = (businessId) => ({
+const removeOneBusiness = (businessId) => ({
   type: REMOVE_BUSINESS,
   businessId
 })
@@ -68,11 +68,11 @@ export const createOneBusiness = (formData) => async dispatch  => {
     body: JSON.stringify(formData)
   });
 
-  console.log("this is response in thunk",response)
+  // console.log("this is response in thunk",response)
 
   // if(response.ok) {
     const newBusiness = await response.json();
-    console.log("newBusiness in thunk", newBusiness)
+    // console.log("newBusiness in thunk", newBusiness)
 
     dispatch(addOneBusiness(newBusiness))
     return newBusiness
@@ -93,6 +93,16 @@ export const editOneBusiness = (updateBusiness, businessId) => async dispatch =>
     return business
   }
 }
+
+// thunk to delete one business
+export const deleteBusiness = businessId => async dispatch => {
+  const response = await csrfFetch(`/api/business/${businessId}`, {
+    method: 'DELETE'
+  });
+  if (response.ok) {
+    dispatch(removeOneBusiness(businessId))
+  }
+};
 
 // reducer
 const initialState = { entries: {}};

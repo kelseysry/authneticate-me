@@ -7,7 +7,9 @@ import {useParams } from 'react-router-dom';
 
 // import thunk creator
 import { getOneBusiness } from "../../store/business"
-// import { useHistory } from 'react-router';
+import { useHistory } from 'react-router';
+
+import { deleteBusiness } from '../../store/business';
 
 import EditBusinessForm from '../EditBusinessForm';
 
@@ -17,7 +19,7 @@ const SingleBusinessPage = () => {
   const business = useSelector((state) => state.business[businessId]);
   const [showEditBusinessForm, setShowEditBusinessForm] = useState(false)
   const dispatch = useDispatch();
-  // const history = useHistory();
+  const history = useHistory();
 
   useEffect(() => {
     dispatch(getOneBusiness(businessId));
@@ -73,7 +75,11 @@ const SingleBusinessPage = () => {
     )
   }
 
-
+  // deleteBusiness thunk
+  const handleDelete = (businessId) => {
+    dispatch(deleteBusiness(businessId));
+    history.push("/")
+  }
 
   return (
     <div
@@ -87,6 +93,9 @@ const SingleBusinessPage = () => {
 
     <div>
       {content}
+    </div>
+    <div>
+      <button onClick={() => handleDelete(businessId)}>Delete</button>
     </div>
 
     <button onClick={() => setShowEditBusinessForm(true)}>Edit</button>

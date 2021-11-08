@@ -1,13 +1,12 @@
 const express = require('express');
 const router = express.Router();
-
 const asyncHandler = require('express-async-handler')
 
-const { sequelize, Business } = require('../../db/models');
+const { Business } = require('../../db/models');
 
-const businessNotFoundError = id => {
+const businessNotFoundError = businessId => {
   const err = Error('Business not found');
-  err.errors = [`Business with id of ${id} could not be found.`];
+  err.errors = [`Business with id of ${businessId} could not be found.`];
   err.title = 'Business not found.';
   err.status = 404;
   return err;
@@ -19,12 +18,15 @@ router.get('/', asyncHandler(async (req, res) => {
 
 }));
 
-router.get('/:businessId', asyncHandler(async (req, res) => {
+router.get('/:businessId(\\d+)', asyncHandler(async (req, res) => {
   const business = await Business.findByPk(req.params.businessId);
   // console.log("this is business", business)
   return res.json(business) // sends one business to the front end
 
 }));
+
+
+
 
 // create one business
 router.post('/', asyncHandler(async (req, res) =>{
@@ -36,31 +38,44 @@ router.post('/', asyncHandler(async (req, res) =>{
 )
 
 // edit one business
-router.put('/:businessId', asyncHandler(async (req, res) => {
-  let previousObj = await Business.findByPk(req.params.businessId)
-  console.log("this is the previous", previousObj)
-  console.log("this is req.body", req.body)
+router.put('/:businessId(\\d+)', asyncHandler(async (req, res, next) => {
+  const business = await Business.findByPk(req.params.businessId)
+  // console.log("this is the previous", previousObj)
+  // console.log("this is req.body", req.body)
 
-  if(previousObj) {
-    previousObj.title = req.body.title
-    await previousObj.save();
-    res.json({previousObj})
+  if(business) {
+    business.title = req.body.title || business.title;
+    business.description = req.body.description || business.description;
+    business.address = req.body.address || business.address;
+    business.city = req.body.city || business.city;
+    business.zipCode = req.body.zipCode || business.zipCode;
+    business.imageUrl = req.body.imageUrl || business.imageUrl;
+
+    await business.save();
+    res.json({business})
   } else {
     next(businessNotFoundError(req.params.businessId))
   }
-
-
-
   // const {title, description, address, city, zipCode, imageUrl} = req.body
   // await previousObj.update({title:title, description:description, address:address, city, zipCode, imageUrl})
   // let newobj = await previousObj.save()
   // return res.json(newobj)
-}))
+  })
+);
+
+
+
+
 
 // delete one business
-router.delete('/:businessId', asyncHandler(async(req, res) => {
-  const businessId = await Business.deleteBusiness(req.params.id);
-  return res.json({businessId})
-}))
+router.delete('/:businessId(\\d+)', asyncHandler(async(req, res, next) => {
+  const business = await Business.findByPk(req.params.businessId);
+  if (business) {
+    await business.destroy();
+    res.status(204).end();
+  } else {
+    next(businessNotFoundError(req.params.businessId))
+  }
+}));
 
 module.exports = router;
