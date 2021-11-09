@@ -7,7 +7,7 @@ const HomePage = () => {
   return (
     // <img src ={pictures.collection[0].imageUrl} alt={"hiii"}/>
     <>
-    <div className="top-pic-container" style={{ backgroundImage: `url('${pictures.collection[0].imageUrl}')` }}>
+    <div className="top-pi-container" style={{ backgroundImage: `url('${pictures.collection[0].imageUrl}')` }}>
 
     </div>
     <div>Hello </div>
