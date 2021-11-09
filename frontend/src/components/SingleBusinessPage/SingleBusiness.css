@@ -24,9 +24,10 @@ font-family: 'Poppins', sans-serif !important;
   margin: 0 auto;
   border: 0px;
   height: 100vh;
+  align-content: flex-start;
+  justify-content: flex-end;
   flex-wrap: wrap;
-  align-content: flex-end;
-  justify-content: flex-start;
+  flex-direction: column;
 
   background-size: cover;
   background-position: center center;
