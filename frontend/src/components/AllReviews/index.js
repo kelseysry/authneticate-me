@@ -24,15 +24,16 @@ const BusinessReviews = ({business}) => {
   <h1>Reviews in BusinessReviews component</h1>
    <div>
     {reviews.map((review) => (
+      <div className="review-container">
       <ul>
         <li>
-          <div>
+          <div >
           <b>User</b> {review.User.username}
           </div>
           <div>
           <b>Rating</b> {review.rating}
           </div>
-          <div>
+          <div className="review-container">
           {review.answer}
           </div>
           <div className="image-container">
@@ -40,6 +41,7 @@ const BusinessReviews = ({business}) => {
           </div>
         </li>
       </ul>
+      </div>
     ))}
   </div>
     </>
