@@ -8,6 +8,9 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { editOneBusiness } from '../../store/business';
 
+import './EditBusinessForm.css';
+
+
 // import { editOneBusiness } from '../store/business';
 
 const EditBusinessForm = ({business, hideForm}) => {

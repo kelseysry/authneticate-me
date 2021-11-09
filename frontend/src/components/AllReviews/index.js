@@ -19,14 +19,6 @@ const BusinessReviews = ({business}) => {
     dispatch(getReviews(business.id))
   },[dispatch])
 
-  let stars = [];
-  let rating = reviews.rating
-  for(let i =0; i < rating; i++) {
-    stars.push(i)
-  }
-
-  console.log("this is rating", rating)
-  let test = [1,2,3]
 
   return (
   <>
@@ -41,7 +33,7 @@ const BusinessReviews = ({business}) => {
             {/* <i className="far fa-user-circle"></i> */}
             <i className="fas fa-user-ninja"></i>
             </span>
-            <span className="username">
+            <span className="">
             {review.User.username}
             </span>
           </div>
