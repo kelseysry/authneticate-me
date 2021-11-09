@@ -105,37 +105,28 @@ const SingleBusinessPage = () => {
       <ReviewForm reviews={reviews} hideForm={() => setShowReviewForm(false)} />
     )
   } else {
-    reviewContent = (
-      <div>
-          {/* {reviews.map((review) => defaultReview)} */}
-{/*
-        <h2>Reviews</h2> {reviews.answer}
-        <ul>
-          <li>
-            <b>Rating</b>{reviews.rating}
-          </li>
-        </ul> */}
-
-        {reviews.map((review) => (
-          <ul>
-            <li>
-              <b>Answer</b> {review.answer}
-            </li>
-            <li>
-              <b>Rating</b> {review.rating}
-            </li>
-            <li>
-            </li>
-              <li>
-                <b>User</b> {review.User.username}
-              </li>
-            <div>
-            <img src ={review.imageUrl} alt={review.imageUrl}/>
-            </div>
-          </ul>
-        ))}
-      </div>
-    )
+    // reviewContent = (
+    //   <div>
+    //     {reviews.map((review) => (
+    //       <ul>
+    //         <li>
+    //           <b>Answer</b> {review.answer}
+    //         </li>
+    //         <li>
+    //           <b>Rating</b> {review.rating}
+    //         </li>
+    //         <li>
+    //         </li>
+    //           <li>
+    //             <b>User</b> {review.User.username}
+    //           </li>
+    //         <div>
+    //         <img src ={review.imageUrl} alt={review.imageUrl}/>
+    //         </div>
+    //       </ul>
+    //     ))}
+    //   </div>
+    // )
   }
 
   // console.log("this is reviews.User", reviews[0].User)
@@ -158,12 +149,9 @@ const SingleBusinessPage = () => {
         <div className="rating">
           Rating w/ Stars - Figure out this
         </div>
-        {/* <div className="business-title">
-          hello
-        </div> */}
-        {/* <Link > */}
         <div>
-        <button className ="edit-business-title" onClick={() => setShowEditBusinessForm(true)}>Edit Business</button>
+        <button className="edit-business-title" onClick={() => setShowEditBusinessForm(true)}>Edit Business</button>
+        <button className="edit-business-title" onClick={() => handleDelete(businessId)}>Delete Business</button>
         </div>
 
 
@@ -180,13 +168,10 @@ const SingleBusinessPage = () => {
       {content}
     </div>
     <div>
-      <button onClick={() => handleDelete(businessId)}>Delete Business</button>
-    {/* </div>
-    <button onClick={() => setShowEditBusinessForm(true)}>Edit Business</button>
-    <div> */}
-    <BusinessReviews business={business}/>
     <button onClick={() => setShowReviewForm(true)}>Add a Review</button>
     {reviewContent}
+
+    <BusinessReviews reviews={reviews} business={business}/>
     </div>
     {/* <img src ={business?.imageUrl} alt= "single business pic"/> */}
   </>

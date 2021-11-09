@@ -14,25 +14,33 @@ const BusinessReviews = ({business}) => {
   console.log("review components", reviews)
 
   useEffect(() => {
-    dispatch(getReviews(business.id))   // thunk dispatched here! 
+    dispatch(getReviews(business.id))   // thunk dispatched here!
   },[dispatch])
 
   return (
-    <div>
-        <h1>Past Reviews in BusinessReviews component</h1>
+  <>
+  <h1>Reviews in BusinessReviews component</h1>
+   <div>
+    {reviews.map((review) => (
+      <ul>
+        <li>
+          <b>Answer</b> {review.answer}
+        </li>
+        <li>
+          <b>Rating</b> {review.rating}
+        </li>
+        <li>
+        </li>
+          <li>
+            <b>User</b> {review.User.username}
+          </li>
         <div>
-        {reviews.map((review,index) =>
-        <div key={index}>
-          <img src ={review.imageUrl} alt={review.imageUrl}/>
+        <img src ={review.imageUrl} alt={review.imageUrl}/>
         </div>
-        )}
-      </div>
-
-      <div>
-        {reviews.map((review) => review.answer)}
-      </div>
-
-    </div>
+      </ul>
+    ))}
+  </div>
+    </>
   )
 
    }
