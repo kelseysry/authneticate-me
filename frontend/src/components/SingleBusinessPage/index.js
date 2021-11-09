@@ -164,26 +164,16 @@ console.log("average", average)
         <button className="edit-business-title" onClick={() => setShowEditBusinessForm(true)}>Edit Business</button>
         <button className="edit-business-title" onClick={() => handleDelete(businessId)}>Delete Business</button>
         </div>
-
-
       </div>
-
-
-    {/* <h1>{business?.title}</h1> */}
-    {/* <img src ={business?.imageUrl} alt= "single business pic"/> */}
-
-
-
-
-    <div>
-      {content}
-    </div>
-    <div>
-    <button onClick={() => setShowReviewForm(true)}>Add a Review</button>
-    {reviewContent}
-
-    <BusinessReviews reviews={reviews} business={business}/>
-    </div>
+      <div>
+        {content}
+      </div>
+      
+      <div>
+      <button className="add-review-button" onClick={() => setShowReviewForm(true)}>Add a Review</button>
+      {reviewContent}
+      <BusinessReviews reviews={reviews} business={business}/>
+      </div>
     {/* <img src ={business?.imageUrl} alt= "single business pic"/> */}
   </>
   )
