@@ -19,6 +19,7 @@ const BusinessReviews = ({business}) => {
     dispatch(getReviews(business.id))
   },[dispatch])
 
+  console.log("reviews in allReview Component", reviews)
 
   return (
   <>
