@@ -9,13 +9,24 @@ import SingleBusinessPage from "./components/SingleBusinessPage";
 import AllBusiness from "./components/AllBusiness";
 import CreateBusinessForm from "./components/CreateBusiness";
 import EditBusinessForm from "./components/EditBusinessForm";
+
+import { useSelector } from "react-redux";
+
 import HomePage from "./components/HomePage";
 import pictures from '../src/data/pictures'
+
 
 
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
+
+  const sessionUser = useSelector((state) => state.session.user);
+  // const userId = sessionUser.id
+
+  console.log("sessionUser in app", sessionUser)
+
+
   // isLoaded - don't want to render routes unless user logged in
 
   // use restore user thunk action after App component's first render
@@ -31,7 +42,11 @@ function App() {
       {isLoaded && (
         <Switch>
           <Route exact path='/'>
+
+            Landing page
+
             <HomePage pictures={pictures}/>
+
           </Route>
           <Route path='/login'>
             <LoginFormPage />
@@ -39,13 +54,17 @@ function App() {
           <Route path='/signup'>
             <SignupFormPage />
           </Route>
+          {sessionUser &&
           <Route path='/business/:businessId'>
             <SingleBusinessPage />
-          </Route>
+          </Route>}
+
+{sessionUser &&
           <Route path='/business'>
             <CreateBusinessForm />
             <AllBusiness />
           </Route>
+      }
           {/* <Route path='/createBusiness'>
             <CreateBusinessForm />
           </Route> */}

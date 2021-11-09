@@ -5,6 +5,7 @@ const asyncHandler = require('express-async-handler')
 const { Business } = require('../../db/models');
 const { Review } = require('../../db/models')
 const { User } = require('../../db/models')
+const { requireAuth } = require('../../utils/auth')
 
 const businessNotFoundError = businessId => {
   const err = Error('Business not found');
@@ -39,7 +40,7 @@ router.post('/', asyncHandler(async (req, res) =>{
 )
 
 // edit one business
-router.put('/:businessId(\\d+)', asyncHandler(async (req, res, next) => {
+router.put('/:businessId(\\d+)', requireAuth, asyncHandler(async (req, res, next) => {
   const business = await Business.findByPk(req.params.businessId, {
     include: [User]
   })
