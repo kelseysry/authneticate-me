@@ -37,13 +37,16 @@ function Navigation({ isLoaded }){
   }
 
   return (
-    <ul>
-      <li className="home">
-        <NavLink activeClassName='red' exact to="/">Home</NavLink>
-        <NavLink to="/business">Explore Restaurants</NavLink>
-        {isLoaded && sessionLinks}
-      </li>
-    </ul>
+  <nav>
+    <div>
+      <NavLink activeClassName='red' exact to="/">Home</NavLink>
+      <NavLink to="/business">Explore</NavLink>
+      <NavLink to="/createBusiness">Add Restaurant</NavLink>
+    </div>
+    <div>
+      {isLoaded && sessionLinks}
+    </div>
+  </nav>
   );
   // only show sessionLink if check app has loaded
   // isLoaded runs before restoreUser runs. B/c we run our jsx before our logic.
