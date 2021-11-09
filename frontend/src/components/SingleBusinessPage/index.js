@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'; // side effects
 
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 //dispatch  - send request to redux store.
 // useSelector - grab info loaded into the store
 // import {useParams, Redirect } from 'react-router-dom';
@@ -157,6 +158,14 @@ const SingleBusinessPage = () => {
         <div className="rating">
           Rating w/ Stars - Figure out this
         </div>
+        {/* <div className="business-title">
+          hello
+        </div> */}
+        {/* <Link > */}
+        <div>
+        <button className ="edit-business-title" onClick={() => setShowEditBusinessForm(true)}>Edit Business</button>
+        </div>
+
 
       </div>
 
@@ -172,10 +181,9 @@ const SingleBusinessPage = () => {
     </div>
     <div>
       <button onClick={() => handleDelete(businessId)}>Delete Business</button>
-    </div>
+    {/* </div>
     <button onClick={() => setShowEditBusinessForm(true)}>Edit Business</button>
-    {/* <p>{business?.description}</p> */}
-    <div>
+    <div> */}
     <BusinessReviews business={business}/>
     <button onClick={() => setShowReviewForm(true)}>Add a Review</button>
     {reviewContent}
