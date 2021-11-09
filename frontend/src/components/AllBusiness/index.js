@@ -25,6 +25,7 @@ const AllBusiness = () => {
     dispatch(getAllBusinesses())
   }, [dispatch])
 
+  /// 
   return (
     <>
       <div>
