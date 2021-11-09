@@ -19,6 +19,15 @@ const BusinessReviews = ({business}) => {
     dispatch(getReviews(business.id))
   },[dispatch])
 
+  let stars = [];
+  let rating = reviews.rating
+  for(let i =0; i < rating; i++) {
+    stars.push(i)
+  }
+
+  console.log("this is rating", rating)
+  let test = [1,2,3]
+
   return (
   <>
   <h1>Reviews in BusinessReviews component</h1>
@@ -27,18 +36,25 @@ const BusinessReviews = ({business}) => {
       <div className="review-container">
       <ul>
         <li>
-          <div >
-          <b>User</b> {review.User.username}
+          <div className="profile">
+            <span className="icon">
+            {/* <i className="far fa-user-circle"></i> */}
+            <i className="fas fa-user-ninja"></i>
+            </span>
+            <span className="username">
+            {review.User.username}
+            </span>
           </div>
-          <div>
-          <b>Rating</b> {review.rating}
+          <div className="rating-profile">
+            <b>Rating</b> {review.rating}
+            {Array(review.rating).fill(<i class="fas fa-star"></i>)}
           </div>
-          <div className="review-container">
-          {review.answer}
-          </div>
-          <div className="image-container">
-            <img className="reviewImage" src ={review.imageUrl} alt={review.imageUrl}/>
-          </div>
+            <div className="review-container">
+            {review.answer}
+            </div>
+            <div className="image-container">
+              <img className="reviewImage" src ={review.imageUrl} alt={review.imageUrl}/>
+            </div>
         </li>
       </ul>
       </div>

@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+#template_header h1, #template_header .subtitle, #body_content_inner, .td, .text, #template_body h2, #template_body h2 a, #template_body h3, #template_footer a.ft-social-link, #template_footer #credit {
+font-family: 'Poppins', sans-serif !important;
+}
+
 .reviewImage {
   max-width:100%;
   height:auto;
@@ -14,10 +19,34 @@
   margin: auto;
   background-color: yellowgreen;
   text-align:left;
-  width: 800px
+  width: 800px;
+  box-sizing: border-box;
 
 }
 
 ul {
   list-style-type: none;
+}
+
+.icon {
+  font-size: 45px;
+  padding-right: 5px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 5px 5px;
+}
+
+.username {
+  font-size: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.rating-profile {
+  padding: 5px 5px;
+  font-family: 'Poppins', sans-serif;
+
 }
