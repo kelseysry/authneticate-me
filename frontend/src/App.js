@@ -9,7 +9,12 @@ import SingleBusinessPage from "./components/SingleBusinessPage";
 import AllBusiness from "./components/AllBusiness";
 import CreateBusinessForm from "./components/CreateBusiness";
 import EditBusinessForm from "./components/EditBusinessForm";
+
 import { useSelector } from "react-redux";
+
+import HomePage from "./components/HomePage";
+import pictures from '../src/data/pictures'
+
 
 
 function App() {
@@ -37,7 +42,11 @@ function App() {
       {isLoaded && (
         <Switch>
           <Route exact path='/'>
+
             Landing page
+
+            <HomePage pictures={pictures}/>
+
           </Route>
           <Route path='/login'>
             <LoginFormPage />
