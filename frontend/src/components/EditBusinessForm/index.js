@@ -80,6 +80,7 @@ const EditBusinessForm = ({business, hideForm}) => {
   };
 
   return (
+  <section className="edit-form-container">
     <form onSubmit={handleSubmit}>
       <ul className="errors">
         {errors.map((error) => <li key={error}>{error}</li>)}
@@ -152,7 +153,8 @@ const EditBusinessForm = ({business, hideForm}) => {
       </label> */}
       <button type="submit" disabled={errors.length>0}>Update Business</button>
       <button type="button" onClick={handleCancelFormEditClick}>Cancel</button>
-    </form>
+      </form>
+    </section>
   )
 
 }
