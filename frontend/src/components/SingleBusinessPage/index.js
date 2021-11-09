@@ -82,7 +82,7 @@ console.log("average", average)
         <h2 className="header-details">Details</h2>
         <ul>
           <li className="header-details">
-            <b>Owner</b> {business.User.username}
+            <b>Owner</b> {business.User?.username}
           </li>
           <li className>
             <b>Description</b> {business.description}
@@ -157,9 +157,15 @@ console.log("average", average)
         <div className="business-title">
           {business.title}
         </div>
-        <div className="rating"> {average}
-          {Array(1).fill(<i class="fas fa-star"></i>)}
+        {
+          reviews.length?
+          <div className="rating"> {average}
+
+        {reviews.length && average && Array(average).fill(<i class="fas fa-star"></i>)}
         </div>
+        : null
+        }
+
         <div>
         <button className="edit-business-title" onClick={() => setShowEditBusinessForm(true)}>Edit Business</button>
         <button className="edit-business-title" onClick={() => handleDelete(businessId)}>Delete Business</button>
