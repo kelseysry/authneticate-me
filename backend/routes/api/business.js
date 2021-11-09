@@ -40,7 +40,9 @@ router.post('/', asyncHandler(async (req, res) =>{
 
 // edit one business
 router.put('/:businessId(\\d+)', asyncHandler(async (req, res, next) => {
-  const business = await Business.findByPk(req.params.businessId)
+  const business = await Business.findByPk(req.params.businessId, {
+    include: [User]
+  })
 
   // console.log("business in api route", business)
   if(business) {
@@ -98,8 +100,13 @@ router.get('/:businessId(\\d+)/reviews', asyncHandler(async(req, res) => {
 // create one review for one business
 router.post('/:businessId(\\d+)/reviews', asyncHandler(async(req,res) => {
   const review = await Review.create(req.body);
-  console.log("review in backend", review)
-  return res.json(review)
+
+  const reviewAndUser = await Review.findByPk(review.id, {
+    include: [User]
+  })
+
+  console.log("review in backend", reviewAndUser)
+  return res.json(reviewAndUser)
 }))
 
 module.exports = router;
