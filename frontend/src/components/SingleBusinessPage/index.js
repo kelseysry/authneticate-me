@@ -65,10 +65,12 @@ const SingleBusinessPage = () => {
   } else {
     content = (
       <div>
+            {/* <img src ={business?.imageUrl} alt= "single business pic"/> */}
+
         <h2>Information</h2>
         <ul>
           <li>
-            <b>Title</b> {business.title}
+            {/* <b>Title</b> {business.title} */}
           </li>
           <li>
             <b>Owner</b> {business.User.username}
@@ -147,14 +149,20 @@ const SingleBusinessPage = () => {
   // if (businessId == null) return <Redirect to="/" />;
 
   return (
-    <div
-    // style={{ backgroundImage: `url('${business.imageUrl}')` }}
-    >
-    <h1>{business?.title}</h1>
-    {/* <EditBusinessForm /> */}
+    <>
+      <div className="top-pic-container" style={{ backgroundImage: `url('${business?.imageUrl}')` }}>
+        <div className="business-title">
+          {business.title}
+        </div>
+
+      </div>
 
 
-    {/* <button onClick={() => {history.push("/EditBusiness");}}>Edit Business</button> */}
+    {/* <h1>{business?.title}</h1> */}
+    {/* <img src ={business?.imageUrl} alt= "single business pic"/> */}
+
+
+
 
     <div>
       {content}
@@ -169,9 +177,8 @@ const SingleBusinessPage = () => {
     <button onClick={() => setShowReviewForm(true)}>Add a Review</button>
     {reviewContent}
     </div>
-    <img src ={business?.imageUrl} alt= "single business pic"/>
-  </div>
-
+    {/* <img src ={business?.imageUrl} alt= "single business pic"/> */}
+  </>
   )
 
   }

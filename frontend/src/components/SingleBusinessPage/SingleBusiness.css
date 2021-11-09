@@ -1,2 +1,30 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  outline: none;
+  border: 0px;
+}
+
+.top-pic-container {
+  display: flex;
+  /* justify-content: flex-start; */
+  align-items: flex-end;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  margin: 0px;
+  padding: 0px;
+  outline: none;
+  border: 0px;
+
+}
 
 
+
+
+.business-title{
+  color: white;
+  font-size: 100px;
+
+}
