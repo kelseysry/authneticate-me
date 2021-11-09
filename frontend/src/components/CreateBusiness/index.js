@@ -21,8 +21,8 @@ const CreateBusinessForm = () => {
   const sessionUser = useSelector((state) => state.session.user);
 
   console.log("this is sessionUser", sessionUser)
-  console.log("this is sessionUserId", sessionUser.id)
-  const ownerId = sessionUser.id
+  console.log("this is sessionUserId", sessionUser?.id)
+  const ownerId = sessionUser?.id
 
 
   useEffect(() => {
