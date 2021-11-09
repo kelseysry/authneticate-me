@@ -14,39 +14,43 @@ font-family: 'Poppins', sans-serif !important;
   box-sizing: border-box;
   display: flex;
   /* position: absolute; */
-  top: 0;
+  /* top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
+  bottom: 0; */
   /* max-width: 1272px;
   min-width: 1144px; */
   padding: 40px 64px;
-  margin: auto;
-  align-items: flex-end;
+  margin: 0 auto;
+  border: 0px;
+  height: 100vh;
+  flex-wrap: wrap;
+  align-content: flex-end;
+  justify-content: flex-start;
 
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  height: 100vh;
-  margin: 0px;
-  padding: 0px;
   outline: none;
-  border: 0px;
 
 }
-
-
-
 
 .business-title{
   color: #fff;
   font-size: 150px;
   font-weight: 700;
-  letter-spacing: -0.4px;
+  letter-spacing: -7px;
   line-height: 56px;
   word-break: break-word !important;
   overflow-wrap: break-word !important;
   display: inline;
   font-family: 'Poppins';
+
+}
+
+.rating {
+  font-size: 100px;
+  font-family: 'Poppins';
+  color: #fff;
 
 }

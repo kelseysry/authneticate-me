@@ -154,6 +154,9 @@ const SingleBusinessPage = () => {
         <div className="business-title">
           {business.title}
         </div>
+        <div className="rating">
+          Rating w/ Stars - Figure out this
+        </div>
 
       </div>
 
