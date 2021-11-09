@@ -55,6 +55,23 @@ const SingleBusinessPage = () => {
     return null;
   }
 
+  // array of all the reviews associated with the business
+  console.log("business singleBusinessPage", reviews)
+
+  // const allRatings = reviews.filter( review => review.rating)
+  // console.log("one", reviews.rating)
+  // console.log("all", allRatings)
+  // const avg = allRatings.reduce(total, next) => total/
+  // console.log("reviewss", reviews[0])
+  // console.log("reviewssss", reviews[0])
+
+  let res = reviews.map(x => Object.values(x)[3])
+  console.log("this is res", res)
+  const avg = res.reduce((a,b) => a+b, 0)
+  // const reducer = (previousValue, currentValue) => previousValue + currentValue;
+
+console.log("avg", avg)
+
   let content = null;
   let reviewContent = null;
 
@@ -146,7 +163,7 @@ const SingleBusinessPage = () => {
           {business.title}
         </div>
         <div className="rating">
-          Rating w/ Stars - Figure out this
+          Rating
         </div>
         <div>
         <button className="edit-business-title" onClick={() => setShowEditBusinessForm(true)}>Edit Business</button>
