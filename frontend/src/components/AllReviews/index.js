@@ -4,6 +4,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { getReviews } from "../../store/review";
 
 // import ReviewForm from "../CreateReview";
+import './AllReviews.css';
+
 
 const BusinessReviews = ({business}) => {
 
@@ -14,7 +16,7 @@ const BusinessReviews = ({business}) => {
   console.log("review components", reviews)
 
   useEffect(() => {
-    dispatch(getReviews(business.id))   // thunk dispatched here!
+    dispatch(getReviews(business.id))
   },[dispatch])
 
   return (
@@ -24,19 +26,19 @@ const BusinessReviews = ({business}) => {
     {reviews.map((review) => (
       <ul>
         <li>
-          <b>Answer</b> {review.answer}
-        </li>
-        <li>
+          <div>
+          <b>User</b> {review.User.username}
+          </div>
+          <div>
           <b>Rating</b> {review.rating}
+          </div>
+          <div>
+          {review.answer}
+          </div>
+          <div className="image-container">
+            <img className="reviewImage" src ={review.imageUrl} alt={review.imageUrl}/>
+          </div>
         </li>
-        <li>
-        </li>
-          <li>
-            <b>User</b> {review.User.username}
-          </li>
-        <div>
-        <img src ={review.imageUrl} alt={review.imageUrl}/>
-        </div>
       </ul>
     ))}
   </div>
