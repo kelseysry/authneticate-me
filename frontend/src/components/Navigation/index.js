@@ -6,7 +6,7 @@ import ProfileButton from './ProfileButton';
 import * as sessionActions from '../../store/session'
 import './Navigation.css';
 import { useDispatch } from "react-redux";
-
+import './Navigation.css'
 
 function Navigation({ isLoaded }){
   const dispatch = useDispatch();
@@ -39,7 +39,7 @@ function Navigation({ isLoaded }){
   return (
     <ul>
       <li>
-        <NavLink exact to="/">Home</NavLink>
+        <NavLink activeClassName="home" exact to="/">Home</NavLink>
         {isLoaded && sessionLinks}
       </li>
     </ul>
