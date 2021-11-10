@@ -16,14 +16,14 @@ const businessNotFoundError = businessId => {
 }
 
 router.get('/', asyncHandler(async (req, res) => {
-  const businesses = await Business.findAll();
+  const businesses = await Business.findAll({include : [Review]});
   res.json(businesses) // sends an array of businesses to the front end
 
 }));
 
 router.get('/:businessId(\\d+)', asyncHandler(async (req, res) => {
   const business = await Business.findByPk(req.params.businessId, {
-    include: [User]
+    include: [User, Review]
   });
   // console.log("this is business maybe User", business.User)
   return res.json(business) // sends one business to the front end
@@ -82,11 +82,11 @@ router.delete('/:businessId(\\d+)', asyncHandler(async(req, res, next) => {
 
 // get reviews for one business
 router.get('/:businessId(\\d+)/reviews', asyncHandler(async(req, res) => {
-  const business = await Business.findByPk(req.params.businessId);
+  // const business = await Business.findByPk(req.params.businessId);
 
   const reviews = await Review.findAll({
     where: {
-      businessId: business.id
+      businessId: req.params.businessId
     },
     include: [User]
   })

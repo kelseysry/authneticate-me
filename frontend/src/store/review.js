@@ -2,6 +2,7 @@ import { csrfFetch } from "./csrf"
 
 const LOAD_REVIEWS = "review/LOAD_REVIEWS";
 const ADD_ONE = "review/ADD_ONE"
+const CLEAR = "review/CLEAR"
 
 // action
 const load = (reviews, businessId) => ({
@@ -15,6 +16,12 @@ const load = (reviews, businessId) => ({
 const addOneReview = (newReview) => ({
   type: ADD_ONE,
   newReview
+})
+
+// action
+export const clearReviews = () => ({
+  type: CLEAR,
+
 })
 
 
@@ -65,6 +72,9 @@ const reviewReducer = (state = initialState, action) => {
         return newState
       }
       return state
+    }
+    case CLEAR : {
+      return {}
     }
     default:
       return state;

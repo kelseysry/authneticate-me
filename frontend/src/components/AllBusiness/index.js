@@ -11,6 +11,7 @@ import { getAllBusinesses } from '../../store/business';
 import './AllBusiness.css'
 import pictures from '../../data/pictures'
 import OneBusinessTile from '../OneBusinessTile';
+import { clearReviews } from '../../store/review';
 
 const AllBusiness = () => {
   // declare variables from hooks
@@ -32,6 +33,7 @@ const AllBusiness = () => {
   //useEffect will dispatch the thunk
   useEffect(() => {
     dispatch(getAllBusinesses())
+    dispatch(clearReviews())
   }, [dispatch])
 
 

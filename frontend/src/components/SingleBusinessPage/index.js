@@ -16,7 +16,7 @@ import BusinessReviews from '../AllReviews';
 import EditBusinessForm from '../EditBusinessForm';
 import ReviewForm from "../CreateReview";
 import './SingleBusiness.css';
-
+import { getReviews } from '../../store/review';
 
 const SingleBusinessPage = () => {
 
@@ -46,6 +46,10 @@ const SingleBusinessPage = () => {
   useEffect(() => {
     setShowReviewForm(false)
   },[businessId])
+
+  useEffect(()=> {
+    dispatch(getReviews(businessId))
+  }, [businessId])
 
 
   if(!reviews) {

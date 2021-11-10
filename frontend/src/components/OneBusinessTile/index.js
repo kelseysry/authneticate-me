@@ -20,37 +20,38 @@ const OneBusinessTile = ({businessId}) => {
 const business = useSelector((state) => state.business[businessId]);
 // console.log("businessOneTile",business)
 
-const reviewsObj = useSelector((state) => state.review)
-// console.log("reviewObj", reviewsObj)
-const reviews = Object.values(reviewsObj)
+// const reviewsObj = useSelector((state) => state.review)
+// // console.log("reviewObj", reviewsObj)
+// const reviews = Object.values(reviewsObj)
 
   // getOneBusiness
   useEffect(() => {
     dispatch(getOneBusiness(businessId));
   }, [dispatch, businessId]);
 
-  // get all reviews
-  useEffect(() => {
-    dispatch(getReviews(businessId))
-  },[dispatch,businessId])
+  // // get all reviews
+  // useEffect(() => {
+  //   dispatch(getReviews(businessId))
+  // },[dispatch,businessId])
 
 
-  if(!reviews) {
-    return null;
-  }
+  // if(!reviews) {
+  //   return null;
+  // }
 
   if (!business) {
     return null;
   }
 
-  let res = reviews.map(x => Object.values(x)[3])
+  // let res = reviews.map(x => Object.values(x)[3])
   // console.log("this is res", res)
-  const avge = (res.reduce((a,b) => a+b, 0)) /res.length
+  const avge = (business.Reviews.reduce((a,b) => a+b.rating, 0)) /business.Reviews.length
   const average = Math.round(avge)
 
   // console.log(average)
 
-  // console.log("average", average)
+  // console.log("average", reviews)
+  // console.log("business",business )
 
 
   return (
@@ -60,10 +61,10 @@ const reviews = Object.values(reviewsObj)
           {business.title}
         </div>
         {
-          reviews.length?
+          business.Reviews.length?
           <div className="rating">
 
-        {reviews.length && average && Array(average).fill(<i className="fas fa-star"></i>).map((ele, idx) => <span key={idx}>{ele}</span> )}
+        {business.Reviews.length && average && Array(average).fill(<i className="fas fa-star"></i>).map((ele, idx) => <span key={idx}>{ele}</span> )}
         </div>
         : null
         }
