@@ -36,7 +36,7 @@ function App() {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
 
-
+let apiKey = "AIzaSyAxgYIpAwKEyzjJ9WApIpm4Q2kty9QT-uc"
 
   return (
     <>
@@ -72,7 +72,7 @@ function App() {
           </Route>
           <Route path='/test'>
             <OneBusinessTile businessId={"1"}/>
-            <Maps />
+            <Maps apiKey={apiKey}/>
             {/* <MapContainer /> */}
           </Route>
           <Route>
