@@ -99,6 +99,7 @@ console.log("average", average)
         </ul>
         </div>
       </div>
+
     )
   }
 
@@ -138,11 +139,10 @@ console.log("average", average)
       <div className="details-reviewButton-container">
         <div>
           {content}
+          
         </div>
           <button className="add-review-button" onClick={() => setShowReviewForm(true)}>Write a Review</button>
-        <div>
-          Hello
-        </div>
+
         <div>
           {reviewContent}
           <BusinessReviews reviews={reviews} business={business}/>

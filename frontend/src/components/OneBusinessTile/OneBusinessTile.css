@@ -1,8 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins');
-#template_header h1, #template_header .subtitle, #body_content_inner, .td, .text, #template_body h2, #template_body h2 a, #template_body h3, #template_footer a.ft-social-link, #template_footer #credit {
-font-family: 'Poppins', sans-serif;
-}
-
 * {
   margin: 0px;
   padding: 0px;
