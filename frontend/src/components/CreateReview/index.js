@@ -30,6 +30,7 @@ const ReviewForm = ({reviews, hideForm}) => {
   useEffect(() => {
     const validationErrors = [];
     if(!rating) validationErrors.push("Rating is required")
+    if(rating > 5 || rating < 1) validationErrors.push("Rating must be between 1-5")
     if(!answer) validationErrors.push("Please write a review!")
     if(answer.length < 10) validationErrors.push("Review must be at least 10 characters!")
     if(!imageUrl) {

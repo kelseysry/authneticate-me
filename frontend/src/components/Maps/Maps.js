@@ -10,13 +10,14 @@ const containerStyle = {
 };
 
 const center = {
-  lat: 37.772,
-  lng: -122.214
+  lat: 11.540525241506499,
+  lng: 104.9152178929382
 }
 
+
 const position = {
-  lat: 37.772,
-  lng: -122.214
+  lat: 11.540525241506499,
+  lng: 104.9152178929382
 }
 
 const onLoad = marker => {
@@ -37,7 +38,7 @@ const Maps = ({ apiKey }) => {
         <GoogleMap
       id="marker-example"
       mapContainerStyle={containerStyle}
-      zoom={10}
+      zoom={15}
       center={center}
       >
       <Marker
