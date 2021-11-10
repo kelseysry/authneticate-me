@@ -1,5 +1,5 @@
 import {useEffect } from 'react'; // side effects
-
+import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 //dispatch  - send request to redux store.
 // useSelector - grab info loaded into the store
@@ -32,27 +32,33 @@ const AllBusiness = () => {
   ///
   return (
     <>
-        <div className="top-business-container" style={{ backgroundImage: `url('${pictures.collection[2].imageUrl}')` }}>
-
-        </div>
+      <div className="top-business-container" style={{ backgroundImage: `url('${pictures.collection[2].imageUrl}')` }}></div>
 
       <div>
-        {businesses.map((business) =>
-        <div key={business?.id}>
-          <img src ={business.imageUrl} alt={business.imageUrl}/>
-        </div>
-        )}
+          {businesses.map((business) =>
+
+          <NavLink to={`/business/${business.id}`}>{<img src ={business.imageUrl} alt={business.imageUrl}/>}</NavLink>
+          )}
       </div>
-      <div>
-        {/* {businesses[1].description} */}
-      </div>
+
+
     </>
   )
 
 
 }
 
-///  imageUrl
+// just simple mapping out images 
+
+{/* <div>
+{businesses.map((business) =>
+<div key={business?.id}>
+  <img src ={business.imageUrl} alt={business.imageUrl}/>
+</div>
+)}
+</div>
+<div>
+</div> */}
 
 
 export default AllBusiness
