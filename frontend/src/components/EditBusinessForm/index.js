@@ -82,9 +82,6 @@ const EditBusinessForm = ({business, hideForm}) => {
   return (
   <section className="edit-form-container">
     <form onSubmit={handleSubmit}>
-      <ul className="errors">
-        {errors.map((error) => <li key={error}>{error}</li>)}
-      </ul>
       <label>
         Name
           <input
@@ -142,15 +139,9 @@ const EditBusinessForm = ({business, hideForm}) => {
         >
         </input>
       </label>
-      {/* <label>
-        Owner Id
-        <input
-        type="number"
-        value={ownerId}
-        onChange={(e) => setOwnerId(e.target.value)}
-        >
-        </input>
-      </label> */}
+      <ul className="errors">
+        {errors.map((error) => <li key={error}>{error}</li>)}
+      </ul>
       <button type="submit" disabled={errors.length>0}>Update Business</button>
       <button type="button" onClick={handleCancelFormEditClick}>Cancel</button>
       </form>

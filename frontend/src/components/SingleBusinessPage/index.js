@@ -78,7 +78,6 @@ console.log("average", average)
   } else {
     content = (
       <div className="details-container">
-
         <div>
         <h2 className="header-details">Details</h2>
         <ul>
@@ -100,6 +99,7 @@ console.log("average", average)
         </ul>
         </div>
       </div>
+
     )
   }
 
@@ -139,10 +139,10 @@ console.log("average", average)
       <div className="details-reviewButton-container">
         <div>
           {content}
+          
         </div>
-        <div>
-        <button className="add-review-button" onClick={() => setShowReviewForm(true)}>Write a Review</button>
-        </div>
+          <button className="add-review-button" onClick={() => setShowReviewForm(true)}>Write a Review</button>
+
         <div>
           {reviewContent}
           <BusinessReviews reviews={reviews} business={business}/>

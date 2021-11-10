@@ -5,7 +5,7 @@ import { useDispatch} from 'react-redux';
 import { createOneReview } from "../../store/review";
 import { useSelector } from "react-redux";
 import {useParams} from 'react-router-dom';
-
+import './CreateReview.css'
 
 const ReviewForm = ({reviews, hideForm}) => {
 
@@ -31,7 +31,7 @@ const ReviewForm = ({reviews, hideForm}) => {
     const validationErrors = [];
     if(!rating) validationErrors.push("Rating is required")
     if(!answer) validationErrors.push("Please write a review!")
-    if(answer.length < 10) validationErrors.push("Please write a review with at least 10 or more characters!")
+    if(answer.length < 10) validationErrors.push("Review must be at least 10 characters!")
     if(!imageUrl) {
       validationErrors.push("Please provide an image")
     } else if (!isURL(imageUrl)) {
@@ -74,11 +74,8 @@ const ReviewForm = ({reviews, hideForm}) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <ul className="error">
-      {errors.map((error) => <li key={error}>{error}</li>)}
-      </ul>
+
       <label>
-        Rating
           <input
             type="number"
             placeholder="rating"
@@ -88,8 +85,8 @@ const ReviewForm = ({reviews, hideForm}) => {
           </input>
       </label>
       <label>
-        Review
           <input
+            placeholder="review"
             type="text"
             value={answer}
             onChange={(e) => setAnswer(e.target.value)}
@@ -97,14 +94,17 @@ const ReviewForm = ({reviews, hideForm}) => {
           </input>
       </label>
       <label>
-        Image Url
         <input
         type="text"
+        placeholder="image url"
         value={imageUrl}
         onChange={(e) => setImageUrl(e.target.value)}
         >
         </input>
       </label>
+      <ul className="error">
+      {errors.map((error) => <li key={error}>{error}</li>)}
+      </ul>
       <button type="submit" disabled={errors.length>0}>Submit Review</button>
       <button type="button" onClick={handleCancelReviewFormClick}>Cancel</button>
 

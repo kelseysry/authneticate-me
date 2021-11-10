@@ -23,7 +23,6 @@ const BusinessReviews = ({business}) => {
 
   return (
   <>
-  <h1>Reviews in BusinessReviews component</h1>
    <div>
     {reviews.map((review) => (
       <div className="review-container">
