@@ -56,7 +56,7 @@ const reviews = Object.values(reviewsObj)
   return (
     <>
       <div className="top-pic-container" style={{ backgroundImage: `url('${business?.imageUrl}')` }}>
-        <div className="business-title">
+        <div className="invid-business-title">
           {business.title}
         </div>
         {

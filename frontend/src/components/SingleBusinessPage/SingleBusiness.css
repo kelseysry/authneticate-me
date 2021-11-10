@@ -31,7 +31,7 @@ font-family: 'Poppins', sans-serif;
 
 .business-title{
   color: #fff;
-  font-size: 150px;
+  font-size: 10vw;
   font-weight: 700;
   letter-spacing: -7px;
   line-height: 56px;
@@ -91,5 +91,11 @@ font-family: 'Poppins', sans-serif;
 
 .add-review-button {
   padding: 20px 20px;
+
+}
+
+a {
+  text-decoration: none;
+  font-size: 30px
 
 }
