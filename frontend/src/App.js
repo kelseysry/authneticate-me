@@ -42,11 +42,7 @@ function App() {
       {isLoaded && (
         <Switch>
           <Route exact path='/'>
-
-            Landing page
-
             <HomePage pictures={pictures}/>
-
           </Route>
           <Route path='/login'>
             <LoginFormPage />
@@ -59,15 +55,15 @@ function App() {
             <SingleBusinessPage />
           </Route>}
 
-{sessionUser &&
+          {sessionUser &&
           <Route path='/business'>
-            <CreateBusinessForm />
+            {/* <CreateBusinessForm /> */}
             <AllBusiness />
           </Route>
-      }
-          {/* <Route path='/createBusiness'>
+          }
+          <Route path='/createBusiness'>
             <CreateBusinessForm />
-          </Route> */}
+          </Route>
           <Route path='/EditBusiness'>
             <EditBusinessForm />
           </Route>
