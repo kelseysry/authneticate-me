@@ -47,7 +47,9 @@ const AllBusiness = () => {
 
   return (
     <>
-      <div className="top-business-container" style={{ backgroundImage: `url('${pictures.collection[2].imageUrl}')` }}></div>
+      <div className="top-business-container" style={{ backgroundImage: `url('${pictures.collection[2].imageUrl}')` }}>
+        <div className="explore">Explore</div>
+      </div>
       <div className="business-image-container">
           {businesses.map((business) =>
           <div className="one-image-container" key={business.id}>
