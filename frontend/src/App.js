@@ -36,8 +36,6 @@ function App() {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
 
-let apiKey = "AIzaSyAxgYIpAwKEyzjJ9WApIpm4Q2kty9QT-uc"
-
   return (
     <>
       <Navigation isLoaded={isLoaded} />
