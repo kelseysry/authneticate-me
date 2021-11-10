@@ -17,12 +17,25 @@
 }
 
 .business-image-container{
+  box-sizing: border-box;
   display:grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 20px;
+  grid-gap:10px;
+  justify-items: center;
+  padding-top: 30px;
+
 
 }
 
 .each-image {
   width: 200px
+}
+
+.one-image-container {
+  display:flex;
+  flex-direction: column;
+}
+
+.each-business-details {
+  width: 150px
 }

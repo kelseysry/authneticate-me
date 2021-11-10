@@ -28,6 +28,7 @@ const SingleBusinessPage = () => {
   const history = useHistory();
 
   const reviewsObj = useSelector((state) => state.review)
+  console.log("reviewObj", reviewsObj)
   const reviews = Object.values(reviewsObj)
   const [showReviewForm, setShowReviewForm] = useState(false)
 
@@ -146,7 +147,7 @@ console.log("average", average)
     history.push("/")
   }
 
-  let rating = reviews.rating
+  // let rating = reviews.rating
 
 
   // if (businessId == null) return <Redirect to="/" />;
@@ -159,7 +160,7 @@ console.log("average", average)
         </div>
         {
           reviews.length?
-          <div className="rating"> 
+          <div className="rating">
 
         {reviews.length && average && Array(average).fill(<i class="fas fa-star"></i>)}
         </div>
