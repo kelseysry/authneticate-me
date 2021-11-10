@@ -141,7 +141,9 @@ console.log("average", average)
           {content}
         </div>
         <div>
-          <button className="add-review-button" onClick={() => setShowReviewForm(true)}>Add a Review</button>
+        <button className="add-review-button" onClick={() => setShowReviewForm(true)}>Write a Review</button>
+        </div>
+        <div>
           {reviewContent}
           <BusinessReviews reviews={reviews} business={business}/>
         </div>
