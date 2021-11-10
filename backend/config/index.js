@@ -3,12 +3,12 @@
 //Each environment variable will be read and exported as a key from this file.
 module.exports = {
   environment: process.env.NODE_ENV || 'development',
+  googleMapsAPIKey: process.env.MAPS_API_KEY,
   port: process.env.PORT || 5000,
   db: {
     username: process.env.DB_USERNAME,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_DATABASE,
-    googleMapsAPIKey: process.env.MAPS_API_KEY,
     host: process.env.DB_HOST,
   },
   jwtConfig: {
