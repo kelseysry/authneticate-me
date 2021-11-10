@@ -6,12 +6,51 @@ font-family: 'Poppins', sans-serif;
 .home {
   font-size: 20px;
   font-family: 'Poppins', sans-serif;
-
+  /* border-bottom: none; */
+  font-weight: 700;
+  margin-left: 24px;
 }
 
 nav {
   position:relative;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: stretch;
+  border-bottom: none;
+  flex-direction: column;
+  font-family: 'Poppins', sans-serif;
+
 }
+
+.home-explore {
+  display:flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.subNav {
+  display:flex;
+  padding-right: 10px;
+}
+
+.pad {
+  padding: 30px 30px;
+}
+
+.pad a {
+  border-bottom: none;
+  text-decoration: none;
+  color: #2699FB;
+
+}
+
+ .nav-link{
+    color: #2699FB !important;
+    text-decoration: none;
+
+  }
+
+/* .nav-link{
+  font-family: 'Roboto', sans-serif;
+  color: #2699FB !important;
+} */
