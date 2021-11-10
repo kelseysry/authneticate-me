@@ -97,9 +97,6 @@ console.log("average", average)
           <li>
             <b>zipCode</b> {business.zipCode}
           </li>
-          {/* <li>
-            <b>Image Url</b> {business.imageUrl}
-          </li> */}
         </ul>
         </div>
       </div>
@@ -113,32 +110,7 @@ console.log("average", average)
     reviewContent = (
       <ReviewForm reviews={reviews} hideForm={() => setShowReviewForm(false)} />
     )
-  } else {
-    // reviewContent = (
-    //   <div>
-    //     {reviews.map((review) => (
-    //       <ul>
-    //         <li>
-    //           <b>Answer</b> {review.answer}
-    //         </li>
-    //         <li>
-    //           <b>Rating</b> {review.rating}
-    //         </li>
-    //         <li>
-    //         </li>
-    //           <li>
-    //             <b>User</b> {review.User.username}
-    //           </li>
-    //         <div>
-    //         <img src ={review.imageUrl} alt={review.imageUrl}/>
-    //         </div>
-    //       </ul>
-    //     ))}
-    //   </div>
-    // )
   }
-
-  // console.log("this is reviews.User", reviews[0].User)
   // console.log("this is reviews.User", reviews[0].User.username)
 
   // deleteBusiness thunk
@@ -147,41 +119,34 @@ console.log("average", average)
     history.push("/")
   }
 
-  // let rating = reviews.rating
-
-
-  // if (businessId == null) return <Redirect to="/" />;
-
   return (
     <>
       <div className="top-pic-container" style={{ backgroundImage: `url('${business?.imageUrl}')` }}>
         <div className="business-title">
           {business.title}
         </div>
-        {
-          reviews.length?
-          <div className="rating">
-
-        {reviews.length && average && Array(average).fill(<i class="fas fa-star"></i>)}
-        </div>
-        : null
+        { reviews.length?
+            <div className="rating">
+              {reviews.length && average && Array(average).fill(<i class="fas fa-star"></i>)}
+            </div>
+          : null
         }
-
         <div>
         <button className="edit-business-title" onClick={() => setShowEditBusinessForm(true)}>Edit Business</button>
         <button className="edit-business-title" onClick={() => handleDelete(businessId)}>Delete Business</button>
         </div>
       </div>
-      <div>
-        {content}
+      <div className="details-reviewButton-container">
+        <div>
+          {content}
+        </div>
+        <div>
+          <button className="add-review-button" onClick={() => setShowReviewForm(true)}>Add a Review</button>
+          {reviewContent}
+          <BusinessReviews reviews={reviews} business={business}/>
+        </div>
       </div>
 
-      <div>
-      <button className="add-review-button" onClick={() => setShowReviewForm(true)}>Add a Review</button>
-      {reviewContent}
-      <BusinessReviews reviews={reviews} business={business}/>
-      </div>
-    {/* <img src ={business?.imageUrl} alt= "single business pic"/> */}
   </>
   )
 

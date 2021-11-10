@@ -44,6 +44,7 @@ function App() {
         <Switch>
           <Route exact path='/'>
             <HomePage pictures={pictures}/>
+            {/* <AllBusiness /> */}
           </Route>
           <Route path='/login'>
             <LoginFormPage />
@@ -68,9 +69,9 @@ function App() {
           <Route path='/EditBusiness'>
             <EditBusinessForm />
           </Route>
-          <Route path='/test'>
+          {/* <Route path='/test'>
             <OneBusinessTile businessId={"1"}/>
-          </Route>
+          </Route> */}
           <Route>
             Page Not Found
           </Route>
