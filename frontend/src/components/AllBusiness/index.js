@@ -33,11 +33,9 @@ const AllBusiness = () => {
   return (
     <>
       <div className="top-business-container" style={{ backgroundImage: `url('${pictures.collection[2].imageUrl}')` }}></div>
-
-      <div>
+      <div className="business-image-container">
           {businesses.map((business) =>
-
-          <NavLink to={`/business/${business.id}`}>{<img src ={business.imageUrl} alt={business.imageUrl}/>}</NavLink>
+          <NavLink to={`/business/${business.id}`}>{<img className="each-image" src ={business.imageUrl} alt={business.imageUrl}/>}</NavLink>
           )}
       </div>
 
@@ -48,7 +46,7 @@ const AllBusiness = () => {
 
 }
 
-// just simple mapping out images 
+// just simple mapping out images
 
 {/* <div>
 {businesses.map((business) =>
