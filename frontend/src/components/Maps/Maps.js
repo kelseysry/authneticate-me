@@ -1,6 +1,8 @@
 // frontend/src/components/Maps/Maps.js
 import React from 'react';
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
+// import { useJsApiLoader } from '@react-google-maps/api';
+import { Marker } from '@react-google-maps/api';
 
 const containerStyle = {
   width: '400px',
@@ -8,9 +10,20 @@ const containerStyle = {
 };
 
 const center = {
-  lat: 11.539970,
-  lng: 104.914864,
-};
+  lat: 37.772,
+  lng: -122.214
+}
+
+const position = {
+  lat: 37.772,
+  lng: -122.214
+}
+
+const onLoad = marker => {
+  console.log('marker: ', marker)
+}
+
+
 
 const Maps = ({ apiKey }) => {
   const { isLoaded } = useJsApiLoader({
@@ -22,13 +35,32 @@ const Maps = ({ apiKey }) => {
     <>
       {isLoaded && (
         <GoogleMap
-          mapContainerStyle={containerStyle}
-          center={center}
-          zoom={10}
-        />
+      id="marker-example"
+      mapContainerStyle={containerStyle}
+      zoom={10}
+      center={center}
+      >
+      <Marker
+        onLoad={onLoad}
+        position={position}
+      />
+</GoogleMap>
       )}
+
+
     </>
   );
 };
 
 export default React.memo(Maps);
+
+
+
+
+
+
+{/* <GoogleMap
+mapContainerStyle={containerStyle}
+center={center}
+zoom={4}
+/> */}

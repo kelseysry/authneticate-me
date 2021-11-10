@@ -20,7 +20,9 @@ const MapContainer = () => {
   }
 
   return (
-    <Maps apiKey={key} />
+    <div className="map">
+      <Maps apiKey={key} />
+    </div>
   );
 };
 

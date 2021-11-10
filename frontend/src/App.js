@@ -69,7 +69,7 @@ function App() {
             <EditBusinessForm />
           </Route>
           <Route path='/test'>
-            <OneBusinessTile businessId={"1"}/>
+            {/* <OneBusinessTile businessId={"1"}/> */}
             {/* <Maps apiKey={apiKey}/> */}
             <MapContainer />
           </Route>
