@@ -8,7 +8,7 @@ import { getReviews } from "../../store/review";
 import './OneBusinessTile.css';
 
 
-// mistakes?
+// mistakesesese
 
 const OneBusinessTile = ({businessId}) => {
   const dispatch = useDispatch();
