@@ -9,13 +9,14 @@ import SingleBusinessPage from "./components/SingleBusinessPage";
 import AllBusiness from "./components/AllBusiness";
 import CreateBusinessForm from "./components/CreateBusiness";
 import EditBusinessForm from "./components/EditBusinessForm";
-// import OneBusinessTile from "./components/OneBusinessTile";
+import OneBusinessTile from "./components/OneBusinessTile";
 
 import { useSelector } from "react-redux";
 
 import HomePage from "./components/HomePage";
 import pictures from '../src/data/pictures'
 
+import Maps from "./components/Maps/Maps";
 
 
 function App() {
@@ -69,9 +70,11 @@ function App() {
           <Route path='/EditBusiness'>
             <EditBusinessForm />
           </Route>
-          {/* <Route path='/test'>
+          <Route path='/test'>
             <OneBusinessTile businessId={"1"}/>
-          </Route> */}
+            <Maps />
+            {/* <MapContainer /> */}
+          </Route>
           <Route>
             Page Not Found
           </Route>

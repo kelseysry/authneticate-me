@@ -4,12 +4,14 @@ import thunk from 'redux-thunk';
 import sessionReducer from './session';
 import businessReducer from './business';
 import reviewReducer from './review';
+import mapsReducer from './map';
 
 // add reducer so can name (business) slice of state so useSelector can grab it
 const rootReducer = combineReducers({
   session: sessionReducer,
   business: businessReducer,
-  review: reviewReducer
+  review: reviewReducer,
+  map: mapsReducer
 });
 
 let enhancer; // In production, the enhancer should only apply the thunk middleware.
