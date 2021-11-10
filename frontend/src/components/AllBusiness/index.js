@@ -8,6 +8,10 @@ import { useDispatch, useSelector } from 'react-redux';
 // import thunk creator
 import { getAllBusinesses } from '../../store/business';
 
+import './AllBusiness.css'
+import pictures from '../../data/pictures'
+
+
 const AllBusiness = () => {
   // declare variables from hooks
   const dispatch = useDispatch();
@@ -25,9 +29,13 @@ const AllBusiness = () => {
     dispatch(getAllBusinesses())
   }, [dispatch])
 
-  /// 
+  ///
   return (
     <>
+        <div className="top-business-container" style={{ backgroundImage: `url('${pictures.collection[2].imageUrl}')` }}>
+
+        </div>
+
       <div>
         {businesses.map((business) =>
         <div key={business?.id}>
