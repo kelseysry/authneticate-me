@@ -24,8 +24,8 @@ export const getReviews = (businessId) => async(dispatch) => {
   const response = await csrfFetch(`/api/business/${businessId}/reviews`)
   if(response.ok) {
     const reviews = await response.json();
-    console.log("reviews in thunk, works!", reviews)
-    console.log("thunk businessId, worjs", businessId)
+    // console.log("reviews in thunk, works!", reviews)
+    // console.log("thunk businessId, worjs", businessId)
     dispatch(load(reviews, businessId))
   }
 }
@@ -52,7 +52,7 @@ const reviewReducer = (state = initialState, action) => {
       action.reviews.forEach((review) => {
         newState[review.id] = review
       })
-      console.log("newState LOAD_REVIEWS", newState)
+      // console.log("newState LOAD_REVIEWS", newState)
       return newState
     }
     case ADD_ONE : {

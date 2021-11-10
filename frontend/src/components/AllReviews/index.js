@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import { getReviews } from "../../store/review";
@@ -17,7 +17,7 @@ const BusinessReviews = ({business}) => {
 
   useEffect(() => {
     dispatch(getReviews(business.id))
-  },[dispatch])
+  },[dispatch, business.id])
 
   console.log("reviews in allReview Component", reviews)
 
@@ -25,7 +25,7 @@ const BusinessReviews = ({business}) => {
   <>
    <div>
     {reviews.map((review) => (
-      <div className="review-container">
+      <div key={review.id} className="review-container">
       <ul>
         <li>
           <div className="profile">
@@ -39,7 +39,7 @@ const BusinessReviews = ({business}) => {
           </div>
           <div className="rating-profile">
             <b>Rating</b> {review.rating}
-            {Array(review.rating).fill(<i class="fas fa-star"></i>)}
+            {Array(review.rating).fill(<i className="fas fa-star"></i>)}
           </div>
             <div className="review-container">
             {review.answer}

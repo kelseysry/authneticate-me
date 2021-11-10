@@ -22,6 +22,11 @@ function LoginFormPage() {
     <Redirect to="/"/>
   )
 
+  // if (!sessionUser) return (
+  //   <Redirect to="/login"/>
+  // )
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors([]);

@@ -127,7 +127,7 @@ console.log("average", average)
         </div>
         { reviews.length?
             <div className="rating">
-              {reviews.length && average && Array(average).fill(<i class="fas fa-star"></i>)}
+              {reviews.length && average && Array(average).fill(<i className="fas fa-star"></i>)}
             </div>
           : null
         }
@@ -139,7 +139,7 @@ console.log("average", average)
       <div className="details-reviewButton-container">
         <div>
           {content}
-          
+
         </div>
           <button className="add-review-button" onClick={() => setShowReviewForm(true)}>Write a Review</button>
 

@@ -21,11 +21,11 @@ const AllBusiness = () => {
 
   // if want array version of business
   const businesses = Object.values(businessObj)
-  console.log("this is from components", businesses)
+  // console.log("this is from components", businesses)
 
   const reviewsObj = useSelector((state) => state.review)
   const reviews = Object.values(reviewsObj)
-  console.log("reviewsAllBusiness", reviews)
+  // console.log("reviewsAllBusiness", reviews)
 
 
   // after the component return () below has been rendered for the first time,
@@ -36,14 +36,14 @@ const AllBusiness = () => {
 
 
   let res = reviews.map(x => Object.values(x)[3])
-  console.log("this is res", res)
+  // console.log("this is res", res)
   const avge = (res.reduce((a,b) => a+b, 0)) /res.length
   const average = Math.round(avge)
 
 
-  console.log("averageAllBusiness", average)
+  // console.log("averageAllBusiness", average)
 
-  console.log("businessesAllBu", businesses)
+  // console.log("businessesAllBu", businesses)
 
   return (
     <>
@@ -69,34 +69,4 @@ const AllBusiness = () => {
 
 
 }
-
-// just simple mapping out images
-
-{/* <div>
-{businesses.map((business) =>
-<div key={business?.id}>
-  <img src ={business.imageUrl} alt={business.imageUrl}/>
-</div>
-)}
-</div>
-<div>
-</div> */}
-
-
-
-{/* <div className="business-image-container">
-{businesses.map((business) =>
-<div className="one-image-container" key={business.id}>
-  <div>
-  <NavLink to={`/business/${business.id}`}>{<img className="each-image" src ={business.imageUrl} alt={business.imageUrl}/>}</NavLink>
-  </div>
-  <div className="each-business-details">
-  {business.description}
-  </div>
-</div>
-)}
-</div>
- */}
-
-
 export default AllBusiness

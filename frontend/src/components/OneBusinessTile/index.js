@@ -18,10 +18,10 @@ const OneBusinessTile = ({businessId}) => {
   // let id = businessId
 
 const business = useSelector((state) => state.business[businessId]);
-console.log("businessOneTile",business)
+// console.log("businessOneTile",business)
 
 const reviewsObj = useSelector((state) => state.review)
-console.log("reviewObj", reviewsObj)
+// console.log("reviewObj", reviewsObj)
 const reviews = Object.values(reviewsObj)
 
   // getOneBusiness
@@ -32,7 +32,7 @@ const reviews = Object.values(reviewsObj)
   // get all reviews
   useEffect(() => {
     dispatch(getReviews(businessId))
-  },[dispatch])
+  },[dispatch,businessId])
 
 
   if(!reviews) {
@@ -44,13 +44,13 @@ const reviews = Object.values(reviewsObj)
   }
 
   let res = reviews.map(x => Object.values(x)[3])
-  console.log("this is res", res)
+  // console.log("this is res", res)
   const avge = (res.reduce((a,b) => a+b, 0)) /res.length
   const average = Math.round(avge)
 
-  console.log(average)
+  // console.log(average)
 
-  console.log("average", average)
+  // console.log("average", average)
 
 
   return (
@@ -63,7 +63,7 @@ const reviews = Object.values(reviewsObj)
           reviews.length?
           <div className="rating">
 
-        {reviews.length && average && Array(average).fill(<i class="fas fa-star"></i>)}
+        {reviews.length && average && Array(average).fill(<i className="fas fa-star"></i>)}
         </div>
         : null
         }
