@@ -16,8 +16,8 @@ import { useSelector } from "react-redux";
 import HomePage from "./components/HomePage";
 import pictures from '../src/data/pictures'
 
-import Maps from "./components/Maps/Maps";
-
+// import Maps from "./components/Maps/Maps";
+import MapContainer from "./components/Maps/index.js";
 
 function App() {
   const dispatch = useDispatch();
@@ -36,7 +36,6 @@ function App() {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
 
-let apiKey = "AIzaSyAxgYIpAwKEyzjJ9WApIpm4Q2kty9QT-uc"
 
   return (
     <>
@@ -72,8 +71,8 @@ let apiKey = "AIzaSyAxgYIpAwKEyzjJ9WApIpm4Q2kty9QT-uc"
           </Route>
           <Route path='/test'>
             <OneBusinessTile businessId={"1"}/>
-            <Maps apiKey={apiKey}/>
-            {/* <MapContainer /> */}
+            {/* <Maps apiKey={apiKey}/> */}
+            <MapContainer />
           </Route>
           <Route>
             Page Not Found
