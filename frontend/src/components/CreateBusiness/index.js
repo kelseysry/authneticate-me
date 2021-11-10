@@ -4,7 +4,8 @@ import isURL from 'validator/es/lib/isURL';
 import { createOneBusiness } from '../../store/business';
 
 import { useDispatch, useSelector } from "react-redux";
-
+import './CreateBusinessForm.css'
+import HomePage from '../HomePage';
 
 const CreateBusinessForm = () => {
 
@@ -64,16 +65,14 @@ const CreateBusinessForm = () => {
   }
 
   return (
-
+    <>
+    <HomePage />
+    <div className="form-style">
     <form onSubmit={handleSubmit}>
-      <ul className="errors">
-        {errors.map((error) => <li key={error}>{error}</li>)}
-      </ul>
       <label>
         Name
           <input
           type="text"
-          placeholder="Name of Business"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           >
@@ -84,7 +83,6 @@ const CreateBusinessForm = () => {
         Description
           <input
           type="text"
-          placeholder="Tell us what customers love about your restaurant!"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           >
@@ -126,15 +124,9 @@ const CreateBusinessForm = () => {
         >
         </input>
       </label>
-      {/* <label>
-        Owner Id
-        <input
-        type="number"
-        value={ownerId}
-        onChange={(e) => setOwnerId(e.target.value)}
-        >
-        </input>
-      </label> */}
+      <ul className="errors">
+        {errors.map((error) => <li key={error}>{error}</li>)}
+      </ul>
       <button
         type="submit"
         disabled={errors.length>0}
@@ -142,6 +134,8 @@ const CreateBusinessForm = () => {
         Submit
       </button>
     </form>
+    </div>
+    </>
   )
 
 }
