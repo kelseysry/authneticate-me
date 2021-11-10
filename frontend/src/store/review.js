@@ -18,7 +18,7 @@ const addOneReview = (newReview) => ({
   newReview
 })
 
-// action
+// action to clear reviews so not see other reviews on a business
 export const clearReviews = () => ({
   type: CLEAR,
 
