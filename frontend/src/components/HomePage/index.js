@@ -10,7 +10,6 @@ const HomePage = () => {
     <div className="top-pi-container" style={{ backgroundImage: `url('${pictures.collection[0].imageUrl}')` }}>
 
     </div>
-    <div>Hello </div>
     </>
   )
 
