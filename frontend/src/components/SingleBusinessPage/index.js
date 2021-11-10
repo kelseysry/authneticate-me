@@ -17,6 +17,7 @@ import EditBusinessForm from '../EditBusinessForm';
 import ReviewForm from "../CreateReview";
 import './SingleBusiness.css';
 import { getReviews } from '../../store/review';
+import MapContainer from '../Maps';
 
 const SingleBusinessPage = () => {
 
@@ -143,7 +144,9 @@ console.log("average", average)
       <div className="details-reviewButton-container">
         <div>
           {content}
-
+        </div>
+        <div>
+        <MapContainer />
         </div>
           <button className="add-review-button" onClick={() => setShowReviewForm(true)}>Write a Review</button>
 
