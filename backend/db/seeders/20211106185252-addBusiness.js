@@ -24,9 +24,18 @@ module.exports = {
           imageUrl: 'https://res.cloudinary.com/mabmab/image/upload/v1636248447/khmer_food/oysterJ_ceurjg.jpg',
           lat: 11.539970,
           lng: 104.914864
-
         },
-
+        {
+          ownerId: 4,
+          title: 'Khmer Food Spark Cafe',
+          description: 'Fresh grilled seafood food on the daily. During special months, grilled honey comb is available.',
+          address: '242 Rue Pasteur No. 51',
+          city: 'Phnom Penh',
+          zipCode: '120308',
+          imageUrl: 'https://res.cloudinary.com/mabmab/image/upload/v1636267178/khmer_food/snail_f2e6nu.png',
+          lat:11.558446528422527,
+          lng: 104.92501818402742
+        },
 
     ], {});
 

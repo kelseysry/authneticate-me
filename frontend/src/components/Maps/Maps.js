@@ -9,28 +9,39 @@ const containerStyle = {
   height: '400px',
 };
 
-const center = {
-  lat: 11.540525241506499,
-  lng: 104.9152178929382
-}
+// const center = {
+//   lat: 11.540525241506499,
+//   lng: 104.9152178929382
+// }
 
 
-const position = {
-  lat: 11.540525241506499,
-  lng: 104.9152178929382
-}
+// const position = {
+//   lat: 11.540525241506499,
+//   lng: 104.9152178929382
+// }
 
 const onLoad = marker => {
   console.log('marker: ', marker)
 }
 
-
-
-const Maps = ({ apiKey }) => {
+const Maps = ({ apiKey, BusinessLat, BusinessLng }) => {
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: apiKey,
   });
+
+  const center = {
+    lat: +BusinessLat,
+    lng: +BusinessLng
+  }
+
+  console.log("MapsBusi", BusinessLat)
+
+  const position = {
+    lat: +BusinessLat,
+    lng: +BusinessLng
+  }
+
 
   return (
     <>
