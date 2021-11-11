@@ -45,7 +45,7 @@ const business = useSelector((state) => state.business[businessId]);
 
   // let res = reviews.map(x => Object.values(x)[3])
   // console.log("this is res", res)
-  const avge = (business?.Reviews.reduce((a,b) => a+b.rating, 0)) /business.Reviews.length
+  const avge = (business?.Reviews?.reduce((a,b) => a+b.rating, 0)) /business.Reviews.length
   const average = Math.round(avge)
 
   // console.log(average)
