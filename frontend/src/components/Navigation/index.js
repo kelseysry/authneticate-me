@@ -36,7 +36,7 @@ function Navigation({ isLoaded }){
         <div className="sign-log-style">
         <NavLink to="/signup">Sign Up</NavLink>
         </div>
-        <button onClick={demo}><i class="fas fa-user-secret fa-2x"></i></button>
+        <button onClick={demo}><i className="fas fa-user-secret fa-2x"></i></button>
       </div>
       </>
     );
@@ -47,7 +47,7 @@ function Navigation({ isLoaded }){
     <div className="home-explore">
       <div className="subNav">
         <div className="pad">
-        <NavLink exact to="/"><i class="fas fa-home fa-lg"></i></NavLink>
+        <NavLink exact to="/"><i className="fas fa-home fa-lg"></i></NavLink>
         </div>
         <div className="pad">
         <NavLink to="/business">Explore</NavLink>
@@ -62,7 +62,7 @@ function Navigation({ isLoaded }){
     </div>
   </nav>
   );
-  
+
   // only show sessionLink if check app has loaded
   // isLoaded runs before restoreUser runs. B/c we run our jsx before our logic.
   // want basic functionality of web to work first before user logins
