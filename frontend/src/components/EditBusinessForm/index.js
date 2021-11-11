@@ -23,6 +23,8 @@ const EditBusinessForm = ({business, hideForm}) => {
   const [zipCode, setZipCode] = useState(business.zipCode);
   const [imageUrl, setImageUrl] = useState(business.imageUrl);
   // const [ownerId, setOwnerId] = useState(business.ownerId)
+  const [lat, setLat] = useState(business.lat);
+  const [lng, setLng] = useState(business.lng);
   const [errors, setErrors] = useState([])
 
   // const history = useHistory();
@@ -48,16 +50,18 @@ const EditBusinessForm = ({business, hideForm}) => {
     } else if (!isURL(imageUrl)) {
       validationErrors.push("Please provide a valid link for the image")
     }
+    if(!lat) validationErrors.push("latitude of business is required")
+    if(!lng) validationErrors.push("longitude of business is required")
 
     setErrors(validationErrors)
 
-  },[title,address,city,zipCode,imageUrl, description])
+  },[title,address,city,zipCode,imageUrl, description,lat,lng])
 
   const handleSubmit = async(e) => {
     e.preventDefault();
 
     const userInputUpdateBusiness = {
-      title, description, address, city, zipCode, imageUrl, ownerId
+      title, description, address, city, zipCode, imageUrl, ownerId, lat,lng
     }
 
     console.log("this is userInput", userInputUpdateBusiness)
@@ -139,6 +143,27 @@ const EditBusinessForm = ({business, hideForm}) => {
         >
         </input>
       </label>
+
+      <label>
+        Latitude of Restaurant Location
+        <input
+        type="text"
+        value={lat}
+        onChange={(e) => setLat(e.target.value)}
+        >
+        </input>
+      </label>
+
+      <label>
+        Longitude of Restaurant Location
+        <input
+        type="text"
+        value={lng}
+        onChange={(e) => setLng(e.target.value)}
+        >
+        </input>
+      </label>
+
       <ul className="errors">
         {errors.map((error) => <li key={error}>{error}</li>)}
       </ul>

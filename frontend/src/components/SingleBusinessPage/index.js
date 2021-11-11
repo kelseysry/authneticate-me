@@ -103,6 +103,9 @@ const SingleBusinessPage = () => {
           </li>
         </ul>
         </div>
+        <div>
+          <MapContainer BusinessLat={business.lat} BusinessLng={business.lng}/>
+        </div>
       </div>
 
     )
@@ -124,7 +127,7 @@ const SingleBusinessPage = () => {
     history.push("/")
   }
 
-  console.log("business.latt", business.lat)
+  // console.log("business.latt", business.lat)
 
 
   return (
@@ -148,11 +151,7 @@ const SingleBusinessPage = () => {
         <div>
           {content}
         </div>
-        <div>
-        <MapContainer BusinessLat={business.lat} BusinessLng={business.lng}/>
-        </div>
           <button className="add-review-button" onClick={() => setShowReviewForm(true)}>Write a Review</button>
-
         <div>
           {reviewContent}
           <BusinessReviews reviews={reviews} business={business}/>
