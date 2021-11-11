@@ -1,18 +1,29 @@
-.top-pi-container {
+.top-pie-container {
   box-sizing: border-box;
   display: flex;
   padding: 40px 64px;
   margin: 0 auto;
   border: 0px;
   height: 50vh;
-  align-content: flex-start;
-  justify-content: flex-end;
-  flex-wrap: wrap;
-  flex-direction: column;
+
+  flex-direction: row;
 
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   outline: none;
+  background-color: rgb(211, 211, 211);
+  background-blend-mode: multiply;
 
+
+}
+
+.explore {
+  color: #fff;
+  font-size: 10vw;
+  font-weight: 700;
+  letter-spacing: -7px;
+  font-family: 'Poppins', sans-serif;
+  height: auto;
+  margin: 0 auto;
 }
