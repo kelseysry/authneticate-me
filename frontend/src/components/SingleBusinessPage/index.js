@@ -151,7 +151,7 @@ const SingleBusinessPage = () => {
             <div>
               {content}
             </div>
-          <button className="add-review-button" onClick={() => setShowReviewForm(true)}>Write a Review</button>
+          <button className="add-review-button" onClick={() => setShowReviewForm(true)}> <i className="fas fa-star"></i>  Write a Review</button>
         <div>
           {reviewContent}
           <BusinessReviews reviews={reviews} business={business}/>
