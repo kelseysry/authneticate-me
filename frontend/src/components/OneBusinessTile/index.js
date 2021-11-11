@@ -38,7 +38,7 @@ const business = useSelector((state) => state.business[businessId]);
           business.Reviews.length?
           <div className="rating">
 
-        {business.Reviews.length && average && Array(average).fill(<i className="fas fa-star"></i>).map((ele, idx) => <span key={idx}>{ele}</span> )}
+        {business.Reviews.length && average && Array(average).fill(<i className="fas fa-star"></i>).map((ele, idx) => <span key={idx}>{ele}</span>)}
         </div>
         : null
         }
