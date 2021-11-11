@@ -15,6 +15,8 @@ const CreateBusinessForm = () => {
   const [city, setCity] = useState('');
   const [zipCode, setZipCode] = useState('');
   const [imageUrl, setImageUrl] = useState('');
+  const [lat, setLat] = useState('');
+  const [lng, setLng] = useState('');
   // const [ownerId, setOwnerId] = useState('')
   const [errors, setErrors] = useState([])
   const history = useHistory();
@@ -39,17 +41,19 @@ const CreateBusinessForm = () => {
     } else if (!isURL(imageUrl)) {
       validationErrors.push("Please provide a valid link for the image")
     }
+    if(!lat) validationErrors.push("latitude of business is required")
+    if(!lng) validationErrors.push("longitude of business is required")
 
 
 
     setErrors(validationErrors)
-  },[title,address,city,zipCode,imageUrl])
+  },[title,address,city,zipCode,imageUrl, lat, lng])
 
   const handleSubmit = async(e) => {
     e.preventDefault();
 
     const newBusiness = {
-      title, description, address, city, zipCode, imageUrl, ownerId
+      title, description, address, city, zipCode, imageUrl, ownerId, lat, lng
     }
     // console.log("newBusiness in component", newBusiness)
 
@@ -121,6 +125,26 @@ const CreateBusinessForm = () => {
         type="text"
         value={imageUrl}
         onChange={(e) => setImageUrl(e.target.value)}
+        >
+        </input>
+      </label>
+
+      <label>
+        Latitude of Restaurant Location
+        <input
+        type="text"
+        value={lat}
+        onChange={(e) => setLat(e.target.value)}
+        >
+        </input>
+      </label>
+
+      <label>
+        Longitude of Restaurant Location
+        <input
+        type="text"
+        value={lng}
+        onChange={(e) => setLng(e.target.value)}
         >
         </input>
       </label>

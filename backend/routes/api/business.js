@@ -54,6 +54,8 @@ router.put('/:businessId(\\d+)', requireAuth, asyncHandler(async (req, res, next
     business.city = req.body.city || business.city;
     business.zipCode = req.body.zipCode || business.zipCode;
     business.imageUrl = req.body.imageUrl || business.imageUrl;
+    business.lat = req.body.lat || business.lat;
+    business.lng = req.body.lng || business.lng; 
 
     await business.save();
     console.log("api route, res.json(business)", business) // business is saving properly
