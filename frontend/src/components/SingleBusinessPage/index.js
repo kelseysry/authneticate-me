@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'; // side effects
 
 import { useDispatch, useSelector } from 'react-redux';
+import { Redirect } from 'react-router-dom';
+
 //dispatch  - send request to redux store.
 // useSelector - grab info loaded into the store
 // import {useParams, Redirect } from 'react-router-dom';
@@ -19,9 +21,11 @@ import './SingleBusiness.css';
 import { getReviews } from '../../store/review';
 import MapContainer from '../Maps';
 
+
 const SingleBusinessPage = () => {
 
-  const { businessId } = useParams();
+    const { businessId } = useParams();
+    const sessionUser = useSelector(state => state.session.user); // first argument always state -> session from index.js in store, .user is from initial state in reducer for sessionReducer
   const business = useSelector((state) => state.business[businessId]);
 
   const [showEditBusinessForm, setShowEditBusinessForm] = useState(false)
@@ -64,6 +68,14 @@ const SingleBusinessPage = () => {
   if (!business) {
     return null;
   }
+
+  console.log("singleBUsiness",sessionUser)
+
+  // if (!sessionUser) return <Redirect to="/" />;
+  // if(!sessionUser) {
+  //   history.push("/")
+  // }
+
 
   // array of all the reviews associated with the business
   // console.log("business singleBusinessPage", reviews)

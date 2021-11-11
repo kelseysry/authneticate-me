@@ -29,9 +29,15 @@ function Navigation({ isLoaded }){
   } else {
     sessionLinks = (
       <>
+      <div className="sign-up-login-container">
+        <div className="sign-log-style">
         <NavLink to="/login">Log In</NavLink>
+        </div>
+        <div className="sign-log-style">
         <NavLink to="/signup">Sign Up</NavLink>
-        <button onClick={demo}>Demo</button>
+        </div>
+        <button onClick={demo}><i class="fas fa-user-secret fa-2x"></i></button>
+      </div>
       </>
     );
   }
@@ -41,7 +47,7 @@ function Navigation({ isLoaded }){
     <div className="home-explore">
       <div className="subNav">
         <div className="pad">
-        <NavLink exact to="/">Home</NavLink>
+        <NavLink exact to="/"><i class="fas fa-home fa-lg"></i></NavLink>
         </div>
         <div className="pad">
         <NavLink to="/business">Explore</NavLink>
