@@ -1,6 +1,5 @@
 import pictures from '../../data/pictures'
 import './HomePage.css'
-import MapContainer from '../Maps'
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllBusinesses } from '../../store/business';
 import {useEffect } from 'react';
@@ -34,9 +33,8 @@ const HomePage = () => {
     // <img src ={pictures.collection[0].imageUrl} alt={"hiii"}/>
     <>
     <div className="top-pi-container" style={{ backgroundImage: `url('${pictures.collection[0].imageUrl}')` }}>
-
+    <div className="explore">Explore</div>
     </div>
-    <MapContainer />
     </>
   )
 
