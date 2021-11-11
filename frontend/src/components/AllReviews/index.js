@@ -25,7 +25,7 @@ const BusinessReviews = ({business}) => {
   console.log("reviews in allReview Component", reviews)
 
   return (
-  <>
+
    <div>
     {reviews.map((review) =>
       <div className="review-container" key={review.id}>
@@ -42,7 +42,7 @@ const BusinessReviews = ({business}) => {
             </div>
             <div className="rating-profile">
               <b>Rating</b> {review.rating}
-              {Array(review.rating).fill(<i className="fas fa-star"></i>)}
+              {Array(review.rating).fill(<i className="fas fa-star"></i>).map((ele, idx) => <span key={idx}>{ele}</span>)}
             </div>
               <div className="review-container">
               {review.answer}
@@ -55,7 +55,7 @@ const BusinessReviews = ({business}) => {
       </div>
     )}
   </div>
-    </>
+
   )
 
    }
