@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import './Navigation.css';
 import { Link } from "react-router-dom";
+import './Navigation.css'
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
@@ -48,7 +49,7 @@ function ProfileButton({ user }) {
           <li>{user.email}</li>
           <li>
             <Link to="/">
-              <button onClick={logout}>Log Out</button>
+              <button onClick={logout}><i class="fas fa-power-off fa-2x"></i></button>
             </Link>
           </li>
         </ul>

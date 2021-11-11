@@ -55,44 +55,14 @@ function Navigation({ isLoaded }){
         <div className="pad">
         <NavLink to="/createBusiness">Add Restaurant</NavLink>
         </div>
-      {/* <ul>
-        <li>
-        <NavLink exact to="/">Home</NavLink>
-        </li>
-        <li>
-        <NavLink to="/business">Explore</NavLink>
-        </li>
-        <li>
-        <NavLink to="/createBusiness">Add Restaurant</NavLink>
-        </li>
-      </ul> */}
       </div>
       <div>
       {isLoaded && sessionLinks}
       </div>
     </div>
   </nav>
-
-
-
-
-  // <nav>
-  //   <div className="home-explore">
-  //     <div className="home">
-  //     <NavLink activeClassName='red' exact to="/">Home</NavLink>
-  //     </div>
-  //     <div>
-  //     <NavLink to="/business">Explore</NavLink>
-  //     </div>
-  //     <div>
-  //     <NavLink to="/createBusiness">Add Restaurant</NavLink>
-  //     </div>
-  //   </div>
-  //   <div>
-  //     {isLoaded && sessionLinks}
-  //   </div>
-  // </nav>
   );
+  
   // only show sessionLink if check app has loaded
   // isLoaded runs before restoreUser runs. B/c we run our jsx before our logic.
   // want basic functionality of web to work first before user logins
