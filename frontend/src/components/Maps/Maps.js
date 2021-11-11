@@ -65,14 +65,3 @@ const Maps = ({ apiKey, BusinessLat, BusinessLng }) => {
 };
 
 export default React.memo(Maps);
-
-
-
-
-
-
-{/* <GoogleMap
-mapContainerStyle={containerStyle}
-center={center}
-zoom={4}
-/> */}

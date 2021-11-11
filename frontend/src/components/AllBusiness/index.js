@@ -24,8 +24,8 @@ const AllBusiness = () => {
   const businesses = Object.values(businessObj)
   // console.log("this is from components", businesses)
 
-  const reviewsObj = useSelector((state) => state.review)
-  const reviews = Object.values(reviewsObj)
+  // const reviewsObj = useSelector((state) => state.review)
+  // const reviews = Object.values(reviewsObj)
   // console.log("reviewsAllBusiness", reviews)
 
 
@@ -37,10 +37,10 @@ const AllBusiness = () => {
   }, [dispatch])
 
 
-  let res = reviews.map(x => Object.values(x)[3])
-  // console.log("this is res", res)
-  const avge = (res.reduce((a,b) => a+b, 0)) /res.length
-  const average = Math.round(avge)
+  // let res = reviews.map(x => Object.values(x)[3])
+  // // console.log("this is res", res)
+  // const avge = (res.reduce((a,b) => a+b, 0)) /res.length
+  // const average = Math.round(avge)
 
 
   // console.log("averageAllBusiness", average)
@@ -55,12 +55,7 @@ const AllBusiness = () => {
       <div className="business-image-container">
           {businesses.map((business) =>
           <div className="one-image-container" key={business.id}>
-
-<NavLink to={`/business/${business.id}`}><OneBusinessTile businessId={business.id}/></NavLink>
-
-
-
-
+          <NavLink to={`/business/${business.id}`}><OneBusinessTile businessId={business.id}/></NavLink>
           </div>
           )}
       </div>
