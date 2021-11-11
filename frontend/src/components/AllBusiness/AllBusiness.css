@@ -1,33 +1,41 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 
-
-.top-business-container {
+.top-banner-pic-all-business {
   width:100%;
   box-sizing: border-box;
   display: flex;
   padding: 40px 64px;
   margin: 0 auto;
   border: 0px;
-  height: 100vh;
+  height: 50vh;
   background-size: cover;
   background-position-y: 90%;
   background-repeat: no-repeat;
   outline: none;
   align-items: center;
   box-shadow:inset 0 0 0 2000px rgba(27, 26, 27, 0.3);
-
 }
 
-.business-image-container{
-  box-sizing: border-box;
-  display:grid;
+*{
+  margin:0;
+  padding: 0;
+}
+
+
+
+.one-business-image-container{
+
+  display: grid;
+  justify-content: center;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap:10px;
-  justify-items: center;
-  padding-top: 30px;
+  grid-gap: 10px;
 
 
 }
+/*
+
+
+
 
 .each-image {
   width: 200px
@@ -52,4 +60,4 @@
   height: auto;
   margin: 0 auto;
   position: relative;
-}
+} */
