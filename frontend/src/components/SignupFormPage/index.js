@@ -3,8 +3,10 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
-import PicBanner from "../PicBanner";
+// import PicBanner from "../PicBanner";
 import './SignUpForm.css';
+import pictures from '../../data/pictures'
+
 
 function SignupFormPage() {
   const dispatch = useDispatch();
@@ -33,8 +35,11 @@ function SignupFormPage() {
 
   return (
     <>
-    <PicBanner photoId={4}/>
-    <h2 className="signUp">Sign Up</h2>
+    {/* <PicBanner photoId={4}/> */}
+    <div className="signup-pic-container" style={{ backgroundImage: `url('${pictures.collection[4].imageUrl}')` }}>
+      <div className="explore">Sign Up</div>
+    </div>
+    {/* <h2 className="signUp">Sign Up</h2> */}
     <form className="signup-form-style" onSubmit={handleSubmit}>
       <ul>
         {errors.map((error, idx) => <li key={idx}>{error}</li>)}
