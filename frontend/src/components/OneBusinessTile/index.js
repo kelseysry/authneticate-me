@@ -15,6 +15,7 @@ const business = useSelector((state) => state.business[businessId]);
     dispatch(getOneBusiness(businessId));
   }, [dispatch, businessId]);
 
+
   if (!business) {
     return null;
   }
