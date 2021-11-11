@@ -24,33 +24,33 @@ const BusinessReviews = ({business}) => {
   return (
   <>
    <div>
-    {reviews.map((review) => (
-      <div key={review.id} className="review-container">
-      <ul>
-        <li>
-          <div className="profile">
-            <span className="icon">
-            {/* <i className="far fa-user-circle"></i> */}
-            <i className="fas fa-user-ninja"></i>
-            </span>
-            <span className="">
-            {review.User.username}
-            </span>
-          </div>
-          <div className="rating-profile">
-            <b>Rating</b> {review.rating}
-            {Array(review.rating).fill(<i className="fas fa-star"></i>)}
-          </div>
-            <div className="review-container">
-            {review.answer}
+    {reviews.map((review) =>
+      <div className="review-container" key={review.id}>
+        <ul>
+          <li>
+            <div className="profile">
+              <span className="icon">
+              {/* <i className="far fa-user-circle"></i> */}
+              <i className="fas fa-user-ninja"></i>
+              </span>
+              <span className="">
+              {review.User.username}
+              </span>
             </div>
-            <div className="image-container">
-              <img className="reviewImage" src ={review.imageUrl} alt={review.imageUrl}/>
+            <div className="rating-profile">
+              <b>Rating</b> {review.rating}
+              {Array(review.rating).fill(<i className="fas fa-star"></i>)}
             </div>
-        </li>
-      </ul>
+              <div className="review-container">
+              {review.answer}
+              </div>
+              <div className="image-container">
+                <img className="reviewImage" src ={review.imageUrl} alt={review.imageUrl}/>
+              </div>
+          </li>
+        </ul>
       </div>
-    ))}
+    )}
   </div>
     </>
   )
