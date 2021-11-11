@@ -65,13 +65,13 @@ const SingleBusinessPage = () => {
   // console.log("business singleBusinessPage", reviews)
 
   let res = reviews.map(x => Object.values(x)[3])
-  console.log("this is res", res)
+  // console.log("this is res", res)
   const avge = (res.reduce((a,b) => a+b, 0)) /res.length
   const average = Math.round(avge)
 
-  console.log(average)
+  // console.log(average)
 
-console.log("average", average)
+// console.log("average", average)
 
   let content = null;
   let reviewContent = null;
@@ -124,6 +124,9 @@ console.log("average", average)
     history.push("/")
   }
 
+  console.log("business.latt", business.lat)
+
+
   return (
     <>
       <div className="top-pic-container" style={{ backgroundImage: `url('${business?.imageUrl}')` }}>
@@ -146,7 +149,7 @@ console.log("average", average)
           {content}
         </div>
         <div>
-        <MapContainer />
+        <MapContainer BusinessLat={business.lat} BusinessLng={business.lng}/>
         </div>
           <button className="add-review-button" onClick={() => setShowReviewForm(true)}>Write a Review</button>
 
