@@ -4,10 +4,13 @@ import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import './Navigation.css';
 import { Link } from "react-router-dom";
-import './Navigation.css'
+import { useHistory } from 'react-router';
+
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
+  const history = useHistory();
+
   const [showMenu, setShowMenu] = useState(false);
   // false = menu is hidden
 
@@ -31,10 +34,18 @@ function ProfileButton({ user }) {
     return () => document.removeEventListener("click", closeMenu);
   }, [showMenu]);
 
-  const logout = (e) => {
+
+  async function logout (e) {
+
     e.preventDefault();
-    dispatch(sessionActions.logout());
-  };
+
+       await dispatch(sessionActions.logout());
+
+        history.push("/login")
+  }
+
+
+
 
   return (
     <>
@@ -48,9 +59,7 @@ function ProfileButton({ user }) {
           <li>{user.username}</li>
           <li>{user.email}</li>
           <li>
-            <Link to="/">
               <button onClick={logout}><i class="fas fa-power-off fa-2x"></i></button>
-            </Link>
           </li>
         </ul>
       )}

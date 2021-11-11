@@ -11,8 +11,9 @@ import CreateBusinessForm from "./components/CreateBusiness";
 import EditBusinessForm from "./components/EditBusinessForm";
 // import OneBusinessTile from "./components/OneBusinessTile";
 
+
+
 import { useSelector } from "react-redux";
-import { Redirect } from 'react-router-dom';
 
 
 import HomePage from "./components/HomePage";
@@ -22,6 +23,7 @@ import pictures from '../src/data/pictures'
 import MapContainer from "./components/Maps/index.js";
 
 function App() {
+
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -37,10 +39,6 @@ function App() {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
 
-
-  // if (!sessionUser) return (
-  //   <Redirect to="/"/>
-  // )
 
 
 
@@ -84,7 +82,6 @@ function App() {
             <MapContainer />
           </Route>
           <Route>
-          {/* <HomePage pictures={pictures}/> */}
             Page Not Found
           </Route>
         </Switch>

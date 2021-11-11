@@ -22,6 +22,7 @@ import { getReviews } from '../../store/review';
 import MapContainer from '../Maps';
 
 
+
 const SingleBusinessPage = () => {
 
     const { businessId } = useParams();
@@ -72,6 +73,8 @@ const SingleBusinessPage = () => {
   console.log("singleBUsiness",sessionUser)
 
   // if (!sessionUser) return <Redirect to="/" />;
+
+
   // if(!sessionUser) {
   //   history.push("/")
   // }
