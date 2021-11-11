@@ -82,32 +82,30 @@ const SingleBusinessPage = () => {
     )
   } else {
     content = (
+      <>
       <div className="details-container">
-        <div>
-        <h2 className="header-details">Details</h2>
-        <ul>
-          <li className="header-details">
-            <b>Owner</b> {business.User?.username}
-          </li>
-          <li className>
-            <b>Description</b> {business.description}
-          </li>
-          <li>
-            <b>Address</b> {business.address}
-          </li>
-          <li>
-            <b>City</b> {business.city}
-          </li>
-          <li>
-            <b>zipCode</b> {business.zipCode}
-          </li>
-        </ul>
-        </div>
-        <div>
-          <MapContainer BusinessLat={business.lat} BusinessLng={business.lng}/>
+        <div className ="details-container-text">
+          <h1 className="header-details">Details</h1>
+          <ul>
+            <li className="header-details">
+              <b>Owner</b> {business.User?.username}
+            </li>
+            <li>
+              <b>Description</b> {business.description}
+            </li>
+            <li>
+              <b>Address</b> {business.address}
+            </li>
+            <li>
+              <b>City</b> {business.city}
+            </li>
+            <li>
+              <b>zipCode</b> {business.zipCode}
+            </li>
+          </ul>
         </div>
       </div>
-
+      </>
     )
   }
 
@@ -147,15 +145,24 @@ const SingleBusinessPage = () => {
         <button className="edit-business-title" onClick={() => handleDelete(businessId)}>Delete Business</button>
         </div>
       </div>
+
       <div className="details-reviewButton-container">
-        <div>
-          {content}
-        </div>
+        <div className="details">
+            <div>
+              {content}
+            </div>
           <button className="add-review-button" onClick={() => setShowReviewForm(true)}>Write a Review</button>
         <div>
           {reviewContent}
           <BusinessReviews reviews={reviews} business={business}/>
         </div>
+        </div>
+
+        <div className="map">
+            <MapContainer BusinessLat={business.lat} BusinessLng={business.lng}/>
+        </div>
+
+
       </div>
 
   </>

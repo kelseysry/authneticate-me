@@ -5,8 +5,8 @@ import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 import { Marker } from '@react-google-maps/api';
 
 const containerStyle = {
-  width: '400px',
-  height: '400px',
+  width: '800px',
+  height: '600px',
 };
 
 // const center = {
@@ -49,7 +49,7 @@ const Maps = ({ apiKey, BusinessLat, BusinessLng }) => {
         <GoogleMap
       id="marker-example"
       mapContainerStyle={containerStyle}
-      zoom={15}
+      zoom={16}
       center={center}
       >
       <Marker
