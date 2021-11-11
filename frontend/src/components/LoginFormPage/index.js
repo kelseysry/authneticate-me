@@ -22,9 +22,9 @@ function LoginFormPage() {
     <Redirect to="/"/>
   )
 
-  if (!sessionUser) return (
-    <Redirect to="/login"/>
-  )
+  // if (!sessionUser) return (
+  //   <Redirect to="/login"/>
+  // )
 
 
   const handleSubmit = (e) => {

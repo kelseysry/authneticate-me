@@ -12,6 +12,8 @@ import EditBusinessForm from "./components/EditBusinessForm";
 // import OneBusinessTile from "./components/OneBusinessTile";
 
 import { useSelector } from "react-redux";
+import { Redirect } from 'react-router-dom';
+
 
 import HomePage from "./components/HomePage";
 import pictures from '../src/data/pictures'
@@ -28,13 +30,19 @@ function App() {
 
   console.log("sessionUser in app", sessionUser)
 
-
   // isLoaded - don't want to render routes unless user logged in
 
   // use restore user thunk action after App component's first render
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
+
+
+  // if (!sessionUser) return (
+  //   <Redirect to="/"/>
+  // )
+
+
 
   return (
     <>
@@ -62,9 +70,11 @@ function App() {
             <AllBusiness />
           </Route>
           }
+          {sessionUser &&
           <Route path='/createBusiness'>
             <CreateBusinessForm />
           </Route>
+          }
           <Route path='/EditBusiness'>
             <EditBusinessForm />
           </Route>

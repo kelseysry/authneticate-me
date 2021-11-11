@@ -49,3 +49,25 @@ nav {
   color:#2699FB;
   font-family: 'Poppins', sans-serif;
 }
+
+.sign-log-style a {
+  text-decoration: none;
+  color: #2699FB;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+
+}
+
+.sign-log-style {
+  padding: 30px 30px;
+
+}
+
+.sign-up-login-container{
+  display: flex;
+  align-items: center;
+}
+
+.fa-user-secret {
+  color: #2699FB;
+}
