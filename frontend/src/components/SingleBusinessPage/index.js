@@ -45,16 +45,16 @@ const SingleBusinessPage = () => {
 // Show Business Form
   useEffect(() => {
     setShowEditBusinessForm(false)
-  },[dispatch, businessId])
+  },[businessId])
 
   //trying to hide review form
   useEffect(() => {
     setShowReviewForm(false)
-  },[dispatch,businessId])
+  },[businessId])
 
   useEffect(()=> {
     dispatch(getReviews(businessId))
-  }, [dispatch,businessId])
+  }, [businessId])
 
 
   if(!reviews) {
@@ -140,8 +140,7 @@ const SingleBusinessPage = () => {
         </div>
         { reviews.length?
             <div className="rating">
-              {/* {reviews.length && average && Array(average).fill(<i className="fas fa-star"></i>)} */}
-              {reviews.length && average && Array(average).fill(<i className="fas fa-star"></i>).map((ele, idx) => <span key={idx}></span>)}
+              {reviews.length && average && Array(average).fill(<i className="fas fa-star"></i>)}
             </div>
           : null
         }
