@@ -25,6 +25,7 @@ const SingleBusinessPage = () => {
   const business = useSelector((state) => state.business[businessId]);
 
   const [showEditBusinessForm, setShowEditBusinessForm] = useState(false)
+
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -32,6 +33,9 @@ const SingleBusinessPage = () => {
   console.log("reviewObj", reviewsObj)
   const reviews = Object.values(reviewsObj)
   const [showReviewForm, setShowReviewForm] = useState(false)
+
+  const [hideReviewButton, setHideReviewButton] = useState(false)
+
 
 // getOneBusiness
   useEffect(() => {
@@ -151,7 +155,12 @@ const SingleBusinessPage = () => {
             <div>
               {content}
             </div>
-          <button className="add-review-button" onClick={() => setShowReviewForm(true)}>Write a Review</button>
+              {!hideReviewButton && <button className="add-review-button"
+               onClick={() => setHideReviewButton(true)}
+               onClick={() => setShowReviewForm(true)}>
+               <i className="fas fa-star"></i>  Write a Review</button>
+               }
+
         <div>
           {reviewContent}
           <BusinessReviews reviews={reviews} business={business}/>

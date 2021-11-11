@@ -29,13 +29,15 @@
   color: #fff;
   font-size: 4.5vw;
   font-weight: 700;
-  letter-spacing: 0px;
-  line-height:55px;
-  word-break: break-word !important;
+  /* letter-spacing: 0px; */
+  /* line-height:55px; */
+  /* word-break: break-word !important; */
   overflow-wrap: break-word !important;
-  display: inline;
+  /* display: inline; */
   font-family: 'Poppins', sans-serif;
-  padding: 50px 15px;
+  line-height: 0.82em;
+
+  /* padding: 50px 15px; */
 }
 
 .rating {
