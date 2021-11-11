@@ -45,16 +45,16 @@ const SingleBusinessPage = () => {
 // Show Business Form
   useEffect(() => {
     setShowEditBusinessForm(false)
-  },[businessId])
+  },[dispatch,businessId])
 
   //trying to hide review form
   useEffect(() => {
     setShowReviewForm(false)
-  },[businessId])
+  },[dispatch,businessId])
 
   useEffect(()=> {
     dispatch(getReviews(businessId))
-  }, [businessId])
+  }, [dispatch,businessId])
 
 
   if(!reviews) {
