@@ -30,19 +30,17 @@ const business = useSelector((state) => state.business[businessId]);
 
   return (
     <>
-      <div className="top-pic-container" style={{ backgroundImage: `url('${business?.imageUrl}')` }}>
-        <div className="invid-business-title">
-          {business.title}
+      <div className="each-pic-container" style={{ backgroundImage: `url('${business?.imageUrl}')` }}>
+        <div className="each-tile-title">
+        {business.title}
         </div>
         {
-          business.Reviews.length?
-          <div className="rating">
-
+        business.Reviews.length?
+        <div className="rating">
         {business.Reviews.length && average && Array(average).fill(<i className="fas fa-star"></i>).map((ele, idx) => <span key={idx}>{ele}</span>)}
         </div>
         : null
         }
-
       </div>
     </>
   )

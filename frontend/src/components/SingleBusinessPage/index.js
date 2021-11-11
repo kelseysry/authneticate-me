@@ -148,7 +148,7 @@ const SingleBusinessPage = () => {
 
   return (
     <>
-      <div className="top-pic-container" style={{ backgroundImage: `url('${business?.imageUrl}')` }}>
+      <div className="single-top-pic-container" style={{ backgroundImage: `url('${business?.imageUrl}')` }}>
         <div className="business-title">
           {business.title}
         </div>
@@ -170,8 +170,10 @@ const SingleBusinessPage = () => {
               {content}
             </div>
               {!hideReviewButton && <button className="add-review-button"
-               onClick={() => setHideReviewButton(true)}
-               onClick={() => setShowReviewForm(true)}>
+              //  onClick={() => setHideReviewButton(true)}
+               onClick={() => {setShowReviewForm(true);  setHideReviewButton(true)
+
+               }}>
                <i className="fas fa-star"></i>  Write a Review</button>
                }
 

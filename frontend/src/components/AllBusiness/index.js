@@ -37,22 +37,12 @@ const AllBusiness = () => {
   }, [dispatch])
 
 
-  // let res = reviews.map(x => Object.values(x)[3])
-  // // console.log("this is res", res)
-  // const avge = (res.reduce((a,b) => a+b, 0)) /res.length
-  // const average = Math.round(avge)
-
-
-  // console.log("averageAllBusiness", average)
-
-  // console.log("businessesAllBu", businesses)
-
   return (
     <>
-      <div className="top-business-container" style={{ backgroundImage: `url('${pictures.collection[2].imageUrl}')` }}>
+      <div className="top-banner-pic-all-business" style={{ backgroundImage: `url('${pictures.collection[2].imageUrl}')` }}>
         <div className="explore">Explore</div>
       </div>
-      <div className="business-image-container">
+      <div className="one-business-image-container">
           {businesses.map((business) =>
           <div className="one-image-container" key={business.id}>
           <NavLink to={`/business/${business.id}`}><OneBusinessTile businessId={business.id}/></NavLink>
