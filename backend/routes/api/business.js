@@ -21,6 +21,7 @@ router.get('/', asyncHandler(async (req, res) => {
 
 }));
 
+
 router.get('/:businessId(\\d+)', asyncHandler(async (req, res) => {
   const business = await Business.findByPk(req.params.businessId, {
     include: [User, Review]
