@@ -140,7 +140,7 @@ const SingleBusinessPage = () => {
         </div>
         { reviews.length?
             <div className="rating">
-              {reviews.length && average && Array(average).fill(<i className="fas fa-star"></i>)}
+              {reviews.length && average && Array(average).fill(<i className="fas fa-star"></i>).map((ele, idx) => <span key={idx}>{ele}</span> )}
             </div>
           : null
         }
