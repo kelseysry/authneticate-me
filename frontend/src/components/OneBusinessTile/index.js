@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react'; // side effects
 
 import { getOneBusiness } from "../../store/business"
-import { getReviews } from "../../store/review";
+// import { getReviews } from "../../store/review";
 
 
 import './OneBusinessTile.css';
