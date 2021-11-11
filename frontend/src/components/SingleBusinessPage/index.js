@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'; // side effects
 
 import { useDispatch, useSelector } from 'react-redux';
-import { Redirect } from 'react-router-dom';
 
 //dispatch  - send request to redux store.
 // useSelector - grab info loaded into the store

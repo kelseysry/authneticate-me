@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import './Navigation.css';
-import { Link } from "react-router-dom";
 import { useHistory } from 'react-router';
 
 
@@ -59,7 +58,7 @@ function ProfileButton({ user }) {
           <li>{user.username}</li>
           <li>{user.email}</li>
           <li>
-              <button onClick={logout}><i class="fas fa-power-off fa-2x"></i></button>
+              <button onClick={logout}><i className="fas fa-power-off fa-2x"></i></button>
           </li>
         </ul>
       )}
