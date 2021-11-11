@@ -32,8 +32,8 @@ const HomePage = () => {
   return (
     // <img src ={pictures.collection[0].imageUrl} alt={"hiii"}/>
     <>
-    <div className="top-pi-container" style={{ backgroundImage: `url('${pictures.collection[0].imageUrl}')` }}>
-    <div className="explore">Explore</div>
+    <div className="top-pie-container" style={{ backgroundImage: `url('${pictures.collection[0].imageUrl}')` }}>
+    <div className="explore">Mab Mab</div>
     </div>
     </>
   )
