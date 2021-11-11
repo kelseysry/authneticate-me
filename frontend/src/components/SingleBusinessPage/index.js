@@ -68,7 +68,7 @@ const SingleBusinessPage = () => {
   // array of all the reviews associated with the business
   // console.log("business singleBusinessPage", reviews)
 
-  let res = reviews.map(x => Object.values(x)[3])
+  let res = reviews.map(review => Object.values(review)[3])
   // console.log("this is res", res)
   const avge = (res.reduce((a,b) => a+b, 0)) /res.length
   const average = Math.round(avge)
