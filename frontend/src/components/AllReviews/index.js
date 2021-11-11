@@ -13,7 +13,9 @@ const BusinessReviews = ({business}) => {
   const dispatch = useDispatch();
   const reviewsObj = useSelector((state) => state.review)
 
-  const reviews = Object.values(reviewsObj)
+
+
+  const reviews = Object.values(reviewsObj).filter(review => review.businessId === business.id)
   console.log("review components", reviews)
 
   useEffect(() => {
