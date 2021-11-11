@@ -21,6 +21,10 @@ const pictures = {
     {
       "imageNumbers":"5",
       "imageUrl": "https://res.cloudinary.com/mabmab/image/upload/v1636655089/khmer_food/near_unesco_part3_aqmdww.png"
+    },
+    {
+      "imageNumbers":"6",
+      "imageUrl": "https://res.cloudinary.com/mabmab/image/upload/v1636662981/khmer_food/malis_aaldjb.png"
     }
 
 
