@@ -6,6 +6,7 @@ import { getReviews } from "../../store/review";
 // import ReviewForm from "../CreateReview";
 import './AllReviews.css';
 
+// weird bug
 
 const BusinessReviews = ({business}) => {
 
