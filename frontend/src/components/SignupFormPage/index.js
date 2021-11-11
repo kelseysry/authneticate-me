@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
+import PicBanner from "../PicBanner";
 import './SignUpForm.css';
 
 function SignupFormPage() {
@@ -32,8 +33,9 @@ function SignupFormPage() {
 
   return (
     <>
+    <PicBanner photoId={4}/>
     <h2 className="signUp">Sign Up</h2>
-    <form onSubmit={handleSubmit}>
+    <form className="signup-form-style" onSubmit={handleSubmit}>
       <ul>
         {errors.map((error, idx) => <li key={idx}>{error}</li>)}
       </ul>

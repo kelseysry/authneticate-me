@@ -71,7 +71,7 @@ const CreateBusinessForm = () => {
 
   return (
     <>
-    <PicBanner />
+    <PicBanner photoId={3} />
     <div className="form-style">
     <form onSubmit={handleSubmit}>
       <label>

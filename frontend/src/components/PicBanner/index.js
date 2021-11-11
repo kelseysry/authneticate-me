@@ -5,7 +5,7 @@ import { getAllBusinesses } from '../../store/business';
 import {useEffect } from 'react';
 
 
-const PicBanner = () => {
+const PicBanner = ({photoId}) => {
   const dispatch = useDispatch();
 
   const businessObj = useSelector((state) => state.business);
@@ -21,7 +21,7 @@ const PicBanner = () => {
   return (
     // <img src ={pictures.collection[0].imageUrl} alt={"hiii"}/>
     <>
-    <div className="top-pi-container" style={{ backgroundImage: `url('${pictures.collection[3].imageUrl}')` }}>
+    <div className="top-pi-container" style={{ backgroundImage: `url('${pictures.collection[photoId].imageUrl}')` }}>
 
     </div>
     </>
