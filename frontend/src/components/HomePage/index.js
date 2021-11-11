@@ -24,9 +24,15 @@ const HomePage = () => {
     // <img src ={pictures.collection[0].imageUrl} alt={"hiii"}/>
     <>
     <div className="top-pie-container" style={{ backgroundImage: `url('${pictures.collection[0].imageUrl}')` }}>
-    <div className="explore">Mab Mab</div>
-    <OneBusinessTile />
+      <div className="explore">Mab Mab</div>
     </div>
+    <div className="business-tiles-container">
+      <OneBusinessTile businessId={1}/>
+      <OneBusinessTile businessId={2}/>
+      <OneBusinessTile businessId={3}/>
+    </div>
+
+
     </>
   )
 

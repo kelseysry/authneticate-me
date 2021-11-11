@@ -14,8 +14,6 @@
 
 }
 
-
-
 .explore {
   color: #fff;
   font-size: 10vw;
@@ -26,4 +24,8 @@
   height: auto;
   margin: 0 auto;
   position: relative;
+}
+
+.business-tiles-container{
+  display: flex;
 }
