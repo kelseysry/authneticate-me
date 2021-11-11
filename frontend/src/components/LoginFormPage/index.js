@@ -8,6 +8,8 @@ import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import './LoginForm.css';
+import pictures from '../../data/pictures'
+
 
 function LoginFormPage() {
   const dispatch = useDispatch();
@@ -40,8 +42,10 @@ function LoginFormPage() {
 
   return (
     <>
-    <h2 className="login">Log in to Yelp</h2>
-    <form onSubmit={handleSubmit}>
+    <div className="signup-pic-container" style={{ backgroundImage: `url('${pictures.collection[5].imageUrl}')` }}>
+      <div className="explore">Login</div>
+    </div>
+    <form className="signup-form-style" onSubmit={handleSubmit}>
       <ul>
         {errors.map((error, idx) => <li key={idx}>{error}</li>)}
       </ul>

@@ -84,6 +84,7 @@ function App() {
             <MapContainer />
           </Route>
           <Route>
+          {/* <HomePage pictures={pictures}/> */}
             Page Not Found
           </Route>
         </Switch>
