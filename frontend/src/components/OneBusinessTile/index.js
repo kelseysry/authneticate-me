@@ -34,6 +34,7 @@ const business = useSelector((state) => state.business[businessId]);
   //   dispatch(getReviews(businessId))
   // },[dispatch,businessId])
 
+  /// stars
 
   // if(!reviews) {
   //   return null;
