@@ -7,7 +7,8 @@
 }
 
 
-.one-image-container a > .hover-pic :hover {
+
+.one-image-container a > .hover-pic:hover {
   background-color:rgba(0, 0, 0, 0.5);
 }
 
