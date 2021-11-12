@@ -3,6 +3,7 @@
 .reviewImage {
   max-width:100%;
   height:auto;
+  border-radius: 5px;
 
 }
 
@@ -13,11 +14,12 @@
 }
 
 .review-container {
-  margin: auto;
   /* background-color: yellowgreen; */
   text-align:left;
   width: 800px;
   box-sizing: border-box;
+  padding-top: 10px;
+  padding-bottom: 20px;
 
 }
 
@@ -45,5 +47,12 @@ ul {
 .rating-profile {
   padding: 5px 5px;
   font-family: 'Poppins', sans-serif;
+
+}
+
+.review-username {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+  color: cornflowerblue;
 
 }

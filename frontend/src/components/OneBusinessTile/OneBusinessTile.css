@@ -54,8 +54,7 @@
   flex-direction: column;
   justify-content: flex-end;
   flex-wrap: nowrap;
-
-
+  border-radius: 5px;
 }
 
 .each-tile-title {

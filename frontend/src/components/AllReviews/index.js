@@ -34,14 +34,14 @@ const BusinessReviews = ({business}) => {
             <div className="profile">
               <span className="icon">
               {/* <i className="far fa-user-circle"></i> */}
-              <i className="fas fa-user-ninja"></i>
+              <i class="fas fa-utensils"></i>
               </span>
-              <span className="">
+              <span className="review-username">
               {review.User.username}
               </span>
             </div>
             <div className="rating-profile">
-              <b>Rating</b> {review.rating}
+              {/* <b>Rating</b>  */}
               {Array(review.rating).fill(<i className="fas fa-star"></i>).map((ele, idx) => <span key={idx}>{ele}</span>)}
             </div>
               <div className="review-container">
