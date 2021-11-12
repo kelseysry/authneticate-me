@@ -3,9 +3,10 @@ import React from 'react';
 import { GoogleMap, useJsApiLoader, InfoBox } from '@react-google-maps/api';
 // import { useJsApiLoader } from '@react-google-maps/api';
 import { Marker } from '@react-google-maps/api';
+import allMarkers from '../../data/markers';
 
 const containerStyle = {
-  width: '800px',
+  width: '1000px',
   height: '600px',
 };
 
@@ -22,30 +23,16 @@ const AllMaps = ({ apiKey, BusinessLat, BusinessLng }) => {
 
 
   const center = {
-    lat: 11.540526555498468,
-    lng: 104.91522593956448
+    // lat: 11.540526555498468,
+    // lng: 104.91522593956448
+    lat: 11.560114866039607,
+    lng: 104.91626530485476
   }
 
   console.log("MapsBusiness", BusinessLat)
 
 
   const options = { closeBoxURL: '', enableEventPropagation: true };
-
-
-let allMarkers = [
-  {
-    business: "Best Iced Coffee",
-    position: {  lat:11.540526555498468,lng: 104.91522593956448, }
-  },
-  {
-    business: "Tuol Tom Pong Seafood - Street Food",
-    position: {lat: 11.539970, lng: 104.914864 }
-  },
-  {
-    business: "Khmer Food Spark Cafe",
-    position: { lat:11.558446528422527,lng: 104.92501818402742 }
-  }
-]
 
 
   return (
