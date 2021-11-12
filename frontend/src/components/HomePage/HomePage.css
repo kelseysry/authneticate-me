@@ -96,15 +96,15 @@
 
   font-size: 5em;
   line-height: 1em;
-  color: cornflowerblue;
   font-family: 'Poppins', sans-serif;
   padding-bottom: 10px;
+  color: cornflowerblue;
+
 
 }
 
 .about-details {
   font-size: 1em;
-  color: cornflowerblue;
   font-family: 'Poppins', sans-serif;
 }
 

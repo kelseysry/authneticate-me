@@ -110,7 +110,7 @@ const SingleBusinessPage = () => {
         <div className ="details-container-text">
           <h1 className="header-details">Details</h1>
           <ul>
-            <li className="header-details">
+            <li>
               <b>Owner</b> {business.User?.username}
             </li>
             <li>
