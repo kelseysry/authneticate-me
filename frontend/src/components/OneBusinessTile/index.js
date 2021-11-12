@@ -30,9 +30,10 @@ const business = useSelector((state) => state.business[businessId]);
 
   return (
     <>
+      <div className="hover-pic">
       <div className="each-pic-container" style={{ backgroundImage: `url('${business?.imageUrl}')` }}>
         <div className="each-tile-title">
-        {business.title}
+        {business?.title}
         </div>
         {
         business.Reviews.length?
@@ -41,6 +42,8 @@ const business = useSelector((state) => state.business[businessId]);
         </div>
         : null
         }
+      </div>
+
       </div>
     </>
   )
