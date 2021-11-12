@@ -32,8 +32,9 @@
 .splash-business-tiles-container{
   box-sizing: border-box;
 
-  padding: 7vw 7vw;
-  margin-top: 3vh;
+  padding: 1vw 7vw;
+  padding-bottom: 3vw;
+  /* margin-top: 3vh; */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
