@@ -32,8 +32,15 @@ const HomePage = () => {
       <div className ="map-home">
       <AllMapContainer />
       </div>
-      <div className="about">
-        Hello 
+      <div className="about-container">
+        <div className="about">
+            <div className="about-header">
+              About Mab Mab
+            </div>
+            <div className="about-details">
+              More details
+            </div>
+        </div>
       </div>
     </div>
 
