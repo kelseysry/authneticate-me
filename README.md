@@ -15,3 +15,5 @@ https://yelp-clone-kelsey-sry.herokuapp.com/
 
 6. in your backend directory, run the following commands:  
   -  npx dotenv sequelize-cli db:create
+  -  npx dotenv sequelize-cli db:migrate
+  -  npx dotenv sequelize-cli db:seed:all
