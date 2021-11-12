@@ -6,18 +6,18 @@
   border: 0px;
 }
 
-/* .fa-star {
-  color: pink;
+
+.one-image-container a > .hover-pic :hover {
+  background-color:rgba(0, 0, 0, 0.5);
+}
+
+
+ /* .each-tile-title:hover {
+  box-shadow:inset 0 0 0 5000px rgba(255, 0, 0, 0.3);
 } */
 
-.each-pic-container a:hover {
-  box-shadow:inset 0 0 0 2000px rgba(27, 26, 27, 1);
-}
 
-.one-image-container a:hover {
-  box-shadow:inset 0 0 0 2000px rgba(0, 0, 0, 0.3);
 
-}
 
 
 .rating {
