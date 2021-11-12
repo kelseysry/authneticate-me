@@ -10,4 +10,4 @@ https://yelp-clone-kelsey-sry.herokuapp.com/
 4. cd backend, run npm install 
 5. in the backend directory create a .env file. There is a .env.example that you can follow to structure the .env file. 
   - To generate a MAPS_API_KEY you must use your google account
-    - Create a 
+    1. Create a Google developers project
