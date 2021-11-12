@@ -26,8 +26,10 @@ const HomePage = () => {
     <div className="top-pie-container" style={{ backgroundImage: `url('${pictures.collection[0].imageUrl}')` }}>
       <div className="explore">Mab Mab</div>
     </div>
-    <div className="business-tiles-container">
+    <div className="splash-business-tiles-container">
+      <div className="home-splash-each-image-title">
       <OneBusinessTile businessId={1}/>
+      </div>
       <OneBusinessTile businessId={2}/>
       <OneBusinessTile businessId={3}/>
     </div>
