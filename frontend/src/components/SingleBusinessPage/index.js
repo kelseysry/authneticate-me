@@ -40,6 +40,8 @@ const SingleBusinessPage = () => {
 
   const [hideReviewButton, setHideReviewButton] = useState(false)
 
+
+  // hide create a review button
   useEffect(() => {
     setHideReviewButton(false)
   },[dispatch, reviews.length])
@@ -99,7 +101,7 @@ const SingleBusinessPage = () => {
 
   if(showEditBusinessForm && business) {
     content = (
-      <EditBusinessForm business={business} hideForm={() => setShowEditBusinessForm(false) }/>
+      <EditBusinessForm business={business} hideForm={() => setShowEditBusinessForm(false)}/>
     )
   } else {
     content = (
@@ -135,7 +137,7 @@ const SingleBusinessPage = () => {
     // console.log("this is reviews in component", reviews)
 
     reviewContent = (
-      <ReviewForm reviews={reviews} hideForm={() => setShowReviewForm(false)} />
+      <ReviewForm reviews={reviews} hideForm={() => setShowReviewForm(false)} hideButton={() => setHideReviewButton(false)}/>
     )
   }
   // console.log("this is reviews.User", reviews[0].User.username)
