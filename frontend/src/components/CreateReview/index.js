@@ -13,6 +13,8 @@ const ReviewForm = ({reviews, hideForm}) => {
   const [rating, setRating] = useState('');
   const [answer, setAnswer] = useState('');
   const [imageUrl, setImageUrl] = useState('');
+  const [hideReviewButton, setHideReviewButton] = useState('')
+
   // const [userId, setUserId] = useState('');
   // const [businessId, setBusinessId] = useState('')
   const [errors, setErrors] = useState([])
@@ -66,6 +68,9 @@ const ReviewForm = ({reviews, hideForm}) => {
     if (createdReview) {
       hideForm();
     }
+
+
+
   }
 
   const handleCancelReviewFormClick = (e) => {
@@ -74,6 +79,7 @@ const ReviewForm = ({reviews, hideForm}) => {
   }
 
   return (
+<>
     <form onSubmit={handleSubmit}>
 
       <label>
@@ -106,10 +112,11 @@ const ReviewForm = ({reviews, hideForm}) => {
       <ul className="error">
       {errors.map((error) => <li key={error}>{error}</li>)}
       </ul>
-      <button type="submit" disabled={errors.length>0}>Submit Review</button>
+      <button type="submit" disabled={errors.length>0} >Submit Review</button>
       <button type="button" onClick={handleCancelReviewFormClick}>Cancel</button>
 
     </form>
+    </>
   )
 
 }

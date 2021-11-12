@@ -40,6 +40,9 @@ const SingleBusinessPage = () => {
 
   const [hideReviewButton, setHideReviewButton] = useState(false)
 
+  useEffect(() => {
+    setHideReviewButton(false)
+  },[dispatch, reviews.length])
 
 // getOneBusiness
   useEffect(() => {
@@ -169,6 +172,8 @@ const SingleBusinessPage = () => {
             <div>
               {content}
             </div>
+
+
               {!hideReviewButton && <button className="add-review-button"
               //  onClick={() => setHideReviewButton(true)}
                onClick={() => {setShowReviewForm(true);  setHideReviewButton(true)
