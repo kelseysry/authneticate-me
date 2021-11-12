@@ -54,20 +54,27 @@ let allMarkers = [
         <GoogleMap
       id="marker-example"
       mapContainerStyle={containerStyle}
-      zoom={13}
+      zoom={14}
       center={center}
       >
-           <InfoBox
-      onLoad={onLoad}
-      options={options}
-      position={center}
-    >
-            <div style={{ backgroundColor: 'yellow', opacity: 0.75, padding: 12 }}>
-        <div style={{ fontSize: 16, fontColor: `#08233B` }}>
-          Hello, World!
-        </div>
-      </div>
-    </InfoBox>
+        {
+          allMarkers.map((marker,idx) => (
+
+
+            <InfoBox
+            onLoad={onLoad}
+            options={options}
+            position={marker.position}
+          >
+                  <div style={{ backgroundColor: 'yellow', opacity: 0.75, padding: 12 }}>
+              <div style={{ fontSize: 16, fontColor: `#08233B` }}>
+                {marker.business}
+              </div>
+            </div>
+          </InfoBox>
+
+
+          ))}
 
 {allMarkers.map((marker, idx) => (
       <Marker
