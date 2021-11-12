@@ -33,7 +33,7 @@ const BusinessReviews = ({business}) => {
           <li>
             <div className="profile">
               <span className="icon">
-              <i className="far fa-user-circle fa-lg"></i>
+              <i className="far fa-user-circle fa-2x"></i>
               {/* <i class="fas fa-utensils"></i> */}
               </span>
               <span className="review-username">

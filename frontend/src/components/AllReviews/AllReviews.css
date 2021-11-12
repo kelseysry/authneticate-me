@@ -18,7 +18,7 @@
   text-align:left;
   width: 800px;
   box-sizing: border-box;
-  padding-top: 10px;
+  padding-top: 20px;
   padding-bottom: 20px;
 
 }
@@ -73,3 +73,8 @@ ul {
 /* .fa-utensils {
   color: cornflowerblue;
 } */
+
+.fa-user-circle {
+  color: cornflowerblue;
+  padding-bottom: 10px;
+}
