@@ -25,6 +25,8 @@
 
 .each-pic-container {
   box-sizing: border-box;
+  height: 250px;
+  width: 300px;
   display: flex;
   padding: 40px 64px;
   margin: 0 auto;
