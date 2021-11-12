@@ -41,8 +41,6 @@
 }
 
 
-
-
 *{
   margin:0;
   padding: 0;
@@ -52,13 +50,17 @@
 
 .one-business-image-container{
 
-  padding: 0 7vw;
+  box-sizing: border-box;
+
+  padding: 7vw 7vw;
   margin-top: 3vh;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
   align-items: center;
   justify-content: center;
+  row-gap: 5em;
+  column-gap: 5em;
 
 }
 /*
