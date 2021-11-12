@@ -3,9 +3,9 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { getKey } from '../../store/maps';
-import Maps from './Maps';
+import AllMaps from './Maps';
 
-const MapContainer = ({BusinessLat, BusinessLng}) => {
+const AllMapContainer = ({BusinessLat, BusinessLng}) => {
   const key = useSelector((state) => state.maps.key);
   const dispatch = useDispatch();
 
@@ -21,9 +21,10 @@ const MapContainer = ({BusinessLat, BusinessLng}) => {
 
   return (
     <div className="map">
-      <Maps apiKey={key} BusinessLat={BusinessLat} BusinessLng={BusinessLng} />
+      {/* <AllMaps apiKey={key} BusinessLat={BusinessLat} BusinessLng={BusinessLng} /> */}
+      <AllMaps apiKey={key}/>
     </div>
   );
 };
 
-export default MapContainer;
+export default AllMapContainer;

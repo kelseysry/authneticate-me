@@ -4,7 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getAllBusinesses } from '../../store/business';
 import {useEffect } from 'react';
 import OneBusinessTile from '../OneBusinessTile';
-
+// import MapContainer from '../Maps';
+import AllMapContainer from '../AllMaps';
 const HomePage = () => {
   const dispatch = useDispatch();
 
@@ -33,6 +34,12 @@ const HomePage = () => {
       <OneBusinessTile businessId={2}/>
       <OneBusinessTile businessId={3}/>
     </div>
+    <div className ="map-home">
+    {/* <MapContainer BusinessLat={11.569210244508676} BusinessLng={104.89773441793412}/> */}
+    <AllMapContainer BusinessLat={11.569210244508676} BusinessLng={104.89773441793412}/>
+
+    </div>
+
 
 
     </>
