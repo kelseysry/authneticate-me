@@ -6,7 +6,7 @@ import { Marker } from '@react-google-maps/api';
 import allMarkers from '../../data/markers';
 
 const containerStyle = {
-  width: '1000px',
+  width: '900px',
   height: '600px',
 };
 

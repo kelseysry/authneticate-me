@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
 .top-pie-container {
   box-sizing: border-box;
   display: flex;
@@ -64,14 +66,50 @@
 
 .map-and-about {
   display:flex;
+  /* justify-content: space-evenly; */
   justify-content: center;
   padding: 5em, 5em;
   align-items: center;
 
+
+
+}
+
+.about-container {
+  box-sizing: border-box;
+  width: 300px;
+  height: 600px;
+  padding: 3px 0;
+  /* padding-left: 5px; */
+  /* background-color: pink; */
 }
 
 .about {
-  width: 300px;
-  height: 600px;
-  background-color: pink;
+  display: flex;
+  flex-direction: column;
+  padding-left: 1em;
+}
+
+.about-header {
+  font-weight: 700;
+
+  font-size: 5em;
+  line-height: 1em;
+  color: cornflowerblue;
+  font-family: 'Poppins', sans-serif;
+
+}
+
+.about-details {
+  font-size: 3em;
+  color: cornflowerblue;
+  font-family: 'Poppins', sans-serif;
+}
+
+.map-home {
+  width: 900px;
+  /* margin: 0 0 !important; */
+}
+.map {
+  /* margin: 0 0 !important; */
 }
