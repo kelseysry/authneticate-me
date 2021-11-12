@@ -25,10 +25,12 @@
 
 .one-business-image-container{
 
+  padding: 30px 30px;
   display: grid;
   justify-content: center;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 10px;
+  grid-gap: 30px;
+  justify-content: normal;
 
 
 }
