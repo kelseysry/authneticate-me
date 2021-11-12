@@ -7,13 +7,13 @@ import { useSelector } from "react-redux";
 import {useParams} from 'react-router-dom';
 import './CreateReview.css'
 
-const ReviewForm = ({reviews, hideForm}) => {
+const ReviewForm = ({reviews, hideForm, hideButton}) => {
 
   const { businessId } = useParams();
   const [rating, setRating] = useState('');
   const [answer, setAnswer] = useState('');
   const [imageUrl, setImageUrl] = useState('');
-  const [hideReviewButton, setHideReviewButton] = useState('')
+  // const [hideReviewButton, setHideReviewButton] = useState('')
 
   // const [userId, setUserId] = useState('');
   // const [businessId, setBusinessId] = useState('')
@@ -51,6 +51,12 @@ const ReviewForm = ({reviews, hideForm}) => {
   },[rating,answer,imageUrl,userId,businessId])
 
 
+  //  // hide create a review button
+  //  useEffect(() => {
+  //   setHideReviewButton(false)
+  // },[dispatch, reviews.length, ])
+
+
   const handleSubmit = async(e) => {
     e.preventDefault();
 
@@ -67,6 +73,7 @@ const ReviewForm = ({reviews, hideForm}) => {
     // }
     if (createdReview) {
       hideForm();
+
     }
 
 
@@ -76,6 +83,7 @@ const ReviewForm = ({reviews, hideForm}) => {
   const handleCancelReviewFormClick = (e) => {
     e.preventDefault();
     hideForm();
+    hideButton();
   }
 
   return (
