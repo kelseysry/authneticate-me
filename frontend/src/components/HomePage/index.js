@@ -28,8 +28,13 @@ const HomePage = () => {
       <div className="explore">Mab Mab</div>
     </div>
 
-    <div className ="map-home">
-    <AllMapContainer />
+    <div className="map-and-about">
+      <div className ="map-home">
+      <AllMapContainer />
+      </div>
+      <div className="about">
+        Hello 
+      </div>
     </div>
 
 
