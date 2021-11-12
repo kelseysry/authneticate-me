@@ -27,17 +27,18 @@ const HomePage = () => {
     <div className="top-pie-container" style={{ backgroundImage: `url('${pictures.collection[0].imageUrl}')` }}>
       <div className="explore">Mab Mab</div>
     </div>
+
+    <div className ="map-home">
+    <AllMapContainer />
+    </div>
+
+
     <div className="splash-business-tiles-container">
       <div className="home-splash-each-image-title">
       <OneBusinessTile businessId={1}/>
       </div>
       <OneBusinessTile businessId={2}/>
       <OneBusinessTile businessId={3}/>
-    </div>
-    <div className ="map-home">
-    {/* <MapContainer BusinessLat={11.569210244508676} BusinessLng={104.89773441793412}/> */}
-    <AllMapContainer BusinessLat={11.569210244508676} BusinessLng={104.89773441793412}/>
-
     </div>
 
 
