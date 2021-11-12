@@ -4,8 +4,8 @@
 https://yelp-clone-kelsey-sry.herokuapp.com/ 
 
 # Instructions on How to Install Mab Mab app 
-- run git clone 
-- run npm install in the root directory 
+1. run git clone 
+2. run npm install in the root directory 
 - cd frontend, run npm install
 - cd backend, run npm install 
 - in the backend directory create a .env file. There is a .env.example that you can follow to structure the .env file. 
