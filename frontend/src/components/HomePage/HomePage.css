@@ -26,6 +26,37 @@
   position: relative;
 }
 
-.business-tiles-container{
-  display: flex;
+.splash-business-tiles-container{
+  box-sizing: border-box;
+
+  padding: 7vw 7vw;
+  margin-top: 3vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-content: center;
+  row-gap: 5em;
+  column-gap: 5em;
+
+}
+
+.home-splash-each-image-title {
+  color:olive;
+  font-weight: 700;
+  overflow-wrap: break-word !important;
+  font-family: 'Poppins', sans-serif !important;
+  line-height: 0.82em;
+  padding-left: 20px;
+
+}
+
+.each-tile-title {
+  color:white;
+
+  font-weight: 700;
+  overflow-wrap: break-word !important;
+  font-family: 'Poppins', sans-serif !important;
+  line-height: 0.82em;
+  padding-left: 20px;
+  font-size: 30px;
 }
