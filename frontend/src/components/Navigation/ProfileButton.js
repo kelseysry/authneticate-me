@@ -50,7 +50,8 @@ function ProfileButton({ user }) {
     <>
       <button onClick={openMenu}>
        {/* <i className="fas fa-user-cog fa-7x"></i> */}
-         <i className="far fa-user-circle fa-3x"></i>
+         {/* <i className="far fa-user-circle fa-3x"></i> */}
+         <i class="fas fa-user-circle fa-3x"></i>
         {/* <i className="fas fa-user-circle" /> */}
       </button>
       {showMenu && (

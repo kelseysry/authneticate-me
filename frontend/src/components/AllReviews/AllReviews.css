@@ -56,4 +56,20 @@ ul {
   font-weight: 900;
   color: cornflowerblue;
   padding-left: 10px ;
+  font-size: 35px;
 }
+
+.star-color-blue {
+  background-color: cornflowerblue;
+  border-radius: 10px;
+  padding: 8px 8px;
+  margin-left: 3px;
+}
+
+.fa-star {
+  color: white;
+}
+
+/* .fa-utensils {
+  color: cornflowerblue;
+} */
