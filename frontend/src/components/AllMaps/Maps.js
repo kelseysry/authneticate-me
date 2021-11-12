@@ -53,7 +53,7 @@ const AllMaps = ({ apiKey, BusinessLat, BusinessLng }) => {
             options={options}
             position={marker.position}
           >
-                  <div style={{ backgroundColor: 'yellow', opacity: 0.75, padding: 12 }}>
+                  <div style={{ backgroundColor: 'black', opacity: 0.75, padding: 3, color: 'white'}}>
               <div style={{ fontSize: 16, fontColor: `#08233B` }}>
                 {marker.business}
               </div>
