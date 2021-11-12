@@ -3,4 +3,4 @@
 - Live Link 
 https://yelp-clone-kelsey-sry.herokuapp.com/ 
 
-cd
+# Instructions on How to Install Mab Mab app 
