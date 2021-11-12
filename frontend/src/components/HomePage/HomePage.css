@@ -87,7 +87,7 @@
 .about {
   display: flex;
   flex-direction: column;
-  padding-left: 1em;
+  padding-left: 2em;
 }
 
 .about-header {
@@ -97,11 +97,12 @@
   line-height: 1em;
   color: cornflowerblue;
   font-family: 'Poppins', sans-serif;
+  padding-bottom: 10px;
 
 }
 
 .about-details {
-  font-size: 3em;
+  font-size: 1em;
   color: cornflowerblue;
   font-family: 'Poppins', sans-serif;
 }
