@@ -3,7 +3,7 @@ import React from 'react';
 import { GoogleMap, useJsApiLoader, InfoBox } from '@react-google-maps/api';
 // import { useJsApiLoader } from '@react-google-maps/api';
 import { Marker } from '@react-google-maps/api';
-import allMarkers from '../../data/markers';
+// import allMarkers from '../../data/markers';
 
 const containerStyle = {
   width: '900px',
@@ -15,7 +15,7 @@ const onLoad = infoBox => {
   console.log('infoBox: ', infoBox)
 };
 
-const AllMaps = ({ apiKey, BusinessLat, BusinessLng }) => {
+const AllMaps = ({ apiKey, allMarkers }) => {
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: apiKey,
@@ -29,7 +29,6 @@ const AllMaps = ({ apiKey, BusinessLat, BusinessLng }) => {
     lng: 104.91626530485476
   }
 
-  console.log("MapsBusiness", BusinessLat)
 
 
   const options = { closeBoxURL: '', enableEventPropagation: true };

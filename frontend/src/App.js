@@ -10,8 +10,7 @@ import AllBusiness from "./components/AllBusiness";
 import CreateBusinessForm from "./components/CreateBusiness";
 import EditBusinessForm from "./components/EditBusinessForm";
 // import OneBusinessTile from "./components/OneBusinessTile";
-
-
+import HitError from "./components/HitError";
 
 import { useSelector } from "react-redux";
 
@@ -21,6 +20,7 @@ import pictures from '../src/data/pictures'
 
 // import Maps from "./components/Maps/Maps";
 import MapContainer from "./components/Maps/index.js";
+
 
 function App() {
 
@@ -83,7 +83,7 @@ function App() {
 
           </Route>
           <Route>
-            Page Not Found
+            <HitError />
           </Route>
         </Switch>
       )}
