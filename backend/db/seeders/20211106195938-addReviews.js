@@ -15,7 +15,7 @@ module.exports = {
         businessId: 2,
         rating: 5,
         answer: 'WHERE THE LOCALS GO FOR SEAFOOD!!!!!! Absolutely AMAZING. The wait can be kind of long but WOW it is WORTH IT. Highly recommend getting the crabs and oyster!!!!',
-        imageUrl: 'https://res.cloudinary.com/mabmab/image/upload/v1636248447/khmer_food/oysterJ_ceurjg.jpg'
+        imageUrl: 'https://res.cloudinary.com/mabmab/image/upload/v1636484472/khmer_food/crab2_cbm0xs.png'
         },
         {
           userId: 4,
@@ -37,7 +37,42 @@ module.exports = {
           rating: 5,
           answer: 'I am officially a regular at this shop :) Mr.Bounnreath is like an uncle to me now! I love coming here alone on Saturday mornings and just sip on coffee while watching the people shop in Russian market.',
           imageUrl: 'https://res.cloudinary.com/mabmab/image/upload/v1636735586/khmer_food/IMG_0994_vwrf3i.jpg'
-        }
+        },
+        {
+          userId: 6,
+          businessId: 3,
+          rating: 5,
+          answer: "Okay, hear me out. Order the snails, fried chicken feet, and grilled egg plants with a can of beer. I ordered all of this for my birthday and the total cost was less than $20! Come around 5pm so you can grab a nice seat on the second floor and watch the sun set while you eat :)!! I still think about those snails! They are so GOOOD. They come with this lemon, pepper, salt sauce. It's a challenge to get the snail out of its shell but once you do, man!!!!!",
+          imageUrl: "https://res.cloudinary.com/mabmab/image/upload/v1636786116/khmer_food/IMG_9926_kltuax.jpg"
+        },
+        {
+          userId: 5,
+          businessId: 3,
+          rating: 5,
+          answer: "The grilled fish is so crunchy!",
+          imageUrl: "https://res.cloudinary.com/mabmab/image/upload/v1636786365/khmer_food/fish_spark_ltycve.png",
+        },
+        // {
+        //   userId: 5,
+        //   businessId: 2,
+        //   rating: 4,
+        //   answer: 'The grilled shrimp here is one of there top selling meals!',
+        //   imageUrl: 'https://res.cloudinary.com/mabmab/image/upload/v1636786869/khmer_food/shrimp_lgfy02.png',
+        // },
+        // {
+        //   userId: 2,
+        //   businessId: 2,
+        //   rating: 4,
+        //   answer: "My favorite place to get oysters! For every plate of oysters, they give you a bunch of garlic, lemon sauce, and vegetables to top it.",
+        //   imageUrl: "https://res.cloudinary.com/mabmab/image/upload/v1636786993/khmer_food/oyster_qqze2a.png",
+        // },
+        // {
+        //   userId: 1,
+        //   businessId: 2,
+        //   rating: 3,
+        //   answer: "This place is super crowded! Waiting time to get a seat might be a while. Food is good though.",
+        //   imageUrl: "https://res.cloudinary.com/mabmab/image/upload/v1636787086/khmer_food/squid_uewqax.png"
+        // }
 
     ], {});
 
