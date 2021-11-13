@@ -21,7 +21,6 @@ import pictures from '../src/data/pictures'
 
 // import Maps from "./components/Maps/Maps";
 import MapContainer from "./components/Maps/index.js";
-import HoverTest from "./components/HoverTest";
 
 function App() {
 
@@ -81,7 +80,6 @@ function App() {
             {/* <OneBusinessTile businessId={"1"}/> */}
             {/* <Maps apiKey={apiKey}/> */}
             {/* <MapContainer /> */}
-            <HoverTest />
 
           </Route>
           <Route>
