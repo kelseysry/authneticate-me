@@ -16,6 +16,9 @@ is a website build off the idea of yelp.com but focuses solely on restaurants in
 - View and add a review for a restaurant. 
 - View the location of the restaurant on Google maps 
 
+## Overall Structure 
+
+### Back end 
 
 ## Instructions on How to Install Mab Mab app 
 1. run git clone 
