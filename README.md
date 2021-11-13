@@ -5,7 +5,7 @@ Mab Mab is a clone of yelp.com that focuses solely on restaurants in Phnom Penh.
 - Live Link 
 https://yelp-clone-kelsey-sry.herokuapp.com/ 
 
-# Instructions on How to Install Mab Mab app 
+## Instructions on How to Install Mab Mab app 
 1. run git clone 
 2. run npm install in the root directory 
 3. cd frontend, run npm install
