@@ -79,6 +79,50 @@ module.exports = {
           imageUrl: 'https://res.cloudinary.com/mabmab/image/upload/v1636662981/khmer_food/malis_aaldjb.png',
           lat: 11.554081576008095,
           lng: 104.9290223294673
+        },
+        {
+          ownerId:3,
+          title: "Sok Leng Lort Cha",
+          description: "For over 25 years, our business has been serving classic Cambodian stir fried noodles!",
+          address: "18 Preah Ang Makhak Vann St. 178",
+          city: "Phnom Penh",
+          zipCode: "12206",
+          imageUrl: "https://res.cloudinary.com/mabmab/image/upload/v1636655089/khmer_food/near_unesco_part3_aqmdww.png",
+          lat: 11.56684406195201,
+          lng: 104.9306582807501
+        },
+        {
+         ownerId:3,
+         title: '126 The Noodle Factory',
+         description: "Slow cooked berry curry, pho, and num bao served daily fresh in the morning.",
+         address: "126 St 13 corner St 136",
+         zipCode: "12204",
+         city: 'Phnom Penh',
+         imageUrl: "https://res.cloudinary.com/mabmab/image/upload/v1636784594/khmer_food/Screen_Shot_2021-11-12_at_10.22.28_PM_nwj6rb.png",
+         lat: 11.570999164664489,
+         lng: 104.9278965209347
+        },
+        {
+          ownerId: 3,
+          title: "88 Cafe",
+          description: "Traditional Cambodian served daily - breakfast, lunch, and dinner.",
+          address:"88 Krala Haom Kong St.",
+          zipCode: "12204",
+          city: 'Phnom Penh',
+          imageUrl: "https://res.cloudinary.com/mabmab/image/upload/v1636645601/khmer_food/bread_curry_f8zezf.png",
+          lat: 11.572000853267086,
+          lng: 104.92701572870371
+        },
+        {
+          ownerId: 3,
+          title: "Coffee Lab Kh",
+          description: "Spacious modern cafe. Customers are free to work in the cafe, hold meetings, and meet with friends.",
+          address:"House 309 St 265 Sangkat Teuk Laak 2",
+          zipCode: "12105",
+          city: 'Phnom Penh',
+          imageUrl: "https://res.cloudinary.com/mabmab/image/upload/v1636597469/khmer_food/IMG_0405_cn9bl9.jpg",
+          lat: 11.561850410925317,
+          lng: 104.89153787321227
         }
 
     ], {});
