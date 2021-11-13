@@ -40,6 +40,7 @@ is a website build off the idea of yelp.com but focuses solely on restaurants in
 ## Primary Components 
 
 **User Authorizaition** 
+
 When a user logs in, the API login route will be sent with a request that has the user's email or username and password. The password that the user utilized to log in is then hashed and compared to the hashed password that is stored in the databse. If these passwords are the same, the API login route sends back at JWT in an HTTP-only cookie. 
 
 ## Instructions on How to Install Mab Mab app 
