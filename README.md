@@ -15,9 +15,9 @@ is a website build off the idea of yelp.com but focuses solely on restaurants in
 ## Index
 
 - [Feature List Document](https://github.com/kelseysry/Mab-Mab/wiki/Features)
-- [React Components list]
+- [React Components list](https://github.com/kelseysry/Mab-Mab/wiki/React-Components-List)
 - [Database Schema](https://github.com/kelseysry/Mab-Mab/wiki/Database-Scheme)
-- [Front end Routes document]
+- [Front End Routes Document]
 - [API Routes document]
 
 # Overall Structure 
