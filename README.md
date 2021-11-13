@@ -2,9 +2,15 @@
 
 ![Home Page of Mab Mab](https://res.cloudinary.com/mabmab/image/upload/v1636833234/khmer_food/home_piicjk.png)
 
-Mab Mab is a clone of yelp.com that focuses solely on restaurants in Phnom Penh
-
 [Mab Mab](https://yelp-clone-kelsey-sry.herokuapp.com/)
+
+## Summary 
+
+[Mab Mab](https://yelp-clone-kelsey-sry.herokuapp.com/) 
+is a website build off the idea of yelp.com but focuses solely on restaurants in Phnom Penh. Mab Mab was created by using React, Redux, Express, and PostgreSQL. Anyone who uses Mab Mab can do the following: 
+
+- 
+fasdfsdfds
 
 ## Instructions on How to Install Mab Mab app 
 1. run git clone 
