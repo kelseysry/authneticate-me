@@ -18,7 +18,7 @@ is a website build off the idea of yelp.com but focuses solely on restaurants in
 
 ## Overall Structure 
 
-### Back end 
+**Back end** 
 
 ## Instructions on How to Install Mab Mab app 
 1. run git clone 
