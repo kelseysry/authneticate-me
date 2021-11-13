@@ -57,6 +57,8 @@ When a user logs in, the API login route will be sent with a request that has th
 ## Explore Page 
 
 A user can scroll through the explore page to view the different restaurants in Phnom Penh, Cambodia. Each restaurant picture is a nav link that will navigate a user to that restaurant's page. 
+![explore page part 1](https://res.cloudinary.com/mabmab/image/upload/v1636843433/khmer_food/explore1_okwtru.png)
+![explore page part 2](https://res.cloudinary.com/mabmab/image/upload/v1636843442/khmer_food/explore2_imeawp.png)
 
 ## Instructions on How to Install Mab Mab app 
 1. run git clone 
