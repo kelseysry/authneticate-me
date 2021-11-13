@@ -19,7 +19,7 @@ is a website build off the idea of yelp.com but focuses solely on restaurants in
 ## Overall Structure 
 
 **Back end** 
-- The back end was created by using Express and postgreSQL database with user austhentication routes.  
+- The back end was created by using Express as a REST API server and postgreSQL database with user austhentication routes.  
 
 **Front end** 
 - The front end was created by using React, Redux, Flexbox, and Grid. The React front end uses the backend API routes to let a user sign up for an account, log in, and log out. 
@@ -36,6 +36,11 @@ is a website build off the idea of yelp.com but focuses solely on restaurants in
 - faker - random seeding library 
 - jsonwebtoken - JWT
 - cors - Cross-Origin Resource Sharing,
+
+## Primary Components 
+
+**User Authorizaition** 
+When a user logs in, the API login route will be sent with a request that has the user's email or username and password. The password that the user utilized to log in is then hashed and compared to the hashed password that is stored in the databse. If these passwords are the same, the API login route sends back at JWT in an HTTP-only cookie. 
 
 ## Instructions on How to Install Mab Mab app 
 1. run git clone 
