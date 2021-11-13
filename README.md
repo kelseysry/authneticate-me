@@ -70,6 +70,10 @@ A user can edit or delete a specific business. Users can also leave reviews for 
 The most challenging thing about this project was this bug that kept rendering reviews from another business on the page of a newly created business. Upon refresh of the newly created business, the reviews from another business would disappear. The frustrating thing about this bug is that it happens occaionally, it doesn't appear all the time. So I solved it by creating an action creator that would clear the previous old state values when loading a business page. Thus, when a business page is created, the user is redirected from the form page to the newly created business page with no reviews. 
 ![bug](https://res.cloudinary.com/mabmab/image/upload/v1636844770/khmer_food/tech_och94d.png)
 
+# To-dos 
+- [ ] add edit/delete functionality for reviews 
+- [ ] add a search bar 
+
 # Instructions on How to Install Mab Mab app 
 1. run git clone 
 2. run npm install in the root directory 
