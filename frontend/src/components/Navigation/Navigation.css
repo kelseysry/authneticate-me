@@ -75,3 +75,10 @@ nav {
 .fa-power-off{
   color: #2699FB;
 }
+
+
+
+
+.pad:hover {
+  text-decoration: underline;
+}
