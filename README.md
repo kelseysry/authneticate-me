@@ -19,17 +19,20 @@ is a website build off the idea of yelp.com but focuses solely on restaurants in
 ## Overall Structure 
 
 **Back end** 
-- The back end was created by using Express and postgreSQL database. 
+- The back end was created by using Express and postgreSQL database with user austhentication routes.  
 
 **Front end** 
-- The front end was created by using React, Redux, Flexbox, and Grid. 
+- The front end was created by using React, Redux, Flexbox, and Grid. The React front end uses the backend API routes to let a user sign up for an account, log in, and log out. 
 
 **Libraries** 
 - React 
 - Redux 
+- express
+- dotenv
+- express-async-handler - handling async route handler 
+- express-validator - validation of request bodies
 - bcryptjs - hash passwords  
 - csurf - CSRF protection
-- express-validator - validation of request bodies
 - faker - random seeding library 
 - jsonwebtoken - JWT
 - cors - Cross-Origin Resource Sharing,
