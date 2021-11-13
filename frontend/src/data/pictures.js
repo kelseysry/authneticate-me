@@ -19,12 +19,16 @@ const pictures = {
       "imageUrl": "https://res.cloudinary.com/mabmab/image/upload/v1636353089/khmer_food/river-side_dssd3f.png"
     },
     {
-      "imageNumbers":"5",
+      "imageNumber":"5",
       "imageUrl": "https://res.cloudinary.com/mabmab/image/upload/v1636655089/khmer_food/near_unesco_part3_aqmdww.png"
     },
     {
-      "imageNumbers":"6",
+      "imageNumber":"6",
       "imageUrl": "https://res.cloudinary.com/mabmab/image/upload/v1636662981/khmer_food/malis_aaldjb.png"
+    },
+    {
+      "imageNumber":"7",
+      "imageUrl": "https://res.cloudinary.com/mabmab/image/upload/v1636388692/khmer_food/pho_xiqrut.png"
     }
 
 

@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getKey } from '../../store/maps';
 import AllMaps from './Maps';
 
-const AllMapContainer = ({BusinessLat, BusinessLng}) => {
+const AllMapContainer = ({allMarkers}) => {
   const key = useSelector((state) => state.maps.key);
   const dispatch = useDispatch();
 
@@ -22,7 +22,7 @@ const AllMapContainer = ({BusinessLat, BusinessLng}) => {
   return (
     <div className="map">
       {/* <AllMaps apiKey={key} BusinessLat={BusinessLat} BusinessLng={BusinessLng} /> */}
-      <AllMaps apiKey={key}/>
+      <AllMaps apiKey={key} allMarkers={allMarkers}/>
     </div>
   );
 };

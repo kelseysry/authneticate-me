@@ -4,8 +4,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getAllBusinesses } from '../../store/business';
 import {useEffect } from 'react';
 import OneBusinessTile from '../OneBusinessTile';
-// import MapContainer from '../Maps';
 import AllMapContainer from '../AllMaps';
+import allMarkers from '../../data/markers';
+
+
 const HomePage = () => {
   const dispatch = useDispatch();
 
@@ -30,7 +32,7 @@ const HomePage = () => {
 
     <div className="map-and-about">
       <div className ="map-home">
-      <AllMapContainer />
+      <AllMapContainer allMarkers={allMarkers}/>
       </div>
       <div className="about-container">
         <div className="about">
