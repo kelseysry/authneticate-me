@@ -19,7 +19,7 @@ import ReviewForm from "../CreateReview";
 import './SingleBusiness.css';
 import { getReviews } from '../../store/review';
 import MapContainer from '../Maps';
-
+import { clearReviews } from '../../store/review';
 
 
 const SingleBusinessPage = () => {
@@ -49,6 +49,7 @@ const SingleBusinessPage = () => {
 // getOneBusiness
   useEffect(() => {
     dispatch(getOneBusiness(businessId));
+    dispatch(clearReviews())
   }, [dispatch, businessId]);
 
 // Show Business Form
@@ -60,6 +61,14 @@ const SingleBusinessPage = () => {
   useEffect(() => {
     setShowReviewForm(false)
   },[dispatch,businessId])
+
+
+
+  // let res = reviews.map(review => Object.values(review)[3])
+  // // console.log("this is res", res)
+  // const avge = (res.reduce((a,b) => a+b, 0)) /res.length
+  // const average = Math.round(avge)
+
 
   useEffect(()=> {
     dispatch(getReviews(businessId))
