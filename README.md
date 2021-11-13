@@ -16,6 +16,15 @@ is a website build off the idea of yelp.com but focuses solely on restaurants in
 - View and add a review for a restaurant. 
 - View the location of the restaurant on Google maps 
 
+## Index
+
+- [Feature List Document()
+- [React Components list]
+- [Database Schema](https://github.com/kelseysry/Mab-Mab/wiki/Database-Scheme)
+- [Front end Routes document]
+- [API Routes document]
+- []
+
 ## Overall Structure 
 
 **Back end** 
