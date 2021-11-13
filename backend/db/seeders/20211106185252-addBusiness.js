@@ -123,7 +123,46 @@ module.exports = {
           imageUrl: "https://res.cloudinary.com/mabmab/image/upload/v1636597469/khmer_food/IMG_0405_cn9bl9.jpg",
           lat: 11.561850410925317,
           lng: 104.89153787321227
-        }
+        },
+        {
+          ownerId: 7,
+          title: "Pho Sorya 118",
+          description: "Vietnamese pho with a Cambodian twist. The owner is from Vietnam",
+          address: "26 Preah Chey Chetha St. 118",
+          zipCode: "12204",
+          city: "Phnom Penh",
+          imageUrl: "https://res.cloudinary.com/mabmab/image/upload/v1636388692/khmer_food/pho_xiqrut.png",
+          lat: 11.571119446214905,
+          lng: 104.9212223588955
+        },
+        {
+          ownerId: 7,
+          title: "Meatophum",
+          description: "Traditional Cambodian food",
+          address: "60 Preah Monivong Blvd 93",
+          zipCode: "12205",
+          city: "Phnom Penh",
+          imageUrl: "https://res.cloudinary.com/mabmab/image/upload/v1636790400/khmer_food/meatophum_obvlal.png",
+          lat:11.577779806503697,
+          lng: 104.9179888947942
+        },
+        {
+          ownerId: 4,
+          title: "J Mey Meatballs Battambang",
+          address: "Samdach Sang Neayok Srey St. 67",
+          zipCode: "12205",
+          city: "Phnom Penh",
+          description: "Specialize in fried meatballs and bread from Battambang",
+          imageUrl: "https://res.cloudinary.com/mabmab/image/upload/v1636790595/khmer_food/meatball_q9fvlh.png",
+          lat: 11.571349276541694,
+          lat:104.91992712107161
+        },
+        // {
+        //   ownerId: 7,
+        //   title: "Central Market"
+        // }
+
+
 
     ], {});
 

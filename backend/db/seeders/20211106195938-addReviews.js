@@ -32,6 +32,13 @@ module.exports = {
           imageUrl: 'https://res.cloudinary.com/mabmab/image/upload/v1636484330/khmer_food/2019-10-05_11_23_44.802_xnfcnu.jpg'
         },
         {
+          userId: 7,
+          businessId: 1,
+          rating: 5,
+          answer: 'Condensed milk in your coffee. A+ combo',
+          imageUrl: 'https://res.cloudinary.com/mabmab/image/upload/v1636789226/khmer_food/DSC03297_mcbvhi.jpg'
+        },
+        {
           userId: 6,
           businessId: 1,
           rating: 5,
@@ -52,26 +59,59 @@ module.exports = {
           answer: "The grilled fish is so crunchy!",
           imageUrl: "https://res.cloudinary.com/mabmab/image/upload/v1636786365/khmer_food/fish_spark_ltycve.png",
         },
+        {
+          userId: 5,
+          businessId: 2,
+          rating: 4,
+          answer: 'The grilled shrimp here is one of there top selling meals!',
+          imageUrl: 'https://res.cloudinary.com/mabmab/image/upload/v1636786869/khmer_food/shrimp_lgfy02.png',
+        },
+        {
+          userId: 2,
+          businessId: 2,
+          rating: 4,
+          answer: "My favorite place to get oysters! For every plate of oysters, they give you a bunch of garlic, lemon sauce, and vegetables to top it.",
+          imageUrl: "https://res.cloudinary.com/mabmab/image/upload/v1636786993/khmer_food/oyster_qqze2a.png",
+        },
+        {
+          userId: 1,
+          businessId: 2,
+          rating: 3,
+          answer: "This place is super crowded! Waiting time to get a seat might be a while. Food is good though.",
+          imageUrl: "https://res.cloudinary.com/mabmab/image/upload/v1636787086/khmer_food/squid_uewqax.png"
+        },
+        {
+          userId: 6,
+          businessId: 4,
+          rating: 5,
+          answer: "The ah kour here is made at 4AM! Best Ah Kour in Cambodia!",
+          imageUrl: "https://res.cloudinary.com/mabmab/image/upload/v1636350420/khmer_food/Screen_Shot_2019-11-10_at_11.45.34_PM_ch7654.png",
+        },
+        {
+          userId: 2,
+          businessId: 4,
+          rating: 5,
+          answer: "I love coming here and watching them make it!!",
+          imageUrl: "https://res.cloudinary.com/mabmab/image/upload/v1636789090/khmer_food/ah_kour_gdr778.png",
+        },
+        {
+          userId: 6,
+          businessId: 8,
+          rating: 4,
+          answer: "The best stir fried noodles for cheap. The only con is that you'll be smelling like it all day long haha! The smell literally sticks to your clothes!! Would not advise wearing your favorite clothes here.",
+          imageUrl: "https://res.cloudinary.com/mabmab/image/upload/v1636789283/khmer_food/near_unesco_part4_i3vomc.png"
+        },
+        {
+          userId: 2,
+          businessId: 8,
+          rating: 4,
+          answer: "The noodles are made right in front of the shop so you can't help but be enticed into the shop. Smells so good!",
+          imageUrl: "https://res.cloudinary.com/mabmab/image/upload/v1636789440/khmer_food/near_unesco_part2_romdis.png"
+        },
+        
         // {
-        //   userId: 5,
-        //   businessId: 2,
-        //   rating: 4,
-        //   answer: 'The grilled shrimp here is one of there top selling meals!',
-        //   imageUrl: 'https://res.cloudinary.com/mabmab/image/upload/v1636786869/khmer_food/shrimp_lgfy02.png',
-        // },
-        // {
-        //   userId: 2,
-        //   businessId: 2,
-        //   rating: 4,
-        //   answer: "My favorite place to get oysters! For every plate of oysters, they give you a bunch of garlic, lemon sauce, and vegetables to top it.",
-        //   imageUrl: "https://res.cloudinary.com/mabmab/image/upload/v1636786993/khmer_food/oyster_qqze2a.png",
-        // },
-        // {
-        //   userId: 1,
-        //   businessId: 2,
-        //   rating: 3,
-        //   answer: "This place is super crowded! Waiting time to get a seat might be a while. Food is good though.",
-        //   imageUrl: "https://res.cloudinary.com/mabmab/image/upload/v1636787086/khmer_food/squid_uewqax.png"
+        //   userId: 6,
+
         // }
 
     ], {});
