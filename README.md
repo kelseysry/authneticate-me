@@ -24,6 +24,16 @@ is a website build off the idea of yelp.com but focuses solely on restaurants in
 **Front end** 
 - The front end was created by using React, Redux, Flexbox, and Grid. 
 
+**Libraries** 
+- React 
+- Redux 
+- bcryptjs - hash passwords  
+- csurf - CSRF protection
+- express-validator - validation of request bodies
+- faker - random seeding library 
+- jsonwebtoken - JWT
+- cors - Cross-Origin Resource Sharing,
+
 ## Instructions on How to Install Mab Mab app 
 1. run git clone 
 2. run npm install in the root directory 
