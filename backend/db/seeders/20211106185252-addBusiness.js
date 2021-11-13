@@ -157,10 +157,84 @@ module.exports = {
           lat: 11.571349276541694,
           lat:104.91992712107161
         },
-        // {
-        //   ownerId: 7,
-        //   title: "Central Market"
-        // }
+        {
+          ownerId: 7,
+          title: "La Pergola",
+          address: "28 St 184",
+          zipCode: "12205",
+          city: "Phnom Penh",
+          description: "Western and Khmer food served poolside in a casual atmosphere, with an impressive breakfast buffet. Come evening, dine at La Pergola and be inspired by creative cuisine. The familiar and exotic, together at last.",
+          imageUrl: "https://res.cloudinary.com/mabmab/image/upload/v1636792934/khmer_food/la_pergola_yezemm.png",
+          lat: 11.563768879937864,
+          lng: 104.92691462639586
+        },
+        {
+          ownerId: 3,
+          title: "Sundown Social Club",
+          address: "86 St 440",
+          zipCode: "12310",
+          city: "Phnom Penh",
+          description: "Great place to grab drinks and chat with friends!",
+          imageUrl: "https://res.cloudinary.com/mabmab/image/upload/v1636793666/khmer_food/Screen_Shot_2021-11-13_at_12.54.08_AM_ip80c1.png",
+          lat: 11.541344606160509,
+          lng:104.91480691290407
+        },
+        {
+          ownerId: 7,
+          title: "Little Sheep Hot Pot",
+          address: "House 27 214",
+          zipCode: "12211",
+          city: "Phnom Penh",
+          description: "Hot pot restaurant chain",
+          imageUrl: "https://res.cloudinary.com/mabmab/image/upload/v1636794107/khmer_food/hotpot_awmese.png",
+          lat: 11.56146469256715,
+          lng:104.92485899755961
+        },
+        {
+          ownerId: 3,
+          title: "The Pizza Company",
+          address: "Mao Tse Toung Blvd",
+          zipCode: "12105",
+          city: "Phnom Penh",
+          description: "Pizza chain in Cambodia",
+          imageUrl: "https://res.cloudinary.com/mabmab/image/upload/v1636794569/khmer_food/pizza_wobsgp.png",
+          lat: 11.550934812959493,
+          lng: 104.89223956149264
+        },
+        {
+          ownerId: 7,
+          title: "Katanashi",
+          address: "51 Street Village 5 Commune BKK1 District",
+          zipCode: "12000",
+          city: "Phnom Penh",
+          description: "Luxury Japanese restaurant",
+          imageUrl: "https://res.cloudinary.com/mabmab/image/upload/v1636795121/khmer_food/ka_yv0wrn.png",
+          lat: 11.5545554314904,
+          lng: 104.92679685337878
+        },
+        {
+          ownerId: 3,
+          title: "Food Stall - Insects",
+          address: "Samdach Preah Thoamak Lekhet Ouk St 184",
+          zipCode: "12206",
+          city: "Phnom Penh",
+          description: "Food stall that sells fried insects like crickets, spiders, and larvae every night",
+          imageUrl: "https://res.cloudinary.com/mabmab/image/upload/v1636795715/khmer_food/bugs_jb54mh.png",
+          lat: 11.565903603347152,
+          lng: 104.93148941959797
+        },
+        {
+          ownerId: 5,
+          title: "Orussey Market - Street Food",
+          address: "Oknha Tep Phan St 182",
+          zipCode: '120307',
+          city: "Phnom Penh",
+          description: "Food stall that specializes in fried street foot",
+          imageUrl: "https://res.cloudinary.com/mabmab/image/upload/v1636795720/khmer_food/snack_dnhpvz.png",
+          lat: 11.563513146861608, lng: 104.91629988375026
+
+        }
+
 
 
 

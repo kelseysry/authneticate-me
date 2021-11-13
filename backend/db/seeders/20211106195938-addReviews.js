@@ -108,11 +108,21 @@ module.exports = {
           answer: "The noodles are made right in front of the shop so you can't help but be enticed into the shop. Smells so good!",
           imageUrl: "https://res.cloudinary.com/mabmab/image/upload/v1636789440/khmer_food/near_unesco_part2_romdis.png"
         },
-        
-        // {
-        //   userId: 6,
+        {
+          userId: 6,
+          businessId: 15,
+          rating: 5,
+          answer: "If you want to be wined and dined, this is the place. The decor just outside is drop dead gorgeous.",
+          imageUrl: "https://res.cloudinary.com/mabmab/image/upload/v1636793157/khmer_food/tree_jvhbai.png",
+        },
+        {
+          userId: 3,
+          businessId: 15,
+          rating: 4,
+          answer: "Man you know it's fancy when the servings are small and the decorations take up more space",
+          imageUrl: "https://res.cloudinary.com/mabmab/image/upload/v1636793259/khmer_food/la_gqudhf.png"
+        },
 
-        // }
 
     ], {});
 
