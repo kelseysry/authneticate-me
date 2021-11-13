@@ -44,7 +44,8 @@ const business = useSelector((state) => state.business[businessId]);
           }
         </div>
         <div className="image_overlay">
-          </div>
+
+        </div>
 
       </div>
     </>

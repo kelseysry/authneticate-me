@@ -97,6 +97,18 @@
 */
 
 
+.image {
+  position: relative;
+  width: 400px
+}
+
+.image_img {
+  display: block;
+  width: 100%;
+
+}
+
+
 .hover-pic {
   position: relative;
 }
@@ -120,4 +132,3 @@
 .image_overlay:hover {
   opacity: 1;
 }
-
