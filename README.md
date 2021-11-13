@@ -54,6 +54,10 @@ When a user logs in, the API login route will be sent with a request that has th
 
 ![login page](https://res.cloudinary.com/mabmab/image/upload/v1636836616/khmer_food/login_osmrto.png)
 
+## Explore Page 
+
+A user can scroll through the explore page to view the different restaurants in Phnom Penh, Cambodia. Each restaurant picture is a nav link that will navigate a user to that restaurant's page. 
+
 ## Instructions on How to Install Mab Mab app 
 1. run git clone 
 2. run npm install in the root directory 
