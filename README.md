@@ -1,10 +1,6 @@
-# Mab Mab 
-
 ![Home Page of Mab Mab](https://res.cloudinary.com/mabmab/image/upload/v1636833234/khmer_food/home_piicjk.png)
 
-[Mab Mab](https://yelp-clone-kelsey-sry.herokuapp.com/)
-
-## Summary 
+# Summary 
 
 [Mab Mab](https://yelp-clone-kelsey-sry.herokuapp.com/) 
 is a website build off the idea of yelp.com but focuses solely on restaurants in Phnom Penh. Mab Mab was created by using React, Redux, Express, and PostgreSQL. Anyone who uses Mab Mab can do the following: 
@@ -25,7 +21,7 @@ is a website build off the idea of yelp.com but focuses solely on restaurants in
 - [API Routes document]
 - []
 
-## Overall Structure 
+# Overall Structure 
 
 **Back end** 
 - The back end was created by using Express as a REST API server and postgreSQL database with user austhentication routes.  
@@ -46,7 +42,7 @@ is a website build off the idea of yelp.com but focuses solely on restaurants in
 - jsonwebtoken - JWT
 - cors - Cross-Origin Resource Sharing,
 
-## Primary Components 
+# Primary Components 
 
 **User Authorizaition** 
 
@@ -69,12 +65,12 @@ A user can edit or delete a specific business. Users can also leave reviews for 
 ## Form to add a restaurant 
 ![form to add a restaurant](https://res.cloudinary.com/mabmab/image/upload/v1636844135/khmer_food/form_r1jcrm.png)
 
-## Technical Implementation Details
+# Technical Implementation Details
 
 The most challenging thing about this project was this bug that kept rendering reviews from another business on the page of a newly created business. Upon refresh of the newly created business, the reviews from another business would disappear. The frustrating thing about this bug is that it happens occaionally, it doesn't appear all the time. So I solved it by creating an action creator that would clear the previous old state values when loading a business page. Thus, when a business page is created, the user is redirected from the form page to the newly created business page with no reviews. 
 ![bug](https://res.cloudinary.com/mabmab/image/upload/v1636844770/khmer_food/tech_och94d.png)
 
-## Instructions on How to Install Mab Mab app 
+# Instructions on How to Install Mab Mab app 
 1. run git clone 
 2. run npm install in the root directory 
 3. cd frontend, run npm install
