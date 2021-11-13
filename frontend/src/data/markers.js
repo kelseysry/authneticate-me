@@ -67,6 +67,35 @@ let allMarkers = [
     business: "Fuwari",
     position: {lat: 11.550486590447706, lng: 104.92372750462535}
   },
+  {
+    business: "La Pergola",
+    position: {lat: 11.563768879937864, lng: 104.92691462639586}
+  },
+  {
+    business: "Sundown Social Club",
+    position: {lat: 11.541344606160509, lng:104.91480691290407}
+  },
+  {
+    business: "Little Sheep Hot Pot",
+    position: {lat:11.56146469256715, lng:104.92485899755961}
+  },
+  {
+    business: "The Pizza Company",
+    position: {lat: 11.550934812959493, lng: 104.89223956149264 }
+  },
+  {
+    business: "Katanashi",
+    position: {lat: 11.5545554314904, lng: 104.92679685337878}
+  },
+  {
+    business: "Food Stall - Insects",
+    position: {lat: 11.565903603347152, lng: 104.93148941959797}
+  },
+  {
+    business: "Orussey Market - Street Food",
+    position: {lat: 11.563513146861608, lng: 104.91629988375026}
+  }
+
 
 
 ]
