@@ -73,7 +73,7 @@ const CreateBusinessForm = () => {
     <>
     <PicBanner photoId={3} />
     <div className="form-style">
-    <form onSubmit={handleSubmit}>
+    <form className ="create-business-form" onSubmit={handleSubmit}>
       <label>
         Name
           <input
