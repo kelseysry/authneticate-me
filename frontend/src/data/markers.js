@@ -28,7 +28,7 @@ let allMarkers = [
     position: {lat: 11.554081576008095,lng: 104.9290223294673}
   },
   {
-    business: "Cafe Amazon Riverside",
+    business: "Cafe Amazon",
     position: {lat:11.566438749423035, lng: 104.9319116967672}
   },
   {
@@ -46,7 +46,28 @@ let allMarkers = [
   {
     business: "Coffee Lab Kh",
     position: {lat: 11.561850410925317, lng: 104.89153787321227 }
-  }
+  },
+  {
+    business: "Pho Sorya 118",
+    position: {lat: 11.571119446214905, lng: 104.9212223588955}
+  },
+  {
+    business: "Meatophum",
+    position : {lat: 11.577779806503697, lng: 104.9179888947942}
+  },
+  {
+    business: "J Mey Meatballs",
+    position: {lat: 11.571349276541694, lng:104.91992712107161}
+  },
+  {
+    business: "Central Market",
+    position: {lat:11.56975258696104, lng: 104.92100199755971}
+  },
+  {
+    business: "Fuwari",
+    position: {lat: 11.550486590447706, lng: 104.92372750462535}
+  },
+
 
 ]
 
