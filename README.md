@@ -69,6 +69,10 @@ A user can edit or delete a specific business. Users can also leave reviews for 
 ## Form to add a restaurant 
 ![form to add a restaurant](https://res.cloudinary.com/mabmab/image/upload/v1636844135/khmer_food/form_r1jcrm.png)
 
+## Technical Implementation Details
+
+The most challenging thing about this project was this bug that kept rendering reviews from another business on the page of a newly created business. Upon refresh of the newly created business, the reviews from another business would disappear. The frustrating thing about this bug is that it happens occaionally, it doesn't appear all the time. So I solved it using two methods. One was to build an action creator that would force a refresh 
+
 ## Instructions on How to Install Mab Mab app 
 1. run git clone 
 2. run npm install in the root directory 
