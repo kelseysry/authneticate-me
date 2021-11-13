@@ -9,8 +9,13 @@
 [Mab Mab](https://yelp-clone-kelsey-sry.herokuapp.com/) 
 is a website build off the idea of yelp.com but focuses solely on restaurants in Phnom Penh. Mab Mab was created by using React, Redux, Express, and PostgreSQL. Anyone who uses Mab Mab can do the following: 
 
-- 
-fasdfsdfds
+- Sign up 
+- Login and Log out
+- Login as a demo user 
+- View, add, delete, and edit restaurants. 
+- View and add a review for a restaurant. 
+- View the location of the restaurant on Google maps 
+
 
 ## Instructions on How to Install Mab Mab app 
 1. run git clone 
