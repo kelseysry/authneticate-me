@@ -1,0 +1,48 @@
+/* box-shadow:inset 0 0 0 2000px rgba(27, 26, 27, 0.3); */
+
+
+/* .each-pic-containe {
+  box-sizing: border-box;
+
+  height: 350px;
+  width: 300px;
+  display: flex;
+  padding: 20px 10px;
+  margin: 0 auto;
+  border: 0px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  outline: none;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex-wrap: nowrap;
+  border-radius: 5px;
+} */
+
+.image {
+  position: relative;
+  width: 400px
+}
+
+.image_img {
+  display: block;
+  width: 100%;
+
+}
+
+.image_overlay {
+  position:absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  opacity: 0;
+}
+
+.image_overlay:hover {
+  opacity: 1;
+}

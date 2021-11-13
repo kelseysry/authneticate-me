@@ -2,10 +2,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react'; // side effects
 
 import { getOneBusiness } from "../../store/business"
+import './HoverTest.css'
 
-import './OneBusinessTile.css';
+// import './OneBusinessTile.css';
 
-const OneBusinessTile = ({businessId}) => {
+const HoverOneTile = ({businessId}) => {
   const dispatch = useDispatch();
 
 const business = useSelector((state) => state.business[businessId]);
@@ -28,10 +29,20 @@ const business = useSelector((state) => state.business[businessId]);
   // console.log("average", reviews)
   // console.log("business",business )
 
+  // style={{ backgroundImage: `url('${business?.imageUrl}')` }}
+
   return (
     <>
-      <div className="hover-pic">
-        <div className="each-pic-container" style={{ backgroundImage: `url('${business?.imageUrl}')` }}>
+
+        <div className="image">
+          <img className="image_img" src ={business?.imageUrl} alt={"hiii"}/>
+          <div className="image_overlay">
+            <div className="image_title">Hello</div>
+            <p className="image_description"> descriptioon</p>
+          </div>
+        </div>
+
+
           <div className="each-tile-title">
           {business?.title}
           </div>
@@ -42,11 +53,7 @@ const business = useSelector((state) => state.business[businessId]);
           </div>
           : null
           }
-        </div>
-        <div className="image_overlay">
-          </div>
 
-      </div>
     </>
   )
 
@@ -54,4 +61,4 @@ const business = useSelector((state) => state.business[businessId]);
   }
 
 
-export default OneBusinessTile
+export default HoverOneTile

@@ -21,6 +21,7 @@ import pictures from '../src/data/pictures'
 
 // import Maps from "./components/Maps/Maps";
 import MapContainer from "./components/Maps/index.js";
+import HoverTest from "./components/HoverTest";
 
 function App() {
 
@@ -79,7 +80,9 @@ function App() {
           <Route path='/test'>
             {/* <OneBusinessTile businessId={"1"}/> */}
             {/* <Maps apiKey={apiKey}/> */}
-            <MapContainer />
+            {/* <MapContainer /> */}
+            <HoverTest />
+
           </Route>
           <Route>
             Page Not Found
