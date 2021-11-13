@@ -29,7 +29,7 @@
 
   height: 350px;
   width: 500px;
-  display: flex;
+  display: flex !important;
   padding: 20px 10px;
   margin: 0 auto;
   border: 0px;
@@ -43,6 +43,7 @@
   justify-content: flex-end;
   flex-wrap: nowrap;
   border-radius: 5px;
+
 }
 
 .each-tile-title {
