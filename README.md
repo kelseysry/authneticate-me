@@ -19,7 +19,6 @@ is a website build off the idea of yelp.com but focuses solely on restaurants in
 - [Database Schema](https://github.com/kelseysry/Mab-Mab/wiki/Database-Scheme)
 - [Front end Routes document]
 - [API Routes document]
-- []
 
 # Overall Structure 
 
