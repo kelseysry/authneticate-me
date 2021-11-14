@@ -31,6 +31,8 @@ const AllBusiness = () => {
 
   // after the component return () below has been rendered for the first time,
   //useEffect will dispatch the thunk
+
+  
   useEffect(() => {
     dispatch(getAllBusinesses())
     dispatch(clearReviews())

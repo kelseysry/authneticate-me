@@ -64,13 +64,13 @@ const EditBusinessForm = ({business, hideForm}) => {
       title, description, address, city, zipCode, imageUrl, ownerId, lat,lng
     }
 
-    console.log("this is userInput", userInputUpdateBusiness)
+    // console.log("this is userInput", userInputUpdateBusiness)
 
     // editOneBusiness is the thunk, we're passing the updateBusiness info that the user typed
     // and the specific business.id that we can get from the useSelector in the SingleBusinessPage component
     // note we passed in business as a prop into the EditBusinessForm component
     let updated = await dispatch(editOneBusiness(userInputUpdateBusiness, business.id))
-    console.log("editBusinessForm after dispatch thunk", updated)
+    // console.log("editBusinessForm after dispatch thunk", updated)
 
     if (updated) {
       hideForm();

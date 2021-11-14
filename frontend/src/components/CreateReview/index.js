@@ -63,10 +63,10 @@ const ReviewForm = ({reviews, hideForm, hideButton}) => {
     const newReview = {
       rating,answer,imageUrl,userId,businessId
     }
-    console.log("newReview in CreateView Component", newReview)
+    // console.log("newReview in CreateView Component", newReview)
 
     let createdReview = await dispatch(createOneReview(newReview))
-    console.log("this is createdReview in CreateView Component", createdReview)
+    // console.log("this is createdReview in CreateView Component", createdReview)
 
     // if(createdReview) {
     //   history.push('/')

@@ -1,22 +1,25 @@
-// frontend/src/components/Navigation/ProfileButton.js
 import React, { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
-import './Navigation.css';
+// import './Navigation.css';
 import { useHistory } from 'react-router';
+import EditOneReview from "../EditOneReview";
+import { NavLink } from "react-router-dom";
+import './DotDotButton.css'
 
 
-function ProfileButton({ user }) {
+function DotDotButton({businessId, reviewId}) {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const [showMenu, setShowMenu] = useState(false);
   // false = menu is hidden
+  const [showMenu, setShowMenu] = useState(false);
 
   const openMenu = () => { // invoked by the onClick in the html button, opens menu
     if (showMenu) return;
     setShowMenu(true);
   };
+
 
   useEffect(() => {
     if (!showMenu) return;
@@ -33,35 +36,24 @@ function ProfileButton({ user }) {
     return () => document.removeEventListener("click", closeMenu);
   }, [showMenu]);
 
-
-  async function logout (e) {
-
-    e.preventDefault();
-
-       await dispatch(sessionActions.logout());
-
-        history.push("/login")
-  }
-
-
-
-
   return (
     <>
       <button onClick={openMenu}>
-        <i className="fas fa-user-circle fa-3x"></i>
+        <div className="dotStyle">
+          <i class="fas fa-ellipsis-h fa-2x"></i>
+        </div>
       </button>
       {showMenu && (
-        <ul className="profile-dropdown">
-          <li>{user.username}</li>
-          <li>{user.email}</li>
+        <ul className="review-dropdown">
           <li>
-              <button onClick={logout}><i className="fas fa-power-off fa-2x"></i></button>
+            {/* <EditOneReview /> */}
+            <NavLink to={`/business/${businessId}/reviews/${reviewId}`}><div>Edit</div><i class="fas fa-edit"></i></NavLink>
           </li>
         </ul>
       )}
-    </>
-  );
-}
 
-export default ProfileButton;
+    </>
+  )
+
+}
+export default DotDotButton

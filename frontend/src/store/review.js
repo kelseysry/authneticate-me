@@ -3,6 +3,7 @@ import { csrfFetch } from "./csrf"
 const LOAD_REVIEWS = "review/LOAD_REVIEWS";
 const ADD_ONE = "review/ADD_ONE"
 const CLEAR = "review/CLEAR"
+const EDIT_ONE_REVIEW = "review/EDIT_ONE_REVIEW"
 
 // action
 const load = (reviews, businessId) => ({
@@ -22,6 +23,13 @@ const addOneReview = (newReview) => ({
 export const clearReviews = () => ({
   type: CLEAR,
 
+})
+
+// action creator to edit one review
+export const editReviewAction = (review, reviewId) => ({
+  type: EDIT_ONE_REVIEW,
+  review,
+  reviewId
 })
 
 
@@ -50,6 +58,19 @@ export const createOneReview = (formData) => async dispatch => {
   return newReview
 }
 
+//thunk for editing a review
+export const editOneReview = (editReview, reviewId, businessId) => async dispatch => {
+  const response = await csrfFetch(`/api/business/${businessId}/reviews/${reviewId}`, {
+    method: 'PUT',
+    body: JSON.stringify(editReview)
+  });
+  console.log('response in the thunk editOneReview', response)
+
+  const review = await response.json();
+  dispatch(editReviewAction(review, reviewId))
+  return review
+}
+
 // reducer
 const initialState = {};
 const reviewReducer = (state = initialState, action) => {
@@ -69,6 +90,17 @@ const reviewReducer = (state = initialState, action) => {
           ...state,
           [action.newReview.id]: action.newReview
         }
+        return newState
+      }
+      return state
+    }
+    case EDIT_ONE_REVIEW: {
+      if(!state[action.review]) {
+        const newState = {
+          ...state, [action.review.id]: action.review
+        };
+        // console.log("this is newState", newState)
+
         return newState
       }
       return state
