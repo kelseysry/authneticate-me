@@ -74,18 +74,19 @@ The most challenging thing about this project was this bug that kept rendering r
 - [ ] add a search bar 
 
 # Instructions on How to Install Mab Mab app 
-More indepth step process available ![here](https://github.com/Lazytangent/Google-Maps-API-Walkthrough)
 1. run git clone 
 2. run npm install in the root directory 
 3. cd frontend, run npm install
 4. cd backend, run npm install 
 5. in the backend directory create a .env file. There is a .env.example that you can follow to structure the .env file. 
-  - To generate a MAPS_API_KEY you must use your google account
-    1. Go to ![Google Cloud console](https://console.cloud.google.com/)
-    2. Click `Select a Project` and then click on `New Project` 
+  - To generate a MAPS_API_KEY you must use your google account. The [resource](https://github.com/Lazytangent/Google-Maps-API-Walkthrough) I used to develop a MAP API KEY.
+    1. Go to [Google Cloud console](https://console.cloud.google.com/)
+    2. Click `Select a Project` and then click on `New Project`. Pick a name for the project and put the location as `No Organization` then click `create` 
     ![step1](https://res.cloudinary.com/mabmab/image/upload/v1636849102/khmer_food/step1_ggni4z.png)
-    
-    4. Enable Maps ....
+    3. Click `APIs & Services` in the side navigation bar and then click `Credentials`. After that, click `Create credentials` and then choose `API KEY`. 
+    4. With your new API key, click `Restrict key`. After that rename the API KEY. 
+    5.  Don't forget to click `Restrict Key`
+    6.  Add your API key to the .env file. 
 
 6. in your backend directory, run the following commands:  
   -  npx dotenv sequelize-cli db:create
