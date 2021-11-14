@@ -29,9 +29,11 @@ const pictures = {
     {
       "imageNumber":"7",
       "imageUrl": "https://res.cloudinary.com/mabmab/image/upload/v1636388692/khmer_food/pho_xiqrut.png"
+    },
+    {
+      "imageNumber":"8",
+      "imageUrl":"https://res.cloudinary.com/mabmab/image/upload/v1636841509/khmer_food/Screen_Shot_2021-11-13_at_2.11.33_PM_fieiu4.png"
     }
-
-
   ]
 
 }

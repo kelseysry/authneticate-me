@@ -83,9 +83,11 @@ function App() {
             {/* <MapContainer /> */}
 
           {/* </Route> */}
+          {sessionUser &&
           <Route exact path='/business/:businessId/reviews/:reviewId'>
             <EditOneReview />
           </Route>
+          }
           <Route>
             <HitError />
           </Route>
