@@ -6,6 +6,8 @@ import { getReviews } from "../../store/review";
 import isURL from 'validator/es/lib/isURL';
 import { editOneReview } from '../../store/review';
 import { useHistory } from 'react-router';
+import './EditOneReview.css'
+import pictures from '../../data/pictures'
 
 // will need to thread the review the user is passing in from the SingleBusinessPage component
 const EditOneReview = ({}) => {
@@ -27,7 +29,7 @@ const EditOneReview = ({}) => {
   // grab the user from state so a user doesn't have the manually input their data into the form
   // we automatically know who's submitting the form
   const sessionUser = useSelector((state) => state.session.user)
-  const userId = sessionUser.id
+  const userId = sessionUser?.id
 
   // getOneBusiness thunk, have to import this in order to grab the business from the stata via useSelector
   useEffect(() => {
@@ -77,9 +79,11 @@ const EditOneReview = ({}) => {
   }
 
   return (
-<>
-    <form onSubmit={handleSubmit}>
-
+  <>
+    <div className="signup-pic-container" style={{ backgroundImage: `url('${pictures.collection[7].imageUrl}')` }}>
+      <div className="explore">Edit Review</div>
+    </div>
+    <form className="signup-form-style" onSubmit={handleSubmit}>
       <label>
           <input
             type="number"
@@ -110,9 +114,10 @@ const EditOneReview = ({}) => {
       <ul className="error">
       {errors.map((error) => <li key={error}>{error}</li>)}
       </ul>
+      <div className="submit-cancel">
       <button type="submit" disabled={errors?.length>0} >Submit Review</button>
       <button type="button" onClick={handleCancelReviewFormClick}>Cancel</button>
-
+      </div>
     </form>
     </>
   )

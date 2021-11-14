@@ -47,7 +47,7 @@ function DotDotButton({businessId, reviewId}) {
         <ul className="review-dropdown">
           <li>
             {/* <EditOneReview /> */}
-            <NavLink to={`/business/${businessId}/reviews/${reviewId}`}><div>Edit</div><i class="fas fa-edit"></i></NavLink>
+            <NavLink to={`/business/${businessId}/reviews/${reviewId}`}><div className="dot-edit">Edit</div><i class="fas fa-edit"></i></NavLink>
           </li>
         </ul>
       )}

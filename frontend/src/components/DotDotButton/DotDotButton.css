@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
 .review-dropdown {
   position: absolute;
   flex-direction: column;
 }
 
-.fa-ellipsis-h {
+.fa-ellipsis-h, .fa-edit {
   color: cornflowerblue;
 }
 
@@ -18,4 +20,9 @@
   /* background-color: pink; */
   justify-content: space-between;
   align-items: center;
+}
+
+.dot-edit {
+  font-family: 'Poppins', sans-serif;
+  color: cornflowerblue;
 }
