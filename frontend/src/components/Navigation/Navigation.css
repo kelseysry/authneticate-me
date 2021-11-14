@@ -48,6 +48,7 @@ nav {
 .profile-dropdown {
   color:#2699FB;
   font-family: 'Poppins', sans-serif;
+  /* position: absolute; */
 }
 
 .sign-log-style a {

@@ -1,0 +1,21 @@
+.review-dropdown {
+  position: absolute;
+  flex-direction: column;
+}
+
+.fa-ellipsis-h {
+  color: cornflowerblue;
+}
+
+.dotStyle {
+  /* color: cornflowerblue; */
+  /* font-size: 500px; */
+}
+
+.user-icon-and-dot {
+  display: flex !important;
+  width: 800px;
+  /* background-color: pink; */
+  justify-content: space-between;
+  align-items: center;
+}

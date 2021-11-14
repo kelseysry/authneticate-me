@@ -10,6 +10,7 @@ import AllBusiness from "./components/AllBusiness";
 import CreateBusinessForm from "./components/CreateBusiness";
 import EditBusinessForm from "./components/EditBusinessForm";
 // import OneBusinessTile from "./components/OneBusinessTile";
+import EditOneReview from "./components/EditOneReview";
 import HitError from "./components/HitError";
 
 import { useSelector } from "react-redux";
@@ -30,7 +31,7 @@ function App() {
   const sessionUser = useSelector((state) => state.session.user);
   // const userId = sessionUser.id
 
-  console.log("sessionUser in app", sessionUser)
+  // console.log("sessionUser in app", sessionUser)
 
   // isLoaded - don't want to render routes unless user logged in
 
@@ -58,12 +59,12 @@ function App() {
             <SignupFormPage />
           </Route>
           {sessionUser &&
-          <Route path='/business/:businessId'>
+          <Route exact path='/business/:businessId'>
             <SingleBusinessPage />
           </Route>}
 
           {sessionUser &&
-          <Route path='/business'>
+          <Route exact path='/business'>
             {/* <CreateBusinessForm /> */}
             <AllBusiness />
           </Route>
@@ -73,14 +74,17 @@ function App() {
             <CreateBusinessForm />
           </Route>
           }
-          <Route path='/EditBusiness'>
+          {/* <Route path='/EditBusiness'>
             <EditBusinessForm />
-          </Route>
-          <Route path='/test'>
+          </Route> */}
+          {/* <Route path='/test'> */}
             {/* <OneBusinessTile businessId={"1"}/> */}
             {/* <Maps apiKey={apiKey}/> */}
             {/* <MapContainer /> */}
 
+          {/* </Route> */}
+          <Route exact path='/business/:businessId/reviews/:reviewId'>
+            <EditOneReview />
           </Route>
           <Route>
             <HitError />

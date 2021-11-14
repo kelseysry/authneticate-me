@@ -12,7 +12,7 @@ const containerStyle = {
 
 
 const onLoad = infoBox => {
-  console.log('infoBox: ', infoBox)
+  // console.log('infoBox: ', infoBox)
 };
 
 const AllMaps = ({ apiKey, allMarkers }) => {
@@ -48,6 +48,7 @@ const AllMaps = ({ apiKey, allMarkers }) => {
 
 
             <InfoBox
+            key={idx}
             onLoad={onLoad}
             options={options}
             position={marker.position}

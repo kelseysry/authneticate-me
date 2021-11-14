@@ -35,7 +35,7 @@ const Maps = ({ apiKey, BusinessLat, BusinessLng }) => {
     lng: +BusinessLng
   }
 
-  console.log("MapsBusi", BusinessLat)
+  // console.log("MapsBusi", BusinessLat)
 
   const position = {
     lat: +BusinessLat,

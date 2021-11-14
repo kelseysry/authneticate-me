@@ -1,7 +1,9 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { NavLink } from "react-router-dom";
 
 import { getReviews } from "../../store/review";
+import DotDotButton from "../DotDotButton";
 
 // import ReviewForm from "../CreateReview";
 import './AllReviews.css';
@@ -16,7 +18,7 @@ const BusinessReviews = ({business}) => {
 
 
   const reviews = Object.values(reviewsObj).filter(review => review.businessId === business.id)
-  console.log("review components", reviews)
+  // console.log("review components", reviews)
 
   useEffect(() => {
     dispatch(getReviews(business.id))
@@ -31,14 +33,18 @@ const BusinessReviews = ({business}) => {
       <div className="review-container" key={review.id}>
         <ul>
           <li>
-            <div className="profile">
-              <span className="icon">
-              <i className="far fa-user-circle fa-2x"></i>
-              {/* <i class="fas fa-utensils"></i> */}
-              </span>
-              <span className="review-username">
-              {review.User.username}
-              </span>
+            <div className="user-icon-and-dot">
+              <div className="profile">
+                <span className="icon">
+                  <i className="far fa-user-circle fa-2x"></i>
+                </span>
+                <span className="review-username">
+                {review.User.username}
+                </span>
+              </div>
+              <div className="dotStyle">
+                <DotDotButton businessId={business.id} reviewId={review.id}/>
+              </div>
             </div>
             <div className="rating-profile">
               {/* <b>Rating</b>  */}
@@ -50,6 +56,13 @@ const BusinessReviews = ({business}) => {
             </div>
               <div className="review-container">
               {review.answer}
+              {/* {business.id} */}
+              </div>
+              <div>
+                {/* <NavLink> Hi </NavLink> */}
+                {/* <div>{review.id}</div> */}
+                {/* <NavLink to={`/business/${business.id}/reviews/${review.id}`}>Edit Review</NavLink> */}
+
               </div>
               <div className="image-container">
                 <img className="reviewImage" src ={review.imageUrl} alt={review.imageUrl}/>

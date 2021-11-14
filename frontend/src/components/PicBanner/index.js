@@ -9,10 +9,10 @@ const PicBanner = ({photoId}) => {
   const dispatch = useDispatch();
 
   const businessObj = useSelector((state) => state.business);
-  console.log("businessHome", businessObj)
+  // console.log("businessHome", businessObj)
 
   const businesses = Object.values(businessObj)
-  console.log("business", businesses)
+  // console.log("business", businesses)
 
   useEffect(() => {
     dispatch(getAllBusinesses())

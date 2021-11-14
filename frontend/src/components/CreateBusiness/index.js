@@ -24,8 +24,8 @@ const CreateBusinessForm = () => {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
 
-  console.log("this is sessionUser", sessionUser)
-  console.log("this is sessionUserId", sessionUser?.id)
+  // console.log("this is sessionUser", sessionUser)
+  // console.log("this is sessionUserId", sessionUser?.id)
   const ownerId = sessionUser?.id
 
 

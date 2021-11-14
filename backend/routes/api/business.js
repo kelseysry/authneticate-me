@@ -55,10 +55,10 @@ router.put('/:businessId(\\d+)', requireAuth, asyncHandler(async (req, res, next
     business.zipCode = req.body.zipCode || business.zipCode;
     business.imageUrl = req.body.imageUrl || business.imageUrl;
     business.lat = req.body.lat || business.lat;
-    business.lng = req.body.lng || business.lng; 
+    business.lng = req.body.lng || business.lng;
 
     await business.save();
-    console.log("api route, res.json(business)", business) // business is saving properly
+    // console.log("api route, res.json(business)", business) // business is saving properly
     res.json({business})
   } else {
     // next(businessNotFoundError(req.params.businessId))
@@ -94,9 +94,9 @@ router.get('/:businessId(\\d+)/reviews', asyncHandler(async(req, res) => {
     include: [User]
   })
 
-  console.log("this is reviews", reviews)
+  // console.log("this is reviews", reviews)
   // console.log("this is reviews.User, no array", reviews.User)
-  console.log("this is reviews.User in the api yaaaa", reviews[0].User)
+  // console.log("this is reviews.User in the api yaaaa", reviews[0].User)
 
   return res.json(reviews)
 }))
@@ -109,8 +109,30 @@ router.post('/:businessId(\\d+)/reviews', asyncHandler(async(req,res) => {
     include: [User]
   })
 
-  console.log("review in backend", reviewAndUser)
+  // console.log("review in backend", reviewAndUser)
   return res.json(reviewAndUser)
 }))
+
+// edit one review for one business
+router.put('/:businessId(\\d+)/reviews/:reviewId(\\d+)', asyncHandler(async(req, res, next) => {
+
+  const oneReview = await Review.findByPk(req.params.reviewId, {
+      include: [User]
+  })
+
+  console.log("edit review in API", oneReview)
+
+  if(oneReview) {
+    oneReview.rating = req.body.rating || oneReview.rating;
+    oneReview.answer = req.body.answer || oneReview.answer;
+    oneReview.imageUrl = req.body.imageUrl || oneReview.imageUrl;
+
+    await oneReview.save();
+    res.json({oneReview})
+  }
+}))
+
+
+
 
 module.exports = router;
