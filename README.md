@@ -57,12 +57,15 @@ A user can scroll through the explore page to view the different restaurants in 
 
 ## Single Business Page
 
-A user can edit or delete a specific business. Users can also leave reviews for the business. 
+A user can edit or delete a specific business. Users can also leave reviews for the business as well as edit their review. 
 ![single business page part 1](https://res.cloudinary.com/mabmab/image/upload/v1636843850/khmer_food/single1_io7spj.png)
 ![single_business page part 2](https://res.cloudinary.com/mabmab/image/upload/v1636843847/khmer_food/single2_gpedkz.png)
 
 ## Form to add a restaurant 
 ![form to add a restaurant](https://res.cloudinary.com/mabmab/image/upload/v1636844135/khmer_food/form_r1jcrm.png)
+
+## Form to edit a review 
+![form to edit a review](https://res.cloudinary.com/mabmab/image/upload/v1636879658/khmer_food/edit_review_rwswkv.png)
 
 # Technical Implementation Details
 
