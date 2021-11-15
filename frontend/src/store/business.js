@@ -6,6 +6,12 @@ const LOAD_BUSINESSES = 'business/LOAD_BUSINESSES';
 const ADD_ONE = 'business/ADD_ONE';
 const REMOVE_BUSINESS = 'business/REMOVE_BUSINESS';
 const EDIT_ONE = 'business/EDIT_ONE'
+const CLEAR_BUSINESS = 'business/CLEAR_BUSINESS'
+
+// clear deleted business
+export const clearBusiness = () => ({
+  type: CLEAR_BUSINESS
+})
 
 // action for one business
 const load = (business) => ({
@@ -111,7 +117,7 @@ const businessReducer = (state = initialState, action) => {
 // let newState
 switch (action.type) {
   case LOAD_BUSINESSES: {
-    const newState = {...state}; // don't have to ...state, if this load on first render/first time user opens the page
+    const newState = {}; // don't have to ...state, if this load on first render/first time user opens the page
     action.businesses.forEach((business) => {
       // normalizing
       newState[business.id] = business // make key value pair with id as key and value as business object
@@ -121,7 +127,7 @@ switch (action.type) {
   }
   case LOAD_BUSINESS: {
     const newState = {...state};
-    newState[action.business.id] = action.business
+    newState[action.business?.id] = action.business
     // console.log("this is newState in Load", newState)
     return newState
   }
