@@ -12,8 +12,6 @@ import './AllBusiness.css'
 import pictures from '../../data/pictures'
 import OneBusinessTile from '../OneBusinessTile';
 import { clearReviews } from '../../store/review';
-import { clearBusiness } from '../../store/business';
-
 
 const AllBusiness = () => {
   // declare variables from hooks
@@ -23,11 +21,7 @@ const AllBusiness = () => {
   const businessObj = useSelector((state) => state.business)
 
   // if want array version of business
-
-
   const businesses = Object.values(businessObj)
-
-
   // console.log("this is from components", businesses)
 
   // const reviewsObj = useSelector((state) => state.review)
@@ -42,13 +36,8 @@ const AllBusiness = () => {
   useEffect(() => {
     dispatch(getAllBusinesses())
     dispatch(clearReviews())
-    dispatch(clearBusiness())
-  }, [dispatch])
+  }, [dispatch, businessObj.length])
 
-
-  // const reviews = Object.values(reviewsObj).filter(review => review.businessId === business.id)
-  // const businesses = Object.values(businessObj).filter(business => business)
-  console.log("businesses in AllBusiness COmponent", businesses)
 
   return (
 
@@ -63,11 +52,21 @@ const AllBusiness = () => {
 
 
       <div className="one-business-image-container">
-          {businesses.map((business) =>
 
-          <div className="one-image-container" key={business?.id}>
-          <NavLink to={`/business/${business?.id}`}><OneBusinessTile businessId={business?.id}/></NavLink>
+
+          {businesses.map((business) =>
+          // {business &&
+
+           // {
+              // business.id &&
+                <div className="one-image-container" key={business?.id}>
+
+              <NavLink to={`/business/${business?.id}`}><OneBusinessTile businessId={business?.id}/></NavLink>
           </div>
+
+          //  }
+          // }
+
           )}
       </div>
 

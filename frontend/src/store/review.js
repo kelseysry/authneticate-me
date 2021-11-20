@@ -4,6 +4,7 @@ const LOAD_REVIEWS = "review/LOAD_REVIEWS";
 const ADD_ONE = "review/ADD_ONE"
 const CLEAR = "review/CLEAR"
 const EDIT_ONE_REVIEW = "review/EDIT_ONE_REVIEW"
+const REMOVE_REVIEW = "review/REMOVE_REVIEW"
 
 // action
 const load = (reviews, businessId) => ({
@@ -29,6 +30,12 @@ export const clearReviews = () => ({
 export const editReviewAction = (review, reviewId) => ({
   type: EDIT_ONE_REVIEW,
   review,
+  reviewId
+})
+
+// action creator to delete on review
+const removeOneReview = (reviewId) => ({
+  type: REMOVE_REVIEW,
   reviewId
 })
 
@@ -64,12 +71,24 @@ export const editOneReview = (editReview, reviewId, businessId) => async dispatc
     method: 'PUT',
     body: JSON.stringify(editReview)
   });
-  console.log('response in the thunk editOneReview', response)
+  // console.log('response in the thunk editOneReview', response)
 
   const review = await response.json();
   dispatch(editReviewAction(review, reviewId))
   return review
 }
+
+// thunk to delete a review
+export const deleteReview = (businessId, reviewId) => async dispatch => {
+  const response = await csrfFetch(`/api/business/${businessId}/reviews/${reviewId}`, {
+    method: 'DELETE'
+  });
+  console.log("delete review thunk", response)
+  console.log("reviewId in thunk", reviewId)
+  if(response.ok) {
+    dispatch(removeOneReview(reviewId))
+  }
+};
 
 // reducer
 const initialState = {};
@@ -104,6 +123,11 @@ const reviewReducer = (state = initialState, action) => {
         return newState
       }
       return state
+    }
+    case REMOVE_REVIEW : {
+      const newState = {...state};
+      delete newState[action.reviewId];
+      return newState
     }
     case CLEAR : {
       return {}

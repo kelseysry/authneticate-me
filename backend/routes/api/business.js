@@ -1,3 +1,6 @@
+// api
+
+
 const express = require('express');
 const router = express.Router();
 const asyncHandler = require('express-async-handler')
@@ -13,6 +16,14 @@ const businessNotFoundError = businessId => {
   err.title = 'Business not found.';
   err.status = 404;
   return err;
+}
+
+const oneReviewNotFoundError = reviewId => {
+  const err = Error('Review not found');
+  err.errors = [`Review with id of ${reviewId} could not be found.`];
+  err.title = 'Review not found';
+  err.status = 404;
+  return err
 }
 
 router.get('/', asyncHandler(async (req, res) => {
@@ -132,6 +143,17 @@ router.put('/:businessId(\\d+)/reviews/:reviewId(\\d+)', asyncHandler(async(req,
   }
 }))
 
+// delete one review for a business
+router.delete('/:businessId(\\d+)/reviews/:reviewId(\\d+)', asyncHandler(async(req, res, next) => {
+  const oneReview = await Review.findByPk(req.params.reviewId);
+  console.log("oneReview API", oneReview)
+  if(oneReview) {
+    await oneReview.destroy();
+    res.status(204).end();
+  } else {
+    next(oneReviewNotFoundError(req.params.reviewId))
+  }
+}));
 
 
 
