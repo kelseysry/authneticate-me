@@ -43,7 +43,8 @@ function Navigation({ isLoaded }){
   }
 
   return (
-  <nav>
+  <>
+  <nav className="big-screen">
     <div className="home-explore">
       <div className="subNav">
         <div className="pad">
@@ -61,6 +62,25 @@ function Navigation({ isLoaded }){
       </div>
     </div>
   </nav>
+  <nav className="small-screen">
+    <div className="home-explore">
+      <div className="subNav">
+        <div className="pad">
+        <NavLink exact to="/"><i className="fas fa-home fa-lg"></i></NavLink>
+        </div>
+        <div className="pad">
+        <NavLink to="/business"><i class="fas fa-search fa-lg"></i></NavLink>
+        </div>
+        <div className="pad">
+        <NavLink to="/createBusiness"><i class="fas fa-map-marked-alt fa-lg"></i></NavLink>
+        </div>
+      </div>
+      <div>
+      {isLoaded && sessionLinks}
+      </div>
+    </div>
+  </nav>
+  </>
   );
 
   // only show sessionLink if check app has loaded
