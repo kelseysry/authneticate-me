@@ -51,10 +51,10 @@ function DotDotButton({businessId, reviewId}) {
       {showMenu && (
         <ul className="review-dropdown">
           <li>
-            <NavLink to={`/business/${businessId}/reviews/${reviewId}`}><div className="dot-edit">Edit</div><i class="fas fa-edit"></i></NavLink>
+            <NavLink to={`/business/${businessId}/reviews/${reviewId}`}><div className="dot-edit"></div><i class="fas fa-edit"></i></NavLink>
           </li>
           <li>
-            <button onClick={() => {handleDeleteReview(businessId, reviewId)}}>Delete</button>
+            <button onClick={() => {handleDeleteReview(businessId, reviewId)}}><i class="fas fa-trash-alt fa-2x"></i></button>
           </li>
         </ul>
       )}
