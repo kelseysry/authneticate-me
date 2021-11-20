@@ -6,7 +6,8 @@ import { useHistory } from 'react-router';
 import EditOneReview from "../EditOneReview";
 import { NavLink } from "react-router-dom";
 import './DotDotButton.css'
-
+// import * as reviewActions from '../../store/review'
+import { deleteReview } from "../../store/review";
 
 function DotDotButton({businessId, reviewId}) {
   const dispatch = useDispatch();
@@ -36,6 +37,10 @@ function DotDotButton({businessId, reviewId}) {
     return () => document.removeEventListener("click", closeMenu);
   }, [showMenu]);
 
+   const handleDeleteReview = (businessId, reviewId) => {
+     dispatch(deleteReview(businessId, reviewId));
+    history.push(`/business/${businessId}`)
+  }
   return (
     <>
       <button onClick={openMenu}>
@@ -46,12 +51,13 @@ function DotDotButton({businessId, reviewId}) {
       {showMenu && (
         <ul className="review-dropdown">
           <li>
-            {/* <EditOneReview /> */}
             <NavLink to={`/business/${businessId}/reviews/${reviewId}`}><div className="dot-edit">Edit</div><i class="fas fa-edit"></i></NavLink>
+          </li>
+          <li>
+            <button onClick={() => {handleDeleteReview(businessId, reviewId)}}>Delete</button>
           </li>
         </ul>
       )}
-
     </>
   )
 
