@@ -1,20 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 
-/* .top-banner-pic-all-business {
-  box-sizing: border-box;
-  display: flex;
-  padding: 40px 64px;
-  margin: 0 auto;
-  height: 50vh;
-  background-size: cover;
-  background-position-y: 90%;
-  background-repeat: no-repeat;
-  outline: none;
-  align-items: center;
-  object-fit: fill!important;
-  box-shadow:inset 0 0 0 2000px rgba(27, 26, 27, 0.3);
-
-} */
 
 
 .one-image-container a:hover {
@@ -70,32 +55,23 @@
   column-gap: 5em;
 
 }
-/*
+
+@media only screen and (max-width:1000px) {
+
+  .one-business-image-container{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .top-banner-pic-all-business {
+    /* display: none !important; */
+  }
+
+  .explore {
+    letter-spacing: normal !important;
+    font-size: 10vw;
+  }
 
 
 
-
-.each-image {
-  width: 200px
 }
-
-.one-image-container {
-  display:flex;
-  flex-direction: column;
-}
-
-.each-business-details {
-  width: 150px
-}
-
-.explore {
-  color: #fff;
-  font-size: 10vw;
-  font-weight: 700;
-  letter-spacing: -7px;
-  font-family: 'Poppins', sans-serif;
-  text-align: center;
-  height: auto;
-  margin: 0 auto;
-  position: relative;
-} */

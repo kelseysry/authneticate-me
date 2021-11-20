@@ -5,11 +5,16 @@ import { GoogleMap, useJsApiLoader, InfoBox } from '@react-google-maps/api';
 import { Marker } from '@react-google-maps/api';
 // import allMarkers from '../../data/markers';
 
+// const containerStyleSmall = {
+//   width: '600vw',
+//   height: '300vh',
+// };
+
+
 const containerStyle = {
   width: '900px',
   height: '600px',
 };
-
 
 const onLoad = infoBox => {
   // console.log('infoBox: ', infoBox)
@@ -36,6 +41,7 @@ const AllMaps = ({ apiKey, allMarkers }) => {
 
   return (
     <>
+    {/* <div className="big-screen-home"> */}
       {isLoaded && (
         <GoogleMap
       id="marker-example"
@@ -45,8 +51,6 @@ const AllMaps = ({ apiKey, allMarkers }) => {
       >
         {
           allMarkers.map((marker,idx) => (
-
-
             <InfoBox
             key={idx}
             onLoad={onLoad}
@@ -59,26 +63,24 @@ const AllMaps = ({ apiKey, allMarkers }) => {
               </div>
             </div>
           </InfoBox>
-
-
           ))}
 
 {allMarkers.map((marker, idx) => (
       <Marker
       onLoad={onLoad}
-
         key={idx}
         position={marker.position}
         name={marker.name}
-
-
-
       />
     ))}
-
-
 </GoogleMap>
       )}
+{/* </div> */}
+
+{/* <div className ="small-screen-map">
+  hi
+</div> */}
+
 
 
     </>
