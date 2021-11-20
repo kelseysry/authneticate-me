@@ -4,11 +4,12 @@ import { GoogleMap, useJsApiLoader, InfoBox } from '@react-google-maps/api';
 // import { useJsApiLoader } from '@react-google-maps/api';
 import { Marker } from '@react-google-maps/api';
 // import allMarkers from '../../data/markers';
+import './AllMaps.css'
 
-// const containerStyleSmall = {
-//   width: '600vw',
-//   height: '300vh',
-// };
+const containerStyleSmall = {
+  width: '300px',
+  height: '400px',
+};
 
 
 const containerStyle = {
@@ -41,7 +42,7 @@ const AllMaps = ({ apiKey, allMarkers }) => {
 
   return (
     <>
-    {/* <div className="big-screen-home"> */}
+    <div className="big-screen-home">
       {isLoaded && (
         <GoogleMap
       id="marker-example"
@@ -75,11 +76,43 @@ const AllMaps = ({ apiKey, allMarkers }) => {
     ))}
 </GoogleMap>
       )}
-{/* </div> */}
+</div>
 
-{/* <div className ="small-screen-map">
-  hi
-</div> */}
+<div className ="small-screen-map">
+{isLoaded && (
+        <GoogleMap
+      id="marker-example"
+      mapContainerStyle={containerStyleSmall}
+      zoom={14}
+      center={center}
+      >
+        {
+          allMarkers.map((marker,idx) => (
+            <InfoBox
+            key={idx}
+            onLoad={onLoad}
+            options={options}
+            position={marker.position}
+          >
+                  <div style={{ backgroundColor: 'black', opacity: 0.75, padding: 3, color: 'white'}}>
+              <div style={{ fontSize: 16, fontColor: `#08233B` }}>
+                {marker.business}
+              </div>
+            </div>
+          </InfoBox>
+          ))}
+
+{allMarkers.map((marker, idx) => (
+      <Marker
+      onLoad={onLoad}
+        key={idx}
+        position={marker.position}
+        name={marker.name}
+      />
+    ))}
+</GoogleMap>
+      )}
+</div>
 
 
 
