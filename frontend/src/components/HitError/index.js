@@ -1,7 +1,9 @@
 import pictures from '../../data/pictures'
-import AllMapContainer from '../AllMaps'
+// import AllMapContainer from '../AllMaps'
 import {errorMessage as allMarkers} from '../../data/errorMessage'
+import ErrorMapContainer from '../MapErrors'
 import './HitError.css'
+
 
 function HitError () {
 
@@ -12,7 +14,8 @@ function HitError () {
     </div>
 
     <div className="error-map-container">
-    <AllMapContainer allMarkers={allMarkers}/>
+    <ErrorMapContainer allMarkers={allMarkers}/>
+
     </div>
 
 
