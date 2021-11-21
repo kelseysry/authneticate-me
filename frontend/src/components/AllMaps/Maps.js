@@ -108,7 +108,9 @@ console.log("allMarkers in AllMaps", allMarkers)
               >
                 <div className="image-title-map-container" style={{ backgroundImage: `url('${selectedCenter.image}')`}}>
                   <div className="image-title-map">
+
                   {selectedCenter.marker.title}
+
                   </div>
                 </div>
               </InfoWindow>

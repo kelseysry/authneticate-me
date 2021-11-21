@@ -120,7 +120,27 @@
 @media only screen and (max-width:1000px) {
 
   .map-and-about {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+  }
+
+  .about-details {
+    width:fit-content
+  }
+
+  .splash-business-tiles-container {
+    display: none;
+
+  }
+
+  .about-container {
     width: 80%;
+  }
+
+  .map-home {
+    width: 300px;
+
   }
 
 }
@@ -157,5 +177,10 @@
 
   /* display: none; */
 }
+
+/* .image-title-map {
+  word-break: break-all;
+} */
+
 
 }
