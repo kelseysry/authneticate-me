@@ -110,6 +110,13 @@
   width: 900px;
 }
 
+.click-marker {
+  font-weight: 900;
+  font-size: medium;
+  color: rgb(205, 38, 38);
+  font-size: 18px
+}
+
 @media only screen and (max-width:1000px) {
 
   .map-and-about {

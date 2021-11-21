@@ -86,8 +86,8 @@ console.log("allMarkers in AllMaps", allMarkers)
         key={idx}
 
         position={{
-          lat: parseFloat(center.position.position.lat),
-          lng: parseFloat(center.position.position.lng)
+          lat: parseFloat(center.marker.position.position.lat),
+          lng: parseFloat(center.marker.position.position.lng)
         }}
 
         // causes pop up
@@ -103,12 +103,14 @@ console.log("allMarkers in AllMaps", allMarkers)
                 setSelectedCenter(null);
               }}
               position={{
-                lat: parseFloat(selectedCenter.position.position.lat),
-                lng: parseFloat(selectedCenter.position.position.lng)
+                lat: parseFloat(selectedCenter.marker.position.position.lat),
+                lng: parseFloat(selectedCenter.marker.position.position.lng)
               }}
             >
-              <div>
-                <h3>{selectedCenter.title}</h3>
+              <div className="image-title-map-container" style={{ backgroundImage: `url('${selectedCenter.image}')`}}>
+                <div className="image-title-map">
+                {selectedCenter.marker.title}
+                </div>
               </div>
             </InfoWindow>
           )}
