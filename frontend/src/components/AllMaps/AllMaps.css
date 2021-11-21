@@ -59,4 +59,50 @@
     display: block;
   }
 
+  .image-title-map-container {
+    box-sizing: border-box;
+    box-shadow:inset 0 0 0 2000px rgba(27, 26, 27, 0.3);
+
+    height: 100px;
+    width: fit-content;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: flex !important;
+    padding: 20px 10px;
+    margin: 0 auto;
+    border: 0px;
+    /* align-content: flex-start; */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    outline: none;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    border-radius: 5px;
+
+  }
+
+  .image-title-map {
+    color: #fff;
+    font-weight: 700;
+    font-size: medium;
+    overflow-wrap: break-word !important;
+    /* font-family: 'Poppins', sans-serif; */
+    line-height: 0.82em;
+    padding-left: 0px;
+    /* white-space: initial; */
+    /* word-wrap: break-word; */
+
+  }
+
+  .image-title-map {
+    word-break: break-all;
+  }
+
+
+
+
+
 }
