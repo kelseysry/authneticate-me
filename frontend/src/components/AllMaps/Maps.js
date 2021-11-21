@@ -19,7 +19,6 @@ const containerStyle = {
   height: '600px',
 };
 
-
 const AllMaps = (
   ({ apiKey, allMarkers }) => {
   const [selectedCenter, setSelectedCenter] = useState(null);
@@ -74,55 +73,95 @@ console.log("allMarkers in AllMaps", allMarkers)
     <div className="big-screen-home">
 
       {isLoaded && (
-        <GoogleMap
+      <GoogleMap
       id="marker-example"
       mapContainerStyle={containerStyle}
       zoom={14}
       center={center}
       >
 
-{allMarkers.map((center, idx) => (
-      <Marker
-        key={idx}
+      {allMarkers.map((center, idx) => (
+            <Marker
+              key={idx}
 
-        position={{
-          lat: parseFloat(center.marker.position.position.lat),
-          lng: parseFloat(center.marker.position.position.lng)
-        }}
-
-        // causes pop up
-        onClick={() => {
-          setSelectedCenter(center);
-       }}
-      />
-    ))}
-
-{selectedCenter && (
-            <InfoWindow
-              onCloseClick={() => {
-                setSelectedCenter(null);
-              }}
               position={{
-                lat: parseFloat(selectedCenter.marker.position.position.lat),
-                lng: parseFloat(selectedCenter.marker.position.position.lng)
+                lat: parseFloat(center.marker.position.position.lat),
+                lng: parseFloat(center.marker.position.position.lng)
               }}
-            >
-              <div className="image-title-map-container" style={{ backgroundImage: `url('${selectedCenter.image}')`}}>
-                <div className="image-title-map">
-                {selectedCenter.marker.title}
+
+              // causes pop up
+              onClick={() => {
+                setSelectedCenter(center);
+            }}
+            />
+          ))}
+
+  {selectedCenter && (
+              <InfoWindow
+                onCloseClick={() => {
+                  setSelectedCenter(null);
+                }}
+                position={{
+                  lat: parseFloat(selectedCenter.marker.position.position.lat),
+                  lng: parseFloat(selectedCenter.marker.position.position.lng)
+                }}
+              >
+                <div className="image-title-map-container" style={{ backgroundImage: `url('${selectedCenter.image}')`}}>
+                  <div className="image-title-map">
+                  {selectedCenter.marker.title}
+                  </div>
                 </div>
-              </div>
-            </InfoWindow>
-          )}
-</GoogleMap>
+              </InfoWindow>
+            )}
+      </GoogleMap>
       )}
 </div>
 
-{/* <div className ="small-screen-map">
+<div className ="small-screen-map">
+{isLoaded && (
+      <GoogleMap
+      id="marker-example"
+      mapContainerStyle={containerStyleSmall}
+      zoom={14}
+      center={center}
+      >
 
-  // add map data for small-screen
+      {allMarkers.map((center, idx) => (
+            <Marker
+              key={idx}
 
-</div> */}
+              position={{
+                lat: parseFloat(center.marker.position.position.lat),
+                lng: parseFloat(center.marker.position.position.lng)
+              }}
+
+              // causes pop up
+              onClick={() => {
+                setSelectedCenter(center);
+            }}
+            />
+          ))}
+
+  {selectedCenter && (
+              <InfoWindow
+                onCloseClick={() => {
+                  setSelectedCenter(null);
+                }}
+                position={{
+                  lat: parseFloat(selectedCenter.marker.position.position.lat),
+                  lng: parseFloat(selectedCenter.marker.position.position.lng)
+                }}
+              >
+                <div className="image-title-map-container" style={{ backgroundImage: `url('${selectedCenter.image}')`}}>
+                  <div className="image-title-map">
+                  {selectedCenter.marker.title}
+                  </div>
+                </div>
+              </InfoWindow>
+            )}
+      </GoogleMap>
+      )}
+</div>
 
     </>
   );
