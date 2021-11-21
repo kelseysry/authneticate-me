@@ -8,6 +8,7 @@ import AllMapContainer from '../AllMaps';
 import allMarkers from '../../data/markers';
 
 
+
 const HomePage = () => {
   const dispatch = useDispatch();
 
@@ -16,6 +17,23 @@ const HomePage = () => {
 
   const businesses = Object.values(businessObj)
   console.log("business", businesses)
+
+
+  const busLat = businesses.map(business => business.lat)
+  console.log("business lat", busLat)
+
+  const busLng = businesses.map(business => business.lng)
+  console.log("business lng", busLng)
+
+  const coordinates = busLat.map(function(lat, i) {
+    return {lat:+lat, lng:+busLng[i]};
+  })
+
+  console.log("coordinates", coordinates)
+  // ['11.558446528422527', '104.92501818402742']
+
+  const positionAdded = coordinates.map(coordinate => ({"position": coordinate}))
+console.log("position", positionAdded)
 
   useEffect(() => {
     dispatch(getAllBusinesses())
@@ -26,12 +44,15 @@ const HomePage = () => {
   return (
     // <img src ={pictures.collection[0].imageUrl} alt={"hiii"}/>
     <>
+
     <div className="top-pie-container" style={{ backgroundImage: `url('${pictures.collection[0].imageUrl}')` }}>
       <div className="explore">Mab Mab</div>
     </div>
 
     <div className="map-and-about">
       <div className ="map-home">
+      {/* <AllMapContainer allMarkers={positionAdded}/> */}
+
       <AllMapContainer allMarkers={allMarkers}/>
       </div>
       <div className="about-container">
