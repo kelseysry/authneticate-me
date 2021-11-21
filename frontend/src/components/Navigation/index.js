@@ -69,10 +69,10 @@ function Navigation({ isLoaded }){
         <NavLink exact to="/"><i className="fas fa-home fa-lg"></i></NavLink>
         </div>
         <div className="pad">
-        <NavLink to="/business"><i class="fas fa-search fa-lg"></i></NavLink>
+        <NavLink to="/business"><i className="fas fa-search fa-lg"></i></NavLink>
         </div>
         <div className="pad">
-        <NavLink to="/createBusiness"><i class="fas fa-map-marked-alt fa-lg"></i></NavLink>
+        <NavLink to="/createBusiness"><i className="fas fa-map-marked-alt fa-lg"></i></NavLink>
         </div>
       </div>
       <div>

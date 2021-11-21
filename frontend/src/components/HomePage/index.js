@@ -13,27 +13,42 @@ const HomePage = () => {
   const dispatch = useDispatch();
 
   const businessObj = useSelector((state) => state.business);
-  console.log("businessHome", businessObj)
+  // console.log("businessHome", businessObj)
 
   const businesses = Object.values(businessObj)
-  console.log("business", businesses)
+  // console.log("business", businesses)
 
+  // title: "Best Iced Coffee"
+  // const busTitle = businesses.map(business => ({"title":business.title}))
+  const busTitle = businesses.map(business => (business.title))
+
+  // console.log("busTItle", busTitle)
 
   const busLat = businesses.map(business => business.lat)
-  console.log("business lat", busLat)
+  // console.log("business lat", busLat)
 
   const busLng = businesses.map(business => business.lng)
-  console.log("business lng", busLng)
+  // console.log("business lng", busLng)
 
+  // combine lat and lng into  {lat: 11.540526555498468, lng: 104.91522593956448}
   const coordinates = busLat.map(function(lat, i) {
-    return {lat:+lat, lng:+busLng[i]};
+    return {lat:parseFloat(lat), lng:parseFloat(busLng[i])};
   })
 
-  console.log("coordinates", coordinates)
+  // console.log("coordinates", coordinates)
   // ['11.558446528422527', '104.92501818402742']
 
+  // position: {lat: 11.53997, lng: 104.914864}
   const positionAdded = coordinates.map(coordinate => ({"position": coordinate}))
-console.log("position", positionAdded)
+// console.log("position", positionAdded)
+
+// {  {position:{lat:11, lng:104}, {title:"The best ice coffee"}}, {position, title}  }
+const markerData = positionAdded.map(function(position,i) {
+  return {position, "title":busTitle[i]};
+})
+
+// console.log("combined", markerData)
+
 
   useEffect(() => {
     dispatch(getAllBusinesses())
@@ -53,7 +68,9 @@ console.log("position", positionAdded)
       <div className ="map-home">
       {/* <AllMapContainer allMarkers={positionAdded}/> */}
 
-      <AllMapContainer allMarkers={allMarkers}/>
+      {/* <AllMapContainer allMarkers={allMarkers}/> */}
+      <AllMapContainer allMarkers={markerData}/>
+
       </div>
       <div className="about-container">
         <div className="about">
