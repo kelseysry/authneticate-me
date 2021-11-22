@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 
 .top-pie-container {
+  z-index: -2;
   box-sizing: border-box;
   display: flex;
   padding: 40px 64px;
@@ -14,10 +15,11 @@
   outline: none;
   box-shadow:inset 0 0 0 2000px rgba(27, 26, 27, 0.3);
   align-items: center;
+  z-index: 1;
 }
 
 .explore {
-
+  z-index: 1;
   color: #fff;
   font-size: 10vw;
   font-weight: 700;
