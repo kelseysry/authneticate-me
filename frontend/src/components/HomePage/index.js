@@ -54,9 +54,7 @@ const markerData = coordinate_title.map(function(marker, i) {
   return {marker, "image":busPic[i]}
 })
 
-
-console.log("combined", markerData)
-
+// console.log("combined", markerData)
 
   useEffect(() => {
     dispatch(getAllBusinesses())
@@ -66,6 +64,8 @@ console.log("combined", markerData)
 
   return (
     // <img src ={pictures.collection[0].imageUrl} alt={"hiii"}/>
+
+    // small screen
     <>
 
     <div className="top-pie-container" style={{ backgroundImage: `url('${pictures.collection[0].imageUrl}')` }}>
@@ -82,24 +82,27 @@ console.log("combined", markerData)
         </div>
      </div>
 
+{/* big screen */}
     <div className="map-and-about">
       <div className ="map-home">
-      {/* <AllMapContainer allMarkers={positionAdded}/> */}
-
-      {/* <AllMapContainer allMarkers={allMarkers}/> */}
-      <AllMapContainer allMarkers={markerData}/>
-
+        <AllMapContainer allMarkers={markerData}/>
       </div>
       <div className="about-container">
         <div className="about">
-            <div className="about-header">
-              About
+
+            <div className="about-details"style={{ backgroundImage: `url('${pictures.collection[8].imageUrl}')` }} >
+
+          <div className="captionBigScreen">I worked for about a year in Phnom Penh, Cambodia and became pretty well acquainted with all the restaurants there since I ate out for dinner daily. Food in Cambodia is incredibly fresh and cheap! I always bring my camera with me when I eat out so I managed to take a snapshot of all the meals I had in Cambodia and added these photos as my seeder data. The name Mab Mab is play on words from the Cambodian word "cah mab." "Cah mab" means fat in the Khmer language. It's typical to have your elder nickname you "mab mab" in a cute and endearing way.
+              <div>
+                <i class="fas fa-map-marker-alt fa-2x"></i>
+              </div>
+              <span className="click-marker">
+                Click on a marker to see a restaurant!
+              </span>
             </div>
-            <div className="about-details">
-            I worked for about a year in Phnom Penh, Cambodia and became pretty well acquainted with all the restaurants there since I ate out for dinner daily. Food in Cambodia is incredibly fresh and cheap! I always bring my camera with me when I eat out so I managed to take a snapshot of all the meals I had in Cambodia and added these photos as my seeder data. The name Mab Mab is play on words from the Cambodian word "cah mab." "Cah mab" means fat in the Khmer language. It's typical to have your elder nickname you "mab mab" in a cute and endearing way.
-            <span className="click-marker"> Click on a marker to see a restaurant!</span>
+
             </div>
-        </div>
+         </div>
       </div>
     </div>
 
