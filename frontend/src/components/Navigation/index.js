@@ -6,6 +6,7 @@ import ProfileButton from './ProfileButton';
 import * as sessionActions from '../../store/session'
 import './Navigation.css';
 import { useDispatch } from "react-redux";
+import UserButton from './UserButton';
 
 
 function Navigation({ isLoaded }){
@@ -29,7 +30,9 @@ function Navigation({ isLoaded }){
   } else {
     sessionLinks = (
       <>
-      <div className="sign-up-login-container">
+      <UserButton />
+
+      {/* <div className="sign-up-login-container">
         <div className="sign-log-style">
         <NavLink to="/login">Log In</NavLink>
         </div>
@@ -37,7 +40,7 @@ function Navigation({ isLoaded }){
         <NavLink to="/signup">Sign Up</NavLink>
         </div>
         <button onClick={demo}><i className="fas fa-user-secret fa-2x"></i></button>
-      </div>
+      </div> */}
       </>
     );
   }
