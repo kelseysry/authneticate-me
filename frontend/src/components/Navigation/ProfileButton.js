@@ -52,13 +52,13 @@ function ProfileButton({ user }) {
         <i className="fas fa-user-circle fa-3x"></i>
       </button>
       {showMenu && (
-        <ul className="profile-dropdown">
-          <li>{user.username}</li>
-          <li>{user.email}</li>
-          <li>
-              <button onClick={logout}><i className="fas fa-power-off fa-2x"></i></button>
-          </li>
-        </ul>
+          <ul className="profile-dropdown">
+            <li>{user.username}</li>
+            <li>{user.email}</li>
+            <li>
+                <button onClick={logout}><i className="fas fa-power-off fa-2x"></i></button>
+            </li>
+          </ul>
       )}
     </>
   );
