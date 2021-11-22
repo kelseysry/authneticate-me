@@ -48,7 +48,7 @@
 .profile-dropdown {
   color:#2699FB;
   font-family: 'Poppins', sans-serif;
-  /* position: absolute; */
+  position: absolute;
 }
 
 .sign-log-style a {
@@ -74,7 +74,7 @@
 }
 
 .fa-power-off{
-  color: #2699FB;
+  color: white;
 }
 
 
@@ -85,6 +85,31 @@
 .small-screen {
   display: none;
 }
+
+.profile-dropdown {
+  /* display: none; */
+  position: absolute;
+  background-color:cornflowerblue;
+  width: 200px;
+  overflow: auto;
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.5);
+  right: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  padding: 5px 6px;
+  font-size: 20px !important;
+
+}
+
+.profile-dropdown li {
+  color:white;
+  padding: 2px 15px;
+  text-decoration: none;
+  display: block;
+  font-size: 23px !important;
+
+}
+
 
 @media only screen and (max-width:1000px) {
   .big-screen {
