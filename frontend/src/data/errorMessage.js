@@ -13,7 +13,7 @@ export const errorMessage = [
   },
   {
     business: "404",
-    position: {  lat:11.564423572724035, lng: 104.93425018774106}
+    position: {  lat:11.564423572724035, lng: 104.92725018774106}
   },
   {
     business: "!",

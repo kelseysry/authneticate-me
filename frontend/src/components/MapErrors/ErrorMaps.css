@@ -2,3 +2,18 @@
   border-radius: 10px;
   padding: 5px 10px !important;
 }
+
+.small-error-map {
+  display: none;
+}
+
+@media only screen and (max-width:768px) {
+
+  .small-error-map {
+    display: block;
+  }
+  .big-error-map {
+    display: none;
+  }
+
+}
