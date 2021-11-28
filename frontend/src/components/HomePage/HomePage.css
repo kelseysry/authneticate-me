@@ -145,7 +145,7 @@
 }
 
 .about-details {
-  font-size: 30px;
+  font-size: 25px;
   font-family: 'Poppins', sans-serif;
   border-radius: 10px 10px;
 }
@@ -159,11 +159,12 @@
   font-size: medium;
   /* color: rgb(213, 43, 43); */
   color: white !important;
-  font-size: 18px;
+  font-size: 30px;
   line-height:1.3em !important;
   overflow-wrap: break-word !important;
   padding-top: 10px;
   padding: 20px 2px;
+
 }
 
 @media only screen and (max-width:1000px) {
