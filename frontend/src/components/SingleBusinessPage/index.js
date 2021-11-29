@@ -207,8 +207,8 @@ const SingleBusinessPage = () => {
             : null
           }
           <div>
-          <button className="edit-business-title" onClick={() => setShowEditBusinessForm(true)}>Edit Business</button>
-          <button className="edit-business-title" onClick={() => handleDelete(businessId)}>Delete Business</button>
+          <button className="edit-business-title-mobile" onClick={() => setShowEditBusinessForm(true)}>Edit Business</button>
+          <button className="edit-business-title-mobile" onClick={() => handleDelete(businessId)}>Delete Business</button>
           </div>
       </div>
 

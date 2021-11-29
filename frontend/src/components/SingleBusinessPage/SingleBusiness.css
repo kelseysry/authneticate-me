@@ -70,7 +70,7 @@
   right: 0;
   bottom: 0;
   color: #fff;
-  font-size: 20px;
+  font-size: 28px;
   font-weight: 10;
   letter-spacing: -1px;
   line-height: 56px;
@@ -78,6 +78,7 @@
   background-color: transparent;
   justify-content: flex-start;
   padding-left: 25px;
+  padding-bottom: 25px;
 }
 
 .details-container {
@@ -170,7 +171,7 @@ ul li {
 
   .mobile-single-business {
     display: block;
-    width: 300px !important;
+    /* width: 300px !important; */
     margin: 0px 0px !important;
   }
 
@@ -262,13 +263,13 @@ ul li {
   }
 
 
-  .edit-business-title {
+  .edit-business-title-mobile {
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     color: #fff;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 10;
     letter-spacing: -1px;
     line-height: 30px;
