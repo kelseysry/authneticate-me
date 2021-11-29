@@ -37,7 +37,7 @@ const BusinessReviews = ({business}) => {
             <div className="user-icon-and-dot">
               <div className="profile">
                 <span className="icon">
-                  <i className="far fa-user-circle fa-2x"></i>
+                <i class="fas fa-mug-hot" fa-5x></i>
                 </span>
                 <span className="review-username">
                 {review.User.username}
@@ -58,6 +58,7 @@ const BusinessReviews = ({business}) => {
               <div className="review-container">
               {review.answer}
               {/* {business.id} */}
+
               </div>
               <div>
                 {/* <NavLink> Hi </NavLink> */}
@@ -71,6 +72,8 @@ const BusinessReviews = ({business}) => {
           </li>
         </ul>
       </div>
+
+
     )}
   </div>
 
@@ -83,7 +86,7 @@ const BusinessReviews = ({business}) => {
             <div className="user-icon-and-dot-mobile">
               <div className="profile">
                 <span className="icon">
-                  <i className="far fa-user-circle fa-2x"></i>
+                  <i class="fas fa-mug-hot" fa-2x></i>
                 </span>
                 <span className="review-username">
                 {review.User.username}

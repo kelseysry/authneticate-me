@@ -7,6 +7,7 @@
   border: 0px;
 }
 
+
 .single-top-pic-container {
   box-sizing: border-box;
   display: flex !important;
@@ -108,12 +109,11 @@
   width: 30%;
   background-color:cornflowerblue;
   color: #fff;
-  padding:10px 20px;
+  padding:20px 20px;
   border: none;
   border-radius: 4px;
   text-transform: uppercase;
-  margin: 5px 1px;
-
+  margin: 30px 1px;
 }
 
 a {
@@ -146,14 +146,27 @@ ul li {
 
 .details-container-text {
   padding-top: 50px;
+  /* border-bottom: 15px solid #e6e6e6; */
 }
+
+hr {
+  border: none;
+  border-top: 15px solid #f4f2f2;
+  color: #e6e6e6;
+  overflow: visible;
+  text-align: center;
+  height: 5px;
+  padding: 0px 0px !important;
+
+}
+
 
 .map {
   /* position: absolute; */
   position: sticky;
   top: 0px;
   right:0;
-  margin-top: 60px;
+  margin-top: 50px;
   margin-bottom: auto;
   padding-bottom: 50px;
 }
@@ -205,7 +218,7 @@ ul li {
   }
 
   .details-reviewButton-container-mobile {
-
+    /* padding: 0px 12px; */
   }
 
   .header-details {
@@ -284,8 +297,51 @@ ul li {
   }
 
   .review-username {
-   font-size: 10px !important;
+   font-size: 20px !important;
   }
+
+  .padding-single-business {
+    padding: 0px 12px;
+  }
+
+  .header-details {
+    font-size: 35px !important;
+  }
+
+  .detail-content-pad {
+    padding: 0px 12px;
+  }
+
+  .mapmobile {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    /* margin-top: 1px !important;
+    margin-bottom: 1px !important;
+    padding-bottom: 0px !important; */
+  }
+
+  .add-review-button-mobile{
+    cursor: pointer;
+    width: 80%;
+    background-color:cornflowerblue;
+    color: #fff;
+    padding:20px 20px;
+
+    border-radius: 4px;
+    text-transform: uppercase;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  .pad-review-button{
+    display: flex;
+    padding: 50px 0px;
+  }
+
 
 
 }
