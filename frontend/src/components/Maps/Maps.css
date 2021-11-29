@@ -1,0 +1,18 @@
+.mobile-map {
+  display: none
+}
+
+
+@media only screen and (max-width:768px) {
+
+  .mobile-map {
+    display: block;
+  }
+
+  .desktop-map {
+    display: none;
+  }
+
+
+
+}
