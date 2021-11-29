@@ -67,7 +67,6 @@ function Navigation({ isLoaded }){
   </nav>
   <nav className="small-screen">
     <div className="home-explore">
-      <div className="subNav">
         <div className="pad">
         <NavLink exact to="/"><i className="fas fa-home fa-lg"></i></NavLink>
         </div>
@@ -77,10 +76,9 @@ function Navigation({ isLoaded }){
         <div className="pad">
         <NavLink to="/createBusiness"><i className="fas fa-map-marked-alt fa-lg"></i></NavLink>
         </div>
-      </div>
-      <div>
-      {isLoaded && sessionLinks}
-      </div>
+        <div>
+        {isLoaded && sessionLinks}
+        </div>
     </div>
   </nav>
   </>

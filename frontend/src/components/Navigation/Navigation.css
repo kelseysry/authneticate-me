@@ -43,6 +43,8 @@
 
 .fa-user-circle {
   color: cornflowerblue;
+  font-size: 30px;
+
 }
 
 .profile-dropdown {
@@ -148,5 +150,34 @@
   .small-screen {
     display: contents;
   }
+
+}
+
+
+
+@media only screen and (max-width:768px) {
+
+button {
+  padding-right: 0px !important;
+}
+
+body{
+  overflow-x:hidden;
+}
+
+
+
+.pad {
+  padding: 0px 0px !important;
+}
+
+.home-explore {
+  justify-content: space-evenly;
+  padding: 10px 0px;
+}
+
+.fa-user-circle {
+  padding: 0px 0px !important;
+}
 
 }
