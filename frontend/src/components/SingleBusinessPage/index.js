@@ -105,7 +105,7 @@ const SingleBusinessPage = () => {
       <>
       <div className="details-container">
         <div className ="details-container-text">
-          <h1 className="header-details">Details</h1>
+          <h1 className="header-details">Info</h1>
           <ul>
             <li>
               <b>Owner</b> {business.User?.username}
@@ -173,12 +173,14 @@ const SingleBusinessPage = () => {
               {content}
             </div>
 
+            <hr></hr>
+
               {!hideReviewButton && <button className="add-review-button"
               //  onClick={() => setHideReviewButton(true)}
                onClick={() => {setShowReviewForm(true);  setHideReviewButton(true)
 
                }}>
-               <i className="fas fa-star"></i>  Write a Review</button>
+               <i className="fas fa-star"></i>&nbsp;&nbsp;Write a Review &nbsp;&nbsp;<i className="fas fa-star"></i></button>
                }
 
         <div>
@@ -212,19 +214,31 @@ const SingleBusinessPage = () => {
           </div>
       </div>
 
+      <div className="padding-single-business">
+      </div>
+
       <div className="details-reviewButton-container-mobile">
         <div className="details">
-            <div>
+            <div className="detail-content-pad">
               {content}
             </div>
+            <hr></hr>
 
-              {!hideReviewButton && <button className="add-review-button"
+            <div className="mapmobile">
+              <MapContainer BusinessLat={business.lat} BusinessLng={business.lng}/>
+            </div>
+
+            <hr></hr>
+
+              <div className="pad-review-button">
+              {!hideReviewButton && <button className="add-review-button-mobile"
               //  onClick={() => setHideReviewButton(true)}
                onClick={() => {setShowReviewForm(true);  setHideReviewButton(true)
 
                }}>
-               <i className="fas fa-star"></i>  Write a Review</button>
+               <i className="fas fa-star"></i>&nbsp;&nbsp;Write a Review &nbsp;&nbsp;<i className="fas fa-star"></i></button>
                }
+              </div>
 
         <div>
           {reviewContent}
@@ -232,9 +246,6 @@ const SingleBusinessPage = () => {
         </div>
         </div>
 
-        <div className="map">
-            <MapContainer BusinessLat={business.lat} BusinessLng={business.lng}/>
-        </div>
       </div>
     </div>
 
