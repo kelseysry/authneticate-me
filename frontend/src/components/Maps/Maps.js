@@ -3,10 +3,17 @@ import React from 'react';
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 // import { useJsApiLoader } from '@react-google-maps/api';
 import { Marker } from '@react-google-maps/api';
+import './Maps.css'
+
 
 const containerStyle = {
   width: '800px',
   height: '600px',
+};
+
+const containerStyleSmall = {
+  width: '300px',
+  height: '400px',
 };
 
 // const center = {
@@ -45,19 +52,37 @@ const Maps = ({ apiKey, BusinessLat, BusinessLng }) => {
 
   return (
     <>
+    <div className="desktop-map">
       {isLoaded && (
         <GoogleMap
-      id="marker-example"
-      mapContainerStyle={containerStyle}
-      zoom={16}
-      center={center}
-      >
+        id="marker-example"
+        mapContainerStyle={containerStyle}
+        zoom={16}
+        center={center}
+        >
       <Marker
         onLoad={onLoad}
         position={position}
-      />
-</GoogleMap>
+        />
+        </GoogleMap>
       )}
+    </div>
+
+    <div className="mobile-map">
+      {isLoaded && (
+        <GoogleMap
+        id="marker-example"
+        mapContainerStyle={containerStyleSmall}
+        zoom={16}
+        center={center}
+        >
+      <Marker
+        onLoad={onLoad}
+        position={position}
+        />
+        </GoogleMap>
+      )}
+    </div>
 
 
     </>

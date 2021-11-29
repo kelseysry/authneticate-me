@@ -83,27 +83,15 @@ const SingleBusinessPage = () => {
     return null;
   }
 
-  console.log("singleBUsiness",sessionUser)
+  // console.log("singleBUsiness",sessionUser)
 
-  // if (!sessionUser) return <Redirect to="/" />;
-
-
-  // if(!sessionUser) {
-  //   history.push("/")
-  // }
-
-
-  // array of all the reviews associated with the business
-  // console.log("business singleBusinessPage", reviews)
 
   let res = reviews.map(review => Object.values(review)[3])
   // console.log("this is res", res)
   const avge = (res.reduce((a,b) => a+b, 0)) /res.length
   const average = Math.round(avge)
 
-  // console.log(average)
 
-// console.log("average", average)
 
   let content = null;
   let reviewContent = null;
@@ -162,20 +150,21 @@ const SingleBusinessPage = () => {
 
   return (
     <>
+      <div className="desktop-single-business">
       <div className="single-top-pic-container" style={{ backgroundImage: `url('${business?.imageUrl}')` }}>
-        <div className="business-title">
-          {business.title}
-        </div>
-        { reviews.length?
-            <div className="rating">
-              {reviews.length && average && Array(average).fill(<i className="fas fa-star fa-2x"></i>).map((ele, idx) => <span key={idx}>{ele}</span> )}
-            </div>
-          : null
-        }
-        <div>
-        <button className="edit-business-title" onClick={() => setShowEditBusinessForm(true)}>Edit Business</button>
-        <button className="edit-business-title" onClick={() => handleDelete(businessId)}>Delete Business</button>
-        </div>
+          <div className="business-title">
+            {business.title}
+          </div>
+          { reviews.length?
+              <div className="rating">
+                {reviews.length && average && Array(average).fill(<i className="fas fa-star fa-2x"></i>).map((ele, idx) => <span key={idx}>{ele}</span> )}
+              </div>
+            : null
+          }
+          <div>
+          <button className="edit-business-title" onClick={() => setShowEditBusinessForm(true)}>Edit Business</button>
+          <button className="edit-business-title" onClick={() => handleDelete(businessId)}>Delete Business</button>
+          </div>
       </div>
 
       <div className="details-reviewButton-container">
@@ -183,7 +172,6 @@ const SingleBusinessPage = () => {
             <div>
               {content}
             </div>
-
 
               {!hideReviewButton && <button className="add-review-button"
               //  onClick={() => setHideReviewButton(true)}
@@ -202,9 +190,54 @@ const SingleBusinessPage = () => {
         <div className="map">
             <MapContainer BusinessLat={business.lat} BusinessLng={business.lng}/>
         </div>
-
-
       </div>
+    </div>
+
+
+
+    <div className="mobile-single-business">
+      <div className="single-top-pic-container-mobile" style={{ backgroundImage: `url('${business?.imageUrl}')` }}>
+          <div className="business-title">
+            {business.title}
+          </div>
+          { reviews.length?
+              <div className="rating">
+                {reviews.length && average && Array(average).fill(<i className="fas fa-star fa-2x"></i>).map((ele, idx) => <span key={idx}>{ele}</span> )}
+              </div>
+            : null
+          }
+          <div>
+          <button className="edit-business-title" onClick={() => setShowEditBusinessForm(true)}>Edit Business</button>
+          <button className="edit-business-title" onClick={() => handleDelete(businessId)}>Delete Business</button>
+          </div>
+      </div>
+
+      <div className="details-reviewButton-container-mobile">
+        <div className="details">
+            <div>
+              {content}
+            </div>
+
+              {!hideReviewButton && <button className="add-review-button"
+              //  onClick={() => setHideReviewButton(true)}
+               onClick={() => {setShowReviewForm(true);  setHideReviewButton(true)
+
+               }}>
+               <i className="fas fa-star"></i>  Write a Review</button>
+               }
+
+        <div>
+          {reviewContent}
+          <BusinessReviews reviews={reviews} business={business}/>
+        </div>
+        </div>
+
+        <div className="map">
+            <MapContainer BusinessLat={business.lat} BusinessLng={business.lng}/>
+        </div>
+      </div>
+    </div>
+
 
   </>
   )
