@@ -76,7 +76,7 @@ function Navigation({ isLoaded }){
         <div className="pad">
         <NavLink to="/createBusiness"><i className="fas fa-map-marked-alt fa-lg"></i></NavLink>
         </div>
-        <div>
+        <div className="user-centered">
         {isLoaded && sessionLinks}
         </div>
     </div>
