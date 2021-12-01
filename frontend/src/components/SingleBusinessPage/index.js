@@ -108,24 +108,50 @@ const SingleBusinessPage = () => {
           <h1 className="header-details">Info</h1>
           <ul>
             <li>
-              <b>Owner</b> {business.User?.username}
+              <b><i class="fas fa-book"></i> </b>
+              {business.description}
             </li>
             <li>
-              <b>Description</b> {business.description}
+              <b><i class="fas fa-id-badge"></i> Owner :</b> {business.User?.username}
             </li>
             <li>
-              <b>Address</b> {business.address}
-            </li>
-            <li>
-              <b>City</b> {business.city}
-            </li>
-            <li>
-              <b>zipCode</b> {business.zipCode}
+              <b><i class="fas fa-map-marker-alt"></i></b>
+              &nbsp;
+              {business.address}
+              &nbsp;
+              {business.city}
+              &nbsp;
+              {business.zipCode}
             </li>
           </ul>
         </div>
       </div>
-      </>
+
+
+      <div className="details-container-mobile">
+        <div className ="details-container-text-mobile">
+          <h1 className="header-details-mobile"> Info</h1>
+          <ul>
+            <li>
+              <b><i class="fas fa-book"></i> </b>
+              {business.description}
+            </li>
+            <li>
+              <b><i class="fas fa-id-badge"></i> Owner :</b> {business.User?.username}
+            </li>
+            <li>
+              <b><i class="fas fa-map-marker-alt"></i></b>
+              &nbsp;
+              {business.address}
+              &nbsp;
+              {business.city}
+              &nbsp;
+              {business.zipCode}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </>
     )
   }
 
