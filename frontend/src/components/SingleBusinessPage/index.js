@@ -209,6 +209,8 @@ const SingleBusinessPage = () => {
                <i className="fas fa-star"></i>&nbsp;&nbsp;Write a Review &nbsp;&nbsp;<i className="fas fa-star"></i></button>
                }
 
+
+
         <div>
           {reviewContent}
           <BusinessReviews reviews={reviews} business={business}/>
@@ -265,6 +267,8 @@ const SingleBusinessPage = () => {
                <i className="fas fa-star"></i>&nbsp;&nbsp;Write a Review &nbsp;&nbsp;<i className="fas fa-star"></i></button>
                }
               </div>
+
+            <hr></hr>
 
         <div>
           {reviewContent}
