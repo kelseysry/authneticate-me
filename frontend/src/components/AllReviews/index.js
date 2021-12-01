@@ -96,11 +96,11 @@ const BusinessReviews = ({business}) => {
                 <DotDotButton businessId={business.id} reviewId={review.id}/>
               </div>
             </div>
-            <div className="rating-profile">
+            <div className="rating-profile-mobile">
               {/* <b>Rating</b>  */}
               {Array(review.rating).fill(
 
-              <span className="star-color-blue"><i className="fas fa-star fa-xs"></i></span>).map((ele, idx) => <span key={idx}>{ele}</span>)
+              <span className="star-color-blue"><i className="fas fa-star"></i></span>).map((ele, idx) => <span key={idx}>{ele}</span>)
 
              }
             </div>
