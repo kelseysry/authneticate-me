@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import './CreateBusinessForm.css'
 // import HomePage from '../HomePage';
 import PicBanner from '../PicBanner';
+import pictures from '../../data/pictures'
 
 const CreateBusinessForm = () => {
 
@@ -71,7 +72,12 @@ const CreateBusinessForm = () => {
 
   return (
     <>
+    <div className="create-business-desktop">
     <PicBanner photoId={3} />
+    </div>
+    <div className="create-business-mobile" style={{ backgroundImage: `url('${pictures.collection[3].imageUrl}')` }}>
+        <div className="explore-mobile-add">Add Restaurant</div>
+    </div>
     <div className="form-style">
     <form className ="create-business-form" onSubmit={handleSubmit}>
       <label>
