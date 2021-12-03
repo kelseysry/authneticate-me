@@ -179,8 +179,8 @@ hr {
   display: none;
 }
 
-.fa-book, .fa-id-badge, .fa-map-marker-alt {
-  color: cornflowerblue
+.fa-book, .fa-id-badge, .fa-map-pin {
+  color: cornflowerblue !important
 }
 
 

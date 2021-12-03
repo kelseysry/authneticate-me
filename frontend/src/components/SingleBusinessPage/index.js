@@ -115,7 +115,7 @@ const SingleBusinessPage = () => {
               <b><i class="fas fa-id-badge"></i> Owner :</b> {business.User?.username}
             </li>
             <li>
-              <b><i class="fas fa-map-marker-alt"></i></b>
+              <b><i class="fas fa-map-pin"></i></b>
               &nbsp;
               {business.address}
               &nbsp;
@@ -140,7 +140,7 @@ const SingleBusinessPage = () => {
               <b><i class="fas fa-id-badge"></i> </b> Owner : {business.User?.username}
             </li>
             <li>
-              <b><i class="fas fa-map-marker-alt"></i></b>
+              <b><i class="fas fa-map-pin"></i></b>
               &nbsp;
               {business.address}
               &nbsp;
