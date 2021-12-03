@@ -137,7 +137,7 @@ const SingleBusinessPage = () => {
               {business.description}
             </li>
             <li>
-              <b><i class="fas fa-id-badge"></i> Owner :</b> {business.User?.username}
+              <b><i class="fas fa-id-badge"></i> </b> Owner : {business.User?.username}
             </li>
             <li>
               <b><i class="fas fa-map-marker-alt"></i></b>
