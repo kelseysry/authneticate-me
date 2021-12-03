@@ -18,19 +18,19 @@ const HomePage = () => {
   const businesses = Object.values(businessObj)
   // console.log("business", businesses)
 
-  const busPic = businesses.map(business => business.imageUrl)
+  const busPic = businesses.map(business => business?.imageUrl)
   console.log("busPic", busPic)
 
   // title: "Best Iced Coffee"
   // const busTitle = businesses.map(business => ({"title":business.title}))
-  const busTitle = businesses.map(business => (business.title))
+  const busTitle = businesses.map(business => (business?.title))
 
   // console.log("busTItle", busTitle)
 
-  const busLat = businesses.map(business => business.lat)
+  const busLat = businesses.map(business => business?.lat)
   // console.log("business lat", busLat)
 
-  const busLng = businesses.map(business => business.lng)
+  const busLng = businesses.map(business => business?.lng)
   // console.log("business lng", busLng)
 
   // combine lat and lng into  {lat: 11.540526555498468, lng: 104.91522593956448}
@@ -107,7 +107,7 @@ const markerData = coordinate_title.map(function(marker, i) {
           <span className="click-marker">
             Click on a marker to see a restaurant!
           </span>
-      
+
 
 
           {/* <span><i class="fas fa-utensils"></i>  About  <i class="fas fa-utensils"></i></span> */}
