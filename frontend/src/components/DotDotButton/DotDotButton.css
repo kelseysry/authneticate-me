@@ -5,6 +5,8 @@
   flex-direction: column;
 }
 
+
+
 .fa-ellipsis-h, .fa-edit, .fa-trash-alt {
   color: cornflowerblue;
 }
@@ -26,3 +28,9 @@
   font-family: 'Poppins', sans-serif;
   color: cornflowerblue;
 }
+
+
+.review-dropdown li {
+  width: min-content !important ;
+}
+

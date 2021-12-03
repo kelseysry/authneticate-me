@@ -198,7 +198,12 @@ hr {
 
   ul li, .image-container {
     width: 300px !important;
+
   }
+
+  /* ul li {
+    width: min-content !important ;
+  } */
 
 
   .single-top-pic-container-mobile{
