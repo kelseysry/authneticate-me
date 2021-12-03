@@ -39,7 +39,6 @@
   width: min-content;
   overflow: auto;
   box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.5);
-  /* right: 0; */
   overflow: hidden;
   border-radius: 10px;
   padding: 10px 15px;
@@ -48,4 +47,21 @@
 
 .review-dropdown li {
   width: min-content !important ;
+}
+
+
+@media only screen and (max-width:768px) {
+
+  .review-dropdown {
+    position: absolute;
+    background-color:cornflowerblue;
+    width: min-content;
+    overflow: auto;
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.5);
+    right: 0;
+    overflow: hidden;
+    border-radius: 10px;
+    padding: 10px 15px;
+    font-size: 20px !important;
+  }
 }
