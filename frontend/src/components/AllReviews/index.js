@@ -119,7 +119,10 @@ const BusinessReviews = ({business}) => {
               </div>
           </li>
         </ul>
+        <hr className="blank-review-hr"></hr>
+        <hr className="each-review-hr"></hr>
       </div>
+
     )}
   </div>
 

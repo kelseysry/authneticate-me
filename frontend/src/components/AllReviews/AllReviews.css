@@ -137,6 +137,21 @@ ul {
 
 }
 
+.each-review-hr {
+  border-top: 3px solid #f4f2f2 !important;
+  color: #e6e6e6;
+  overflow: visible;
+  text-align: center;
+  height: 5px;
+  /* padding: 3px 0px !important; */
+
+}
+
+.blank-review-hr {
+  padding: 20px 0px !important;
+  border: none;
+}
+
 
 
 }
