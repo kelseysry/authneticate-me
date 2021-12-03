@@ -3,3 +3,31 @@
 * {
   font-family: 'Poppins', sans-serif;
 }
+
+.mobile-login{
+  display: none;
+}
+
+
+@media only screen and (max-width:768px) {
+
+.desktop-login {
+  display: none;
+}
+
+.mobile-login{
+  display: block;
+}
+
+.signup-form-style-mobile{
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input {
+  width: 300px !important
+}
+
+}

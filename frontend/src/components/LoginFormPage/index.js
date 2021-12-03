@@ -42,33 +42,67 @@ function LoginFormPage() {
 
   return (
     <>
-    <div className="signup-pic-container" style={{ backgroundImage: `url('${pictures.collection[5].imageUrl}')` }}>
-      <div className="explore">Login</div>
+    <div className="desktop-login">
+      <div className="signup-pic-container" style={{ backgroundImage: `url('${pictures.collection[5].imageUrl}')` }}>
+        <div className="explore">Login</div>
+      </div>
+      <form className="signup-form-style" onSubmit={handleSubmit}>
+        <ul>
+          {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+        </ul>
+        <label>
+          Username or Email
+          <input
+            type="text"
+            value={credential}
+            onChange={(e) => setCredential(e.target.value)}
+            required
+          />
+        </label>
+        <label>
+          Password
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+        </label>
+        <button type="submit">Log In</button>
+      </form>
     </div>
-    <form className="signup-form-style" onSubmit={handleSubmit}>
-      <ul>
-        {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-      </ul>
-      <label>
-        Username or Email
-        <input
-          type="text"
-          value={credential}
-          onChange={(e) => setCredential(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        Password
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-      </label>
-      <button type="submit">Log In</button>
-    </form>
+
+    <div className="mobile-login">
+      <div className="signup-pic-container" style={{ backgroundImage: `url('${pictures.collection[5].imageUrl}')` }}>
+        <div className="explore">Login</div>
+      </div>
+      <form className="signup-form-style-mobile" onSubmit={handleSubmit}>
+        <ul>
+          {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+        </ul>
+        <label>
+          Username or Email
+          <input
+            type="text"
+            value={credential}
+            onChange={(e) => setCredential(e.target.value)}
+            required
+          />
+        </label>
+        <label>
+          Password
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+        </label>
+        <button type="submit">Log In</button>
+      </form>
+    </div>
+
+
     </>
   );
 }
