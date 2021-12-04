@@ -167,8 +167,10 @@ const EditBusinessForm = ({business, hideForm}) => {
       <ul className="errors">
         {errors.map((error) => <li key={error}>{error}</li>)}
       </ul>
-      <button type="submit" disabled={errors.length>0}>Update Business</button>
-      <button type="button" onClick={handleCancelFormEditClick}>Cancel</button>
+      <div className="edit-business-buttons-flex">
+        <button type="submit" disabled={errors.length>0}>Update Business</button>
+        <button type="button" onClick={handleCancelFormEditClick}>Cancel</button>
+      </div>
       </form>
     </section>
   )

@@ -1,3 +1,8 @@
 .submit-cancel {
   display: flex;
+  justify-content: space-between;
+}
+
+button {
+  padding-right: 0px;
 }

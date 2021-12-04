@@ -29,7 +29,7 @@ button {
   border: 0;
   background: none;
   font-weight: 700;
-  padding-right: 20px;
+  /* padding-right: 20px; */
   text-transform: uppercase;
   transition: background-color .25s, color .25s;
   cursor: pointer;
@@ -44,4 +44,9 @@ padding: 10px 10px;
 font-family: 'Poppins', sans-serif;
 font-size: small;
 color:crimson
+}
+
+.edit-business-buttons-flex {
+  display: flex;
+  justify-content: space-between;
 }
