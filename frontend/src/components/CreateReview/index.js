@@ -120,9 +120,10 @@ const ReviewForm = ({reviews, hideForm, hideButton}) => {
       <ul className="error">
       {errors.map((error) => <li key={error}>{error}</li>)}
       </ul>
-      <button className="pad-add-review-button" type="submit" disabled={errors.length>0} >Submit Review</button>
+      <div className="add-review-button-flex-mobile">
+      <button type="submit" disabled={errors.length>0} >Submit Review</button>
       <button className="pad-add-review-desktop" type="button" onClick={handleCancelReviewFormClick}>Cancel</button>
-
+      </div>
     </form>
     </>
   )
