@@ -159,6 +159,7 @@ const CreateBusinessForm = () => {
         {errors.map((error) => <li key={error}>{error}</li>)}
       </ul>
       <button
+        className="mobile-submit-create-business"
         type="submit"
         disabled={errors.length>0}
       >
