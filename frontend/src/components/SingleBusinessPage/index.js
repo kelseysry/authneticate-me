@@ -160,7 +160,12 @@ const SingleBusinessPage = () => {
     // console.log("this is reviews in component", reviews)
 
     reviewContent = (
-      <ReviewForm reviews={reviews} hideForm={() => setShowReviewForm(false)} hideButton={() => setHideReviewButton(false)}/>
+      <>
+      <div className="padding-add-review-form">
+        <ReviewForm reviews={reviews} hideForm={() => setShowReviewForm(false)} hideButton={() => setHideReviewButton(false)}/>
+      </div>
+        <hr></hr>
+      </>
     )
   }
   // console.log("this is reviews.User", reviews[0].User.username)
@@ -201,13 +206,18 @@ const SingleBusinessPage = () => {
 
             <hr></hr>
 
-              {!hideReviewButton && <button className="add-review-button"
+              {!hideReviewButton &&
+
+              <button className="add-review-button"
               //  onClick={() => setHideReviewButton(true)}
                onClick={() => {setShowReviewForm(true);  setHideReviewButton(true)
 
                }}>
                <i className="fas fa-star"></i>&nbsp;&nbsp;Write a Review &nbsp;&nbsp;<i className="fas fa-star"></i></button>
+
+
                }
+
 
 
 
@@ -259,16 +269,17 @@ const SingleBusinessPage = () => {
             <hr></hr>
 
               <div className="pad-review-button">
-              {!hideReviewButton && <button className="add-review-button-mobile"
+              {!hideReviewButton &&  <button className="add-review-button-mobile"
               //  onClick={() => setHideReviewButton(true)}
                onClick={() => {setShowReviewForm(true);  setHideReviewButton(true)
 
                }}>
+
                <i className="fas fa-star"></i>&nbsp;&nbsp;Write a Review &nbsp;&nbsp;<i className="fas fa-star"></i></button>
+
                }
               </div>
 
-            <hr></hr>
 
         <div>
           {reviewContent}

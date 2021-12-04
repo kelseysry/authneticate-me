@@ -155,7 +155,7 @@ const CreateBusinessForm = () => {
         >
         </input>
       </label>
-      <ul className="errors">
+      <ul className="error">
         {errors.map((error) => <li key={error}>{error}</li>)}
       </ul>
       <button

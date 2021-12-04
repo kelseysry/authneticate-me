@@ -2,6 +2,7 @@
 
 .error {
   padding-bottom: 5px;
+  padding: 30px 20px;
 }
 
 .error li{
@@ -9,4 +10,36 @@ padding: 10px 10px;
 font-family: 'Poppins', sans-serif;
 font-size: small;
 color:crimson
+}
+
+.form-create-review-form {
+  box-sizing: border-box;
+  padding: 50px 50px;
+}
+
+.pad-add-review-desktop{
+  padding-left: 20px;
+}
+
+
+
+@media only screen and (max-width:768px) {
+
+.pad-add-review-button{
+  padding-right: 20px !important;
+}
+
+.form-create-review-form {
+  box-sizing: border-box;
+  /* padding: 50px 50px; */
+  width: 300px !important;
+  padding: 10px 10px !important;
+}
+
+.error {
+  padding-bottom: 5px;
+  padding: 30px 10px !important;
+}
+
+
 }

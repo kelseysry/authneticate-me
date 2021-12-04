@@ -88,7 +88,7 @@ const ReviewForm = ({reviews, hideForm, hideButton}) => {
 
   return (
 <>
-    <form onSubmit={handleSubmit}>
+    <form className="form-create-review-form" onSubmit={handleSubmit}>
 
       <label>
           <input
@@ -120,8 +120,8 @@ const ReviewForm = ({reviews, hideForm, hideButton}) => {
       <ul className="error">
       {errors.map((error) => <li key={error}>{error}</li>)}
       </ul>
-      <button type="submit" disabled={errors.length>0} >Submit Review</button>
-      <button type="button" onClick={handleCancelReviewFormClick}>Cancel</button>
+      <button className="pad-add-review-button" type="submit" disabled={errors.length>0} >Submit Review</button>
+      <button className="pad-add-review-desktop" type="button" onClick={handleCancelReviewFormClick}>Cancel</button>
 
     </form>
     </>
