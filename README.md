@@ -1,6 +1,6 @@
 <!-- ![Home Page of Mab Mab](https://res.cloudinary.com/mabmab/image/upload/v1636833234/khmer_food/home_piicjk.png) -->
 
-![gif](https://res.cloudinary.com/mabmab/image/upload/v1638852329/khmer_food/ezgif.com-gif-maker_h6jagk.gif)
+![gif](https://res.cloudinary.com/mabmab/image/upload/v1638852997/khmer_food/home_splash_map_zup9ju.gif)
 
 # Summary
 
