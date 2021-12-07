@@ -1,9 +1,11 @@
 ![Home Page of Mab Mab](https://res.cloudinary.com/mabmab/image/upload/v1636833234/khmer_food/home_piicjk.png)
 
+![gif](https://imgflip.com/gif/5wwnd2)
+
 # Summary
 
 [Mab Mab](https://yelp-clone-kelsey-sry.herokuapp.com/)
-<a href="https://imgflip.com/gif/5wwnd2"><img src="https://imgflip.com/5wwnd2.gif"/></a>
+<!-- <a href="https://imgflip.com/gif/5wwnd2"><img src="https://imgflip.com/5wwnd2.gif"/></a> -->
 is a website build off the idea of yelp.com but focuses solely on restaurants in Phnom Penh. Mab Mab was created by using React, Redux, Express, and PostgreSQL. Anyone who uses Mab Mab can do the following:
 
 - Sign up
