@@ -1,6 +1,7 @@
-![Home Page of Mab Mab](https://res.cloudinary.com/mabmab/image/upload/v1636833234/khmer_food/home_piicjk.png)
+<!-- ![Home Page of Mab Mab](https://res.cloudinary.com/mabmab/image/upload/v1636833234/khmer_food/home_piicjk.png) -->
 
-![alt text](https://imgflip.com/gif/5wwtfm "Logo Title Text 1")
+![alt text](https://res.cloudinary.com/mabmab/image/upload/v1638852329/khmer_food/ezgif.com-gif-maker_h6jagk.gif "home page demo")
+
 
 # Summary
 
