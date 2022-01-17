@@ -83,7 +83,8 @@ const SingleBusinessPage = () => {
     return null;
   }
 
-  // console.log("singleBUsiness",sessionUser)
+  console.log("sessionUser",sessionUser)
+  console.log("business.User?.username", business.User)
 
 
   let res = reviews.map(review => Object.values(review)[3])
@@ -192,10 +193,21 @@ const SingleBusinessPage = () => {
               </div>
             : null
           }
+        {
+          sessionUser?.id === business?.User?.id ?
           <div>
           <button className="edit-business-title" onClick={() => setShowEditBusinessForm(true)}>Edit Business</button>
           <button className="edit-business-title" onClick={() => handleDelete(businessId)}>Delete Business</button>
           </div>
+
+          :
+          <>
+            <div className="">&nbsp;</div>
+            <div className="">&nbsp;</div>
+          </>
+
+
+          }
       </div>
 
       <div className="details-reviewButton-container">
@@ -214,8 +226,6 @@ const SingleBusinessPage = () => {
 
                }}>
                <i className="fas fa-star"></i>&nbsp;&nbsp;Write a Review &nbsp;&nbsp;<i className="fas fa-star"></i></button>
-
-
                }
 
 

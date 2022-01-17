@@ -15,6 +15,7 @@ const BusinessReviews = ({business}) => {
   const dispatch = useDispatch();
   const reviewsObj = useSelector((state) => state.review)
 
+  const sessionUser = useSelector(state => state.session.user);
 
 
   const reviews = Object.values(reviewsObj).filter(review => review.businessId === business.id)
@@ -43,9 +44,12 @@ const BusinessReviews = ({business}) => {
                 {review.User.username}
                 </span>
               </div>
-              <div className="dotStyle">
-                <DotDotButton businessId={business.id} reviewId={review.id}/>
-              </div>
+              { sessionUser?.username == review?.User?.username ?
+                <div className="dotStyle">
+                  <DotDotButton businessId={business.id} reviewId={review.id}/>
+                </div>
+                : null
+              }
             </div>
             <div className="rating-profile">
               {/* <b>Rating</b>  */}

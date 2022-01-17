@@ -189,6 +189,10 @@ body{
   display: flex;
 }
 
+.profile-nav {
+
+  display: none;
+}
 
 
 }
@@ -198,4 +202,13 @@ body{
   display: flex;
   align-items: flex-start;
   padding-right: 30px;
+}
+
+
+.profile-nav {
+  text-decoration: none;
+  color: cornflowerblue;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  padding-left: 3px;
 }
