@@ -20,7 +20,7 @@
   box-sizing: border-box;
   padding-top: 20px;
   padding-bottom: 20px;
-  /* border-bottom: 1px solid #e6e6e6; */
+  font-size: 20px;
 
 }
 
@@ -57,7 +57,8 @@ ul {
   font-weight: 900;
   color: cornflowerblue;
   padding-left: 10px ;
-  font-size: 40px;
+  font-size: 25px;
+  padding-bottom: 6px;
 }
 
 .star-color-blue {
@@ -86,7 +87,7 @@ ul {
 
 .fa-mug-hot {
   color: cornflowerblue;
-  font-size: 60px;
+  font-size: 25px;
 }
 
 @media only screen and (max-width:768px) {

@@ -30,7 +30,7 @@ const AboutLinks = () => {
                 <img className="profile-thumb-modal" src={infoLinks[0].imageUrl} alt="user_image"/>
               </div>
 
-                <div className="about-first-text">okSign brought to you by</div>
+                <div className="about-first-text">Mab Mab brought to you by</div>
                 <div className="about-modal-name">
                  {infoLinks[0].name}
                 </div>

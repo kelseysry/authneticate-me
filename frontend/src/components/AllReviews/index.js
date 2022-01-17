@@ -96,9 +96,13 @@ const BusinessReviews = ({business}) => {
                 {review.User.username}
                 </span>
               </div>
+              { sessionUser?.username == review?.User?.username ?
+
               <div className="dotStyle">
                 <DotDotButton businessId={business.id} reviewId={review.id}/>
               </div>
+              : null
+              }
             </div>
             <div className="rating-profile-mobile">
               {/* <b>Rating</b>  */}
