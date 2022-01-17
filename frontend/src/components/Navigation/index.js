@@ -7,6 +7,7 @@ import * as sessionActions from '../../store/session'
 import './Navigation.css';
 import { useDispatch } from "react-redux";
 import UserButton from './UserButton';
+import AboutLinks from '../AboutLinks/AboutLinks';
 
 
 function Navigation({ isLoaded }){
@@ -32,15 +33,6 @@ function Navigation({ isLoaded }){
       <>
       <UserButton />
 
-      {/* <div className="sign-up-login-container">
-        <div className="sign-log-style">
-        <NavLink to="/login">Log In</NavLink>
-        </div>
-        <div className="sign-log-style">
-        <NavLink to="/signup">Sign Up</NavLink>
-        </div>
-        <button onClick={demo}><i className="fas fa-user-secret fa-2x"></i></button>
-      </div> */}
       </>
     );
   }
@@ -60,9 +52,13 @@ function Navigation({ isLoaded }){
         <NavLink to="/createBusiness">Add Restaurant</NavLink>
         </div>
       </div>
-      <div>
+
+
+      <div className="profile-about">
+      <AboutLinks />
       {isLoaded && sessionLinks}
       </div>
+
     </div>
   </nav>
   <nav className="small-screen">
@@ -78,6 +74,9 @@ function Navigation({ isLoaded }){
         </div>
         <div className="user-centered">
         {isLoaded && sessionLinks}
+        </div>
+        <div className="user-centered">
+        <AboutLinks /> 
         </div>
     </div>
   </nav>

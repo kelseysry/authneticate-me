@@ -188,4 +188,14 @@ body{
 .user-centered {
   display: flex;
 }
+
+
+
+}
+
+
+.profile-about {
+  display: flex;
+  align-items: flex-start;
+  padding-right: 30px;
 }

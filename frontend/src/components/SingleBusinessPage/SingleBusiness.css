@@ -107,7 +107,7 @@
 .add-review-button {
   cursor: pointer;
   width: 30%;
-  background-color:cornflowerblue;
+  :cornflowerblue;
   color: #fff;
   padding:20px 20px;
   border: none;
@@ -303,7 +303,7 @@ hr {
     letter-spacing: -1px;
     line-height: 30px;
     font-family: 'Poppins', sans-serif;
-    background-color: transparent;
+    : transparent;
     justify-content: flex-start;
     padding-left: 25px;
   }
@@ -341,7 +341,6 @@ hr {
   .add-review-button-mobile{
     cursor: pointer;
     width: 80%;
-    background-color:cornflowerblue;
     color: #fff;
     padding:20px 20px;
 
