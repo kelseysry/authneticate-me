@@ -24,10 +24,7 @@
   padding: 45px 45px;
   border-radius: 10px 10px;
   color: #fff;
-  /* width: fit-content; */
-  /* font-size: 3vw; */
   font-weight: 700;
-  /* letter-spacing: -7px; */
   font-family: 'Poppins', sans-serif;
   text-align: center;
   margin: 0 auto;
@@ -37,6 +34,7 @@
   justify-content: flex-start;
   flex-direction: column;
   overflow-y: scroll;
+  font-size: 20px;
 }
 
 .explore {
