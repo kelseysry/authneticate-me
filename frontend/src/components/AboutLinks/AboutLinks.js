@@ -18,7 +18,7 @@ const AboutLinks = () => {
               <i class="fas fa-id-card fa-2x"></i>
               <div className="contact-me">
                 <div>Contact</div>
-                <div>Me</div>
+                {/* <div>Me</div> */}
               </div>
             </section>
         </button>
