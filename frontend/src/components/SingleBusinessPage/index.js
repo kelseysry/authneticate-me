@@ -205,9 +205,8 @@ const SingleBusinessPage = () => {
             <div className="">&nbsp;</div>
             <div className="">&nbsp;</div>
           </>
-
-
           }
+
       </div>
 
       <div className="details-reviewButton-container">
@@ -256,10 +255,18 @@ const SingleBusinessPage = () => {
               </div>
             : null
           }
-          <div>
-          <button className="edit-business-title-mobile" onClick={() => setShowEditBusinessForm(true)}>Edit Business</button>
-          <button className="edit-business-title-mobile" onClick={() => handleDelete(businessId)}>Delete Business</button>
-          </div>
+           {
+            sessionUser?.id === business?.User?.id ?
+            <div>
+            <button className="edit-business-title-mobile" onClick={() => setShowEditBusinessForm(true)}>Edit Business</button>
+            <button className="edit-business-title-mobile" onClick={() => handleDelete(businessId)}>Delete Business</button>
+            </div>
+            :
+            <>
+              <div className="">&nbsp;</div>
+              <div className="">&nbsp;</div>
+            </>
+           }
       </div>
 
       <div className="padding-single-business">
