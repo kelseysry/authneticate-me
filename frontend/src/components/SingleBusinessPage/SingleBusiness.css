@@ -209,7 +209,7 @@ hr {
     align-items: flex-end !important;
     margin: 0 auto;
     border: 0px;
-    height: 100vh;
+    height: 60vh;
     width: 100%;
 
     background-size: cover;
@@ -223,6 +223,8 @@ hr {
     align-items: center;
     align-items: flex-start !important;
     justify-content: flex-end !important;
+    background-position-y: 50%;
+
   }
 
   .details-reviewButton-container-mobile {
@@ -269,7 +271,7 @@ hr {
 
   .business-title{
     color: #fff;
-    font-size: 15vw;
+    font-size: 6vw;
     font-weight: 700;
     letter-spacing: -1px;
     /* line-height: 150px; */
