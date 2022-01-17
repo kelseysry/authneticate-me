@@ -205,7 +205,7 @@ hr {
 
     box-sizing: border-box;
     display: flex;
-    padding: 15px 0px !important;
+    /* padding: 15px 0px !important; */
     align-items: flex-end !important;
     margin: 0 auto;
     border: 0px;
@@ -220,7 +220,6 @@ hr {
     align-items: center;
 
     flex-direction: column;
-    align-items: center;
     align-items: flex-start !important;
     justify-content: flex-end !important;
     background-position-y: 50%;
@@ -271,7 +270,7 @@ hr {
 
   .business-title{
     color: #fff;
-    font-size: 6vw;
+    font-size: 10vw;
     font-weight: 700;
     letter-spacing: -1px;
     /* line-height: 150px; */

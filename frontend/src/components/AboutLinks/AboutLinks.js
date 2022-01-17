@@ -14,6 +14,11 @@ const AboutLinks = () => {
           style={{color: 'white'}}
           className="nav-modal-button-about"
           onClick={() => setShowModal(true)}>
+            {/* <section className="nav-kelsey-modal-mobile">
+              <i class="fas fa-id-card fa-2x"></i>
+
+            </section> */}
+
             <section className="nav-kelsey-modal">
               <i class="fas fa-id-card fa-2x"></i>
               <div className="contact-me">
@@ -21,6 +26,7 @@ const AboutLinks = () => {
                 {/* <div>Me</div> */}
               </div>
             </section>
+
         </button>
       {showModal && (
         <AboutModal onClose={() => setShowModal(false)}>
