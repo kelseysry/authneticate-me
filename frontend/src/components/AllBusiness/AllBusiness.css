@@ -94,3 +94,10 @@
 }
 
 }
+
+.color {
+  color: white;
+}
+.noColor {
+  color: rgba(82, 78, 78, 0.714);
+}
