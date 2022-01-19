@@ -115,11 +115,6 @@
 }
 
 
-.filter-by-stars{
-  /* display: flex; */
-}
-
 .filter-by-stars img{
-  /* width: 300px; */
   object-fit: contain;
 }

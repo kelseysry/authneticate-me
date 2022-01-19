@@ -31,7 +31,7 @@ const business = useSelector((state) => state.business[businessId]);
 
   return (
     <>
-{filterAvg === average?
+{filterAvg === average || filterAvg === 0?
   <div className="one-image-container" key={businessId}>
     <NavLink to={`/business/${businessId}`}>
       <div className="hover-pic">
