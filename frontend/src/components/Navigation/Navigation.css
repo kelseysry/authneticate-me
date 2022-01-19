@@ -162,8 +162,16 @@
 
 }
 
+.profile-button-nav {
+  display: flex;
+}
 
-@media only screen and (max-width:1000px) {
+
+
+
+
+@media only screen and (max-width:768px) {
+
   .big-screen {
     display: none;
   }
@@ -171,12 +179,6 @@
   .small-screen {
     display: contents;
   }
-
-}
-
-
-
-@media only screen and (max-width:768px) {
 
 button {
   padding-right: 0px !important;

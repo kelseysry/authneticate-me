@@ -53,7 +53,8 @@ const pictures = {
     {
       "imageNumber":"13",
       "imageUrl":"https://res.cloudinary.com/mabmab/image/upload/v1642626135/khmer_food/angkor_wat_nmiki8.png"
-    }
+    },
+ 
 
   ]
 
