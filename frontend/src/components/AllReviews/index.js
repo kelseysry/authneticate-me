@@ -67,10 +67,6 @@ const BusinessReviews = ({business}) => {
 
               </div>
               <div>
-                {/* <NavLink> Hi </NavLink> */}
-                {/* <div>{review.id}</div> */}
-                {/* <NavLink to={`/business/${business.id}/reviews/${review.id}`}>Edit Review</NavLink> */}
-
               </div>
               <div className="image-container">
                 <img className="reviewImage" src ={review.imageUrl} alt={review.imageUrl}/>
