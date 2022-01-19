@@ -155,7 +155,7 @@
   }
 
   .color img, .noColor img {
-    width: 90px !important;
+    width: 70px !important;
     object-fit: contain;
   }
 
