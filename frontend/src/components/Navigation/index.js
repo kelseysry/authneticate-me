@@ -71,8 +71,8 @@ function Navigation({ isLoaded }){
   </nav>
   <nav className="small-screen">
     <div className="home-explore">
-        <div className="pad">
-        <NavLink exact to="/"><i className="fas fa-home fa-lg"></i></NavLink>
+        <div className="angkor_home">
+        <NavLink exact to="/"><img src={pictures.collection[12].imageUrl} alt="home"/></NavLink>
         </div>
         <div className="pad">
         <NavLink to="/business"><i className="fas fa-search fa-lg"></i></NavLink>
