@@ -45,7 +45,7 @@ const AllBusiness = () => {
 
         <div className="Explore">Explore</div>
         <div className="explore-rating">click on a monument to filter restaurants by rating</div>
-        <section className="filter-by-stars">
+        <div className="filter-by-stars">
           {Array(5).fill(<img src={pictures.collection[9].imageUrl} alt="independence_monument_star"/>).map((ele, idx) => {
             idx += 1;
             return (
@@ -64,7 +64,7 @@ const AllBusiness = () => {
               </button>
             );
           })}
-        </section>
+        </div>
       </div>
     </div>
 
