@@ -58,8 +58,8 @@ ul {
   font-weight: 900;
   color: cornflowerblue;
   padding-left: 10px ;
-  font-size: 25px;
-  padding-bottom: 6px;
+  font-size: 30px;
+  padding-bottom: 13px;
 }
 
 .star-color-blue {
@@ -73,9 +73,7 @@ ul {
   color: white;
 }
 
-/* .fa-utensils {
-  color: cornflowerblue;
-} */
+
 
 .fa-user-circle {
   color: cornflowerblue;
@@ -123,12 +121,17 @@ ul {
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
-  padding: 5px 5px;
+  padding: 5px 0px !important;
 }
 .icon {
   font-size: 0px !important;
   padding-right: 0px !important;
   padding-bottom: 4px;
+}
+
+.icon img {
+  width: 50px !important;
+  padding-right: 3px !important;
 }
 
 .rating-profile-mobile {

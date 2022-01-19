@@ -21,8 +21,8 @@ const PicBanner = ({photoId}) => {
   return (
     // <img src ={pictures.collection[0].imageUrl} alt={"hiii"}/>
     <>
-    <div className="top-pi-container" style={{ backgroundImage: `url('${pictures.collection[photoId].imageUrl}')` }}>
-
+    <div className="add_restaurant" style={{ backgroundImage: `url('${pictures.collection[photoId].imageUrl}')` }}>
+      Add Restaurant
     </div>
     </>
   )
