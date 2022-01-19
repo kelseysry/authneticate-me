@@ -40,7 +40,6 @@ const BusinessReviews = ({business}) => {
               <div className="profile">
                 <span className="icon">
                 <img src={pictures.collection[10].imageUrl} alt="bayon_user"/>
-                {/* <i class="fas fa-mug-hot" fa-5x></i> */}
                 </span>
                 <span className="review-username">
                 {review.User.username}
@@ -88,7 +87,8 @@ const BusinessReviews = ({business}) => {
             <div className="user-icon-and-dot-mobile">
               <div className="profile">
                 <span className="icon">
-                  <i class="fas fa-mug-hot" fa-2x></i>
+                <img src={pictures.collection[10].imageUrl} alt="bayon_user"/>
+                  {/* <i class="fas fa-mug-hot" fa-2x></i> */}
                 </span>
                 <span className="review-username">
                 {review.User.username}
@@ -103,7 +103,6 @@ const BusinessReviews = ({business}) => {
               }
             </div>
             <div className="rating-profile-mobile">
-              {/* <b>Rating</b>  */}
               {Array(review.rating).fill(
 
               <span className="star-color-blue"><i className="fas fa-star"></i></span>).map((ele, idx) => <span key={idx}>{ele}</span>)
@@ -112,12 +111,8 @@ const BusinessReviews = ({business}) => {
             </div>
               <div className="review-container">
               {review.answer}
-              {/* {business.id} */}
               </div>
               <div>
-                {/* <NavLink> Hi </NavLink> */}
-                {/* <div>{review.id}</div> */}
-                {/* <NavLink to={`/business/${business.id}/reviews/${review.id}`}>Edit Review</NavLink> */}
 
               </div>
               <div className="image-container">
