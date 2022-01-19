@@ -8,7 +8,7 @@ import './Navigation.css';
 import { useDispatch } from "react-redux";
 import UserButton from './UserButton';
 import AboutLinks from '../AboutLinks/AboutLinks';
-
+import pictures from '../../data/pictures';
 
 function Navigation({ isLoaded }){
   const dispatch = useDispatch();
@@ -45,8 +45,13 @@ function Navigation({ isLoaded }){
   <nav className="big-screen">
     <div className="home-explore">
       <div className="subNav">
-        <div className="pad">
-        <NavLink exact to="/"><i className="fas fa-home fa-lg"></i></NavLink>
+        <div className="angkor_home">
+        <NavLink exact to="/">
+          <div className="angkor_flex">
+            <img src={pictures.collection[12].imageUrl} alt="home"/>
+            <div className="angkor_word">Home</div>
+          </div>
+        </NavLink>
         </div>
         <div className="pad">
         <NavLink to="/business">Explore</NavLink>
