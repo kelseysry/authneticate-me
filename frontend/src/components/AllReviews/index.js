@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
+import pictures from "../../data/pictures";
 
 import { getReviews } from "../../store/review";
 import DotDotButton from "../DotDotButton";
@@ -38,7 +39,8 @@ const BusinessReviews = ({business}) => {
             <div className="user-icon-and-dot">
               <div className="profile">
                 <span className="icon">
-                <i class="fas fa-mug-hot" fa-5x></i>
+                <img src={pictures.collection[10].imageUrl} alt="bayon_user"/>
+                {/* <i class="fas fa-mug-hot" fa-5x></i> */}
                 </span>
                 <span className="review-username">
                 {review.User.username}

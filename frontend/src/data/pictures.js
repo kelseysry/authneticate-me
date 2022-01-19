@@ -41,7 +41,12 @@ const pictures = {
     {
       "imageNumber":"10",
       "imageUrl":"https://res.cloudinary.com/mabmab/image/upload/v1642566819/khmer_food/independence_m_y9ommh.png"
+    },
+    {
+      "imageNumber":"11",
+      "imageUrl":"https://res.cloudinary.com/mabmab/image/upload/v1642569392/khmer_food/user_icon_mc0qxe.png"
     }
+
   ]
 
 }
