@@ -132,7 +132,7 @@
   .Explore {
     overflow-wrap: break-word !important;
     color: #fff;
-    font-size: 20vw !important;
+    font-size: 18vw !important;
     line-height: 1.2em;
     font-weight: 700;
     font-family: 'Poppins', sans-serif;
@@ -141,17 +141,17 @@
     margin: 0 auto;
     position: relative;
     letter-spacing: .2px !important;
-    padding-left: 0px !important;
-    position: relative;
+    padding-left: 30px !important;
+    /* position: relative; */
   }
 
   .filter-by-stars {
-    display: flex;
-    flex-direction: row !important;
-    width: 100px;
-    position: absolute;
+    /* display: flex; */
+    /* flex-direction: row !important; */
+    /* width: 100px; */
+    /* position: absolute;
     top: 230px;
-    left: 15px;
+    left: 15px; */
   }
 
   .color img, .noColor img {
@@ -183,13 +183,12 @@
       object-fit: fill;
       background-position-y: 90%;
       width: 100% !important;
-      display: block;
-      padding-bottom: 50px !important;
+      padding-right: 40px !important;
     }
     .explore-rating {
-      width: 250px !important;
-      font-size: 13px !important;
-      padding-left: 0px !important;
+      width: 300px !important;
+      font-size: 15px !important;
+      padding-left: 30px !important;
       line-height: 1.1em;
     }
 
