@@ -29,6 +29,13 @@ const AllBusiness = () => {
   }, [dispatch, businessObj.length])
 
 
+  const handleClick = () => {
+    if(filterRatings === 1) {
+      setFilterRatings(0);
+    }
+  }
+
+
   return (
 
     <>
@@ -43,7 +50,11 @@ const AllBusiness = () => {
               <button
                 key={idx}
                 className={idx <= (hover || filterRatings) ? "color" : "noColor"}
-                onClick={() => setFilterRatings(idx)}
+                onClick={() => {
+                  setFilterRatings(idx)
+                  handleClick()
+
+                }}
                 onMouseEnter={() => setHover(idx)}
                 onMouseLeave={() => setHover(filterRatings)}
               >
