@@ -40,7 +40,7 @@ const pictures = {
     },
     {
       "imageNumber":"10",
-      "imageUrl":"https://res.cloudinary.com/mabmab/image/upload/v1642550682/khmer_food/independence_demted.png"
+      "imageUrl":"https://res.cloudinary.com/mabmab/image/upload/v1642566819/khmer_food/independence_m_y9ommh.png"
     }
   ]
 
