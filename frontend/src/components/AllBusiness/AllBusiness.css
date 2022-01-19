@@ -98,6 +98,28 @@
 .color {
   color: white;
 }
+
 .noColor {
-  color: rgba(82, 78, 78, 0.714);
+  /* color: rgba(82, 78, 78, 0.714); */
+  opacity: .6;
+}
+
+.color, .noColor {
+  width: 150px;
+  object-fit: contain;
+}
+
+.color img, .noColor img {
+  width: 250px;
+  object-fit: contain;
+}
+
+
+.filter-by-stars{
+  /* display: flex; */
+}
+
+.filter-by-stars img{
+  /* width: 300px; */
+  object-fit: contain;
 }

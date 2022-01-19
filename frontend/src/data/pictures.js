@@ -37,6 +37,10 @@ const pictures = {
     {
       "imageNumber":"9",
       "imageUrl":"https://res.cloudinary.com/mabmab/image/upload/v1636841816/khmer_food/Screen_Shot_2021-11-13_at_2.16.38_PM_wmn5kl.png"
+    },
+    {
+      "imageNumber":"10",
+      "imageUrl":"https://res.cloudinary.com/mabmab/image/upload/v1642550682/khmer_food/independence_demted.png"
     }
   ]
 

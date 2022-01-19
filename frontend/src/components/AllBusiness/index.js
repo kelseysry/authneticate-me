@@ -37,7 +37,7 @@ const AllBusiness = () => {
       <div className="top-banner-pic-all-business" style={{ backgroundImage: `url('${pictures.collection[2].imageUrl}')` }}>
         <div className="explore">Explore</div>
         <section className="filter-by-stars">
-          {Array(5).fill(<i className="fas fa-trophy"></i>).map((ele, idx) => {
+          {Array(5).fill(<img src={pictures.collection[9].imageUrl} alt="independence_monument_star"/>).map((ele, idx) => {
             idx += 1;
             return (
               <button
@@ -47,14 +47,12 @@ const AllBusiness = () => {
                 onMouseEnter={() => setHover(idx)}
                 onMouseLeave={() => setHover(filterRatings)}
               >
-                <span className={idx <= (hover || filterRatings) ? "color" : "noColor"}><i class="fas fa-trophy fa-7x"></i></span>
+                <span className={idx <= (hover || filterRatings) ? "color" : "noColor"}><img src={pictures.collection[9].imageUrl} alt="independence_monument_star"/> </span>
               </button>
             );
           })}
         </section>
       </div>
-
-
     </div>
 
       <div className="one-business-image-container">
