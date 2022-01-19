@@ -16,6 +16,7 @@
   box-sizing: border-box;
   justify-content: center;
   display: flex !important;
+  flex-direction: column;
   padding: 40px 64px;
   margin: 0 auto;
   border: 0px;
@@ -64,14 +65,12 @@
     grid-template-columns: 1fr;
   }
 
-  .top-banner-pic-all-business {
-    /* display: none !important; */
-  }
 
-  .explore {
+  /* .explore {
     letter-spacing: normal !important;
     font-size: 10vw;
-  }
+    text-align: center;
+  } */
 
 
 
@@ -96,15 +95,10 @@
 }
 
 .color {
-  color: white;
-  filter: invert(100%) sepia(40%) saturate(505%) hue-rotate(319deg) brightness(101%) contrast(116%);
 }
 
 .noColor {
-  /* color: rgba(82, 78, 78, 0.714); */
   opacity: .6;
-
-
 }
 
 .color, .noColor {
@@ -120,4 +114,33 @@
 
 .filter-by-stars img{
   object-fit: contain;
+}
+
+.explore-rating {
+  color: whitesmoke;
+  font-size: 23px;
+  text-align: center;
+  /* background-color: pink; */
+  width: 800px;
+  padding-left: 120px;
+}
+
+.filter-by-stars {
+  /* width: 800px; */
+  /* background-color: plum; */
+}
+
+.Explore {
+  z-index: 1;
+  color: #fff;
+  font-size: 10vw;
+  font-weight: 700;
+  letter-spacing: -7px;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  height: auto;
+  margin: 0 auto;
+  position: relative;
+  padding-left: 90px;
+
 }
