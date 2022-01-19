@@ -1,11 +1,12 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react'; // side effects
+import { NavLink } from 'react-router-dom';
 
 import { getOneBusiness } from "../../store/business"
 
 import './OneBusinessTile.css';
 
-const OneBusinessTile = ({businessId}) => {
+const OneBusinessTile = ({businessId, filterAvg}) => {
   const dispatch = useDispatch();
 
 const business = useSelector((state) => state.business[businessId]);
@@ -25,11 +26,14 @@ const business = useSelector((state) => state.business[businessId]);
   const avge = (business?.Reviews?.reduce((a,b) => a+b.rating, 0)) /business.Reviews?.length
   const average = Math.round(avge)
 
-  // console.log("average", reviews)
+  console.log("average", average)
   // console.log("business",business )
 
   return (
     <>
+{filterAvg === average || filterAvg === 0?
+  <div className="one-image-container" key={businessId}>
+    <NavLink to={`/business/${businessId}`}>
       <div className="hover-pic">
         <div className="each-pic-container" style={{ backgroundImage: `url('${business?.imageUrl}')` }}>
           <div className="each-tile-title">
@@ -48,6 +52,10 @@ const business = useSelector((state) => state.business[businessId]);
         </div>
 
       </div>
+    </NavLink>
+  </div>
+    : null
+    }
     </>
   )
 

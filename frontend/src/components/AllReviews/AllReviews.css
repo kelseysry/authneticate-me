@@ -28,8 +28,9 @@ ul {
   list-style-type: none;
 }
 
-.icon {
-  font-size: 45px;
+.icon img {
+  /* font-size: 45px; */
+  width: 60px;
   padding-right: 5px;
 }
 
@@ -41,7 +42,7 @@ ul {
 }
 
 .username {
-  font-size: 20px;
+  font-size: 30px;
   font-family: 'Poppins', sans-serif;
 }
 
