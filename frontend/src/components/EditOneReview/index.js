@@ -26,6 +26,9 @@ const EditOneReview = ({}) => {
   const [imageUrl, setImageUrl] = useState(review?.imageUrl);
   const [errors, setErrors] = useState([]);
 
+  const [filterRatings, setFilterRatings] = useState(review?.rating);
+  const [hover, setHover] = useState(0);
+
   // grab the user from state so a user doesn't have the manually input their data into the form
   // we automatically know who's submitting the form
   const sessionUser = useSelector((state) => state.session.user)
@@ -84,7 +87,7 @@ const EditOneReview = ({}) => {
       <div className="explore">Edit Review</div>
     </div>
     <form className="signup-form-style" onSubmit={handleSubmit}>
-      <label>
+      {/* <label>
           <input
             type="number"
             placeholder="rating"
@@ -92,7 +95,41 @@ const EditOneReview = ({}) => {
             onChange={(e) => setRating(e.target.value)}
           >
           </input>
-      </label>
+      </label> */}
+      <div className="review-stars">
+          {Array(5).fill(
+          <span className="star-color-blue">
+            <i className="fas fa-star fa-x"></i>
+          </span>
+
+          ).map((ele, idx) => {
+            idx += 1;
+            return (
+              <button
+                key={idx}
+                className={idx <= (hover || filterRatings) ? "colorS" : "noColorS"}
+                onClick={(e) => {
+                  e.preventDefault()
+                  setFilterRatings(idx)
+                  setRating(idx)
+                }}
+                onMouseEnter={() => setHover(idx)}
+                onMouseLeave={() => setHover(filterRatings)}
+              >
+                <span className={idx <= (hover || filterRatings) ? "colorS" : "noColorS"}>
+
+                <span className="star-color-blue">
+                <i className="fas fa-star fa-x"></i>
+               </span>
+
+                  </span>
+              </button>
+            );
+          })}
+        </div>
+
+
+
       <label>
           <input
             placeholder="review"
