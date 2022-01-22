@@ -40,10 +40,10 @@ const ReviewForm = ({reviews, hideForm, hideButton}) => {
   const validate = () => {
 
     const validationErrors = [];
-    if(!rating) validationErrors.push("Rating is required")
-    if(rating > 5 || rating < 1) validationErrors.push("Rating must be between 1-5")
-    if(!answer) validationErrors.push("Please write a review!")
-    if(answer.length < 10) validationErrors.push("Review must be at least 10 characters!")
+    if(!rating) {validationErrors.push("Rating is required")}
+    else if(rating > 5 || rating < 1) {validationErrors.push("Rating must be between 1-5")}
+    if(!answer) {validationErrors.push("Please write a review!")}
+    else if(answer.length < 10) validationErrors.push("Review must be at least 10 characters!")
     if(!imageUrl) {
       validationErrors.push("Please provide an image")
     } else if (!isURL(imageUrl)) {
@@ -137,7 +137,9 @@ const ReviewForm = ({reviews, hideForm, hideButton}) => {
       <div className="reviewButtons">
         <button
         className="createReviewButton"
-        type="submit" disabled={validationErrors.length>0} >Submit Review</button>
+        type="submit"
+        // disabled={validationErrors.length>0}
+        >Submit Review</button>
         <button
         className="createReviewButton"
         type="button" onClick={handleCancelReviewFormClick}>Cancel</button>
