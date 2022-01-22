@@ -289,6 +289,9 @@ hr {
     margin:-38px 0px;
   }
 
+  .edit-business-buttons {
+    padding-bottom: 10px;
+  }
 
   .edit-business-title-mobile {
     top: 0;
@@ -301,9 +304,9 @@ hr {
     letter-spacing: -1px;
     line-height: 30px;
     font-family: 'Poppins', sans-serif;
-    : transparent;
+    background-color: transparent;
     justify-content: flex-start;
-    padding-left: 25px;
+    padding-left: 15px;
   }
 
   .details-container {

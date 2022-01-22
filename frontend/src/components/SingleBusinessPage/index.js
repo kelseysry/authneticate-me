@@ -260,7 +260,7 @@ const SingleBusinessPage = () => {
           }
            {
             sessionUser?.id === business?.User?.id ?
-            <div>
+            <div className="edit-business-buttons">
             <button className="edit-business-title-mobile" onClick={() => setShowEditBusinessForm(true)}>Edit Business</button>
             <button className="edit-business-title-mobile" onClick={() => handleDelete(businessId)}>Delete Business</button>
             </div>
