@@ -20,7 +20,8 @@
   padding: 40px 60px !important;
   margin: 0 auto;
   border: 0px;
-  height: 50vh;
+  /* height: 50vh; */
+  height: 500px;
   align-items: center;
 
   background-size: cover !important;
