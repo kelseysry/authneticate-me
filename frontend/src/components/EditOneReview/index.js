@@ -148,12 +148,19 @@ const EditOneReview = ({}) => {
         >
         </input>
       </label>
-      <ul className="error">
+      {errors.length?
+      <ul className="editReviewErrors">
       {errors.map((error) => <li key={error}>{error}</li>)}
       </ul>
+        : null
+      }
       <div className="submit-cancel">
-      <button type="submit" disabled={errors?.length>0} >Submit Review</button>
-      <button type="button" onClick={handleCancelReviewFormClick}>Cancel</button>
+      <button
+      className="editReviewButton"
+      type="submit" disabled={errors?.length>0} >Submit Review</button>
+      <button
+      className="editReviewButton"
+      type="button" onClick={handleCancelReviewFormClick}>Cancel</button>
       </div>
     </form>
     </>
