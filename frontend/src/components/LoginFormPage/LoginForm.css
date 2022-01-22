@@ -23,6 +23,10 @@
   margin-bottom: 30px;
 }
 
+.loginErrors {
+  padding-bottom: 10px;
+}
+
 .loginErrors li {
   color: cornflowerblue;
   font-size: 15px;

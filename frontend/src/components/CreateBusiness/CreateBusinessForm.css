@@ -10,6 +10,39 @@
   display: none;
 }
 
+.createBusinessButton {
+  cursor: pointer;
+  width: 50%;
+  color: #fff;
+  background-color: cornflowerblue;
+  padding: 20px 20px;
+  border: none;
+  border-radius: 4px;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  position: relative;
+  margin: 0 auto;
+
+}
+
+.centerFormButton {
+  display: flex;
+  justify-content: center;
+}
+
+.createBusinessErrors li {
+  color: cornflowerblue;
+  font-size: 15px;
+  padding-bottom: 5px;
+  list-style-type: circle;
+}
+
+.createBusinessErrors {
+  padding-bottom: 30px;
+  margin-left: 15px;
+}
 
 @media only screen and (max-width:768px) {
 
@@ -56,6 +89,23 @@
 
 .mobile-submit-create-business {
   padding-left: 20px;
+}
+
+.createBusinessButton {
+  cursor: pointer;
+  width: 100%;
+  color: #fff;
+  background-color: cornflowerblue;
+  padding: 20px 0px;
+  border: none;
+  border-radius: 4px;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  position: relative;
+  margin: 0 auto;
+
 }
 
 

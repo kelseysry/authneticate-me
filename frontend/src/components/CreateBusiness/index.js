@@ -19,55 +19,90 @@ const CreateBusinessForm = () => {
   const [imageUrl, setImageUrl] = useState('');
   const [lat, setLat] = useState('');
   const [lng, setLng] = useState('');
-  // const [ownerId, setOwnerId] = useState('')
-  const [errors, setErrors] = useState([])
+  const [validationErrors, setValidationErrors] = useState([]);
   const history = useHistory();
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
-
-  // console.log("this is sessionUser", sessionUser)
-  // console.log("this is sessionUserId", sessionUser?.id)
   const ownerId = sessionUser?.id
 
 
-  useEffect(() => {
-    const validationErrors = []
+  // useEffect(() => {
+  //   const validationErrors = []
+  //   if(!title) validationErrors.push("Name is required")
+  //   if(title.length<4) validationErrors.push("Name must be more than 4 characters long")
+  //   if(title.length >100) validationErrors.push("Name must be less than 100 characters")
+  //   if(!address) validationErrors.push("Address is required")
+  //   if(!city) validationErrors.push("City is required")
+  //   if(!zipCode) validationErrors.push("Zip code is required")
+  //   if(!imageUrl) {
+  //     validationErrors.push("Please provide an image")
+  //   } else if (!isURL(imageUrl)) {
+  //     validationErrors.push("Please provide a valid link for the image")
+  //   }
+  //   if(!lat) validationErrors.push("latitude of business is required")
+  //   if(!lng) validationErrors.push("longitude of business is required")
+  //   setErrors(validationErrors)
+  // },[title,address,city,zipCode,imageUrl, lat, lng])
+
+
+  function checkIfNumeric(number) {
+    return number === +number && number === (number|0);
+  }
+
+  const validate = () => {
+
+    const validationErrors = [];
     if(!title) validationErrors.push("Name is required")
     if(title.length<4) validationErrors.push("Name must be more than 4 characters long")
     if(title.length >100) validationErrors.push("Name must be less than 100 characters")
     if(!address) validationErrors.push("Address is required")
     if(!city) validationErrors.push("City is required")
-    if(!zipCode) validationErrors.push("Zip code is required")
+    if(!zipCode) {validationErrors.push("Zip code is required")}
+    else if (!checkIfNumeric(parseInt(zipCode))) {
+      validationErrors.push("Must be a valid zip code")
+    }
     if(!imageUrl) {
       validationErrors.push("Please provide an image")
     } else if (!isURL(imageUrl)) {
       validationErrors.push("Please provide a valid link for the image")
     }
-    if(!lat) validationErrors.push("latitude of business is required")
-    if(!lng) validationErrors.push("longitude of business is required")
+    if(!(lat)) {
+      validationErrors.push("Lat of business is required")}
+    else if (!checkIfNumeric(parseInt(lat))) {
+      validationErrors.push("Must be a valid lat")
+    }
+    if(!(lng)) {
+      validationErrors.push("Lng of business is required")}
+    else if (!checkIfNumeric(parseInt(lng))) {
+      validationErrors.push("Must be a valid lng")
+    }
+    return validationErrors;
 
-
-
-    setErrors(validationErrors)
-  },[title,address,city,zipCode,imageUrl, lat, lng])
+  }
 
   const handleSubmit = async(e) => {
     e.preventDefault();
 
+    // Get validation errors.
+    const frontErrors = validate();
+
+  // If we have validation errors...
+  if (frontErrors.length > 0) setValidationErrors(frontErrors);
+
+  if(frontErrors.length === 0) {
+
     const newBusiness = {
       title, description, address, city, zipCode, imageUrl, ownerId, lat, lng
     }
-    // console.log("newBusiness in component", newBusiness)
 
     let createdBusiness = await dispatch(createOneBusiness(newBusiness, ))
-    // console.log("Dispatch the return value of the thunk creator -returned from dispatch", createdBusiness)
-
-    // console.log("createdBusiness component", createdBusiness)
-    // console.log("createdBusiness component id", createdBusiness.id)
 
     if (createdBusiness) {
       history.push(`/business/${createdBusiness.id}`)
     }
+
+  }
+
   }
 
   return (
@@ -155,16 +190,24 @@ const CreateBusinessForm = () => {
         >
         </input>
       </label>
-      <ul className="error">
-        {errors.map((error) => <li key={error}>{error}</li>)}
-      </ul>
+
+      {validationErrors.length?
+        <>
+          <ul className="createBusinessErrors">
+              {validationErrors.map((error) => <li key={error}>{error}</li>)}
+          </ul>
+        </>
+        : null
+      }
+      <div className="centerFormButton">
       <button
-        className="mobile-submit-create-business"
+        className="createBusinessButton"
         type="submit"
-        disabled={errors.length>0}
+        // disabled={validationErrors.length>0}
       >
         Submit
       </button>
+      </div>
     </form>
     </div>
     </>
