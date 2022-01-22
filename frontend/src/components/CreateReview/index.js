@@ -13,52 +13,58 @@ const ReviewForm = ({reviews, hideForm, hideButton}) => {
   const [rating, setRating] = useState('');
   const [answer, setAnswer] = useState('');
   const [imageUrl, setImageUrl] = useState('');
-  // const [hideReviewButton, setHideReviewButton] = useState('')
-
-  // const [userId, setUserId] = useState('');
-  // const [businessId, setBusinessId] = useState('')
-  const [errors, setErrors] = useState([])
+  // const [errors, setErrors] = useState([])
   const dispatch = useDispatch();
-  // const history = useHistory();
   const sessionUser = useSelector((state) => state.session.user);
-  // const business = useSelector((state) => state.business)
   const userId = sessionUser.id
-  // const businessId = reviews[0].businessId
 
-  // console.log("this is reviews", {reviews})
-  // console.log("this is reviews", reviews[0].businessId)
+  const [validationErrors, setValidationErrors] = useState([]);
+  const [filterRatings, setFilterRatings] = useState(0);
+  const [hover, setHover] = useState(0);
 
+  // useEffect(() => {
+  //   const validationErrors = [];
+  //   if(!rating) validationErrors.push("Rating is required")
+  //   if(rating > 5 || rating < 1) validationErrors.push("Rating must be between 1-5")
+  //   if(!answer) validationErrors.push("Please write a review!")
+  //   if(answer.length < 10) validationErrors.push("Review must be at least 10 characters!")
+  //   if(!imageUrl) {
+  //     validationErrors.push("Please provide an image")
+  //   } else if (!isURL(imageUrl)) {
+  //     validationErrors.push("Please provide a valid link for the image")
+  //   }
 
-  useEffect(() => {
+  //   setErrors(validationErrors)
+
+  // },[rating,answer,imageUrl,userId,businessId])
+
+  const validate = () => {
+
     const validationErrors = [];
-    if(!rating) validationErrors.push("Rating is required")
-    if(rating > 5 || rating < 1) validationErrors.push("Rating must be between 1-5")
-    if(!answer) validationErrors.push("Please write a review!")
-    if(answer.length < 10) validationErrors.push("Review must be at least 10 characters!")
+    if(!rating) {validationErrors.push("Rating is required")}
+    else if(rating > 5 || rating < 1) {validationErrors.push("Rating must be between 1-5")}
+    if(!answer) {validationErrors.push("Please write a review!")}
+    else if(answer.length < 10) validationErrors.push("Review must be at least 10 characters!")
     if(!imageUrl) {
       validationErrors.push("Please provide an image")
     } else if (!isURL(imageUrl)) {
       validationErrors.push("Please provide a valid link for the image")
     }
 
-    // need to get rid of this later
-    // if(!userId) validationErrors.push("userId required");
-    // if(!businessId) validationErrors.push("businessId required")
+    return validationErrors;
+
+  }
 
 
-    setErrors(validationErrors)
-
-  },[rating,answer,imageUrl,userId,businessId])
-
-
-  //  // hide create a review button
-  //  useEffect(() => {
-  //   setHideReviewButton(false)
-  // },[dispatch, reviews.length, ])
 
 
   const handleSubmit = async(e) => {
     e.preventDefault();
+
+    const frontErrors = validate();
+    if (frontErrors.length > 0) setValidationErrors(frontErrors);
+
+    if(frontErrors.length === 0) {
 
     const newReview = {
       rating,answer,imageUrl,userId,businessId
@@ -75,6 +81,7 @@ const ReviewForm = ({reviews, hideForm, hideButton}) => {
       hideForm();
 
     }
+  }
 
 
 
@@ -90,7 +97,7 @@ const ReviewForm = ({reviews, hideForm, hideButton}) => {
 <>
     <form className="form-create-review-form" onSubmit={handleSubmit}>
 
-      <label>
+      {/* <label>
           <input
             type="number"
             placeholder="rating"
@@ -98,7 +105,43 @@ const ReviewForm = ({reviews, hideForm, hideButton}) => {
             onChange={(e) => setRating(e.target.value)}
           >
           </input>
-      </label>
+      </label> */}
+
+
+      <div className="review-stars">
+          {Array(5).fill(
+          <span className="star-color-blue">
+            <i className="fas fa-star fa-x"></i>
+          </span>
+
+          ).map((ele, idx) => {
+            idx += 1;
+            return (
+              <button
+                key={idx}
+                className={idx <= (hover || filterRatings) ? "colorS" : "noColorS"}
+                onClick={(e) => {
+                  e.preventDefault()
+                  setFilterRatings(idx)
+                  setRating(idx)
+                }}
+                onMouseEnter={() => setHover(idx)}
+                onMouseLeave={() => setHover(filterRatings)}
+              >
+                <span className={idx <= (hover || filterRatings) ? "colorS" : "noColorS"}>
+
+                <span className="star-color-blue">
+                <i className="fas fa-star fa-x"></i>
+               </span>
+
+                  </span>
+              </button>
+            );
+          })}
+        </div>
+
+
+
       <label>
           <input
             placeholder="review"
@@ -117,12 +160,26 @@ const ReviewForm = ({reviews, hideForm, hideButton}) => {
         >
         </input>
       </label>
-      <ul className="error">
+      {/* <ul className="error">
       {errors.map((error) => <li key={error}>{error}</li>)}
-      </ul>
-      <div className="add-review-button-flex-mobile">
-      <button type="submit" disabled={errors.length>0} >Submit Review</button>
-      <button className="pad-add-review-desktop" type="button" onClick={handleCancelReviewFormClick}>Cancel</button>
+      </ul> */}
+            {validationErrors.length?
+        <>
+          <ul className="createBusinessErrors">
+              {validationErrors.map((error) => <li key={error}>{error}</li>)}
+          </ul>
+        </>
+        : null
+      }
+      <div className="reviewButtons">
+        <button
+        className="createReviewButton"
+        type="submit"
+        // disabled={validationErrors.length>0}
+        >Submit Review</button>
+        <button
+        className="createReviewButton"
+        type="button" onClick={handleCancelReviewFormClick}>Cancel</button>
       </div>
     </form>
     </>

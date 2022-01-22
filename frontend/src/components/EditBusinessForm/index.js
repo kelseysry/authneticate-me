@@ -35,27 +35,42 @@ const EditBusinessForm = ({business, hideForm}) => {
 
   const ownerId = sessionUser.id
 
+  function checkIfNumeric(number) {
+    return number === +number && number === (number|0);
+  }
 
   useEffect(() => {
     const validationErrors = []
-    if(!title) validationErrors.push("Name is required")
-    if(title.length<4) validationErrors.push("Name must be more than 4 characters long")
+    if(!title) {validationErrors.push("Name is required") }
+    else if(title.length<4)  {
+      validationErrors.push("Name must be more than 4 characters long")
+    }
     if(title.length >100) validationErrors.push("Name must be less than 100 characters")
     if(!description) validationErrors.push("Please fill in description")
     if(!address) validationErrors.push("Address is required")
     if(!city) validationErrors.push("City is required")
-    if(!zipCode) validationErrors.push("Zip code is required")
-    if(!imageUrl) {
+    if(!zipCode) {validationErrors.push("Zip code is required")}
+    else if (!checkIfNumeric(parseInt(zipCode))) {
+      validationErrors.push("Must be a valid zip code")
+    }    if(!imageUrl) {
       validationErrors.push("Please provide an image")
     } else if (!isURL(imageUrl)) {
       validationErrors.push("Please provide a valid link for the image")
     }
-    if(!lat) validationErrors.push("latitude of business is required")
-    if(!lng) validationErrors.push("longitude of business is required")
-
+    if(!(lat)) {
+      validationErrors.push("Lat of business is required")}
+    else if (!checkIfNumeric(parseInt(lat))) {
+      validationErrors.push("Must be a valid lat")
+    }
+    if(!(lng)) {
+      validationErrors.push("Lng of business is required")}
+    else if (!checkIfNumeric(parseInt(lng))) {
+      validationErrors.push("Must be a valid lng")
+    }
     setErrors(validationErrors)
 
   },[title,address,city,zipCode,imageUrl, description,lat,lng])
+
 
   const handleSubmit = async(e) => {
     e.preventDefault();
@@ -164,12 +179,16 @@ const EditBusinessForm = ({business, hideForm}) => {
         </input>
       </label>
 
-      <ul className="errors">
+      <ul className="editBusinessErrors">
         {errors.map((error) => <li key={error}>{error}</li>)}
       </ul>
       <div className="edit-business-buttons-flex">
-        <button type="submit" disabled={errors.length>0}>Update Business</button>
-        <button type="button" onClick={handleCancelFormEditClick}>Cancel</button>
+        <button
+        className="editBusinessButton"
+        type="submit" disabled={errors.length>0}>Update Business</button>
+        <button
+        className="editBusinessButton"
+        type="button" onClick={handleCancelFormEditClick}>Cancel</button>
       </div>
       </form>
     </section>

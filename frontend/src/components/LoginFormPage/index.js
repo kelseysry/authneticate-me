@@ -47,9 +47,7 @@ function LoginFormPage() {
         <div className="explore">Login</div>
       </div>
       <form className="signup-form-style" onSubmit={handleSubmit}>
-        <ul>
-          {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-        </ul>
+
         <label>
           Username or Email
           <input
@@ -68,18 +66,24 @@ function LoginFormPage() {
             required
           />
         </label>
-        <button type="submit">Log In</button>
+        <ul className="loginErrors">
+          {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+        </ul>
+        <button
+        className="loginButton"
+        type="submit">Log In</button>
+
+
       </form>
     </div>
+
 
     <div className="mobile-login">
       <div className="signup-pic-container" style={{ backgroundImage: `url('${pictures.collection[5].imageUrl}')` }}>
         <div className="explore">Login</div>
       </div>
       <form className="signup-form-style-mobile" onSubmit={handleSubmit}>
-        <ul>
-          {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-        </ul>
+
         <label>
           Username or Email
           <input
@@ -98,7 +102,13 @@ function LoginFormPage() {
             required
           />
         </label>
-        <button type="submit">Log In</button>
+        <ul className="loginErrors">
+          {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+        </ul>
+        <button
+        className="loginButton"
+        type="submit"
+        >Log In</button>
       </form>
     </div>
 
