@@ -41,9 +41,7 @@ function SignupFormPage() {
     </div>
     {/* <h2 className="signUp">Sign Up</h2> */}
     <form className="signup-form-style" onSubmit={handleSubmit}>
-      <ul>
-        {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-      </ul>
+
       <label>
         Email
         <input
@@ -81,6 +79,11 @@ function SignupFormPage() {
         />
       </label>
       <button type="submit">Sign Up</button>
+
+      <ul>
+        {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+      </ul>
+
     </form>
     </>
   );
