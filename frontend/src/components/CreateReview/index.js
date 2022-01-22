@@ -19,7 +19,8 @@ const ReviewForm = ({reviews, hideForm, hideButton}) => {
   const userId = sessionUser.id
 
   const [validationErrors, setValidationErrors] = useState([]);
-
+  const [filterRatings, setFilterRatings] = useState(0);
+  const [hover, setHover] = useState(0);
 
   // useEffect(() => {
   //   const validationErrors = [];
@@ -96,7 +97,7 @@ const ReviewForm = ({reviews, hideForm, hideButton}) => {
 <>
     <form className="form-create-review-form" onSubmit={handleSubmit}>
 
-      <label>
+      {/* <label>
           <input
             type="number"
             placeholder="rating"
@@ -104,7 +105,43 @@ const ReviewForm = ({reviews, hideForm, hideButton}) => {
             onChange={(e) => setRating(e.target.value)}
           >
           </input>
-      </label>
+      </label> */}
+
+
+      <div className="review-stars">
+          {Array(5).fill(
+          <span className="star-color-blue">
+            <i className="fas fa-star fa-x"></i>
+          </span>
+
+          ).map((ele, idx) => {
+            idx += 1;
+            return (
+              <button
+                key={idx}
+                className={idx <= (hover || filterRatings) ? "colorS" : "noColorS"}
+                onClick={(e) => {
+                  e.preventDefault()
+                  setFilterRatings(idx)
+                  setRating(idx)
+                }}
+                onMouseEnter={() => setHover(idx)}
+                onMouseLeave={() => setHover(filterRatings)}
+              >
+                <span className={idx <= (hover || filterRatings) ? "colorS" : "noColorS"}>
+
+                <span className="star-color-blue">
+                <i className="fas fa-star fa-x"></i>
+               </span>
+
+                  </span>
+              </button>
+            );
+          })}
+        </div>
+
+
+
       <label>
           <input
             placeholder="review"
