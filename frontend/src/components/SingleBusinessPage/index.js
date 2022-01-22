@@ -218,13 +218,16 @@ const SingleBusinessPage = () => {
             <hr></hr>
 
               {!hideReviewButton &&
-
+            <div className="centerAddReviewButton">
               <button className="add-review-button"
               //  onClick={() => setHideReviewButton(true)}
                onClick={() => {setShowReviewForm(true);  setHideReviewButton(true)
 
                }}>
-               <i className="fas fa-star"></i>&nbsp;&nbsp;Write a Review &nbsp;&nbsp;<i className="fas fa-star"></i></button>
+               <i className="fas fa-star"></i>&nbsp;&nbsp;Write a Review &nbsp;&nbsp;<i className="fas fa-star"></i>
+
+               </button>
+              </div>
                }
 
 
