@@ -35,9 +35,7 @@ const AllBusiness = () => {
     }
   }
 
-
   return (
-
     <>
     <div className="container-banner">
 
