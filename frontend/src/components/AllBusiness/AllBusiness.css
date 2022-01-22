@@ -85,7 +85,7 @@
 }
 
 .color, .noColor {
-  width: 150px;
+  width: 15%;
   object-fit: contain;
 }
 
@@ -97,6 +97,7 @@
 
 .filter-by-stars img{
   object-fit: contain;
+  width: 200px;
 }
 
 .explore-rating {
@@ -109,8 +110,10 @@
 }
 
 .filter-by-stars {
-  /* width: 800px; */
+  width: 100%;
   /* background-color: plum; */
+  display: flex;
+  justify-content: center;
 }
 
 .Explore {
