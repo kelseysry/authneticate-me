@@ -20,12 +20,14 @@ import './SingleBusiness.css';
 import { getReviews } from '../../store/review';
 import MapContainer from '../Maps';
 import { clearReviews } from '../../store/review';
-
+import { LoginModal } from "../../context/Modal";
+import pictures from '../../data/pictures';
+import * as sessionActions from '../../store/session'
 
 const SingleBusinessPage = () => {
 
-    const { businessId } = useParams();
-    const sessionUser = useSelector(state => state.session.user); // first argument always state -> session from index.js in store, .user is from initial state in reducer for sessionReducer
+  const { businessId } = useParams();
+  const sessionUser = useSelector(state => state.session.user); // first argument always state -> session from index.js in store, .user is from initial state in reducer for sessionReducer
   const business = useSelector((state) => state.business[businessId]);
 
   const [showEditBusinessForm, setShowEditBusinessForm] = useState(false)
@@ -34,11 +36,10 @@ const SingleBusinessPage = () => {
   const history = useHistory();
 
   const reviewsObj = useSelector((state) => state.review)
-  console.log("reviewObj", reviewsObj)
   const reviews = Object.values(reviewsObj)
   const [showReviewForm, setShowReviewForm] = useState(false)
-
   const [hideReviewButton, setHideReviewButton] = useState(false)
+  const [showModal, setShowModal] = useState(false);
 
 
   // hide create a review button
@@ -83,8 +84,14 @@ const SingleBusinessPage = () => {
     return null;
   }
 
-  console.log("sessionUser",sessionUser)
-  console.log("business.User?.username", business.User)
+  function demo () {
+
+    dispatch(sessionActions.login({
+    credential: 'Demo-lition',
+    password: 'password'
+  }));
+  setShowModal(false)
+  }
 
 
   let res = reviews.map(review => Object.values(review)[3])
@@ -178,8 +185,6 @@ const SingleBusinessPage = () => {
   }
 
   // console.log("business.latt", business.lat)
-
-
   return (
     <>
       <div className="desktop-single-business">
@@ -220,18 +225,52 @@ const SingleBusinessPage = () => {
               {!hideReviewButton &&
             <div className="centerAddReviewButton">
               <button className="add-review-button"
-              //  onClick={() => setHideReviewButton(true)}
-               onClick={() => {setShowReviewForm(true);  setHideReviewButton(true)
-
+               onClick={() => {
+                if(sessionUser !==null) {
+                  setShowReviewForm(true);
+                  setHideReviewButton(true)
+                } else {
+                  // history.push("/login")
+                  setShowModal(true)
+                }
                }}>
                <i className="fas fa-star"></i>&nbsp;&nbsp;Write a Review &nbsp;&nbsp;<i className="fas fa-star"></i>
 
                </button>
               </div>
+
+
+
+
                }
 
 
-
+{showModal && (
+        <LoginModal onClose={() => setShowModal(false)}>
+          <section className="review-modal-container">
+            <button className="login-button-modal"
+              onClick={() => {
+                history.push("/login")
+              }}
+            >
+              Login
+            </button>
+            <button className="login-button-modal"
+              onClick={() => {
+                history.push("/signup")
+              }}
+            >
+              Sign Up
+            </button>
+            <button className="login-button-modal"
+            onClick={demo}
+            >
+              Demo
+            </button>
+          </section>
+          <img className="angkor-modal"src={pictures?.collection[13]?.imageUrl} />
+        </LoginModal>
+      )}
 
         <div>
           {reviewContent}
@@ -290,9 +329,13 @@ const SingleBusinessPage = () => {
 
               <div className="pad-review-button">
               {!hideReviewButton &&  <button className="add-review-button-mobile"
-              //  onClick={() => setHideReviewButton(true)}
-               onClick={() => {setShowReviewForm(true);  setHideReviewButton(true)
-
+               onClick={() => {
+                if(sessionUser !==null) {
+                  setShowReviewForm(true);
+                  setHideReviewButton(true)
+                } else {
+                  history.push("/login")
+                }
                }}>
 
                <i className="fas fa-star"></i>&nbsp;&nbsp;Write a Review &nbsp;&nbsp;<i className="fas fa-star"></i></button>

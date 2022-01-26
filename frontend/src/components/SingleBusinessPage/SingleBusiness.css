@@ -183,6 +183,33 @@ hr {
   color: cornflowerblue !important
 }
 
+.login-button-modal {
+  color: white;
+  background-color: cornflowerblue;
+  font-size: 20px;
+  padding: 10px 10px;
+  border-radius: 4px;
+  width: 100px;
+}
+
+.review-modal-container{
+  width: 300px;
+  height: 380px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+}
+
+.angkor-modal {
+  position: absolute;
+  z-index: 1;
+  top: -120px;
+  left: 280px;
+  width: 700px;
+}
 
 @media only screen and (max-width:768px) {
 

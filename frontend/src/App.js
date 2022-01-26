@@ -58,31 +58,23 @@ function App() {
           <Route path='/signup'>
             <SignupFormPage />
           </Route>
-          {sessionUser &&
+          {/* {sessionUser && */}
           <Route exact path='/business/:businessId'>
             <SingleBusinessPage />
-          </Route>}
+          </Route>
+           {/* } */}
 
-          {sessionUser &&
+          {/* {sessionUser && */}
           <Route exact path='/business'>
             {/* <CreateBusinessForm /> */}
             <AllBusiness />
           </Route>
-          }
+          {/* } */}
           {sessionUser &&
           <Route path='/createBusiness'>
             <CreateBusinessForm />
           </Route>
           }
-          {/* <Route path='/EditBusiness'>
-            <EditBusinessForm />
-          </Route> */}
-          {/* <Route path='/test'> */}
-            {/* <OneBusinessTile businessId={"1"}/> */}
-            {/* <Maps apiKey={apiKey}/> */}
-            {/* <MapContainer /> */}
-
-          {/* </Route> */}
           {sessionUser &&
           <Route exact path='/business/:businessId/reviews/:reviewId'>
             <EditOneReview />
