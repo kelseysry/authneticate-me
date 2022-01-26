@@ -41,6 +41,14 @@
   font-size: 20px;
 }
 
+.pad button {
+  text-decoration: none;
+  color: cornflowerblue;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+}
+
+
 .fa-user-circle {
   color: cornflowerblue;
   font-size: 30px;

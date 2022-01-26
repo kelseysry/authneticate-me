@@ -7,6 +7,15 @@
 
 }
 
+.each-pic-container {
+  filter: drop-shadow(0.5rem 0.5rem 0.5rem rgba(26, 27, 28, 0.7));
+
+}
+
+.one-image-container {
+box-shadow: black;
+}
+
 .container-banner {
   display: flex;
   align-items: center;

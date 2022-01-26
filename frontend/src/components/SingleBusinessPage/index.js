@@ -238,10 +238,6 @@ const SingleBusinessPage = () => {
 
                </button>
               </div>
-
-
-
-
                }
 
 

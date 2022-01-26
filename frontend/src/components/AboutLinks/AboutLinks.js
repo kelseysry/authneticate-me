@@ -3,6 +3,7 @@ import infoLinks from '../../data/infoLinks';
 import './AboutLinks.css'
 
 import { AboutModal } from "../../context/Modal";
+import pictures from '../../data/pictures';
 
 const AboutLinks = () => {
   const [showModal, setShowModal] = useState(false);
@@ -45,19 +46,20 @@ const AboutLinks = () => {
 
                 <div className="about-link-container">
                       <a style={{color: 'white'}} target="_blank" href={infoLinks[0].github} rel="noreferrer">
-                          <i className="fab fa-github-square fa-2x"/>
+                          <i className="fab fa-github-square"/>
                       </a>
 
                       <a style={{color: 'white'}}  target="_blank" href={infoLinks[0].linkedin} rel="noreferrer">
-                          <i className="fab fa-linkedin fa-2x"/>
+                          <i className="fab fa-linkedin"/>
                       </a>
                       <a style={{color: 'white'}}  target="_blank" href={infoLinks[0].emailM} rel="noreferrer">
-                          <i className="fas fa-envelope-square fa-2x"/>
+                          <i className="fas fa-envelope-square"/>
                       </a>
 
                  </div>
 
           </section>
+          <img className="angkor-contact-modal"src={pictures?.collection[13]?.imageUrl} />
 
         </AboutModal>
       )}
