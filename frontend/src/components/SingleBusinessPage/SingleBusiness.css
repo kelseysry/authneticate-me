@@ -190,6 +190,7 @@ hr {
   padding: 10px 10px;
   border-radius: 4px;
   width: 100px;
+  box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
 }
 
 .review-modal-container{
@@ -206,9 +207,10 @@ hr {
 .angkor-modal {
   position: absolute;
   z-index: 1;
-  top: -120px;
-  left: 280px;
+  top: -100px;
+  left: -150px;
   width: 700px;
+  opacity: .3;
 }
 
 @media only screen and (max-width:768px) {
@@ -217,7 +219,7 @@ hr {
     position: absolute;
     z-index: 1;
     top: 0px;
-    left: -40px;
+    left: -34px;
     width: 300px;
   }
 

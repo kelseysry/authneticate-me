@@ -173,7 +173,6 @@
   text-shadow: 1px 1px 3px black;
     border-radius: 5px 5px;
     margin-top: 10px;
-
 }
 
 
@@ -181,7 +180,7 @@
   position: absolute;
   top: 0px;
   width: 300px;
-  left: -35px;
+  left: -34px;
   z-index: -1;
   opacity: .2;
 
