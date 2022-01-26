@@ -3,6 +3,7 @@ import infoLinks from '../../data/infoLinks';
 import './AboutLinks.css'
 
 import { AboutModal } from "../../context/Modal";
+import pictures from '../../data/pictures';
 
 const AboutLinks = () => {
   const [showModal, setShowModal] = useState(false);
@@ -58,6 +59,7 @@ const AboutLinks = () => {
                  </div>
 
           </section>
+          <img className="angkor-contact-modal"src={pictures?.collection[13]?.imageUrl} />
 
         </AboutModal>
       )}
