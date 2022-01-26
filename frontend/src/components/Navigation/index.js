@@ -123,12 +123,33 @@ function Navigation({ isLoaded }){
         <div className="angkor_home">
         <NavLink exact to="/"><img src={pictures.collection[12].imageUrl} alt="home"/></NavLink>
         </div>
+
         <div className="pad">
-        <NavLink to="/business"><i className="fas fa-search fa-lg"></i></NavLink>
+          <button
+          onClick={()=>{
+            history.push("/business")
+          }}
+          >
+            <i className="fas fa-search fa-lg"></i>
+          </button>
         </div>
+
         <div className="pad">
-        <NavLink to="/createBusiness"><i className="fas fa-map-marked-alt fa-lg"></i></NavLink>
+          <button
+            onClick={() => {
+            if(sessionUser !==null) {
+              history.push("/createBusiness")
+            } else {
+              setShowModal(true)
+            }
+            }}>
+            <i className="fas fa-map-marked-alt fa-lg"></i>
+          </button>
         </div>
+
+
+
+
         <div className="user-centered">
         {isLoaded && sessionLinks}
         </div>
