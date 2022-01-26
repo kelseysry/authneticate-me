@@ -46,14 +46,14 @@ const AboutLinks = () => {
 
                 <div className="about-link-container">
                       <a style={{color: 'white'}} target="_blank" href={infoLinks[0].github} rel="noreferrer">
-                          <i className="fab fa-github-square fa-2x"/>
+                          <i className="fab fa-github-square"/>
                       </a>
 
                       <a style={{color: 'white'}}  target="_blank" href={infoLinks[0].linkedin} rel="noreferrer">
-                          <i className="fab fa-linkedin fa-2x"/>
+                          <i className="fab fa-linkedin"/>
                       </a>
                       <a style={{color: 'white'}}  target="_blank" href={infoLinks[0].emailM} rel="noreferrer">
-                          <i className="fas fa-envelope-square fa-2x"/>
+                          <i className="fas fa-envelope-square"/>
                       </a>
 
                  </div>

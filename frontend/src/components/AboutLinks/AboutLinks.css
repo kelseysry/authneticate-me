@@ -126,4 +126,66 @@
   padding-right: 0px ;
 }
 
+
+.about-modal-container{
+  width: 150px;
+  height: 250px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  z-index: 10;
+  /* text-shadow: 1px 1px 3px black; */
+  font-weight: 900px;
+}
+
+.profile-thumb-modal{
+  position: relative;
+  z-index: 2;
+  width: 100px;
+  height: 100px;
+  border-radius: 50% !important;
+}
+
+.about-modal-name {
+  color: white;
+  font-size: 25px;
+  text-shadow: 1px 1px 10px black;
+}
+
+.about-first-text {
+  color: white;
+  font-size: 12px;
+  width: 120px;
+  text-shadow: 1px 1px 10px black;
+  text-align: center;
+}
+
+.about-link-container {
+  display: flex;
+  border-radius: 5px 5px;
+  background: cornflowerblue;
+  padding:0px 0px;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  /* text-align: center; */
+  text-shadow: 1px 1px 3px black;
+    border-radius: 5px 5px;
+    margin-top: 10px;
+
+}
+
+
+.angkor-contact-modal {
+  position: absolute;
+  top: 0px;
+  width: 300px;
+  left: -35px;
+  z-index: -1;
+  opacity: .2;
+
+}
+
+
 }
