@@ -334,7 +334,8 @@ const SingleBusinessPage = () => {
                   setShowReviewForm(true);
                   setHideReviewButton(true)
                 } else {
-                  history.push("/login")
+                  // history.push("/login")
+                  setShowModal(true)
                 }
                }}>
 

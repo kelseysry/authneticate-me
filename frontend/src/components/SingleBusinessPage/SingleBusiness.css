@@ -213,6 +213,26 @@ hr {
 
 @media only screen and (max-width:768px) {
 
+  .angkor-modal {
+    position: absolute;
+    z-index: 1;
+    top: 0px;
+    left: -40px;
+    width: 300px;
+  }
+
+  .review-modal-container{
+    width: 150px;
+    height: 250px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 3;
+  }
+
+
   .desktop-single-business {
     display: none;
   }
