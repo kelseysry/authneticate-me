@@ -9,10 +9,15 @@ import { useDispatch } from "react-redux";
 import UserButton from './UserButton';
 import AboutLinks from '../AboutLinks/AboutLinks';
 import pictures from '../../data/pictures';
+import { useHistory } from 'react-router';
+import { LoginModal } from "../../context/Modal";
+import { useState } from 'react'; // side effects
 
 function Navigation({ isLoaded }){
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
+  const history = useHistory();
+  const [showModal, setShowModal] = useState(false);
 
   function demo () {
 
@@ -54,12 +59,56 @@ function Navigation({ isLoaded }){
         </NavLink>
         </div>
         <div className="pad">
-        <NavLink to="/business">Explore</NavLink>
+          <button
+          onClick={()=>{
+            history.push("/business")
+          }}
+          >
+            Explore
+          </button>
         </div>
+
         <div className="pad">
-        <NavLink to="/createBusiness">Add Restaurant</NavLink>
+          <button
+            onClick={() => {
+            if(sessionUser !==null) {
+              history.push("/createBusiness")
+            } else {
+              setShowModal(true)
+            }
+            }}>
+            Add Restaurant
+          </button>
         </div>
       </div>
+
+      {showModal && (
+        <LoginModal onClose={() => setShowModal(false)}>
+          <section className="review-modal-container">
+            <button className="login-button-modal"
+              onClick={() => {
+                history.push("/login")
+              }}
+            >
+              Login
+            </button>
+            <button className="login-button-modal"
+              onClick={() => {
+                history.push("/signup")
+              }}
+            >
+              Sign Up
+            </button>
+            <button className="login-button-modal"
+            onClick={demo}
+            >
+              Demo
+            </button>
+          </section>
+          <img className="angkor-modal"src={pictures?.collection[13]?.imageUrl} />
+        </LoginModal>
+      )}
+
 
 
       <div className="profile-about">
