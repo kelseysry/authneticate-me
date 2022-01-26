@@ -57,8 +57,10 @@ function UserButton() {
       </div>
       <div className="sign-log-style">
       <NavLink to="/signup">Sign Up</NavLink>
+      </div >
+      <div className="sign-log-style-buttonN">
+        <button onClick={demo}>Demo</button>
       </div>
-      <button onClick={demo}><i className="fas fa-user-secret fa-2x"></i></button>
     </div>
 
       )}

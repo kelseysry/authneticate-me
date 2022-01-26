@@ -27,3 +27,39 @@
   z-index: 5;
   background-color: #1a1a1a;
 }
+
+
+#login-modal-background {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 5;
+}
+
+#login-modal-content {
+  position: absolute;
+  padding: 40px 40px;
+  border-radius: 5px 5px;
+  z-index: 5;
+  background-color: #1a1a1a;
+  left: 200px;
+  border-right: 200px;
+}
+
+
+@media only screen and (max-width:768px) {
+  #login-modal-content {
+    position: absolute;
+    padding: 40px 40px;
+    border-radius: 5px 5px;
+    z-index: 5;
+    background-color: #1a1a1a;
+    left: 46px;
+    border-right: 0;
+  }
+
+
+}

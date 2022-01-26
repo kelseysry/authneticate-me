@@ -16,7 +16,7 @@ const ReviewForm = ({reviews, hideForm, hideButton}) => {
   // const [errors, setErrors] = useState([])
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
-  const userId = sessionUser.id
+  const userId = sessionUser?.id
 
   const [validationErrors, setValidationErrors] = useState([]);
   const [filterRatings, setFilterRatings] = useState(0);
