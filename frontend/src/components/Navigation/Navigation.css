@@ -67,6 +67,17 @@
 
 }
 
+.sign-log-style-buttonN button{
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  color:white !important;
+  text-decoration: none;
+  display: block;
+  font-size: 23px !important;
+  width: fit-content;
+  padding: 5px 15px !important;
+}
+
 .sign-log-style {
   padding: 5px 15px !important;
 }
