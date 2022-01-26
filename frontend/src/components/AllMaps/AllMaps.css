@@ -30,15 +30,11 @@
   font-weight: 700;
   font-size: x-large;
   overflow-wrap: break-word !important;
-  /* font-family: 'Poppins', sans-serif; */
   line-height: 0.82em;
   padding-left: 20px;
+  display: inline-block;
+  word-break: break-word;
 
-}
-
-
-.image-title-map {
-  word-break: break-all;
 }
 
 .gm-style .gm-style-iw-c {
