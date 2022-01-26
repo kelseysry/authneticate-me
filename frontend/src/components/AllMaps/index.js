@@ -21,7 +21,6 @@ const AllMapContainer = ({allMarkers}) => {
 
   return (
     <div className="map">
-      {/* <AllMaps apiKey={key} BusinessLat={BusinessLat} BusinessLng={BusinessLng} /> */}
       <AllMaps apiKey={key} allMarkers={allMarkers}/>
     </div>
   );

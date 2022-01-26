@@ -5,9 +5,10 @@ import { Marker } from '@react-google-maps/api';
 // import allMarkers from '../../data/markers';
 import './AllMaps.css'
 import { useState, useEffect } from 'react'; // side effects
-
+import { useHistory } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { getKey } from '../../store/maps';
+import pictures from "../../data/pictures"
 
 const containerStyleSmall = {
   width: '300px',
@@ -19,12 +20,12 @@ const containerStyle = {
   height: '600px',
 };
 
-const AllMaps = (
-  ({ apiKey, allMarkers }) => {
+const AllMaps = (({ apiKey, allMarkers }) => {
   const [selectedCenter, setSelectedCenter] = useState(null);
 
   const key = useSelector((state) => state.maps.key);
   const dispatch = useDispatch();
+  const history = useHistory();
 
   useEffect(() => {
     if (!key) {
@@ -32,7 +33,6 @@ const AllMaps = (
     }
   }, [dispatch, key]);
 
-console.log("allMarkers in AllMaps", allMarkers)
 
   useEffect(() => {
     const listener = e => {
@@ -62,6 +62,12 @@ console.log("allMarkers in AllMaps", allMarkers)
 
   if (!key) {
     return null;
+  }
+
+  const handleRestaurantLink = () => {
+
+    history.push(`/business/${selectedCenter?.businessId}`)
+
   }
 
   return (
@@ -96,7 +102,7 @@ console.log("allMarkers in AllMaps", allMarkers)
             />
           ))}
 
-  {selectedCenter && (
+          {selectedCenter && (
               <InfoWindow
                 onCloseClick={() => {
                   setSelectedCenter(null);
@@ -108,7 +114,11 @@ console.log("allMarkers in AllMaps", allMarkers)
               >
                 <div className="image-title-map-container" style={{ backgroundImage: `url('${selectedCenter.image}')`}}>
                   <div className="image-title-map">
-
+                  <button
+                    onClick={handleRestaurantLink}
+                  >
+                    <img className="map-link" src={pictures.collection[14].imageUrl} />
+                  </button>
                   {selectedCenter.marker.title}
 
                   </div>
@@ -156,6 +166,11 @@ console.log("allMarkers in AllMaps", allMarkers)
               >
                 <div className="image-title-map-container" style={{ backgroundImage: `url('${selectedCenter.image}')`}}>
                   <div className="image-title-map">
+                  <button
+                    onClick={handleRestaurantLink}
+                  >
+                    <img className="map-link" src={pictures.collection[14].imageUrl} />
+                  </button>
                   {selectedCenter.marker.title}
                   </div>
                 </div>

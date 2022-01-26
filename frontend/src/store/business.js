@@ -122,7 +122,7 @@ switch (action.type) {
       // normalizing
       newState[business.id] = business // make key value pair with id as key and value as business object
     })
-    console.log("this is the new State load all business", newState)
+    // console.log("this is the new State load all business", newState)
     return newState // must return newState or else will skip to default
   }
   case LOAD_BUSINESS: {
