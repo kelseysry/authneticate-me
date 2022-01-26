@@ -16,10 +16,8 @@ const HomePage = () => {
   // console.log("businessHome", businessObj)
 
   const businesses = Object.values(businessObj)
-  // console.log("business", businesses)
 
   const busPic = businesses.map(business => business?.imageUrl)
-  console.log("busPic", busPic)
 
   // title: "Best Iced Coffee"
   // const busTitle = businesses.map(business => ({"title":business.title}))
@@ -33,13 +31,15 @@ const HomePage = () => {
   const busLng = businesses.map(business => business?.lng)
   // console.log("business lng", busLng)
 
+  const busId = businesses.map(business => business?.id)
+
   // combine lat and lng into  {lat: 11.540526555498468, lng: 104.91522593956448}
   const coordinates = busLat.map(function(lat, i) {
     return {lat:parseFloat(lat), lng:parseFloat(busLng[i])};
   })
 
   // console.log("coordinates", coordinates)
-  // ['11.558446528422527', '104.92501818402742']
+  // {'11.558446528422527', '104.92501818402742'}
 
   // position: {lat: 11.53997, lng: 104.914864}
   const positionAdded = coordinates.map(coordinate => ({"position": coordinate}))
@@ -51,8 +51,9 @@ const coordinate_title = positionAdded.map(function(position,i) {
 })
 
 const markerData = coordinate_title.map(function(marker, i) {
-  return {marker, "image":busPic[i]}
+  return {marker, "image":busPic[i], 'businessId':busId[i]}
 })
+
 
 // console.log("combined", markerData)
 
@@ -63,9 +64,7 @@ const markerData = coordinate_title.map(function(marker, i) {
 
 
   return (
-    // <img src ={pictures.collection[0].imageUrl} alt={"hiii"}/>
 
-    // small screen
     <>
 
     <div className="top-pie-container" style={{ backgroundImage: `url('${pictures.collection[0].imageUrl}')` }}>

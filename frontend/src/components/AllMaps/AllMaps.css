@@ -58,8 +58,15 @@
   /* background-color: transparent !important; */
   background: linear-gradient(
     45deg,rgba(255, 255, 255, 0.559) 50%,rgba(255, 255, 255, 0) 51%,rgba(255,255,255,0) 100%);
+}
 
-
+.map-link {
+  width: 50px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  box-shadow: 8px 8px 15px 7px rgb(0 0 0 / 45%);
+  border-radius: 5px;
 }
 
 
@@ -85,19 +92,17 @@
     display: block;
   }
 
-  .image-title-map-container {
+
+  /* .image-title-map-container {
     box-sizing: border-box;
     box-shadow:inset 0 0 0 2000px rgba(27, 26, 27, 0.3);
 
-    height: 100px;
-    width: fit-content;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    width: 300px;
+    object-fit: cover;
     display: flex !important;
     padding: 20px 10px;
     margin: 0 auto;
     border: 0px;
-    /* align-content: flex-start; */
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -113,18 +118,51 @@
   .image-title-map {
     color: #fff;
     font-weight: 700;
-    font-size: medium;
+    font-size: 18px;
     overflow-wrap: break-word !important;
-    /* font-family: 'Poppins', sans-serif; */
     line-height: 0.82em;
-    padding-left: 0px;
-    /* white-space: initial; */
-    /* word-wrap: break-word; */
+    padding-left: 20px;
+    display: inline-block;
+    word-break: break-word;
 
+  } */
+
+
+
+  .image-title-map-container {
+    box-sizing: border-box;
+    box-shadow:inset 0 0 0 2000px rgba(27, 26, 27, 0.3);
+
+    height: 100px;
+    /* width: fit-content; */
+    width: 150px;
+
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: flex !important;
+    padding: 20px 10px;
+    /* margin: 0 auto; */
+    border: 0px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    outline: none;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    border-radius: 5px;
+    margin: 0px 0px !important;
+    object-fit: cover;
   }
 
-  .image-title-map {
-    word-break: break-all;
+   .image-title-map {
+    color: #fff;
+    font-weight: 700;
+    font-size: medium;
+    overflow-wrap: break-word !important;
+    line-height: 0.82em;
+    padding-left: 0px;
   }
 
   .gm-style .gm-style-iw-c {
@@ -141,12 +179,7 @@
     background-color: transparent !important;
     overflow: unset !important;
     padding: 12px 12px;
+    width: 300px;
   }
-
-  /* .element.style {
-    overflow: hidden;
-    padding: 5px 5px;
-  } */
-
 
 }
