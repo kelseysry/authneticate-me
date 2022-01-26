@@ -3,10 +3,7 @@ import './HomePage.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllBusinesses } from '../../store/business';
 import {useEffect } from 'react';
-import OneBusinessTile from '../OneBusinessTile';
 import AllMapContainer from '../AllMaps';
-import allMarkers from '../../data/markers';
-
 
 
 const HomePage = () => {
@@ -93,13 +90,6 @@ const markerData = coordinate_title.map(function(marker, i) {
 
           <div className="captionBigScreen">
 
-          <div>
-                {/* <i class="fas fa-map-marker-alt fa-2x"></i> */}
-              </div>
-              {/* <span className="click-marker">
-                Click on <i class="fas fa-map-marker-alt fa-2x"></i> to see a restaurant!
-              </span> */}
-
               <div>
             <i class="fas fa-map-marker-alt fa-2x"></i>
           </div>
@@ -112,17 +102,6 @@ const markerData = coordinate_title.map(function(marker, i) {
          </div>
       </div>
     </div>
-
-{/*
-    <div className="splash-business-tiles-container">
-      <div className="home-splash-each-image-title">
-      <OneBusinessTile businessId={1}/>
-
-      </div>
-      <OneBusinessTile businessId={2}/>
-      <OneBusinessTile businessId={3}/>
-    </div> */}
-
     </>
   )
 

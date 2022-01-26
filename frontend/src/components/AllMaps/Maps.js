@@ -166,6 +166,11 @@ const AllMaps = (({ apiKey, allMarkers }) => {
               >
                 <div className="image-title-map-container" style={{ backgroundImage: `url('${selectedCenter.image}')`}}>
                   <div className="image-title-map">
+                  <button
+                    onClick={handleRestaurantLink}
+                  >
+                    <img className="map-link" src={pictures.collection[14].imageUrl} />
+                  </button>
                   {selectedCenter.marker.title}
                   </div>
                 </div>
