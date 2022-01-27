@@ -22,8 +22,7 @@
 
 .user-icon-and-dot {
   display: flex !important;
-  width: 800px;
-  /* background-color: pink; */
+  width: 560px;
   justify-content: space-between;
   align-items: center;
 }

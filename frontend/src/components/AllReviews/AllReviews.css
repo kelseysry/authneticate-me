@@ -3,8 +3,9 @@
 .reviewImage {
   max-width:100%;
   height:auto;
-  border-radius: 5px;
-
+  margin-left: 12px;
+  border-radius: 10px;
+  filter: drop-shadow(0.5rem 0.5rem 0.5rem rgba(110, 111, 113, 0.7));
 }
 
 .image-container {
@@ -14,14 +15,13 @@
 }
 
 .review-container {
-  /* background-color: yellowgreen; */
   text-align:left;
-  width: 800px;
+  width: 600px;
   box-sizing: border-box;
   padding-top: 20px;
   padding-bottom: 20px;
   font-size: 20px;
-
+  padding-left: 10px;
 }
 
 ul {

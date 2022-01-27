@@ -64,13 +64,6 @@ const SingleBusinessPage = () => {
   },[dispatch,businessId])
 
 
-
-  // let res = reviews.map(review => Object.values(review)[3])
-  // // console.log("this is res", res)
-  // const avge = (res.reduce((a,b) => a+b, 0)) /res.length
-  // const average = Math.round(avge)
-
-
   useEffect(()=> {
     dispatch(getReviews(businessId))
   }, [dispatch,businessId])
@@ -135,7 +128,6 @@ const SingleBusinessPage = () => {
         </div>
       </div>
 
-
       <div className="details-container-mobile">
         <div className ="details-container-text-mobile">
           <h1 className="header-details-mobile"> Info</h1>
@@ -165,8 +157,6 @@ const SingleBusinessPage = () => {
 
 
   if(showReviewForm && reviews) {
-    // console.log("this is reviews in component", reviews)
-
     reviewContent = (
       <>
       <div className="padding-add-review-form">
@@ -176,108 +166,105 @@ const SingleBusinessPage = () => {
       </>
     )
   }
-  // console.log("this is reviews.User", reviews[0].User.username)
 
-  // deleteBusiness thunk
   const handleDelete = (businessId) => {
     dispatch(deleteBusiness(businessId));
     history.push("/")
   }
 
-  // console.log("business.latt", business.lat)
   return (
     <>
       <div className="desktop-single-business">
-      <div className="single-top-pic-container" style={{ backgroundImage: `url('${business?.imageUrl}')` }}>
-          <div className="business-title">
-            {business.title}
-          </div>
-          { reviews.length?
-              <div className="rating">
-                {reviews.length && average && Array(average).fill(<i className="fas fa-star fa-2x"></i>).map((ele, idx) => <span key={idx}>{ele}</span> )}
-              </div>
-            : null
-          }
-        {
-          sessionUser?.id === business?.User?.id ?
-          <div>
-          <button className="edit-business-title" onClick={() => setShowEditBusinessForm(true)}>Edit Business</button>
-          <button className="edit-business-title" onClick={() => handleDelete(businessId)}>Delete Business</button>
-          </div>
-
-          :
-          <>
-            <div className="">&nbsp;</div>
-            <div className="">&nbsp;</div>
-          </>
-          }
-
-      </div>
-
-      <div className="details-reviewButton-container">
-        <div className="details">
-            <div>
-              {content}
+        <div className="single-top-pic-container" style={{ backgroundImage: `url('${business?.imageUrl}')` }}>
+            <div className="business-title">
+              {business.title}
             </div>
-
-            <hr></hr>
-
-              {!hideReviewButton &&
-            <div className="centerAddReviewButton">
-              <button className="add-review-button"
-               onClick={() => {
-                if(sessionUser !==null) {
-                  setShowReviewForm(true);
-                  setHideReviewButton(true)
-                } else {
-                  // history.push("/login")
-                  setShowModal(true)
-                }
-               }}>
-               <i className="fas fa-star"></i>&nbsp;&nbsp;Write a Review &nbsp;&nbsp;<i className="fas fa-star"></i>
-
-               </button>
+            { reviews.length?
+                <div className="rating">
+                  {reviews.length && average && Array(average).fill(<i className="fas fa-star fa-2x"></i>).map((ele, idx) => <span key={idx}>{ele}</span> )}
+                </div>
+              : null
+            }
+            {
+              sessionUser?.id === business?.User?.id ?
+              <div>
+                <button className="edit-business-title" onClick={() => setShowEditBusinessForm(true)}>Edit Business</button>
+                <button className="edit-business-title" onClick={() => handleDelete(businessId)}>Delete Business</button>
               </div>
-               }
+
+              :
+              <>
+                <div className="">&nbsp;</div>
+                <div className="">&nbsp;</div>
+              </>
+              }
+          </div>
+
+        <div className="details-reviewButton-container">
+          <div className="details">
+          <section className="reviews-and-map">
+            <div className="content-left-of-map">
+                {content}
+                <hr></hr>
+              {!hideReviewButton &&
+                <div className="centerAddReviewButton">
+                  <button className="add-review-button"
+                  onClick={() => {
+                    if(sessionUser !==null) {
+                      setShowReviewForm(true);
+                      setHideReviewButton(true)
+                    } else {
+                      setShowModal(true)
+                    }
+                  }}>
+                  <i className="fas fa-star"></i>&nbsp;&nbsp;Write a Review &nbsp;&nbsp;<i className="fas fa-star"></i>
+
+                  </button>
+                </div>
+              }
+              {reviewContent}
+            <BusinessReviews reviews={reviews} business={business}/>
+          </div>
+
+          <div className="map">
+              <MapContainer BusinessLat={business.lat} BusinessLng={business.lng}/>
+          </div>
+        </section>
 
 
-{showModal && (
-        <LoginModal onClose={() => setShowModal(false)}>
-          <section className="review-modal-container">
-            <button className="login-button-modal"
-              onClick={() => {
-                history.push("/login")
-              }}
-            >
-              Login
-            </button>
-            <button className="login-button-modal"
-              onClick={() => {
-                history.push("/signup")
-              }}
-            >
-              Sign Up
-            </button>
-            <button className="login-button-modal"
-            onClick={demo}
-            >
-              Demo
-            </button>
-          </section>
-          <img className="angkor-modal"src={pictures?.collection[13]?.imageUrl} />
-        </LoginModal>
-      )}
+        {showModal && (
+          <LoginModal onClose={() => setShowModal(false)}>
+            <section className="review-modal-container">
+              <button className="login-button-modal"
+                onClick={() => {
+                  history.push("/login")
+                  setShowModal(false)
+                }}
+              >
+                Login
+              </button>
+              <button className="login-button-modal"
+                onClick={() => {
+                  history.push("/signup")
+                  setShowModal(false)
+                }}
+              >
+                Sign Up
+              </button>
+              <button className="login-button-modal"
+              onClick={demo}
+              >
+                Demo
+              </button>
+            </section>
+            <img className="angkor-modal"src={pictures?.collection[13]?.imageUrl} />
+          </LoginModal>
+        )}
 
-        <div>
-          {reviewContent}
-          <BusinessReviews reviews={reviews} business={business}/>
+          </div>
+
+
         </div>
-        </div>
-
-        <div className="map">
-            <MapContainer BusinessLat={business.lat} BusinessLng={business.lng}/>
-        </div>
-      </div>
     </div>
 
 

@@ -78,11 +78,6 @@
   padding: 20px 20px;
   display: flex;
   font-family: 'Poppins', sans-serif;;
-  /* flex-direction: column; */
-  /* align-items: center; */
-  /* width: 800px; */
-  /* margin: auto; */
-  /* width:max-content; */
   width: 600px;
 
 }
@@ -162,13 +157,14 @@ hr {
 
 
 .map {
-  /* position: absolute; */
   position: sticky;
+  border-radius: 5px;
   top: 0px;
-  right:0;
+  right:45px;
   margin-top: 50px;
   margin-bottom: auto;
   padding-bottom: 50px;
+  filter: drop-shadow(0.5rem 0.5rem 0.5rem rgba(161, 162, 164, 0.7));
 }
 
 .mobile-single-business {
@@ -211,6 +207,21 @@ hr {
   left: -150px;
   width: 700px;
   opacity: .3;
+}
+
+.reviews-and-map {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.content-left-of-map {
+  padding-right: 50px;
+}
+
+.business-info-reviews-button {
+  display: flex;
+  flex-direction: column;
 }
 
 @media only screen and (max-width:768px) {
@@ -299,6 +310,7 @@ hr {
   .review-container {
     width: 300px !important;
     margin: 0px 0px !important;
+    padding-left: 0px;
   }
 
   .user-icon-and-dot {
@@ -307,6 +319,8 @@ hr {
 
   .reviewImage {
     width: 300px !important;
+    margin-left: 0px;
+    filter: none;
   }
 
   .rating {
@@ -447,6 +461,19 @@ hr {
     justify-content: center;
 
   }
+
+
+  .map {
+    position: sticky;
+    border-radius: 5px;
+    top: 0px;
+    right:0px;
+    margin-top: 50px;
+    margin-bottom: auto;
+    padding-bottom: 50px;
+    filter: none;
+  }
+
 
 
 }

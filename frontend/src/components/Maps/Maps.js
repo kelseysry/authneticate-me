@@ -7,8 +7,8 @@ import './Maps.css'
 
 
 const containerStyle = {
-  width: '800px',
-  height: '600px',
+  width: '500px',
+  height: '500px',
 };
 
 const containerStyleSmall = {
