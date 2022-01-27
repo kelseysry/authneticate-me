@@ -53,17 +53,12 @@ const BusinessReviews = ({business}) => {
               }
             </div>
             <div className="rating-profile">
-              {/* <b>Rating</b>  */}
               {Array(review.rating).fill(
-
               <span className="star-color-blue"><i className="fas fa-star fa-xs"></i></span>).map((ele, idx) => <span key={idx}>{ele}</span>)
-
-             }
+              }
             </div>
               <div className="review-container">
-              {review.answer}
-              {/* {business.id} */}
-
+                {review.answer}
               </div>
               <div>
               </div>
@@ -88,7 +83,6 @@ const BusinessReviews = ({business}) => {
               <div className="profile">
                 <span className="icon">
                 <img src={pictures.collection[10].imageUrl} alt="bayon_user"/>
-                  {/* <i class="fas fa-mug-hot" fa-2x></i> */}
                 </span>
                 <span className="review-username">
                 {review.User.username}
