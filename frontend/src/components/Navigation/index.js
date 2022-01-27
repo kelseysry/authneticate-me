@@ -20,6 +20,7 @@ function Navigation({ isLoaded }){
   const [showModal, setShowModal] = useState(false);
 
   function demo () {
+    setShowModal(false)
 
     dispatch(sessionActions.login({
     credential: 'Demo-lition',
@@ -88,6 +89,7 @@ function Navigation({ isLoaded }){
             <button className="login-button-modal"
               onClick={() => {
                 history.push("/login")
+                setShowModal(false)
               }}
             >
               Login
@@ -95,6 +97,7 @@ function Navigation({ isLoaded }){
             <button className="login-button-modal"
               onClick={() => {
                 history.push("/signup")
+                setShowModal(false)
               }}
             >
               Sign Up

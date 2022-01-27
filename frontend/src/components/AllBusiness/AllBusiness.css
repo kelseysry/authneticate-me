@@ -205,5 +205,8 @@ box-shadow: black;
       line-height: 1.1em;
     }
 
+    .each-pic-container {
+      filter: none;
 
+    }
   }

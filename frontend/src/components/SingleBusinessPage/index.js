@@ -238,6 +238,7 @@ const SingleBusinessPage = () => {
               <button className="login-button-modal"
                 onClick={() => {
                   history.push("/login")
+                  setShowModal(false)
                 }}
               >
                 Login
@@ -245,6 +246,7 @@ const SingleBusinessPage = () => {
               <button className="login-button-modal"
                 onClick={() => {
                   history.push("/signup")
+                  setShowModal(false)
                 }}
               >
                 Sign Up
