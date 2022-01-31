@@ -1,7 +1,7 @@
 <!-- ![Home Page of Mab Mab](https://res.cloudinary.com/mabmab/image/upload/v1636833234/khmer_food/home_piicjk.png) -->
 
-![gif](https://res.cloudinary.com/mabmab/image/upload/v1638852997/khmer_food/home_splash_map_zup9ju.gif)
-
+<!-- ![gif](https://res.cloudinary.com/mabmab/image/upload/v1638852997/khmer_food/home_splash_map_zup9ju.gif) -->
+![gif](/gif/mabmabGif.gif)
 # Summary
 
 [Mab Mab](https://yelp-clone-kelsey-sry.herokuapp.com/)
