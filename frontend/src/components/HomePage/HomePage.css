@@ -167,6 +167,11 @@
 
 }
 
+.warn-msg {
+  padding: 5px 0px;
+  font-size: 12px;
+}
+
 @media only screen and (max-width:1000px) {
 
   .map-and-about {
